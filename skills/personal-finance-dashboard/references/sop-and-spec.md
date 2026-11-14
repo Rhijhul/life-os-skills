@@ -309,8 +309,9 @@ A new document starts each April.
 | Doc | Shape |
 |---|---|
 | `equity` | `{asof, note, rows:[{ticker, sector, mcap, sleeve 'Core'\|'Satellite'\|'Specials'\|'Gold', shares, avg, ltp, invested, value, pnl_pct, weight (ex-GoldBEES %), chg_1y, chg_3m, high52, low52, from_high, target '10–12%', qvgm '16/20', action, order, note}]}` |
-| `us` | `{asof, usdinr, rows:[{ticker, name, order, invested, value, invested_usd, value_usd, last_usd, pnl_pct, pnl_pct_usd, chg_1y, chg_3m, weight}]}` |
-| `mfret` | `{asof, rows:{fundId:{category, r1y, r3m, r3y, rank 'n of N', flag}}}` |
+| `us` | `{asof, usdinr, perf_asof, bench:{name, chg_3m, chg_6m, chg_1y}, rows:[{ticker, name, order, invested, value, invested_usd, value_usd, last_usd, pnl_pct, pnl_pct_usd, chg_1y, chg_6m, chg_3m, bsince, weight}]}` (bench = Nasdaq 100 / QQQ in USD; bsince = Nasdaq 100 bought on the same dates, %) |
+| `mfret` | `{asof, bench_note, rows:{fundId:{category, r1y, r6m, r3m, r3y, rank 'n of N', flag, bname, b3m, b6m, b1y, bsince}}}` (b* = the fund's own benchmark; bsince = same buys into the benchmark, %) |
+| `planreview` | `{reviews:[{date, actual, next:{date, value}, proj60, need, end, spend, path[₹ thousands per month to 60]}]}` (written only by the page's "Record this review") |
 | `meta` | `{asof, source, eq_invested, eq_value, nifty1y, nifty3m, qqq1y, qqq3m, notes_eq[], notes_mf[], notes_us[], review:{done, next, order[tickers], summary}}` |
 | `snapshot` | `{asof, source, total, components:[{key 'eq'\|'mf'\|'usmf'\|'us'\|'epf'\|'ppf'\|'hm'\|'ef'\|'nps', label, group 'Market-linked'\|'Retirement, locked'\|'Cash for goals', invested\|null, value, note, tab\|null, asof}], notes[4]}` |
 | `results` | `{asof, season 'Q2 FY27', total, declared, pending[], review[], rows:[{ticker, stock, date, verdict 'Strong'\|'Solid'\|'Mixed'\|'Weak', action, note}], source}` |
@@ -365,7 +366,7 @@ The live look is **"Navy & gold, left sidebar"**. Its scope `:root[data-look="ne
 
 ### 3.2 Dark mode (active look)
 
-Applied by `@media (prefers-color-scheme: dark)` with `:root[data-look="new"]:not([data-theme="light"])`, and again by `:root[data-look="new"][data-theme="dark"]`:
+Applied by `:root[data-look="new"][data-theme="dark"]` when the sidebar switch is set to Dark. The page sets `data-theme="light"` by default, so the `prefers-color-scheme` rules only matter if that attribute is removed:
 
 | Token | Dark value |
 |---|---|
@@ -528,6 +529,7 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 - Status chip (month open/closed).
 - Nav (five groups).
 - "Download offline copy" button.
+- Theme switch at the bottom: a minimal sun / moon pill. Light is the default whatever the device setting; the choice is kept per browser (`localStorage` `pf-theme`) and works offline. On phones it sits inside the open Sections menu.
 - The active nav link is highlighted by a scroll spy (top threshold 80px). A clicked link stays lit until the user scrolls with wheel, touch or keys.
 
 ### 4.2 Overview (`#overview`)
@@ -559,12 +561,12 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 - **Compounding at work:** growth share = `1 − contributions / forecast` at 60, with contributions = opening balance + all deposits.
 - **Home loan paid off:** `(original − outstanding) / original`. "Estimated end" = `loans/home.ends`. Links to the prepayment calculator.
 - **Wealth added this month:** latest `trend.total` − total at the end of the previous month.
-- **Term life cover:** donut of term policies.
+- **Term life cover:** a stacked split bar of term policies with a one-line legend (Personal / Employer).
   - Total = Σ cover of `insurance` docs with `kind: 'term'`.
-  - Sub-line: total ÷ `loans/home.outstanding` as "N× the home loan left".
-  - Employer slice is masked by the eye toggle.
-- **Health cover for you:** donut of base / booster / safeguard / employer GMC. Parents' cover is shown separately.
-- Hover or tap a donut slice or legend row to highlight it; click a tile to jump to Insurance.
+  - Line under the legend: total ÷ `loans/home.outstanding` as "N× the home loan left" (kept below the legend so both insurance bars line up).
+  - Employer figure is masked by the eye toggle.
+- **Health cover for you:** split bar of Base / Booster / Safeguard / GMC with a compact legend. Parents' cover is not shown on the card.
+- Every card is clickable (and Enter on keyboard) and opens its section: Retirement and Compounding → Retirement at 60; Milestone → Targets; Runway and Wealth added → Wealth mix; Home loan → Loans; Term and Health → Insurance. Links inside a card keep their own target.
 
 ### 4.3 Income (`#income`)
 
@@ -604,7 +606,7 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 
 - Fund classes come from `mf.bucket`.
 - Return per class is the XIRR of its cash flows. The debt XIRR is blended with EPF and PPF rates by value; cash uses the savings rate from `returns.rates`.
-- "View holdings by account" lists every snapshot component with its XIRR.
+- "View holdings by account" lists every snapshot component with its XIRR. It is expanded by default.
 
 **India and US retirement equity:**
 
@@ -653,7 +655,16 @@ Outputs:
 - Needed through the end age.
 - Ahead/short.
 - "Supports about ₹X/month in today's rupees".
-- The curve has dashed need lines for ages 80/85/90 and a hover readout per month.
+- The curve fills the panel width (the SVG viewBox width follows the container and redraws on resize). It has dashed need lines for ages 80/85/90 and a hover/tap/arrow-key readout per month.
+- Layout is tight: one line under the totals ("Pays ≈₹X/month in today's ₹ … · Needed: To 80 · To 85 · To 90"); the hover hint sits at the end of the legend.
+- Settings: four buttons in one row (Corpus today · Investment settings · Spending & inflation · Projection details). On wide screens each opens on its own into a strip under the row, so the other buttons never move; on phones they stack.
+
+**Half-yearly check** (`invest/planreview`):
+
+- Reviews happen every May and November. "Record this review" (online only, one per month) saves `{date, actual, next:{date, value}, proj60, need, end, spend, path}`, where `actual` = today's corpus, `next.value` = the plan's corpus 6 months ahead, and `path` = the monthly projected corpus in ₹ thousands from that month to 60.
+- On the curve: a dashed grey line = the plan saved at the first review (its `path`); green dots joined by a line = the actual corpus at each review (plus today). The x-axis starts at the first review.
+- Panel: a "Today vs plan" box (actual vs the last review's path interpolated to today, ₹ and %), plan-vs-actual columns for the last 4 reviews (green beat / red miss, gap above, tap for numbers), and a table (actual, plan expected, gap, projected at 60, needed, expect next, status On track / Behind path / Short at 60).
+- A chip shows "Next review <date>" or "Review due now".
 
 ### 4.6 Investments (`#invest`)
 
@@ -683,8 +694,17 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 - Sector and sleeve mix.
 - Analyst read (`meta.notes_eq`) at the bottom.
 
+**Performance vs benchmark** (My mutual funds and US direct stocks):
+
+- Buttons 3M / 6M / 12M / Since bought (choice remembered per browser). One row per holding: holding bar vs benchmark bar, benchmark name under the holding. Hover or tap a row for "X vs benchmark Y → ahead/behind by Z pts".
+- Each fund is compared with its own official index, never a category average. Where index data is not published, rebuild it from component prices (composite funds by their official weights) or use a labelled proxy, and say "approximate" in one short note (`mfret.bench_note`).
+- US stocks: change in USD vs the Nasdaq 100 (`us.bench`, QQQ) as a dashed row.
+- Since bought: the same buys (dates and amounts from `invest/returns`) put into the benchmark on the same dates; FIFO cost where units were sold. Fund side = gain on amount invested; US side = USD gain on average buy price.
+- Notes under charts: one or two short lines only.
+
 **Mutual funds:**
 
+- By category bars, then (dotted separator) an **Equity vs debt** donut: Equity / Debt / Hybrid (multi-asset) from `mf.bucket`; tap a slice for its funds.
 - Table with fund, goal, invested, current, gain, SIP, 1Y/3M/3Y, rank.
 - Per-fund XIRR from `returns.mf[id].cfs` plus `mv`.
 - Lifetime XIRR (`returns.mf_lifetime`).
@@ -703,8 +723,9 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 
 ### 4.7 Bills (`#bills`)
 
-- This month's card bills (by due day) and the home-loan EMI (`loans/home.emi` on `emi_day`).
-- Each row has a tick (`cards.paid[YYYY-MM]`, `months.emi_paid`).
+- This month's card bills (by due day), the home-loan EMI (`loans/home.emi` on `emi_day`), and each monthly insurance premium (`insurance` docs with `prem_freq: 'Monthly'`, on `prem_day`). The premium uses the same tile and tick even when it is debited from a card; it is kept out of the outstanding total because it is already inside the card bill.
+- Each row has a tick (`cards.paid[YYYY-MM]`, `months.emi_paid`, `months.ins_<policyId>_paid`).
+- Any unpaid item past its due day turns the sidebar status to "Bill overdue"; within 2 days, "Bill due soon".
 - Chips: Paid / Due in N days / Overdue N days.
 - Header: outstanding total and the total of issued bills plus EMI.
 - Offline, ticks save to `localStorage` (`pf-off-ticks`).
@@ -734,9 +755,8 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 
 ### 4.9 PPF & NPS (`#ppf`)
 
-- Financial-year cards with balance, contributed vs yearly minimum (PPF ₹500, NPS ₹1,000) and limit (PPF ₹1,50,000).
-- Status: "Minimums met" / amount still needed.
-- Rule note: deposit PPF by the 5th to earn that month's interest.
+- The section is always open. Each financial-year card shows its progress bar, value vs target and the yearly-minimum chip (PPF ₹500, NPS ₹1,000).
+- "Details & edit" (collapsed per card) holds amount to go, contributed vs limit (PPF ₹1,50,000), the rule note (deposit PPF by the 5th to earn that month's interest) and the input fields.
 
 ### 4.10 Cards (`#cards`)
 
@@ -785,14 +805,14 @@ Four views: Spending, All cards, Card detail, Benefits & targets.
 
 - **Header:** policy count · life cover (Σ term cover) · health cover for you (Σ health cover excluding Parents) · what you pay a year (monthly × 12 + yearly).
 - **Coming up:** next monthly term debit (from `prem_day`) and the next `renews` dates (max 4). Click a chip to scroll to and outline its card.
-- **Policy cards:** cover, premium (/mo, /yr, /2 yrs, or ₹0 employer), pay-until or renews, full policy number, nominee, up to three features.
+- **Policy cards:** cover, premium (/mo, /yr, /2 yrs, or ₹0 employer), pay-until or renews, and the card's main bar (term payment progress; health base/booster/safeguard split with legend). Everything else (notes, tips, members, nominee, features) sits under a collapsed "Details" link per card, which opens independently and stays open across re-renders.
 - **Personal term card:**
   - Progress bar = premiums paid so far ÷ total premiums. Monthly count = months from the start to today, inclusive of this month's debit if past the debit day; total = (pay_until year − start year + 1) × 12.
   - "Began yearly ₹X incl. GST · now ₹Y/yr, no GST".
   - Tip when yearly payment would be cheaper. Yearly cost ≈ `prem_start / 1.18` (GST removed); saving = monthly × 12 − that.
   - Early-exit window line.
 - **Health card:** split bar of base / booster / safeguard.
-- **Premiums by year:** chart for health or term (toggle). Stacked premium and GST; click a bar to pin it.
+- **Premiums by year:** Health · Term · Combined buttons. Health and Term stack premium and GST; Combined stacks health + term (incl. GST) by financial year. Term `history` uses financial-year keys (e.g. year-1 annual, then monthly with 18% GST until GST was removed on 22 Sep 2025); a year with no term record is flagged, never guessed. Click a bar to pin it.
 - Hovering a card dims the others.
 
 ### 4.15 Facts (`#facts`)
@@ -826,7 +846,9 @@ Four views: Spending, All cards, Card detail, Benefits & targets.
    - 3M change = latest close ÷ close 3 months back − 1.
    - 52-week high/low.
    - Nifty 50 and Nasdaq-100 (QQQ) the same way.
-   - Fund 1Y/3M/3Y returns and category rank.
+   - Fund 1Y/6M/3M/3Y returns and category rank; each fund's own benchmark 3M/6M/12M (`b3m`, `b6m`, `b1y`). Rebuild composite or unpublished benchmarks from component prices; keep `bname` and `bench_note`.
+   - US stocks 3M/6M/1Y in USD and `us.bench` from QQQ.
+   - Since-bought benchmarks (`bsince`): put each buy from `returns` into the benchmark on its own date; if that is not possible, keep the stored value.
 4. Recompute:
    - Each stock: `value = shares × ltp`; `invested = shares × avg`; `pnl_pct`.
    - Weight = value ÷ direct-stock value excluding GoldBEES.
@@ -838,9 +860,10 @@ Four views: Spending, All cards, Card detail, Benefits & targets.
    - Dates and prices only from trade records (contract notes, order emails, allotment emails).
    - Unmatched changes go to `returns.pending`.
 6. Results season: add newly declared results to `invest/results`, and recompute `earnings` for the current quarter only.
-7. Rewrite `meta.notes_eq`, `notes_mf`, `notes_us` and `snapshot.notes` from the new numbers.
+7. Rewrite `meta.notes_eq`, `notes_mf`, `notes_us` and `snapshot.notes` from the new numbers: at most 8 bullets each, one line (about 25 words) each, numbers first, no method talk.
 8. Add `trend/<today>` = `{date, total, source: 'weekly refresh'}`.
-9. Write everything in one batch; report total and change, equity vs Nifty, top movers, gaps vs targets, gold % of corpus, anything stale.
+9. Never write `invest/planreview` (only the page's "Record this review" does) and never drop a field you could not refresh.
+10. Write everything in one batch; report total and change, equity vs Nifty, top movers, gaps vs targets, gold % of corpus, anything stale.
 
 ### 5.3 Monthly cash-flow update (after salary and statements)
 
@@ -878,6 +901,7 @@ Occasionally: EPF passbook, PPF/NPS statements, insurance renewal notices.
 | Salary revision | Update `ctc_fixed`, `epf_monthly`; the employer term cover follows. |
 | Results season (quarterly) | New `invest/results.season`; move last quarter to `earnings.quarters` as Final. |
 | Formal portfolio review | Update `equity.rows[].target`/`action`, `meta.review` (done, next, order, summary). Only with the owner's approval. |
+| May and November | Half-yearly retirement review: after that week's refresh, open Retirement at 60, check "Today vs plan", and tap "Record this review" (one per month). |
 
 ### 5.6 What a refresh must never do
 
@@ -977,3 +1001,6 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] The eye toggle hides salary and investment figures, but not card spending or bills.
 - [ ] Charts respond to hover, tap and arrow keys; readouts update.
 - [ ] Totals reconcile across Overview, Wealth mix and Investments.
+- [ ] Theme switch: Light by default, Dark readable, choice remembered.
+- [ ] Performance vs benchmark: every fund has its own index; the 3M / 6M / 12M / Since bought buttons all draw.
+- [ ] Half-yearly check renders with no reviews, one review and several.

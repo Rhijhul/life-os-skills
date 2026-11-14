@@ -14,7 +14,12 @@ What the finished page covers:
 - a retirement-at-60 projection
 - goals, bills, loans, insurance and to-dos
 
-It also includes a privacy toggle that hides salary and investment figures, light and dark mode, and a "Download offline copy" button.
+It also includes:
+- each fund and US stock against its own benchmark (3M / 6M / 12M / since bought);
+- a half-yearly retirement review that plots actual corpus against the saved plan;
+- a privacy toggle that hides salary and investment figures;
+- a Light / Dark switch (Light by default);
+- a "Download offline copy" button.
 
 The skill works with any agent that can read files and run Python. Hosting the page with a database is best (for example, a claude.ai artifact with the `db` capability). Without hosting, the skill produces a single offline HTML file instead.
 
@@ -51,6 +56,10 @@ The skill works with any agent that can read files and run Python. Hosting the p
    - The home loan's id is always `home`.
    - Each fund record carries `bucket`: `equity` | `mixed` | `debt` | `us`.
 6. **Ask before anything irreversible**, and before changing targets or decisions the user set.
+7. **Benchmarks are per fund.**
+   - Compare every fund with its own official index, never a category average.
+   - If an index has no data, rebuild it from component prices or use a labelled proxy, and say "approximate" in one line.
+8. **Keep notes short.** Notes under charts are one or two lines; analyst notes are at most 8 one-line bullets.
 
 ## Workflow
 
@@ -116,6 +125,8 @@ Follow SOP section 5:
 - yearly rollovers.
 
 Every refresh writes only changed records, pinned to the version it read, in one batch. It updates `settings/main.last_updated` and never republishes the page. If the platform supports scheduled tasks, create the weekly one.
+
+Every May and November, remind the user to record the half-yearly retirement review on the page. A refresh never writes `invest/planreview`.
 
 ## Changing the design (optional)
 

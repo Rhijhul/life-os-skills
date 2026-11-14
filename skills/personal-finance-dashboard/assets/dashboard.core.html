@@ -241,7 +241,9 @@ svg.scrubbable{cursor:crosshair;touch-action:pan-y;outline-offset:3px;border-rad
 .wt-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .mpick{display:inline-flex;align-items:center;gap:3px}.mpick button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;width:26px;height:30px;padding:0;font-size:1rem;cursor:pointer}.mpick button:disabled{opacity:.35;cursor:default}.mpick select{padding-inline:6px 22px}
 h3.mt{margin-top:6px}.glance{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.glance>div{display:grid;gap:1px;padding:8px 10px;border-radius:9px;background:var(--track)}.glance b{font-size:1.05rem}.glance small{font-size:.7rem;line-height:1.3}
-.cmix{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13.5rem),1fr));gap:3px 16px;font-size:.78rem}.cmix span{display:flex;align-items:baseline;gap:5px;white-space:nowrap}.cmix b{margin-left:auto}.cmix small{min-width:2.6rem;text-align:right}
+.cmix{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13.5rem),1fr));gap:2px 12px;font-size:.78rem}.cmix span,.cmix button{display:flex;align-items:baseline;gap:5px;white-space:nowrap}.cmix button{border:1px solid transparent;border-radius:7px;background:transparent;color:var(--ink);font:inherit;padding:3px 6px;margin:0 -6px;text-align:left;cursor:pointer;transition:opacity .12s,background-color .12s}.cmix button:hover,.cmix button.hov{background:var(--track)}.cmix button.on{border-color:var(--accent);background:var(--accent-soft)}.cmix button.dim{opacity:.5}.cmix b{margin-left:auto}.cmix small{min-width:2.6rem;text-align:right}
+.cstack>button{display:block;height:100%;min-width:3px;border:0;padding:0;margin:0;border-radius:0;cursor:pointer;transition:opacity .12s}.cstack>button.dim{opacity:.35}.cstack>button.on{outline:2px solid var(--ink);outline-offset:-2px}.cstack:hover>button:not(:hover):not(.hov){opacity:.45}.cstack>button.hov{opacity:1}
+.cdetail{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;margin-top:6px;padding:8px 10px;border-radius:9px;background:var(--track);font-size:.84rem}.cdetail .small{flex-basis:100%;line-height:1.35}.chint{margin-top:4px}
 .goldline .meter{position:relative;height:8px}.goldline .meter em{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.6}.goldline p{margin:4px 0 0}.tile.gold{border-color:var(--saffron)}
 .goalbar.cash{background:repeating-linear-gradient(135deg,var(--saffron) 0 6px,color-mix(in srgb,var(--saffron) 55%,transparent) 6px 12px)}.goalrow .gsub{grid-column:1/-1;margin-top:-6px;font-size:.7rem}
 .chart text.xm{fill:var(--ink);font-size:11px}.chart text.xy{font-size:9.5px}.chart text.bv{font-size:9.5px;fill:var(--ink);opacity:.8}
@@ -260,7 +262,10 @@ tr.clickrow{cursor:pointer}tr.clickrow:hover td{background:var(--track)}#month-t
 .pos { color: var(--good); } .neg { color: var(--bad); }
 .notes ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
 .hb { display: flex; flex-direction: column; gap: 7px; }
-.hb .r { display: grid; grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr) 6.5rem; gap: 10px; align-items: center; font-size: 0.84rem; }
+.hb .r { display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr) 6.5rem; gap: 10px; align-items: center; font-size: 0.84rem; line-height: 1.3; }
+.hb .r .hl { display: flex; flex-direction: column; min-width: 0; }
+.hb .r .hl > * { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hb .r .hl .small { font-size: 0.74rem; }
 .hb .r i { display: block; height: 12px; border-radius: 3px; background: var(--accent); min-width: 2px; }
 .hb .r .num { text-align: right; }
 .div-bars { display: flex; flex-direction: column; gap: 3px; }
@@ -278,7 +283,7 @@ tr.clickrow{cursor:pointer}tr.clickrow:hover td{background:var(--track)}#month-t
 th button.sort { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; }
 th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 @media (max-width: 760px) {
-  .hb .r { grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) 5.5rem; }
+  .hb .r { grid-template-columns: minmax(0, 9.6rem) minmax(0, 1fr) 5.5rem; gap: 8px; } .hb .r .hl .small { font-size: 0.68rem; }
   .income { grid-template-columns: minmax(0, 1fr); }
   .hero, .whatif { grid-template-columns: minmax(0, 1fr); }
   .bar-top nav { margin-left: 0; width: 100%; }
@@ -288,7 +293,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 @media (prefers-reduced-motion: no-preference) { .meter > i, .mini > i { transition: width .4s ease-out; } }
 :root{--r:14px}.wrap{gap:32px}.bar-top nav{width:100%;margin:0;flex-wrap:nowrap;overflow:auto}.bar-top nav a{white-space:nowrap}.bar-top .in{gap:5px 14px}.pagehead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:0 0 12px}.pagehead h2{font:500 clamp(1.7rem,4vw,2.5rem)/1.15 Georgia,serif;letter-spacing:-.04em}.pagehead a,.panel a{color:var(--accent)}.hero{margin-top:0}.floor{background:linear-gradient(120deg,#123c3b,#185d52);color:white;justify-content:center}.planbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(14px,3vw,28px);display:grid;gap:15px}.planstats,.controls,.twop{display:grid;gap:14px}.planstats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.planstats strong{display:block;font:500 1.8rem Georgia,serif;color:var(--accent)}.controls{grid-template-columns:repeat(auto-fit,minmax(135px,1fr));margin-top:12px}.controls label{display:grid;gap:4px;font-size:.82rem}.controls input,.controls select{min-width:0;width:100%;box-sizing:border-box}.twop{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}.mixrow{display:grid;grid-template-columns:6rem 1fr auto;align-items:center;gap:10px;margin:9px 0;font-size:.87rem}.mixrow i{height:8px;border-radius:5px;display:block}.mixrow span{background:var(--track);border-radius:5px}.planbox summary{cursor:pointer;font-weight:600}.planbox details p{margin-top:8px}.planbox details{border-top:1px solid var(--line);padding-top:10px}#curve svg{width:100%;height:auto;max-height:235px;display:block}#wealth .panel{display:grid;align-content:start;gap:10px}section{scroll-margin-top:110px}
 .modelinputs input[type=number]{width:clamp(4rem,10vw,8rem);box-sizing:border-box}.modelinputs th{white-space:normal}#curve svg{cursor:crosshair;touch-action:pan-y}#readout{margin:6px 0;background:var(--bg)}
-.plotarea{position:relative}#curve #readout{position:absolute;pointer-events:none;z-index:2;width:max-content;border-radius:7px;margin:0;padding:5px 9px;background:#163e38;color:#fff;box-shadow:0 2px 8px #0002;line-height:1.2}#readout small,#readout strong{display:block}#readout small{font-size:.68rem}#readout strong{font-size:.9rem;font-variant-numeric:tabular-nums}.planbox{gap:8px;padding:clamp(12px,2vw,21px)}.planbox details{padding-top:6px}.holdingline{display:flex;justify-content:space-between;gap:8px;padding:4px 0;font-size:.84rem;border-bottom:1px solid var(--line)}#wealth summary{cursor:pointer}#heldtotal{color:var(--accent)}#curve svg{max-height:180px}
+.plotarea{position:relative}#curve #readout{position:absolute;pointer-events:none;z-index:2;width:max-content;border-radius:7px;margin:0;padding:5px 9px;background:#163e38;color:#fff;box-shadow:0 2px 8px #0002;line-height:1.2}#readout small,#readout strong{display:block}#readout small{font-size:.68rem}#readout strong{font-size:.9rem;font-variant-numeric:tabular-nums}.planbox{gap:8px;padding:clamp(12px,2vw,21px)}.planbox details{padding-top:6px}.holdingline{display:flex;justify-content:space-between;gap:8px;padding:4px 0;font-size:.84rem;border-bottom:1px solid var(--line)}#wealth summary{cursor:pointer}#heldtotal{color:var(--accent)}#curve svg{max-height:200px;width:100%}
 .ret-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}
 .ret-settings>div{display:flex;flex-direction:column;gap:5px;min-width:0}
 .ret-settings>div>details{min-width:0;border:1px solid var(--line);border-radius:8px;padding:0 10px}
@@ -409,6 +414,18 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 :root[data-look="new"] .bar-top.open nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));gap:2px;overflow:visible;padding-top:4px}
 :root[data-look="new"] .bar-top.open nav a{padding:7px 10px}
 }
+.div-bars.pf .r{cursor:pointer}.div-bars.pf .r.on{background:var(--track);opacity:1!important}.div-bars .r .hl{display:flex;flex-direction:column;min-width:0;max-width:11.5rem}.div-bars .r .hl>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.div-bars .r .hl .small{font-size:.7rem;line-height:1.2}.pfdetail{margin:6px 0 0;padding:6px 9px;border-radius:7px;background:var(--accent-soft);min-height:1.3em}@media (max-width:640px){.div-bars .r .hl{max-width:8.5rem}}
+.prv{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}.prv-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.prv-head h3{margin:0}.prv-live{display:flex;flex-direction:column;gap:2px;margin:8px 0;padding:8px 10px;border-radius:9px;background:var(--track)}.prv-live .label{font-size:.75rem;color:var(--muted)}.prv-live strong{font-size:1.1rem}.prv .tbl table{font-size:.82rem}
+.prv-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:end}@media (max-width:700px){.prv-top{grid-template-columns:1fr}}.prv-cols{display:flex;gap:14px;align-items:flex-end;height:120px;padding-top:4px}.prv-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;border:0;background:none;padding:0;cursor:pointer;color:inherit;min-width:0}.prv-col:hover .prv-bars,.prv-col:focus .prv-bars{opacity:.8}.prv-bars{flex:1;width:100%;display:flex;gap:3px;align-items:flex-end;justify-content:center}.prv-bars i{display:block;width:40%;max-width:22px;border-radius:3px 3px 0 0}.prv-bars i.pl{background:var(--line)}.prv-bars i.ok{background:var(--good)}.prv-bars i.miss{background:var(--bad)}.prv-gap{font-size:.72rem;font-weight:600}.prv-col small{font-size:.7rem;color:var(--muted)}.prv-cd{margin:4px 0 0}
+.prv{margin-top:4px;padding-top:8px}.prv-head{row-gap:4px}.prv-act{margin-left:auto;display:flex;align-items:center;gap:8px}.prv-act button{padding:4px 12px;font-size:.82rem}.prv .tbl table th,.prv .tbl table td{padding-top:5px;padding-bottom:5px}#drawdown{margin:0}#curve .legend{margin-top:2px}@media (min-width:900px){.ret-settings{grid-template-columns:repeat(4,minmax(0,1fr))!important}.ret-settings>div{display:contents}.ret-settings{align-items:start}.ret-settings>div>details[open]{padding-bottom:0;border-color:var(--accent);background:var(--accent-soft)}}.ret-pane{display:flex;flex-direction:column;gap:8px}.ret-pane:empty{display:none}.ret-pane-item{border:1px solid var(--line);border-radius:8px;padding:8px 12px 12px}.ret-pane-h{font-weight:600;font-size:.86rem;margin-bottom:6px;color:var(--muted)}
+.dsplit{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}.dnut{width:150px;height:150px;flex:none}.dnut circle{cursor:pointer;transition:opacity .12s;outline:none}.dnut circle.dim,.dlegend button.dim{opacity:.35}.dn-v{font:600 5.4px var(--display,Georgia),serif;fill:var(--ink)}.dn-l{font-size:2.7px;fill:var(--muted)}.dlegend{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}.dlegend button{display:grid;grid-template-columns:12px auto 1fr;align-items:center;gap:8px;border:0;background:none;padding:2px 0;text-align:left;cursor:pointer;color:inherit;font-size:.86rem;transition:opacity .12s}.dlegend button i{width:12px;height:12px;border-radius:3px}.dlegend button span{text-align:right;color:var(--muted)}.dlegend p{margin:4px 0 0;min-height:1.2em}
+.mfcat-panel{display:flex;flex-direction:column}.mf-sep{border-top:2px dotted var(--line);padding-top:16px;margin-top:16px}.mfcat-panel>.hb{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:6px}.mf-sep h3{margin:0 0 4px}.dnut{width:170px;height:170px}
+.ppf-head{display:flex;justify-content:space-between;align-items:center;gap:8px 14px;flex-wrap:wrap}.ppf-more{margin-top:4px}.ppf-more>summary{cursor:pointer;color:var(--muted)}.ppf-more[open]{display:flex;flex-direction:column;gap:6px}.ppf-more[open]>summary{margin-bottom:2px}
+.sep-h{border-top:2px dotted var(--line);padding-top:14px;margin-top:16px!important}.panel .sub{border-top:2px dotted var(--line);padding-top:14px}
+.ins-more{margin-top:2px}.ins-more>summary{cursor:pointer;color:var(--muted)}.ins-more[open]{display:flex;flex-direction:column;gap:6px}.ins-more[open]>summary{margin-bottom:2px}
+.theme-row{display:inline-flex;align-items:center;gap:2px;margin-top:10px;padding:3px;border-radius:999px;background:var(--side-ctl,#151d31);border:1px solid var(--side-line,#263049);width:max-content}.theme-row button{display:grid;place-items:center;width:30px;height:26px;border:0;border-radius:999px;padding:0;background:transparent;color:#8f98ab;cursor:pointer;transition:background .15s,color .15s}.theme-row button:hover{color:#eef0f5}.theme-row button[aria-pressed=true]{background:#eef0f5;color:#111a2e}@media(max-width:959px){.bar-top:not(.open) .theme-row{display:none}}
+.moment[data-go]{cursor:pointer;transition:border-color .12s,box-shadow .12s}.moment[data-go]:hover,.moment[data-go]:focus-visible{border-color:var(--accent);box-shadow:0 2px 8px rgba(17,26,46,.08)}
+.moment .mbar{margin-top:4px}.moment .mkey{font-size:.72rem;gap:2px 10px}
 </style>
 
 <div class="bar-top"><div class="in">
@@ -421,6 +438,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   <nav aria-label="Sections" id="sec-nav">
     <span class="ng n1">Today</span><a class="n1" href="#overview">Overview</a><span class="ng n2">Money in &amp; out</span><a class="n2" href="#income">Income</a><span class="ng n3">Wealth</span><a class="n3" href="#wealth">Wealth mix</a><a class="n3" href="#plan">Retirement</a><a class="n3" href="#invest">Investments</a><a class="n1" href="#bills">Bills</a><span class="ng n4">Plans</span><a class="n4" href="#targets">Targets</a><a class="n3" href="#ppf">PPF &amp; NPS</a><a class="n2" href="#cards">Cards</a><a class="n2" href="#trends">Trends</a><a class="n1" href="#todo">To-do</a><a class="n4" href="#loans">Loans</a><a class="n4" href="#insurance">Insurance</a><span class="ng n5">Reference</span><a class="n5" href="#facts">Facts</a>
   </nav>
+  <div class="theme-row" role="group" aria-label="Theme"><button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme" title="Light"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 1.8v2.2M10 16v2.2M1.8 10H4M16 10h2.2M4.2 4.2l1.6 1.6M14.2 14.2l1.6 1.6M4.2 15.8l1.6-1.6M14.2 5.8l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M16.5 12.3A7 7 0 0 1 7.7 3.5a7 7 0 1 0 8.8 8.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></button></div>
 
 </div></div>
 
@@ -475,7 +493,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         <div class="split" id="split-bar" role="img" aria-label="Split of income"></div>
         <div class="split-legend" id="split-legend"></div>
         <div id="split-detail" class="split-detail" hidden></div>
-        <h3 style="margin-top:14px">Month by month</h3><div class="chart" id="split-hist"></div>
+        <h3 class="sep-h">Month by month</h3><div class="chart" id="split-hist"></div>
         <p class="small muted">Invested = SIP + direct stocks. Saved = emergency + travel fund additions. EMI = all loan EMIs that month (see Loans). Spent = your own card spend (bills paid this month). Left = what stays in the bank.</p>
         <div class="close-row online-only"><button type="button" id="close-btn">Save this month to Notion</button><span class="small muted" id="close-msg" aria-live="polite"></span></div>
       </div>
@@ -486,21 +504,21 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 <div class="plotarea" id="wealth-wrap"><div id="wealth-plot"></div><div id="wealth-tip" class="wtip" hidden></div></div><div id="wealth-reading" class="small"></div>
 <details><summary>Snapshots &amp; data entry</summary><p class="small muted">The chart uses the last recorded value in each period (1–15 and 16–month-end, or the whole month). In the twice-a-month view, a dashed line connects readings across a period with no observation. Changes include deposits, withdrawals and valuation changes. The 2 Nov total includes NPS and updated PPF. Earlier totals come from the original wealth history, so the difference can include a change in coverage.</p>
 <form id="wealth-entry" class="controls"><label>Observation date<input type="date" id="wealth-date" required></label><label>Total tracked holdings (₹)<input type="number" id="wealth-amount" min="0" step="0.01" required></label><button>Save snapshot</button></form><p class="small" id="wealth-msg" role="status"></p><div id="wealth-log" class="small"></div></details></div>
-<div class="twop"><div class="panel"><h3>Tracked holdings <span id="heldtotal"></span></h3><div id="classes"></div><details><summary>View holdings by account</summary><div id="heldaccounts"></div><a href="#invest">Explore individual holdings ↓</a></details><p class="small muted">Cash = the two goal balances (free cash tracked separately). Multi-asset funds and NPS sit in Hybrid.</p></div>
+<div class="twop"><div class="panel"><h3>Tracked holdings <span id="heldtotal"></span></h3><div id="classes"></div><details open><summary>View holdings by account</summary><div id="heldaccounts"></div><a href="#invest">Explore individual holdings ↓</a></details><p class="small muted">Cash = the two goal balances (free cash tracked separately). Multi-asset funds and NPS sit in Hybrid.</p></div>
 <div class="panel"><h3>India and US retirement equity</h3><div id="countries"></div><label>Explore a US allocation <select id="ust"><option>15</option><option selected>20</option><option>25</option><option>30</option></select> %</label><p id="georead"></p><div class="sub" id="corpus-mix"></div><p class="small muted">20% is a comparison point, not a rule; your US funds and stocks overlap heavily. <a href="https://www.investor.gov/introduction-investing/getting-started/asset-allocation">Allocation principles ↗</a></p></div></div></section>
 <section id="plan"><div class="pagehead"><h2>Retirement at 60</h2><span class="small muted" id="plan-range"></span></div>
-<div class="planbox"><div class="planstats" id="planstats"></div><p id="drawdown" class="small"></p><div id="curve"></div>
+<div class="planbox"><div class="planstats" id="planstats"></div><p id="drawdown" class="small"></p><div id="curve"></div><div id="planreview" class="prv"></div>
 <div class="ret-settings"><div><details><summary id="retbalance"></summary><div id="retbuckets"></div><p class="small muted">EPF excludes the EPS pension share.</p></details>
 <details><summary>Investment settings</summary><p class="small muted">Defaults come from your settings: yearly Indian and US stock buying (each spread over 12 months, rising 5% a year), the retirement SIPs rising 7.5% a year, and the monthly EPF contribution rising 7% a year with salary. Each step-up applies after every 12 payments. Change any cell and it is saved for next time.</p>
 <div class="tbl"><table class="modelinputs"><thead><tr><th>Bucket</th><th>Return / year (%)</th><th>Deposit (₹)</th><th>Step-up / year (%)</th></tr></thead><tbody id="inflows"></tbody></table></div>
 <details><summary>Return assumptions and sources</summary><p>Indian and US equity both use 12% a year in rupees. That is a conservative long-run figure; 14% is treated as upside, not the plan. US returns in rupees include some rupee weakening, but US valuations are high today, so the model does not assume more than India. GoldBEES uses 8% (gold’s long-run return is closer to inflation plus 1–2% than its recent 10-year run). EPF uses the declared 8.25% and PPF 7.1%; both can change. NPS uses 10%. After 60 the corpus is assumed to earn 8% in a balanced mix.</p><p class="small muted"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311968">EPF rate</a> · <a href="https://odishapost.gov.in/en/IntrestRate.aspx">PPF rate</a> · <a href="https://npstrust.org.in/">NPS Trust</a></p></details>
 <div class="controls"><label>One-time inflow (₹)<input id="extra" type="number" min="0" max="1000000000" value="0"></label><label>Inflow month<input id="extraDate" type="month" min="2026-12" max="2055-08" value="2027-11"></label><label>Invest into<select id="extraBucket"></select></label></div></details>
-</div><div><details><summary>Spending &amp; inflation settings</summary><div class="controls">
+</div><div><details><summary>Spending &amp; inflation</summary><div class="controls">
 <label>Monthly spend today (₹)<input id="spend" type="number" min="1" max="10000000" value="150000" step="any"></label>
 <label>Inflation (%)<input id="infl" type="number" min="0" max="20" value="6" step="any"></label>
 <label>Growth after 60 (%)<input id="post" type="number" min="0" max="20" value="8" step="any"></label>
 <label>Plan through age<select id="endage"><option>80</option><option selected>85</option><option>90</option></select></label></div></details>
-<details><summary>Projection details</summary><p id="planread"></p><p id="method"></p></details></div></div><p class="small muted">Next annual review · every November</p></div></section>
+<details><summary>Projection details</summary><p id="planread"></p><p id="method"></p></details></div></div></div></section>
 
   <section id="invest" hidden>
     <div class="sec-head"><h2>Investments</h2><span class="small muted" id="inv-asof"></span></div>
@@ -547,7 +565,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <div class="panel notes"><h3>Analyst read</h3><ul id="eq-notes"></ul></div>
       <div class="grid2">
         <div class="panel"><h3>By sector</h3><div id="eq-sector" class="hb"></div></div>
-        <div class="panel"><h3>By market cap</h3><div id="eq-cap" class="hb"></div><h3 style="margin-top:6px">By sleeve</h3><div id="eq-sleeve" class="hb"></div></div>
+        <div class="panel"><h3>By market cap</h3><div id="eq-cap" class="hb"></div><h3 class="sep-h">By sleeve</h3><div id="eq-sleeve" class="hb"></div></div>
       </div>
       <div class="panel">
         <div class="sec-head"><h3>Return by holding</h3>
@@ -561,8 +579,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <div class="kpis" id="mf-kpis"></div>
       <div class="panel notes"><h3>Analyst read</h3><ul id="mf-notes"></ul></div>
       <div class="grid2">
-        <div class="panel"><h3>By category</h3><div id="mf-cat" class="hb"></div></div>
-        <div class="panel"><h3>1 year vs 3 months</h3><div class="legend"><span><i class="sw" style="background:var(--accent)"></i>1 year</span><span><i class="sw" style="background:var(--saffron)"></i>3 months</span></div><div id="mf-ret" class="div-bars"></div></div>
+        <div class="panel mfcat-panel"><h3>By category</h3><div id="mf-cat" class="hb"></div><div class="mf-sep"><h3>Equity vs debt</h3><div id="mf-split" class="dsplit"></div></div></div>
+        <div class="panel"><div class="sec-head"><h3>Performance vs benchmark</h3><div class="seg" role="group" aria-label="Period"><button type="button" data-pf="mf:3m">3M</button><button type="button" data-pf="mf:6m">6M</button><button type="button" data-pf="mf:1y" class="on">12M</button><button type="button" data-pf="mf:since">Since bought</button></div></div><div class="legend" id="mf-ret-lg"></div><div id="mf-ret" class="div-bars pf"></div><p class="small muted" id="mf-ret-sub"></p></div>
       </div>
       <div class="panel"><h3>Funds</h3><div class="tbl"><table id="mf-rtable"></table></div><p class="small muted">Returns are fund NAV returns (1 and 3 months are point to point; 3 years is per year). Rank is within the fund's category.</p></div>
     </div>
@@ -571,7 +589,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <div class="panel notes"><h3>Analyst read</h3><ul id="us-notes"></ul></div>
       <div class="grid2">
         <div class="panel"><h3>Weight in the US sleeve</h3><div id="us-w" class="hb"></div></div>
-        <div class="panel"><h3>1 year vs 3 months (USD)</h3><div class="legend"><span><i class="sw" style="background:var(--accent)"></i>1 year</span><span><i class="sw" style="background:var(--saffron)"></i>3 months</span></div><div id="us-ret" class="div-bars"></div></div>
+        <div class="panel"><div class="sec-head"><h3>Performance vs Nasdaq 100 (USD)</h3><div class="seg" role="group" aria-label="Period"><button type="button" data-pf="us:3m">3M</button><button type="button" data-pf="us:6m">6M</button><button type="button" data-pf="us:1y" class="on">12M</button><button type="button" data-pf="us:since">Since bought</button></div></div><div class="legend" id="us-ret-lg"></div><div id="us-ret" class="div-bars pf"></div><p class="small muted" id="us-ret-sub"></p></div>
       </div>
       <div class="panel"><h3>Holdings</h3><div class="tbl"><table id="us-table"></table></div></div>
     </div>
@@ -581,7 +599,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <div class="grid2">
         <div class="panel"><h3>Verdict mix by quarter</h3><div id="rs-mix" class="qmix"></div>
           <div class="legend"><span><i class="sw" style="background:var(--good)"></i>Strong</span><span><i class="sw" style="background:var(--accent)"></i>Solid</span><span><i class="sw" style="background:var(--warn)"></i>Mixed</span><span><i class="sw" style="background:var(--bad)"></i>Weak</span></div>
-          <h3 style="margin-top:6px">Q1 → Q2 verdict momentum</h3><div class="badges" id="rs-mom"></div></div>
+          <h3 class="sep-h">Q1 → Q2 verdict momentum</h3><div class="badges" id="rs-mom"></div></div>
         <div class="panel"><h3>Median growth and margin breadth</h3><div id="rs-med" class="qbars"></div><p class="small muted">Median revenue and PAT growth YoY, and the share of holdings whose operating margin expanded.</p></div>
       </div>
       <div class="panel"><h3>Portfolio earnings, quarter by quarter</h3><div class="tbl"><table id="rs-qtable"></table></div><p class="small muted" id="rs-method"></p></div>
@@ -636,10 +654,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   </section>
 
   <section id="ppf" hidden>
-    <details class="panel collapse" id="ppf-box">
-      <summary><span class="sum-title"><b>PPF &amp; NPS</b> <span class="small muted">Financial year runs April to March</span></span><span class="small" id="ppf-sum"></span><i class="goal-arrow" aria-hidden="true"></i></summary>
+    <div class="panel" id="ppf-box">
+      <div class="ppf-head"><span class="sum-title"><b>PPF &amp; NPS</b> <span class="small muted">Financial year runs April to March</span></span><span class="small" id="ppf-sum"></span></div>
       <div class="ppf" id="ppf-list" style="margin-top:12px"></div>
-    </details>
+    </div>
   </section>
 
 <section id="cards" hidden>
@@ -698,7 +716,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   <h3 class="ins-h">Term life</h3><div id="ins-term" class="loancards"></div>
   <h3 class="ins-h">Health</h3><div id="ins-health" class="loancards"></div>
   <div class="panel ins-hist"><div class="sec-head"><h3>Premiums by year</h3><span class="small muted" id="ins-hist-sub"></span></div>
-  <div class="ins-tog" role="group" aria-label="Policy"><button type="button" data-insh="health" aria-pressed="true">Health · personal</button><button type="button" data-insh="term" aria-pressed="false">Term · personal</button></div>
+  <div class="ins-tog" role="group" aria-label="Policy"><button type="button" data-insh="health" aria-pressed="true">Health · personal</button><button type="button" data-insh="term" aria-pressed="false">Term · personal</button><button type="button" data-insh="all" aria-pressed="false">Combined</button></div>
   <div class="chart" id="ins-chart"></div></div>
 </section>
   <section id="facts" hidden>
@@ -843,7 +861,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const I = S.invest || {}, comps = (I.snapshot || {}).components || [];
     const st = set(), ks = months().filter((k) => k <= sel), m = M();
     const out = [];
-    const card = (emo, label, v, sub, extra) => '<div class="moment"><span class="mhead"><span class="emo" aria-hidden="true">' + emo + '</span><span class="label">' + esc(label) + '</span></span><span class="v">' + v + '</span>' + (sub ? '<span class="msub">' + sub + '</span>' : '') + (extra || '') + '</div>';
+    const GO = { '🎯': 'plan', '🏁': 'targets', '🛟': 'wealth', '🌱': 'plan', '🏠': 'loans', '📈': 'wealth' };
+    const card = (emo, label, v, sub, extra) => '<div class="moment"' + (GO[emo] ? ' data-go="' + GO[emo] + '" role="link" tabindex="0" title="Open ' + GO[emo] + '"' : '') + '><span class="mhead"><span class="emo" aria-hidden="true">' + emo + '</span><span class="label">' + esc(label) + '</span></span><span class="v">' + v + '</span>' + (sub ? '<span class="msub">' + sub + '</span>' : '') + (extra || '') + '</div>';
     const tag = (t) => '<span class="mtag">' + esc(t) + '</span>';
     const mkt = comps.filter((c) => c.group === 'Market-linked').reduce((a, c) => a + c.value, 0);
     const cvv = (k) => num((comps.find((c) => c.key === k) || {}).value) || 0, gb = num((((I.equity || {}).rows || []).find((r) => r.ticker === 'GOLDBEES') || {}).value) || 0, fv = (id) => num((S.mf[id] || {}).current) || 0;
@@ -874,7 +893,57 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     wireInsTiles(el);
   }
 
+  // ---- half-yearly retirement check: actual corpus vs the path the last review expected ----
+  let reviewCtx = null;
+  const isoAddM = (iso, m) => { const d = new Date(iso + 'T00:00:00'); d.setMonth(d.getMonth() + m); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  const fmtDay = (iso) => new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  function renderPlanReview(ctx) {
+    reviewCtx = ctx; const el = $('planreview'); if (!el) return;
+    const R = (((S.invest || {}).planreview || {}).reviews || []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
+    const nd = new Date(), today = nd.getFullYear() + '-' + String(nd.getMonth() + 1).padStart(2, '0') + '-' + String(nd.getDate()).padStart(2, '0');
+    const last = R[R.length - 1], due = last ? isoAddM(last.date, 6) : today, isDue = !last || today >= due;
+    const cr = ctx.cr, tag = (ok, warn) => '<span class="chip ' + (ok ? 'good' : warn ? 'warn' : 'bad') + '">' + (ok ? 'On track' : warn ? 'Behind path' : 'Short at 60') + '</span>';
+    let live = '';
+    if (last && last.next && last.actual && today > last.date) {
+      const t = Math.max(0, Math.min(2, ((new Date(today) - new Date(last.date)) / 864e5) / ((new Date(last.next.date) - new Date(last.date)) / 864e5)));
+      const exp = last.actual * Math.pow(last.next.value / last.actual, t), g = ctx.principal - exp;
+      live = '<div class="prv-live"><span class="label">Today vs the ' + esc(fmtDay(last.date)) + ' plan</span><strong>' + inr(ctx.principal) + '</strong><small>plan path says ' + inr(exp) + ' by now → <b class="' + (g >= 0 ? 'pos' : 'neg') + '">' + (g >= 0 ? 'ahead' : 'behind') + ' by ' + inr(Math.abs(g)) + ' (' + pc(g / exp * 100) + ')</b> · projected at 60 ' + cr(ctx.forecast) + ' vs need ' + cr(ctx.required) + '</small></div>';
+    }
+    const rows = R.map((r, i) => { const prev = R[i - 1], exp = prev && prev.next ? prev.next.value : null, gap = exp != null ? r.actual - exp : null, ok60 = r.proj60 >= r.need;
+      return '<tr><td>' + esc(fmtDay(r.date)) + (i === 0 ? '<div class="small muted">baseline</div>' : '') + '</td><td class="n">' + esc(inr(r.actual)) + '</td><td class="n">' + (exp == null ? '<span class="muted">—</span>' : esc(inr(exp))) + '</td><td class="n">' + (gap == null ? '<span class="muted">—</span>' : '<span class="' + (gap >= 0 ? 'pos' : 'neg') + '">' + (gap >= 0 ? '+' : '−') + esc(short(Math.abs(gap))) + '</span>') + '</td><td class="n">' + esc(cr(r.proj60)) + '</td><td class="n">' + esc(cr(r.need)) + '</td><td class="n">' + (r.next ? esc(inr(r.next.value)) + '<div class="small muted">by ' + esc(fmtDay(r.next.date)) + '</div>' : '—') + '</td><td>' + tag(ok60 && (gap == null || gap >= 0), ok60) + '</td></tr>'; }).reverse().join('');
+    const can = !!db && canWrite && !window.__SNAPSHOT__;
+    const cmp = R.map((r, i) => ({ r, exp: i && R[i - 1].next ? R[i - 1].next.value : null })).filter((x) => x.exp != null).slice(-4);
+    const cvals = cmp.flatMap((x) => [x.r.actual, x.exp]), cmax = Math.max(1, ...cvals), clo = cvals.length ? Math.min(...cvals) * 0.85 : 0, ch = (v) => 8 + (v - clo) / Math.max(1, cmax - clo) * 92;
+    const cols = cmp.length ? '<div class="prv-cols" role="list">' + cmp.map(({ r, exp }) => { const g = r.actual - exp, ok = g >= 0;
+      return '<button type="button" class="prv-col" role="listitem" data-prv="' + esc(fmtDay(r.date) + ': actual ' + inr(r.actual) + ' vs plan ' + inr(exp) + ' → ' + (ok ? 'beat' : 'missed') + ' by ' + inr(Math.abs(g)) + ' (' + pc(g / exp * 100) + ')') + '"><span class="prv-gap ' + (ok ? 'pos' : 'neg') + '">' + (ok ? '+' : '−') + esc(short(Math.abs(g))) + '</span><span class="prv-bars"><i class="pl" style="height:' + ch(exp) + '%"></i><i class="' + (ok ? 'ok' : 'miss') + '" style="height:' + ch(r.actual) + '%"></i></span><small>' + esc(new Date(r.date + 'T00:00:00').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })) + '</small></button>'; }).join('') + '</div><p class="small muted prv-cd" id="prv-cd">Grey = plan, colour = actual. Tap a column.</p>' : '<p class="small muted">Beat/miss columns start from the May 2027 review.</p>';
+    el.innerHTML = '<div class="prv-head"><h3>Half-yearly check</h3><span class="chip ' + (isDue ? 'warn' : 'good') + '">' + (isDue ? (last ? 'Review due now' : 'No review yet') : 'Next review ' + esc(fmtDay(due))) + '</span><span class="small muted">Every May &amp; Nov vs the previous review’s path</span>' + (can ? '<span class="prv-act"><span class="small muted" id="prv-msg" aria-live="polite"></span><button type="button" id="prv-save"' + (R.some((r) => r.date.slice(0, 7) === today.slice(0, 7)) ? ' disabled title="Already recorded this month"' : '') + '>Record this review</button></span>' : '') + '</div>' + (live || cmp.length ? '<div class="prv-top"><div>' + live + '</div><div>' + cols + '</div></div>' : '') +
+      (R.length ? '<div class="tbl"><table><thead><tr><th>Review</th><th class="n">Actual corpus</th><th class="n">Plan expected</th><th class="n">Gap</th><th class="n">Projected at 60</th><th class="n">Needed</th><th class="n">Expect next</th><th>Status</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : '') +
+      '';
+    el.querySelectorAll('[data-prv]').forEach((b) => { const show = () => { $('prv-cd').textContent = b.dataset.prv; }; b.onclick = show; b.onmouseenter = show; b.onfocus = show; });
+    const pn = $('plan-next'); if (pn) pn.textContent = 'Half-yearly review · next ' + fmtDay(due);
+    const b = $('prv-save'); if (b) b.onclick = async () => {
+      const c = reviewCtx, nx = isoAddM(today, 6), entry = { date: today, actual: Math.round(c.principal), next: { date: nx, value: Math.round(c.path[Math.min(6, c.path.length - 1)].total) }, proj60: Math.round(c.forecast), need: Math.round(c.required), end: c.end, spend: c.spend, path: c.path.map((p) => Math.round(p.total / 1000)) };
+      b.disabled = true;
+      try { await db.doc('invest/planreview').set({ reviews: R.filter((r) => r.date.slice(0, 7) !== today.slice(0, 7)).concat([entry]) }); $('prv-msg').textContent = 'Saved.'; } catch (e) { b.disabled = false; $('prv-msg').textContent = 'Couldn\'t save. Try again.'; }
+    };
+  }
+  // Retirement settings: on wide screens each box opens on its own; its content shows in a strip under the row, so the other boxes never move
+  function wireRetSettings() {
+    const box = document.querySelector('.ret-settings'); if (!box || box.__w) return; box.__w = 1;
+    document.querySelectorAll('.ret-pane').forEach((x) => x.remove());
+    const pane = document.createElement('div'); pane.className = 'ret-pane'; box.after(pane);
+    const wide = () => window.matchMedia('(min-width:900px)').matches;
+    const ds = [...box.querySelectorAll(':scope>div>details')];
+    const out = (d, i) => { if (d.__h) return; const h = document.createElement('div'); h.className = 'ret-pane-item'; h.dataset.i = i;
+      h.innerHTML = '<div class="ret-pane-h"></div>'; h.firstChild.textContent = d.querySelector('summary').textContent;
+      [...d.childNodes].filter((c) => c.nodeName !== 'SUMMARY').forEach((c) => h.appendChild(c));
+      pane.insertBefore(h, [...pane.children].find((x) => +x.dataset.i > i) || null); d.__h = h; };
+    const back = (d) => { if (!d.__h) return; [...d.__h.childNodes].slice(1).forEach((c) => d.appendChild(c)); d.__h.remove(); d.__h = null; };
+    ds.forEach((d, i) => d.addEventListener('toggle', () => { if (d.open && wide()) out(d, i); else back(d); }));
+    window.addEventListener('resize', () => ds.forEach((d, i) => { if (!wide()) back(d); else if (d.open) out(d, i); }));
+  }
   function renderPlan() {
+    wireRetSettings();
     const I = S.invest || {};
     if (!I.snapshot || !(I.snapshot.components || []).length || !((I.equity || {}).rows || []).length) { $('planstats').textContent = 'Holdings are still loading.'; return; }
     const latest = (o) => { const k = Object.keys(o || {}).sort().pop(); return k ? o[k] : {}; };
@@ -913,7 +982,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       ['US MFs',sumFunds(ret.filter(f => f.kind === 'US mutual fund'))],
       ['GoldBEES',gold], ['EPF',comp.epf-pension], ['PPF',ppf], ['NPS',nps], ['Debt MFs',0]
     ];
-    $('retbalance').textContent = 'Your retirement corpus today · '+inr(principal);
+    $('retbalance').textContent = 'Corpus today · '+inr(principal);
     $('retbuckets').innerHTML = bars(buckets.map(([name,v]) => [name,v,'var(--accent)']), principal);
     const total = rows.reduce((v,r) => v+r[1],0);
     renderWealthHistory(total);
@@ -992,23 +1061,32 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     $('planstats').innerHTML=stat('Projected at 60',cr(forecast),cr(forecast/inflation)+' in today’s rupees')+stat('Needed through age '+end,cr(required),inr(spend*inflation)+'/month at 60 ('+inr(spend)+' today)')+
       stat(gap>=0?'Ahead of need':'Short of need','<span class="'+(gap>=0?'pos':'neg')+'">'+cr(Math.abs(gap))+'</span>',hit==null?'Not reached by 60':'Need reached around age '+Math.floor(ageNow+hit/12));
     const ladder=[80,85,90].map(a=>'<span class="'+(a===end?'on':'')+'">To '+a+': <b>'+cr(need(a))+'</b></span>').join('');
-    $('drawdown').innerHTML='<b>At this pace the corpus pays about '+inr(supports)+'/month in today’s rupees</b> ('+inr(supports*inflation)+' at 60), rising with inflation until age '+end+'. Needed corpus by planning age: <span class="ladder">'+ladder+'</span>';
-    const needs=[80,85,90].map(a=>[a,need(a)]); const peak=Math.max(forecast,...needs.map(n=>n[1]))*1.08;
+    $('drawdown').innerHTML='<b>Pays ≈'+inr(supports)+'/month in today’s ₹</b> ('+inr(supports*inflation)+' at 60) to age '+end+' · Needed: <span class="ladder">'+ladder+'</span>';
+    const PRV=(((S.invest||{}).planreview||{}).reviews||[]).slice().sort((a,b)=>a.date<b.date?-1:1), base=PRV[0]||null;
+    const off=base?Math.max(0,midx(nowKey)-midx(base.date.slice(0,7))):0, span=off+monthsLeft;
+    const bpath=base&&base.path?base.path.map(v=>v*1000):[];
+    const needs=[80,85,90].map(a=>[a,need(a)]); const peak=Math.max(forecast,...needs.map(n=>n[1]),...bpath)*1.08;
     const y=v=>135-v/peak*120;
-    const pts=Array.from({length:monthsLeft+1},(_,i)=>(52+i/monthsLeft*620).toFixed(2)+','+y(fv(i)).toFixed(2)).join(' ');
-    const line=(v,color,dash)=>'<path d="M52 '+y(v)+' H672" stroke="'+color+'" stroke-width="1.7" stroke-dasharray="'+dash+'"/>';
-    $('curve').innerHTML='<div class="plotarea"><svg tabindex="0" viewBox="0 0 710 162" role="slider" aria-valuemin="0" aria-valuemax="'+monthsLeft+'" aria-label="Projected retirement balance from age '+Math.floor(ageNow)+' to 60 compared with the corpus needed"><g fill="currentColor" font-size="12">'+[0,1,2].map(i=>{const v=peak*i/2;return '<text x="0" y="'+(y(v)+4)+'">'+(v/1e7).toFixed(1)+' Cr</text><path d="M52 '+y(v)+' H672" stroke="var(--line)"/>';}).join('')+'<text x="52" y="157">'+mlabel(nowKey,true)+' · '+Math.floor(ageNow)+'</text><text x="672" y="157" text-anchor="end">'+mlabel(retireKey,true)+' · 60</text>'+[40,45,50,55].map(a=>{const m=(a-ageNow)*12; if(m<=0||m>=monthsLeft) return ''; const x=52+m/monthsLeft*620; return '<path d="M'+x+' 135 V139" stroke="var(--muted)"/><text x="'+x+'" y="150" text-anchor="middle" style="font-size:10px">'+a+'</text>';}).join('')+'</g>'+needs.map(([a,v])=>line(v,a===end?'var(--saffron)':'var(--line)',a===end?'6 4':'2 3')+'<text x="676" y="'+(y(v)+4)+'" style="font-size:10px;fill:'+(a===end?'var(--saffron)':'var(--muted)')+'">'+a+'</text>').join('')+'<polyline fill="none" stroke="var(--accent)" stroke-width="3" points="'+pts+'"/><line id="guide" y1="8" y2="135" stroke="var(--muted)" stroke-dasharray="2 3"/><circle id="marker" r="4" fill="var(--accent)"/></svg><div id="readout" hidden></div></div><small class="muted">Hover, tap or use the left and right arrow keys to inspect a month.</small><div class="legend"><span>━ Projected balance</span><span style="color:var(--saffron)">– – Needed to age '+end+' ('+cr(required)+')</span><span class="muted">··· Needed to 80 / 85 / 90</span></div>';
+    const W=Math.max(710,Math.min(1500,Math.round((($('curve').clientWidth)||710)*162/200))), R=W-38, SP=R-52;
+    const X=m=>52+(m+off)/span*SP;
+    const pts=Array.from({length:monthsLeft+1},(_,i)=>X(i).toFixed(2)+','+y(fv(i)).toFixed(2)).join(' ');
+    const planPts=bpath.map((v,k)=>X(k-off).toFixed(2)+','+y(v).toFixed(2)).join(' ');
+    const actPts=PRV.map(r=>[midx(r.date.slice(0,7))-midx(nowKey),r.actual]).concat(off>0?[[0,principal]]:[]);
+    const startKey=base?base.date.slice(0,7):nowKey, startAge=Math.floor(ageNow-off/12);
+    const line=(v,color,dash)=>'<path d="M52 '+y(v)+' H'+R+'" stroke="'+color+'" stroke-width="1.7" stroke-dasharray="'+dash+'"/>';
+    $('curve').innerHTML='<div class="plotarea"><svg tabindex="0" viewBox="0 0 '+W+' 162" role="slider" aria-valuemin="'+(-off)+'" aria-valuemax="'+monthsLeft+'" aria-label="Projected retirement balance from age '+Math.floor(ageNow)+' to 60 compared with the corpus needed"><g fill="currentColor" font-size="12">'+[0,1,2].map(i=>{const v=peak*i/2;return '<text x="0" y="'+(y(v)+4)+'">'+(v/1e7).toFixed(1)+' Cr</text><path d="M52 '+y(v)+' H'+R+'" stroke="var(--line)"/>';}).join('')+'<text x="52" y="157">'+mlabel(startKey,true)+' · '+startAge+'</text><text x="'+R+'" y="157" text-anchor="end">'+mlabel(retireKey,true)+' · 60</text>'+[40,45,50,55].map(a=>{const m=(a-ageNow)*12; if(m<=-off||m>=monthsLeft) return ''; const x=X(m); return '<path d="M'+x+' 135 V139" stroke="var(--muted)"/><text x="'+x+'" y="150" text-anchor="middle" style="font-size:10px">'+a+'</text>';}).join('')+'</g>'+needs.map(([a,v])=>line(v,a===end?'var(--saffron)':'var(--line)',a===end?'6 4':'2 3')+'<text x="'+(R+4)+'" y="'+(y(v)+4)+'" style="font-size:10px;fill:'+(a===end?'var(--saffron)':'var(--muted)')+'">'+a+'</text>').join('')+(planPts?'<polyline fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-dasharray="5 4" points="'+planPts+'"/>':'')+'<polyline fill="none" stroke="var(--accent)" stroke-width="3" points="'+pts+'"/>'+(actPts.length>1?'<polyline fill="none" stroke="var(--good)" stroke-width="2.4" points="'+actPts.map(([m,v])=>X(m).toFixed(2)+','+y(v).toFixed(2)).join(' ')+'"/>':'')+actPts.map(([m,v])=>'<circle cx="'+X(m).toFixed(2)+'" cy="'+y(v).toFixed(2)+'" r="4.5" fill="var(--good)" stroke="var(--surface)" stroke-width="1.5"/>').join('')+'<line id="guide" y1="8" y2="135" stroke="var(--muted)" stroke-dasharray="2 3"/><circle id="marker" r="4" fill="var(--accent)"/></svg><div id="readout" hidden></div></div><div class="legend"><span>━ Projected balance</span>'+(base?'<span class="muted">- - Plan set '+esc(fmtDay(base.date))+'</span><span style="color:var(--good)">● Actual at each review</span>':'')+'<span style="color:var(--saffron)">– – Needed to age '+end+' ('+cr(required)+')</span><span class="muted">··· Needed to 80 / 85 / 90</span><span class="muted">· Hover or tap to inspect</span></div>';
     const svg=$('curve').querySelector('svg');
     let selected=monthsLeft;
     function inspect(month){
-      selected=Math.max(0,Math.min(monthsLeft,month));
-      const {total,opening,paid}=path[selected], x=52+selected/monthsLeft*620;
-      const date=new Date(2026,10+selected,1).toLocaleDateString('en-GB',{month:'short',year:'numeric'});
+      selected=Math.max(-off,Math.min(monthsLeft,month));
+      const past=selected<0, total=past?(bpath[selected+off]||0):path[selected].total, x=X(selected);
+      const date=new Date(nowD.getFullYear(),nowD.getMonth()+selected,1).toLocaleDateString('en-GB',{month:'short',year:'numeric'});
+      const pv=bpath[selected+off], act=PRV.find(r=>midx(r.date.slice(0,7))-midx(nowKey)===selected);
       $('guide').setAttribute('x1',x); $('guide').setAttribute('x2',x);
       $('marker').setAttribute('cx',x); $('marker').setAttribute('cy',y(total));
       svg.setAttribute('aria-valuenow',selected);svg.setAttribute('aria-valuetext',date+' projected '+inr(total));
       const tip=$('readout');
-      tip.innerHTML='<small>'+date+'</small><strong>'+inr(total)+'</strong>';
+      tip.innerHTML='<small>'+date+(past?' · plan':'')+'</small><strong>'+inr(total)+'</strong>'+(pv!=null&&!past&&off>0?'<small>Plan '+inr(pv)+'</small>':'')+(act?'<small>Actual '+inr(act.actual)+(pv!=null?' ('+(act.actual>=pv?'+':'−')+short(Math.abs(act.actual-pv))+' vs plan)':'')+'</small>':'');
       tip.hidden=false;
       const screen=new DOMPoint(x,y(total)).matrixTransform(svg.getScreenCTM());
       const box=svg.parentElement.getBoundingClientRect();
@@ -1017,17 +1095,19 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     }
     const pointer=e=>{
       const pt=new DOMPoint(e.clientX,e.clientY).matrixTransform(svg.getScreenCTM().inverse());
-      inspect(Math.round((pt.x-52)/620*monthsLeft));
+      inspect(Math.round((pt.x-52)/SP*span)-off);
     };
     const hide=()=>{ $('readout').hidden=true; };
     svg.onpointerleave=hide; svg.onblur=hide; svg.onfocus=()=>inspect(selected);
     svg.onpointermove=pointer;svg.onpointerdown=pointer;
-    svg.onkeydown=e=>{const move={ArrowRight:selected+1,ArrowLeft:selected-1,Home:0,End:monthsLeft};if(e.key in move){e.preventDefault();inspect(move[e.key]);}};
+    svg.onkeydown=e=>{const move={ArrowRight:selected+1,ArrowLeft:selected-1,Home:-off,End:monthsLeft};if(e.key in move){e.preventDefault();inspect(move[e.key]);}};
     inspect(monthsLeft); hide();
     $('planread').textContent='At 60, projected savings are '+cr(Math.abs(forecast-required))+(forecast>=required?' above':' below')+' the spending-based target. Funding through age 80 takes '+cr(need(80))+' versus '+cr(need(90))+' through 90. At 60, current holdings including growth account for '+cr(path[monthsLeft].opening)+' and new contributions including growth account for '+cr(forecast-path[monthsLeft].opening)+'.';
+    try { renderPlanReview({ principal, path, forecast, required, end, spend, cr }); } catch (e) { console.error('planreview', e); }
     $('method').textContent='Born '+birth.split('-').reverse().join('-')+'. Starting balance '+inr(principal)+' includes '+inr(retirement)+' in retirement holdings (including GoldBEES), '+inr(comp.epf-pension)+' in EPF after removing the pension share, '+inr(ppf)+' in PPF and '+inr(nps)+' in NPS. Each balance compounds monthly at its bucket’s assumed annual effective return. Deposits arrive at month-end, including the selected one-time inflow. Enter EPF contributions net of the pension share. Future pension income is excluded. Spending rises with inflation and begins at retirement, with no residual estate, tax adjustment or allowance for poor early returns.';
   }
   document.addEventListener('input', ev => { if(ev.target.closest('#plan, #wealth')) renderPlan(); });
+  { let cw=0, rt; window.addEventListener('resize', () => { clearTimeout(rt); rt=setTimeout(() => { const w=$('curve').clientWidth; if (w && Math.abs(w-cw)>40) { cw=w; try { renderPlan(); } catch (e) {} } }, 150); }); }
   let planTimer = null;
   document.addEventListener('change', ev => {
     if (!ev.target.closest('#plan') || !db || !canWrite) return;
@@ -1220,6 +1300,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const today = new Date(), curKey = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
     const unpaid = Object.values(S.cards).filter((c) => num((c.bills || {})[sel]) && !(c.estimate || {})[sel] && !(c.paid || {})[sel]).map((c) => num((c.due_days || {})[sel] ?? c.due_day));
     if (num(m.emi) && !m.emi_paid) unpaid.push(st.emi_day || 10);
+    Object.entries(S.insurance || {}).forEach(([k, p]) => { if (/month/i.test(p.prem_freq || '') && num(p.prem_now) && !m['ins_' + k + '_paid']) unpaid.push(num(p.prem_day)); });
     const isCur = sel === curKey, d = today.getDate();
     const fc = num(m.free_cash), floor = st.bank_floor ?? 50000, th = st.regular_threshold ?? 60000;
     const lim = deploy(m), bought = num(m.direct_equity) || 0;
@@ -1242,8 +1323,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const items = Object.entries(S.cards).map(([id, c]) => ({ id, kind: 'card', name: c.name, amt: num((c.bills || {})[sel]), day: num((c.due_days || {})[sel] ?? c.due_day), paid: !!(c.paid || {})[sel], est: !!(c.estimate || {})[sel] }))
       .filter((b) => b.amt);
     if (num(m.emi)) items.push({ id: 'emi', kind: 'emi', name: 'Home loan EMI', amt: num((S.loans.home || {}).emi) || num(m.emi), day: st.emi_day || 10, paid: !!m.emi_paid });
+    Object.entries(S.insurance || {}).filter(([, p]) => /month/i.test(p.prem_freq || '') && num(p.prem_now)).forEach(([k, p]) => { const f = 'ins_' + k + '_paid';
+      items.push({ id: 'ins-' + k, kind: 'ins', flag: f, name: (p.kind === 'term' ? 'Term insurance' : 'Insurance') + ' (' + (p.insurer || p.name || '').replace(/ Life| Allianz/g, '') + ')', amt: num(p.prem_now), day: num(p.prem_day), paid: !!m[f] }); });
     items.sort((a, b) => (a.day || 99) - (b.day || 99));
-    const issued = items.filter(b => !b.est);
+    const issued = items.filter(b => !b.est && b.kind !== 'ins');
     const due = issued.filter((b) => !b.paid).reduce((s, b) => s + b.amt, 0);
     $('bills-sum').textContent = items.length ? inr(due) + ' outstanding · issued bills and EMI total ' + inr(issued.reduce((s, b) => s + b.amt, 0)) : '';
     const dis = (canWrite || window.__SNAPSHOT__) ? '' : ' disabled';
@@ -1260,10 +1343,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         else chip = '<span class="chip info">Due in ' + d + ' days</span>';
       } else if (sel < curKey) chip = '<span class="chip warn">Not marked paid</span>';
       else chip = '<span class="chip info">Upcoming</span>';
-      const box = b.kind === 'emi' ? 'data-month-flag="emi_paid"' : 'data-paid="' + esc(b.id) + '"';
+      const box = b.kind === 'emi' ? 'data-month-flag="emi_paid"' : b.kind === 'ins' ? 'data-month-flag="' + esc(b.flag) + '"' : 'data-paid="' + esc(b.id) + '"';
       return '<div class="bill' + (b.paid ? ' paid' : '') + (alert ? ' alert' : '') + '"><div class="day"><b>' + (b.day || '?') + '</b><span class="small muted">' + esc(monName) + '</span></div>' +
         '<span class="small"><b>' + esc(b.name) + '</b></span><span class="num">' + esc(inr(b.amt)) + (b.est ? ' <span class="small muted">estimate</span>' : '') + '</span>' +
-        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' + chip + '<label><input id="pd-' + esc(b.id) + '" type="checkbox" ' + box + (b.paid ? ' checked' : '') + dis + '>Paid</label></div></div>';
+        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' + chip + '<label><input id="pd-' + esc(b.id) + '" type="checkbox" ' + box + (b.paid ? ' checked' : '') + dis + '>' + 'Paid' + '</label></div></div>';
     }).join('') : '<p class="small muted">No bills recorded for this month.</p>';
   }
 
@@ -1278,13 +1361,14 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       return '<div class="target"><div class="top"><h3>' + esc(title) + ' · FY ' + esc(fy) + '</h3><span class="pct">' + (pct == null ? '—' : Math.round(pct * 100) + '%') + '</span></div>' +
         '<div class="meter"><i style="width:' + (pct == null ? 0 : pct * 100) + '%"></i></div>' +
         '<span class="num">' + esc(inr(bal)) + ' <span class="muted">value' + (t ? ' of ' + esc(inr(t)) + ' target' : '') + (p.balance_asof ? ' · as of ' + esc(p.balance_asof) : '') + '</span></span>' +
+        (minY ? (c >= minY ? '<span class="chip good">Yearly minimum met</span>' : '<span class="chip warn">Deposit at least ' + esc(inr(minY)) + ' by 31 Mar</span>') : '') +
+        '<details class="ppf-more"><summary class="small">Details &amp; edit</summary>' +
         (t && bal < t ? '<span class="small">' + esc(inr(t - bal)) + ' to go</span>' : '') +
         '<span class="small">Deposited this year ' + esc(inr(c)) + (max ? ' <span class="muted">(yearly limit ' + esc(inr(max)) + ')</span>' : '') + '</span>' +
-        (minY ? (c >= minY ? '<span class="chip good">Yearly minimum met</span>' : '<span class="chip warn">Deposit at least ' + esc(inr(minY)) + ' by 31 Mar</span>') : '') +
         '<span class="small muted">' + esc(rule) + '</span>' + (p.note ? '<span class="small muted">' + esc(p.note) + '</span>' : '') +
         '<div class="edit"><div class="field"><label class="label" for="c-' + fid + '">Deposited ₹</label><input id="c-' + fid + '" type="number" min="0"' + (max ? ' max="' + max + '"' : '') + ' step="500" value="' + esc(p.contributed ?? '') + '" data-edit="' + coll + '/' + fy + '/contributed"' + dis + '></div>' +
         '<div class="field"><label class="label" for="t-' + fid + '">Target value ₹</label><input id="t-' + fid + '" type="number" min="0" step="1000" value="' + esc(t ?? '') + '" data-edit="' + coll + '/' + fy + '/target"' + dis + '></div>' +
-        '<div class="field"><label class="label" for="b-' + fid + '">Value ₹</label><input id="b-' + fid + '" type="number" min="0" step="100" value="' + esc(p.balance ?? '') + '" data-edit="' + coll + '/' + fy + '/balance"' + dis + '></div></div></div>';
+        '<div class="field"><label class="label" for="b-' + fid + '">Value ₹</label><input id="b-' + fid + '" type="number" min="0" step="100" value="' + esc(p.balance ?? '') + '" data-edit="' + coll + '/' + fy + '/balance"' + dis + '></div></div></details></div>';
     };
     Object.entries(S.ppf).sort((a, b) => b[0].localeCompare(a[0])).forEach(([fy, p]) => blocks.push(one('ppf', fy, p, 'PPF', 'Limit ₹1,50,000 a year. Deposit by the 5th to earn that month\'s interest. Less than ₹500 in a year marks the account discontinued.')));
     Object.entries(S.nps).sort((a, b) => b[0].localeCompare(a[0])).forEach(([fy, p]) => blocks.push(one('nps', fy, p, 'NPS Tier I', 'Less than ₹1,000 in a year freezes Tier I until it is revived with a penalty.')));
@@ -1594,7 +1678,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const groupBy = (rows, k) => { const g = {}; rows.forEach((r) => { const key = r[k] || 'Other'; g[key] = g[key] || { value: 0, n: 0, rows: [] }; g[key].value += r.value; g[key].n++; g[key].rows.push(r); }); return Object.entries(g).sort((a, b) => b[1].value - a[1].value); };
   function hbars(el, groups, total, extra) {
     const max = Math.max(1, ...groups.map(([, g]) => g.value));
-    el.innerHTML = groups.map(([name, g]) => '<div class="r"><span><b>' + esc(name) + '</b><br><span class="small muted">' + (extra ? extra(name, g) : g.n + ' holding' + (g.n === 1 ? '' : 's')) + '</span></span><i style="width:' + (g.value / max * 100) + '%"></i><span class="num"><b class="amt">' + esc(short(g.value)) + '</b> <span class="shr">' + (g.value / total * 100).toFixed(1) + '%</span></span></div>').join('');
+    el.innerHTML = groups.map(([name, g]) => '<div class="r"><span class="hl"><b>' + esc(name) + '</b><span class="small muted">' + (extra ? extra(name, g) : g.n + ' holding' + (g.n === 1 ? '' : 's')) + '</span></span><i style="width:' + (g.value / max * 100) + '%"></i><span class="num"><b class="amt">' + esc(short(g.value)) + '</b> <span class="shr">' + (g.value / total * 100).toFixed(1) + '%</span></span></div>').join('');
   }
   // one diverging bar per row; scale symmetric around 0
   function divBars(el, rows, k, bms) {
@@ -1611,6 +1695,44 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const line = (r, bm) => '<div class="r' + (bm ? ' bm' : '') + '"><span>' + esc(r.label) + '</span><div class="track" style="height:14px">' + bar(r.a, 'a') + bar(r.b, 's') + '</div><span class="num small">' + pcs(r.a) + '<br>' + pcs(r.b) + '</span></div>';
     el.innerHTML = rows.map((r) => line(r)).join('') + (bms || []).map((r) => line(r, true)).join('');
   }
+  // performance vs benchmark with period filter (3M / 6M / 12M / since bought); row tap/hover shows the comparison
+  const PERF = {}, perfSel = { mf: '1y', us: '1y', fam: '1y' };
+  try { const v = JSON.parse(localStorage.getItem('md-perf') || 'null'); if (v) Object.assign(perfSel, v); } catch (e) {}
+  const PER_TXT = { '3m': 'over 3 months', '6m': 'over 6 months', '1y': 'over 12 months', since: 'since you bought' };
+  function perfDraw(kind) {
+    const P = PERF[kind]; if (!P) return; const p = perfSel[kind], el = $(P.el); if (!el) return;
+    document.querySelectorAll('[data-pf^="' + kind + ':"]').forEach((b) => b.classList.toggle('on', b.dataset.pf === kind + ':' + p));
+    const since = p === 'since', pair = since ? P.rows.some((r) => r.b && num(r.b.since) != null) : P.mode === 'pair';
+    const rows = P.rows.filter((r) => num(r.f[p]) != null).sort((a, b) => b.f[p] - a.f[p]);
+    const bms = !since && P.bm && num(P.bm.f[p]) != null ? [P.bm] : [];
+    const lim = Math.max(5, ...rows.concat(bms).flatMap((r) => [Math.abs(num(r.f[p]) || 0), pair && r.b ? Math.abs(num(r.b[p]) || 0) : 0]));
+    const bar = (v, c) => { if (num(v) == null) return ''; const w = Math.abs(v) / lim * 50; return '<b class="' + c + '" style="left:' + (v >= 0 ? 50 : 50 - w) + '%;width:' + Math.max(0.4, w) + '%"></b>'; };
+    const line = (r, bm) => { const fv = r.f[p], bv = pair && r.b ? r.b[p] : null;
+      return '<div class="r' + (bm ? ' bm' : '') + (P.sel === r.label ? ' on' : '') + '" tabindex="0" role="button" data-pfrow="' + kind + '" data-lbl="' + esc(r.label) + '"><span class="hl"><b>' + esc(r.label) + '</b>' + (pair && r.bname ? '<span class="muted small">vs ' + esc(r.bname) + '</span>' : '') + '</span><div class="track"' + (pair ? ' style="height:14px"' : '') + '>' + (pair ? bar(fv, 'a') + bar(bv, 's') : bar(fv, fv >= 0 ? 'g' : 'l')) + '</div><span class="num' + (pair ? ' small' : '') + '">' + pcs(fv) + (pair ? '<br>' + (num(bv) == null ? '—' : pcs(bv)) : '') + '</span></div>'; };
+    el.innerHTML = rows.map((r) => line(r)).join('') + bms.map((r) => line(r, true)).join('') + '<p class="pfdetail small" id="' + P.el + '-d"></p>';
+    const sw = (c, t) => '<span><i class="sw" style="background:' + c + '"></i>' + t + '</span>';
+    $(P.el + '-lg').innerHTML = pair ? sw('var(--accent)', P.fundWord || 'Holding') + sw('var(--saffron)', since ? 'Benchmark, same buy dates' : 'Its benchmark') : since ? sw('var(--good)', 'Gain') + sw('var(--bad)', 'Loss') : sw('var(--good)', 'Up') + sw('var(--bad)', 'Down') + '<span class="muted">dashed row: ' + esc(P.bm ? P.bm.label : '') + '</span>';
+    $(P.el + '-sub').textContent = (since ? P.sinceNote : P.periodNote) || '';
+    perfDetail(kind, P.sel || (rows[0] && rows[0].label));
+  }
+  function perfDetail(kind, lbl) {
+    const P = PERF[kind], d = $(P.el + '-d'); if (!d) return; const p = perfSel[kind];
+    const r = P.rows.concat(P.bm ? [P.bm] : []).find((x) => x.label === lbl); if (!r) { d.textContent = ''; return; }
+    const fv = r.f[p]; if (num(fv) == null) { d.textContent = ''; return; }
+    let bv = null, bn = '';
+    if (r !== P.bm) { if (r.b && num(r.b[p]) != null) { bv = r.b[p]; bn = r.bname || (P.bm && P.bm.label) || 'benchmark'; } else if (p !== 'since' && P.bm) { bv = P.bm.f[p]; bn = P.bm.label; } }
+    let t = '<b>' + esc(r.full || r.label) + '</b> ' + pcs(fv) + ' ' + PER_TXT[p] + (r.extra && p === 'since' ? ' (' + esc(r.extra) + ')' : '');
+    if (num(bv) != null) { const g = fv - bv; t += ' vs ' + esc(bn) + ' ' + pcs(bv) + ' → <b class="' + (g >= 0 ? 'pos' : 'neg') + '">' + (g >= 0 ? 'ahead' : 'behind') + ' by ' + Math.abs(g).toFixed(1) + ' pts</b>'; }
+    d.innerHTML = t;
+  }
+  function perfSet(kind, cfg) { const prev = PERF[kind]; PERF[kind] = Object.assign({ sel: prev ? prev.sel : null }, cfg); perfDraw(kind); }
+  document.addEventListener('click', (ev) => {
+    const b = ev.target.closest('[data-pf]'); if (b) { const [k, p] = b.dataset.pf.split(':'); perfSel[k] = p; try { localStorage.setItem('md-perf', JSON.stringify(perfSel)); } catch (e) {} perfDraw(k); return; }
+    const r = ev.target.closest('[data-pfrow]'); if (r) { const P = PERF[r.dataset.pfrow]; P.sel = P.sel === r.dataset.lbl ? null : r.dataset.lbl; perfDraw(r.dataset.pfrow); }
+  });
+  ['mouseover', 'focusin'].forEach((evt) => document.addEventListener(evt, (ev) => { const r = ev.target.closest && ev.target.closest('[data-pfrow]'); if (r) perfDetail(r.dataset.pfrow, r.dataset.lbl); }));
+  document.addEventListener('mouseout', (ev) => { const el = ev.target.closest && ev.target.closest('.div-bars.pf'); if (el && !el.contains(ev.relatedTarget)) { const k = Object.keys(PERF).find((x) => PERF[x].el === el.id); if (k) { const P = PERF[k]; const first = el.querySelector('[data-pfrow]'); perfDetail(k, P.sel || (first && first.dataset.lbl)); } } });
+  document.addEventListener('keydown', (ev) => { if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches && ev.target.matches('[data-pfrow]')) { ev.preventDefault(); ev.target.click(); } });
   const notes = (el, arr) => { $(el).innerHTML = (arr || []).map((n) => '<li>' + esc(n) + '</li>').join('') || '<li class="muted">No notes yet.</li>'; };
 
   // ---- new money invested by year: stocks + funds + US stocks, net of sales or gross, financial or calendar year
@@ -1906,12 +2028,33 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     return { parts, total, gold, pct: total ? gold / total * 100 : 0 };
   }
   function goldLine(c) { const t5 = c.total * 0.05; return 'Gold is <b>' + c.pct.toFixed(1) + '%</b> of the ' + esc(short(c.total)) + ' retirement corpus. First target 5% = ' + esc(short(t5)) + ' (' + esc(short(Math.max(0, t5 - c.gold))) + ' to go, about ' + esc(short(Math.max(0, t5 - c.gold) / 12)) + '/month over a year); ceiling 10%.'; }
+  let corpusSel = null;
+  function corpusInfo(n, c) {
+    const I = S.invest || {}, rows = ((I.equity || {}).rows) || [], rf = Object.values(S.mf).filter((f) => f.goal === 'Retirement');
+    const names = (us) => rf.filter((f) => /US/.test(f.kind || '') === us).map((f) => f.name || f.fund || '').filter(Boolean).join(', ');
+    const pen = num(set().epf_pension) || 0;
+    if (n === 'Indian stocks') return (rows.length - (rows.some(isGold) ? 1 : 0)) + ' direct stocks on Kite; GoldBEES is counted separately below.';
+    if (n === 'Indian funds') return 'Retirement-tagged funds: ' + esc(names(false) || '—') + '. Goal funds (car, gift, buffer) are left out.';
+    if (n === 'US funds + stocks') return 'US funds: ' + esc(names(true) || '—') + '. The 6 direct US stocks sit with these when synced.';
+    if (n === 'EPF (excl. pension)') return 'EPF balance minus the pension share (' + esc(short(pen)) + '), which is paid only as a pension.';
+    if (n === 'PPF') return 'SBI PPF, matures Apr-2035.';
+    if (n === 'NPS') return 'NPS balance from the last contribution record.';
+    if (n === 'Gold (GoldBEES)') return goldLine(c);
+    return '';
+  }
   function renderCorpusMix() {
     const c = retCorpus(), el = $('corpus-mix'); if (!el || !c.total) return;
-    el.innerHTML = '<h3>Whole retirement corpus <span class="num muted" style="font-weight:500">' + esc(short(c.total)) + '</span></h3><div class="stack" style="height:16px">' + c.parts.filter((p) => p[1] > 0).map(([n, v, col]) => '<i style="width:' + (v / c.total * 100) + '%;background:' + col + '" title="' + esc(n + ' ' + inr(v)) + '"></i>').join('') + '</div>' +
-      '<div class="cmix">' + c.parts.filter((p) => p[1] > 0).map(([n, v, col]) => '<span><i class="sw" style="background:' + col + '"></i>' + esc(n) + '<b class="num">' + esc(short(v)) + '</b><small class="muted">' + (v / c.total * 100).toFixed(1) + '%</small></span>').join('') + '</div>' +
+    const P = c.parts.filter((p) => p[1] > 0); if (corpusSel != null && !P.some((p) => p[0] === corpusSel)) corpusSel = null;
+    const cls = (n) => corpusSel == null ? '' : (n === corpusSel ? ' on' : ' dim');
+    const sp = corpusSel == null ? null : P.find((p) => p[0] === corpusSel);
+    el.innerHTML = '<h3>Whole retirement corpus <span class="num muted" style="font-weight:500">' + esc(short(c.total)) + '</span></h3><div class="stack cstack" style="height:16px">' + P.map(([n, v, col]) => '<button type="button" data-cp="' + esc(n) + '" class="' + cls(n).trim() + '" style="width:' + (v / c.total * 100) + '%;background:' + col + '" aria-label="' + esc(n + ' ' + inr(v)) + '" title="' + esc(n + ' ' + inr(v)) + '"></button>').join('') + '</div>' +
+      '<div class="cmix">' + P.map(([n, v, col]) => '<button type="button" data-cp="' + esc(n) + '" aria-pressed="' + (n === corpusSel) + '" class="' + cls(n).trim() + '"><i class="sw" style="background:' + col + '"></i>' + esc(n) + '<b class="num">' + esc(short(v)) + '</b><small class="muted">' + (v / c.total * 100).toFixed(1) + '%</small></button>').join('') + '</div>' +
+      (sp ? '<div class="cdetail"><b>' + esc(sp[0]) + '</b> · <span class="amt num">' + esc(inr(sp[1])) + '</span> · <span class="shr">' + (sp[1] / c.total * 100).toFixed(1) + '% of the corpus</span><span class="small muted">' + corpusInfo(sp[0], c) + '</span></div>' : '<p class="small muted chint">Tap a colour or a name to see what it includes.</p>') +
       '<div class="goldline"><div class="goldhead"><span class="label">Gold share of corpus</span><b class="num">' + c.pct.toFixed(1) + '%</b><small>' + esc(short(c.gold)) + ' of ' + esc(short(c.total * 0.05)) + ' · ' + Math.round(c.gold / (c.total * 0.05) * 100) + '% of the 5% target</small></div><div class="meter saffron"><i style="width:' + Math.min(100, c.pct / 10 * 100) + '%"></i><em style="left:50%"></em></div><div class="goldscale"><span>0%</span><span>5% target</span><span>10% ceiling</span></div><p class="small">' + goldLine(c) + '</p></div>' +
       '<p class="small muted">EPF excludes the pension share.</p>';
+    el.onclick = (e) => { const b = e.target.closest('[data-cp]'); if (!b) return; corpusSel = corpusSel === b.dataset.cp ? null : b.dataset.cp; renderCorpusMix(); const nb = el.querySelector('.cmix [data-cp="' + CSS.escape(b.dataset.cp) + '"]'); if (nb) nb.focus({ preventScroll: true }); };
+    el.onmouseover = (e) => { const b = e.target.closest('[data-cp]'); el.querySelectorAll('[data-cp]').forEach((x) => x.classList.toggle('hov', !!b && x.dataset.cp === b.dataset.cp)); };
+    el.onmouseleave = () => el.querySelectorAll('.hov').forEach((x) => x.classList.remove('hov'));
   }
   function renderGoalExtra(goals, funds) {
     const sipTot = goals.reduce((a, [, g]) => a + g.sip, 0);
@@ -2035,6 +2178,22 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       t.map((r) => '<tr' + (isGold(r) ? ' class="gold-tr"' : '') + '><td><b>' + esc(r.ticker) + '</b>' + (isGold(r) ? ' <span class="feepill paid">Gold ETF</span>' : '') + '<div class="small muted">' + esc(r.shares) + ' @ ' + esc(inr(r.avg)) + '</div></td><td class="small">' + esc(r.sector) + '</td><td class="small">' + esc(r.mcap) + '</td><td class="n">' + (isGold(r) ? RCe.pct.toFixed(1) + '%<div class="small muted">vs 5% of corpus</div>' : r.weight.toFixed(1) + '%<div class="small muted">target ' + esc(r.target) + '</div>') + '</td><td class="n">' + esc(inr(r.value)) + '</td><td class="n">' + pcs(r.pnl_pct) + '</td><td class="n">' + (r.xirr != null ? pcs(r.xirr) : r.xdays == null ? '<span class="small muted">date pending</span>' : pcs(r.pnl_pct) + '<div class="small muted">held &lt;1 yr</div>') + '</td><td class="n">' + pcs(r.chg_1y) + '</td><td class="n">' + pcs(r.chg_3m) + '</td><td class="n">' + pcs(r.from_high) + '</td><td class="small">' + esc(r.qvgm) + '</td><td class="small" style="min-width:14rem">' + esc(r.action) + (r.note ? '<div class="muted">' + esc(r.note) + '</div>' : '') + '</td></tr>').join('') + '</tbody>';
   }
 
+  // donut: equity vs debt (multi-asset shown as hybrid) across my mutual funds
+  function renderMfSplit(rows, val) {
+    const el = $('mf-split'); if (!el) return;
+    const kind = (r) => r.bucket === 'debt' || (!r.bucket && /debt|duration|liquid|gilt/i.test(r.category || '')) ? 'Debt' : r.bucket === 'mixed' || (!r.bucket && /multi asset|hybrid/i.test(r.category || '')) ? 'Hybrid (multi-asset)' : 'Equity';
+    const col = { Equity: 'var(--accent)', Debt: 'var(--c3)', 'Hybrid (multi-asset)': 'var(--saffron)' };
+    const g = {}; rows.forEach((r) => { const k = kind(r); (g[k] = g[k] || { v: 0, n: [] }).v += r.value; g[k].n.push(r.fund); });
+    const segs = ['Equity', 'Debt', 'Hybrid (multi-asset)'].filter((k) => g[k]).map((k) => ({ k, v: g[k].v, p: g[k].v / val * 100, funds: g[k].n }));
+    let acc = 0;
+    const arcs = segs.map((s, i) => { const o = 25 - acc; acc += s.p; return '<circle data-ds="' + i + '" r="15.915" cx="21" cy="21" fill="none" stroke="' + col[s.k] + '" stroke-width="6" stroke-dasharray="' + Math.max(0, s.p - 0.4).toFixed(2) + ' ' + (100 - Math.max(0, s.p - 0.4)).toFixed(2) + '" stroke-dashoffset="' + o.toFixed(2) + '" tabindex="0" role="button" aria-label="' + esc(s.k + ' ' + s.p.toFixed(1) + '%') + '"/>'; }).join('');
+    el.innerHTML = '<svg viewBox="0 0 42 42" class="dnut">' + arcs + '<text x="21" y="21" text-anchor="middle" class="dn-v" id="dn-v">' + segs[0].p.toFixed(0) + '%</text><text x="21" y="25" text-anchor="middle" class="dn-l" id="dn-l">' + esc(segs[0].k.split(' ')[0]) + '</text></svg><div class="dlegend">' +
+      segs.map((s, i) => '<button type="button" data-ds="' + i + '"><i style="background:' + col[s.k] + '"></i><b>' + esc(s.k) + '</b><span>' + esc(short(s.v)) + ' · ' + s.p.toFixed(1) + '%</span></button>').join('') + '<p class="small muted" id="dn-d"></p></div>';
+    const pick = (i) => { const s = segs[i]; $('dn-v').textContent = s.p.toFixed(0) + '%'; $('dn-l').textContent = s.k.split(' ')[0]; $('dn-d').textContent = s.funds.join(', ');
+      el.querySelectorAll('[data-ds]').forEach((x) => x.classList.toggle('dim', +x.dataset.ds !== i)); };
+    el.querySelectorAll('[data-ds]').forEach((x) => { const i = +x.dataset.ds; x.onmouseenter = () => pick(i); x.onfocus = () => pick(i); x.onclick = () => pick(i); });
+    el.onmouseleave = () => { el.querySelectorAll('[data-ds]').forEach((x) => x.classList.remove('dim')); $('dn-v').textContent = segs[0].p.toFixed(0) + '%'; $('dn-l').textContent = segs[0].k.split(' ')[0]; $('dn-d').textContent = ''; };
+  }
   function renderMfRet(I, meta) {
     const ret = ((I.mfret || {}).rows) || {};
     const rows = Object.entries(S.mf).filter(([id]) => ret[id]).map(([id, f]) => Object.assign({ id, label: f.fund.replace(/^(Nippon India|Aditya Birla SL|ICICI Pru|Motilal Oswal|Edelweiss|Bandhan|HSBC|DSP) /, '').replace(' Allocation', '').replace(' Tax Saver', ''), value: num(f.current) || 0, inv: num(f.invested) || 0 }, f, ret[id]));
@@ -2048,7 +2207,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       kpi('3 years, per year', pcs(wavg(rows, 'r3y')), 'what the funds have earned');
     notes('mf-notes', meta.notes_mf);
     hbars($('mf-cat'), groupBy(rows, 'category'), val, (n, g) => g.n + ' fund' + (g.n === 1 ? '' : 's') + ' · 1Y ' + pc(wavg(g.rows, 'r1y')));
-    pairBars($('mf-ret'), rows.slice().sort((a, b) => b.r1y - a.r1y).map((r) => ({ label: r.label, a: r.r1y, b: r.r3m })), [{ label: 'Nifty 50', a: meta.nifty1y, b: meta.nifty3m }]);
+    renderMfSplit(rows, val);
+    perfSet('mf', { el: 'mf-ret', mode: 'pair', fundWord: 'Fund', rows: rows.map((r) => ({ label: r.fund, full: r.fund, bname: r.bname, f: { '3m': r.r3m, '6m': r.r6m, '1y': r.r1y, since: r.inv ? (r.value / r.inv - 1) * 100 : null }, b: { '3m': r.b3m, '6m': r.b6m, '1y': r.b1y, since: r.bsince }, extra: r.inv ? short(r.inv) + ' in → ' + short(r.value) : '' })),
+      periodNote: (I.mfret || {}).bench_note || '',
+      sinceNote: '' });
     $('mf-rtable').innerHTML = '<thead><tr><th>Fund</th><th>Category</th><th>Goal</th><th class="n">Value</th><th class="n">Gain</th><th class="n">Per year</th><th class="n">1Y</th><th class="n">3M</th><th class="n">3Y/yr</th><th>Rank</th></tr></thead><tbody>' +
       rows.sort((a, b) => b.value - a.value).map((r) => '<tr><td>' + esc(r.fund) + '</td><td class="small">' + esc(r.category) + '</td><td class="small">' + esc(r.goal) + '</td><td class="n">' + esc(inr(r.value)) + '</td><td class="n">' + pcs(r.inv ? (r.value / r.inv - 1) * 100 : null) + '</td><td class="n">' + (r.xirr != null ? pcs(r.xirr) : r.xdays == null ? '<span class="muted">—</span>' : pcs(r.inv ? (r.value / r.inv - 1) * 100 : null) + '<div class="small muted">held &lt;1 yr</div>') + '</td><td class="n">' + pcs(r.r1y) + '</td><td class="n">' + pcs(r.r3m) + '</td><td class="n">' + pcs(r.r3y) + '</td><td class="small">' + esc(r.rank || '—') + (r.flag ? ' <span class="chip warn">' + esc(r.flag) + '</span>' : '') + '</td></tr>').join('') + '</tbody>';
   }
@@ -2066,7 +2228,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       kpi('3 months', pcs(wavg(rows, 'chg_3m')), 'QQQ ' + pc(meta.qqq3m));
     notes('us-notes', meta.notes_us);
     hbars($('us-w'), rows.map((r) => [r.name, { value: r.value, n: 1, rows: [r] }]).sort((a, b) => b[1].value - a[1].value), val, (n, g) => 'gain ' + pc(g.rows[0].pnl_pct));
-    pairBars($('us-ret'), rows.slice().sort((a, b) => b.chg_1y - a.chg_1y).map((r) => ({ label: r.ticker, a: r.chg_1y, b: r.chg_3m })), [{ label: 'QQQ', a: meta.qqq1y, b: meta.qqq3m }]);
+    const UB = U.bench || { name: 'QQQ', chg_3m: meta.qqq3m, chg_1y: meta.qqq1y };
+    perfSet('us', { el: 'us-ret', mode: 'single', rows: rows.map((r) => ({ label: r.ticker, full: r.name + ' (' + r.ticker + ')', f: { '3m': r.chg_3m, '6m': r.chg_6m, '1y': r.chg_1y, since: r.pnl_pct_usd }, b: { since: r.bsince }, bname: 'Nasdaq 100', extra: 'in USD; ' + pc(r.pnl_pct) + ' in ₹' })), bm: { label: 'QQQ', full: UB.name, f: { '3m': UB.chg_3m, '6m': UB.chg_6m, '1y': UB.chg_1y } },
+      periodNote: 'Price change in USD; dashed row is the Nasdaq 100.',
+      sinceNote: 'USD gain vs Nasdaq 100 bought on the same dates.' });
     $('us-table').innerHTML = '<thead><tr><th>Stock</th><th class="n">Weight</th><th class="n">Value</th><th class="n">Gain ₹</th><th class="n">Gain $</th><th class="n">1Y</th><th class="n">3M</th><th class="n">Last $</th></tr></thead><tbody>' +
       rows.sort((a, b) => b.value - a.value).map((r) => '<tr><td><b>' + esc(r.ticker) + '</b><div class="small muted">' + esc(r.name) + '</div></td><td class="n">' + (r.value / val * 100).toFixed(1) + '%</td><td class="n">' + esc(inr(r.value)) + '</td><td class="n">' + pcs(r.pnl_pct) + '</td><td class="n">' + pcs(r.pnl_pct_usd) + '</td><td class="n">' + pcs(r.chg_1y) + '</td><td class="n">' + pcs(r.chg_3m) + '</td><td class="n">' + esc(r.last_usd.toFixed(2)) + '</td></tr>').join('') + '</tbody>';
   }
@@ -2549,16 +2714,16 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const donut = (segs) => { const r = 26, C = 2 * Math.PI * r, t = segs.reduce((a, x) => a + x.v, 0); let off = 0;
       return '<svg viewBox="0 0 68 68" aria-hidden="true"><circle cx="34" cy="34" r="' + r + '" fill="none" stroke="var(--track)" stroke-width="10"/>' + segs.map((x, i) => { const len = x.v / t * C, gap = segs.length > 1 ? 1.5 : 0; const c = '<circle data-k="' + i + '" cx="34" cy="34" r="' + r + '" fill="none" stroke="' + x.c + '" stroke-width="10" stroke-dasharray="' + Math.max(0.1, len - gap) + ' ' + (C - len + gap) + '" stroke-dashoffset="' + (-off) + '"/>'; off += len; return c; }).join('') + '</svg>'; };
     const leg = (segs) => '<div class="ins-leg">' + segs.map((x, i) => '<button type="button" data-k="' + i + '"' + (x.priv ? ' class="ins-priv"' : '') + '><i style="background:' + x.c + '"></i><span>' + esc(x.l) + '</span><b>' + esc(short(x.v)) + '</b></button>').join('') + '</div>';
-    const tile = (emo, label, v, sub, segs, priv) => '<div class="moment ins-pub" data-go="insurance"><span class="mhead"><span class="emo" aria-hidden="true">' + emo + '</span><span class="label">' + esc(label) + '</span></span><span class="v' + (priv ? ' ins-priv' : '') + '">' + v + '</span><span class="msub">' + sub + '</span><div class="ins-tile">' + donut(segs) + leg(segs) + '</div></div>';
+    const tile = (emo, label, v, sub, segs, priv) => '<div class="moment ins-pub" data-go="insurance" role="link" tabindex="0" title="Open insurance"><span class="mhead"><span class="emo" aria-hidden="true">' + emo + '</span><span class="label">' + esc(label) + '</span></span><span class="v' + (priv ? ' ins-priv' : '') + '">' + v + '</span>' + (() => { const t = segs.reduce((a, x) => a + x.v, 0) || 1; return '<div class="ins-split mbar">' + segs.map((x) => '<i title="' + esc(x.l) + '" style="width:' + (x.v / t * 100) + '%;background:' + x.c + '"></i>').join('') + '</div><div class="ins-key mkey">' + segs.map((x) => '<span' + (x.priv ? ' class="ins-priv"' : '') + '><i style="background:' + x.c + '"></i>' + esc(x.l) + ' ' + esc(short(x.v)) + '</span>').join('') + '</div>'; })() + (sub ? '<span class="msub">' + sub + '</span>' : '') + '</div>';
     const out = [], term = all.filter((p) => p.kind === 'term').sort((a, b) => (a.order ?? 9) - (b.order ?? 9));
-    if (term.length) { const segs = term.map((p, i) => ({ l: p.scope === 'Work' ? 'Employer group' : 'Personal term', v: num(p.cover) || 0, c: i ? 'var(--c3)' : 'var(--accent)', priv: p.scope === 'Work' })), tot = segs.reduce((a, x) => a + x.v, 0), loan = num((S.loans.home || {}).outstanding);
+    if (term.length) { const segs = term.map((p, i) => ({ l: p.scope === 'Work' ? 'Employer' : 'Personal', v: num(p.cover) || 0, c: i ? 'var(--c3)' : 'var(--accent)', priv: p.scope === 'Work' })), tot = segs.reduce((a, x) => a + x.v, 0), loan = num((S.loans.home || {}).outstanding);
       out.push(tile('🛡️', 'Term life cover', esc(short(tot)), loan ? '<span class="ins-priv">' + (tot / loan).toFixed(1) + '×</span> the home loan left (' + esc(short(loan)) + ')' : 'Personal + employer', segs, true)); }
     const hp = all.filter((p) => p.kind === 'health' && p.scope !== 'Parents'), asp = hp.find((p) => num(p.base)), gmc = hp.find((p) => p !== asp), par = all.find((p) => p.scope === 'Parents');
     if (hp.length) { const segs = [];
-      if (asp) { segs.push({ l: 'Base', v: num(asp.base), c: 'var(--accent)' }); if (num(asp.booster)) segs.push({ l: 'Booster+', v: num(asp.booster), c: 'var(--c3)' }); if (num(asp.safeguard)) segs.push({ l: 'Safeguard+', v: num(asp.safeguard), c: 'var(--saffron)' }); }
-      if (gmc) segs.push({ l: 'Employer GMC', v: num(gmc.cover), c: 'var(--c5)' });
+      if (asp) { segs.push({ l: 'Base', v: num(asp.base), c: 'var(--accent)' }); if (num(asp.booster)) segs.push({ l: 'Booster', v: num(asp.booster), c: 'var(--c3)' }); if (num(asp.safeguard)) segs.push({ l: 'Safeguard', v: num(asp.safeguard), c: 'var(--saffron)' }); }
+      if (gmc) segs.push({ l: 'GMC', v: num(gmc.cover), c: 'var(--c5)' });
       const tot = segs.reduce((a, x) => a + x.v, 0);
-      out.push(tile('🩺', 'Health cover for you', esc(short(tot)), (par ? 'Parents ' + esc(short(par.cover)) + ' separately' : '') + (asp && asp.renews ? ' · renews ' + MON[Number(asp.renews.slice(5, 7)) - 1] + ' ' + asp.renews.slice(0, 4) : ''), segs)); }
+      out.push(tile('🩺', 'Health cover for you', esc(short(tot)), '', segs)); }
     return out;
   }
   function wireInsTiles(el) {
@@ -2567,10 +2732,12 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       t.querySelectorAll('[data-k]').forEach((n) => { n.addEventListener('pointerenter', () => set(n.dataset.k)); n.addEventListener('focus', () => set(n.dataset.k)); n.addEventListener('blur', () => set(null)); n.addEventListener('click', (e) => { e.stopPropagation(); set(n.dataset.k); }); });
       t.addEventListener('pointerleave', () => set(null));
     });
-    el.querySelectorAll('.moment[data-go]').forEach((m) => m.onclick = () => { const a = document.querySelector('#sec-nav a[href="#' + m.dataset.go + '"]'); if (a) a.click(); });
+    el.querySelectorAll('.moment[data-go]').forEach((m) => { const go = () => { const a = document.querySelector('#sec-nav a[href="#' + m.dataset.go + '"]'); if (a) a.click(); else location.hash = m.dataset.go; };
+      m.onclick = (e) => { if (e.target.closest('a,button,input,select')) return; go(); }; m.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }; });
   }
 
-  let insHist = 'health', insPick = {};
+  let insHist = 'health', insPick = {}, insOpen = {};
+  document.addEventListener('toggle', (e) => { const d = e.target; if (d && d.dataset && d.dataset.insm) insOpen[d.dataset.insm] = d.open; }, true);
   function renderInsurance() {
     const all = Object.entries(S.insurance || {}).sort(([, a], [, b]) => (a.order ?? 9) - (b.order ?? 9));
     if (!all.length) { $('ins-sum').textContent = 'Not loaded yet'; return; }
@@ -2597,20 +2764,20 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const priv = p.scope === 'Work' ? ' ins-priv' : '';
       const prem = p.prem_now == null ? (num(p.prem_total) ? '<b class="num">' + esc(inr(p.prem_total)) + '<small class="muted">/2 yrs</small></b>' : '<b>Paid</b>') : num(p.prem_now) ? '<b class="num">' + esc(inr(p.prem_now)) + '<small class="muted">' + (p.prem_freq === 'Monthly' ? '/mo' : '/yr') + '</small></b>' : '<b>₹0<small class="muted"> employer</small></b>';
       const lastF = p.kind === 'term' && p.pay_until ? ['Pay until', String(p.pay_until).slice(0, 4)] : ['Renews', p.renews ? MON[Number(p.renews.slice(5, 7)) - 1] + ' ' + p.renews.slice(0, 4) : '—'];
-      let extra = '';
+      let extra = '', top = '';
       if (p.kind === 'term' && p.scope === 'Personal' && p.start && p.pay_until) { const a = new Date(p.start + 'T00:00'), yrs = Number(p.pay_until.slice(0, 4)) - Number(p.start.slice(0, 4)) + 1, tot = yrs * 12;
         let pd = (today.getFullYear() - a.getFullYear()) * 12 + today.getMonth() - a.getMonth() + (today.getDate() >= a.getDate() ? 1 : 0); pd = Math.max(0, Math.min(tot, pd)); const pc = pd / tot * 100;
-        extra = '<div class="ins-prog"><div class="meter saffron"><i style="width:' + pc.toFixed(1) + '%"></i></div><b class="shr">' + pc.toFixed(0) + '%</b></div><span class="small muted">' + pd + ' of ' + tot + ' monthly premiums paid · cover till ' + esc(d8(p.end)) + '</span>';
+        top = '<div class="ins-prog"><div class="meter saffron"><i style="width:' + pc.toFixed(1) + '%"></i></div><b class="shr">' + pc.toFixed(0) + '%</b></div>'; extra = '<span class="small muted">' + pd + ' of ' + tot + ' monthly premiums paid · cover till ' + esc(d8(p.end)) + '</span>';
         if (num(p.prem_start) && num(p.prem_now)) { const base = Math.round(num(p.prem_start) / 1.18), mo = num(p.prem_now) * 12; extra += '<span class="small muted">Began yearly <b class="num">' + esc(inr(p.prem_start)) + '</b> incl. GST · now <b class="num">' + esc(inr(mo)) + '</b>/yr, no GST</span>' + (mo - base > 1000 ? '<div class="lc-tip">Switch to yearly: <b>' + esc(inr(base)) + '</b>/yr, saves <b>' + esc(inr(mo - base)) + '</b>. Change at the policy anniversary (' + esc(d8(p.start).replace(/ \d{4}$/, '')) + ').</div>' : ''); }
         if (p.early_exit) { const ef = p.early_exit; extra += '<div class="lc-tip ee">Early exit window <b>' + esc(MON[Number(ef.from.slice(5, 7)) - 1] + ' ' + ef.from.slice(0, 4)) + ' – ' + esc(MON[Number(ef.to.slice(5, 7)) - 1] + ' ' + ef.to.slice(0, 4)) + '</b> (age 60–63): all premiums paid come back</div>'; } }
       if (p.kind === 'term' && p.scope === 'Work' && num(p.cover_prev)) extra = '<span class="small muted">' + esc(p.formula || '') + ' · was ' + esc(short(p.cover_prev)) + ' last policy year</span>';
       if (p.kind === 'health' && num(p.base)) { const parts = [['Base', p.base, 'var(--accent)'], ['Booster+', p.booster, 'var(--c3)'], ['Safeguard+', p.safeguard, 'var(--saffron)']].filter((x) => num(x[1])), t = parts.reduce((a, x) => a + num(x[1]), 0);
-        extra = '<div class="ins-split">' + parts.map((x) => '<i style="width:' + (num(x[1]) / t * 100) + '%;background:' + x[2] + '"></i>').join('') + '</div><div class="ins-key">' + parts.map((x) => '<span><i style="background:' + x[2] + '"></i>' + esc(x[0]) + ' ' + esc(short(x[1])) + '</span>').join('') + '</div><span class="small muted">' + esc(p.copay || '') + (num(p.miracle) ? ' · M-iracle ' + esc(short(p.miracle)) : '') + '</span>'; }
+        top = '<div class="ins-split">' + parts.map((x) => '<i style="width:' + (num(x[1]) / t * 100) + '%;background:' + x[2] + '"></i>').join('') + '</div><div class="ins-key">' + parts.map((x) => '<span><i style="background:' + x[2] + '"></i>' + esc(x[0]) + ' ' + esc(short(x[1])) + '</span>').join('') + '</div>'; extra = '<span class="small muted">' + esc(p.copay || '') + (num(p.miracle) ? ' · M-iracle ' + esc(short(p.miracle)) : '') + '</span>'; }
       if (p.members) extra += '<span class="small muted">' + esc(p.members) + '</span>';
       if (p.ids) extra += '<span class="small muted">' + esc(p.ids) + '</span>';
       if (p.nominee) extra += '<span class="small"><span class="label">Nominee</span> ' + esc(p.nominee) + '</span>';
       return '<div class="loancard inscard' + priv + '" id="ic-' + esc(id) + '"><div class="lc-head"><b>' + esc(p.name) + '</b><span class="chip ' + (p.scope === 'Personal' ? 'info' : p.scope === 'Parents' ? 'good' : '') + '">' + esc(p.scope) + '</span></div><span class="small muted">' + esc(p.insurer || '') + mask4(p.policy) + '</span>' +
-        '<div class="lc-figs"><div><span class="label">Cover</span><b class="num">' + esc(short(p.cover)) + '</b></div><div><span class="label">Premium</span>' + prem + '</div><div><span class="label">' + lastF[0] + '</span><b>' + esc(lastF[1]) + '</b></div></div>' + extra + feats(p) + '</div>';
+        '<div class="lc-figs"><div><span class="label">Cover</span><b class="num">' + esc(short(p.cover)) + '</b></div><div><span class="label">Premium</span>' + prem + '</div><div><span class="label">' + lastF[0] + '</span><b>' + esc(lastF[1]) + '</b></div></div>' + top + ((extra + feats(p)) ? '<details class="ins-more" data-insm="' + esc(id) + '"' + (insOpen[id] ? ' open' : '') + '><summary class="small">Details</summary>' + extra + feats(p) + '</details>' : '') + '</div>';
     };
     $('ins-term').innerHTML = life.map(card).join('');
     $('ins-health').innerHTML = hl.map(card).join('');
@@ -2620,7 +2787,20 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     $('ins-hist-sub').textContent = insHist === 'term' ? 'Annual with GST at start → monthly, GST nil' : 'Insured with ' + esc((src && src.insurer) || 'the insurer') + ' since ' + (src && src.since ? MON[Number(src.since.slice(5, 7)) - 1] + ' ' + src.since.slice(0, 4) : '2020') + ' · GST nil from the 2026 renewal';
     document.querySelectorAll('[data-insh]').forEach((b) => { b.setAttribute('aria-pressed', String(b.dataset.insh === insHist)); b.onclick = () => { insHist = b.dataset.insh; renderInsurance(); }; });
     const pk = insPick[insHist];
-    if (rows.length) svgStack($('ins-chart'), rows, [{ key: 'net', label: 'Premium', color: 'var(--accent)' }, { key: 'gst', label: 'GST', color: 'var(--saffron)' }], (r) => r.key, { values: true, h: 220, w: (window.innerWidth < 760 ? 420 : 900), label: 'Premiums by year', pick: pk, onClick: (i) => { insPick[insHist] = insPick[insHist] === i ? undefined : i; renderInsurance(); }, tipExtra: (r) => '<span class="r"><span>' + esc(r.note || '') + '</span></span>', readText: (i) => '<b>' + esc(rows[i].key) + '</b> · <span class="amt">' + esc(inr(rows[i].net + rows[i].gst)) + '</span>' + (rows[i].gst ? ' incl. GST <span class="shr">' + esc(inr(rows[i].gst)) + '</span>' : ' <span class="shr">no GST</span>') + ' · ' + esc(rows[i].note || '') });
+    if (insHist === 'all') {
+      const fyOf = (d) => { const y = +d.slice(0, 4), m = +d.slice(5, 7), a = m >= 4 ? y : y - 1; return a + '-' + String(a + 1).slice(2); };
+      const nd = new Date(), curFy = fyOf(nd.getFullYear() + '-' + String(nd.getMonth() + 1).padStart(2, '0'));
+      const T = {}, H = {}, tp = Object.values(pol).find((x) => x.kind === 'term' && (x.history || []).length) || {}, hpol = Object.values(pol).find((x) => x.kind === 'health' && (x.history || []).length) || {};
+      (tp.history || []).forEach((r) => { const k = r.y === 'Now' ? curFy : /^\d{4}$/.test(r.y) && tp.start && tp.start.slice(0, 4) === r.y ? fyOf(tp.start) : r.y; T[k] = num(r.amt) || 0; });
+      (hpol.history || []).forEach((r) => { H[r.y] = num(r.amt) || 0; });
+      const tStart = tp.start ? fyOf(tp.start) : null;
+      const crow = [...new Set(Object.keys(H).concat(Object.keys(T)))].sort().map((k) => ({ key: k, health: H[k] || 0, term: T[k] || 0, gap: tStart && k > tStart && T[k] == null }));
+      const gaps = crow.filter((r) => r.gap).length;
+      $('ins-hist-sub').textContent = 'Health + term, incl. GST, by financial year' + (gaps ? ' · term premiums for ' + gaps + ' year' + (gaps > 1 ? 's' : '') + ' not on file' : '');
+      if (crow.length) svgStack($('ins-chart'), crow, [{ key: 'health', label: 'Health', color: 'var(--accent)' }, { key: 'term', label: 'Term', color: 'var(--saffron)' }], (r) => r.key, { values: true, h: 150, w: (window.innerWidth < 760 ? 420 : 900), label: 'Premiums by year', pick: pk, onClick: (i) => { insPick.all = insPick.all === i ? undefined : i; renderInsurance(); }, tipExtra: (r) => r.gap ? '<span class="r"><span>Term premium not on file</span></span>' : '', readText: (i) => { const r = crow[i]; return '<b>' + esc(r.key) + '</b> · <span class="amt">' + esc(inr(r.health + r.term)) + '</span> = health ' + esc(inr(r.health)) + ' + term ' + (r.gap ? 'not on file' : esc(inr(r.term))); } });
+      return;
+    }
+    if (rows.length) svgStack($('ins-chart'), rows, [{ key: 'net', label: 'Premium', color: 'var(--accent)' }, { key: 'gst', label: 'GST', color: 'var(--saffron)' }], (r) => r.key, { values: true, h: 150, w: (window.innerWidth < 760 ? 420 : 900), label: 'Premiums by year', pick: pk, onClick: (i) => { insPick[insHist] = insPick[insHist] === i ? undefined : i; renderInsurance(); }, tipExtra: (r) => '<span class="r"><span>' + esc(r.note || '') + '</span></span>', readText: (i) => '<b>' + esc(rows[i].key) + '</b> · <span class="amt">' + esc(inr(rows[i].net + rows[i].gst)) + '</span>' + (rows[i].gst ? ' incl. GST <span class="shr">' + esc(inr(rows[i].gst)) + '</span>' : ' <span class="shr">no GST</span>') + ' · ' + esc(rows[i].note || '') });
   }
 
   const pending = new Map();
@@ -2822,6 +3002,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 (function(){
   var R=document.documentElement,bar=document.querySelector('.bar-top'),mb=document.getElementById('menu-btn');
   R.setAttribute('data-look','new');
+  // Theme: Light is the default; Dark is an option, remembered in this browser
+  function setTheme(t){R.setAttribute('data-theme',t);R.style.colorScheme=t;document.querySelectorAll('[data-theme-set]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-theme-set')===t));});}
+  var th='light';try{th=localStorage.getItem('pf-theme')==='dark'?'dark':'light';}catch(e){}
+  setTheme(th);
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-theme-set]');if(!b)return;var t=b.getAttribute('data-theme-set');setTheme(t);try{localStorage.setItem('pf-theme',t);}catch(x){}});
   // Privacy: hide salary and investment amounts (card spending and bills stay visible)
   var main=document.querySelector('main'),eye=document.getElementById('eye'),hide=false;
   var RX=/[₹$]\s?[\d,]+(?:\.\d+)?(?:\s?(?:Cr|L|K|lakh|crore)\b)?|(^|[^\w.₹$•])[\d,]+(?:\.\d+)?\s?(?:Cr|L|K)\b/g,NUM=/^\s*[−+\-]?[\d,]+(?:\.\d+)?\s*$/;

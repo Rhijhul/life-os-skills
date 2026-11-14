@@ -10,7 +10,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 | Skill | What it builds | Status |
 |---|---|---|
-| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.0 |
+| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.1 |
 | Card statement analyser | Category spend, milestone and fee-waiver tracking from monthly statements | Planned |
 | Insurance review | Term and health cover gaps, premium history, renewals | Planned |
 
@@ -19,19 +19,24 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 ![Overview](docs/images/overview.png)
 
 <table>
+<tr><td><img src="docs/images/plan.png" alt="Retirement at 60 with half-yearly check"></td><td><img src="docs/images/performance.png" alt="Mutual funds vs their own benchmarks"></td></tr>
 <tr><td><img src="docs/images/cards.png" alt="Cards and spending"></td><td><img src="docs/images/insurance.png" alt="Insurance"></td></tr>
-<tr><td><img src="docs/images/plan.png" alt="Retirement at 60"></td><td><img src="docs/images/mobile.png" alt="Phone view" width="260"></td></tr>
+<tr><td><img src="docs/images/dark.png" alt="Dark mode"></td><td><img src="docs/images/mobile.png" alt="Phone view" width="260"></td></tr>
 </table>
 
 **Highlights**
 
 - Every chart responds to hover, tap and arrow keys.
-- Light and dark mode. Works on phones.
+- Each mutual fund and US stock against its own benchmark: 3M, 6M, 12M and since bought (same buy dates put into the index).
+- Retirement at 60 with a half-yearly check: actual corpus plotted against the saved plan, beat/miss columns per review.
+- Light / Dark switch (Light by default). Works on phones.
 - An eye toggle hides salary and investment figures for screen-sharing.
 - "Download offline copy" saves a single HTML file that works with no internet and no account.
 - Data lives in a small database (or an embedded JSON for the offline file), never in the page code, so monthly updates are quick.
 
 **Try it in 10 seconds:** download [`sample-dashboard.html`](skills/personal-finance-dashboard/assets/sample-dashboard.html) and open it in Chrome or Safari.
+
+**What's new in v1.1** (15-Nov-2026): see the [changelog](CHANGELOG.md).
 
 ## How to use a skill
 
