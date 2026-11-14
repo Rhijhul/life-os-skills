@@ -1,0 +1,11 @@
+# Never commit personal data
+my-data*.json
+*-data.json
+!skills/*/assets/sample-data.json
+*.core.html
+!skills/*/assets/dashboard.core.html
+*Personal-Finance*.html
+dashboard.html
+*.check.js
+.DS_Store
+__pycache__/
