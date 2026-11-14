@@ -37,13 +37,13 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Claude (claude.ai or the Claude app)**
 
-1. Download the skill's zip from [Releases](../../releases).
+1. Download [`personal-finance-dashboard-skill.zip`](dist/personal-finance-dashboard-skill.zip) (click **Download raw file** on that page). It is also attached to [Releases](../../releases).
 2. Upload it under **Settings → Capabilities → Skills**. The menu names can differ by plan.
 3. In a new chat, say: *"Build my personal finance dashboard."*
 
 **Any other assistant**
 
-1. Download the skill folder, or the zip from Releases.
+1. Download the same zip and unzip it.
 2. Attach `SKILL.md` plus the files it lists. Then say: *"Follow SKILL.md to build my personal finance dashboard."*
 3. The assistant needs to read files and run Python. Hosting the page is optional, because the skill can produce an offline file instead.
 
@@ -69,6 +69,7 @@ skills/
     assets/               ← template page, sample data, sample dashboard
     references/           ← full SOP & spec, connectors guide
     scripts/              ← build.py, make_offline.py, validate_data.py
+dist/                     ← ready-to-upload skill zips
 docs/images/              ← screenshots
 ```
 
