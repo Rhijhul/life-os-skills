@@ -44,7 +44,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Claude (claude.ai or the Claude app)**
 
-1. Download [`personal-finance-dashboard-skill.zip`](dist/personal-finance-dashboard-skill.zip) (click **Download raw file** on that page). It is also attached to [Releases](../../releases).
+1. Download [`personal-finance-dashboard-skill.zip`](dist/personal-finance-dashboard-skill.zip) (click **Download raw file** on that page). Every version is listed under [Releases](../../releases) and in the [changelog](CHANGELOG.md).
 2. Upload it under **Settings → Capabilities → Skills**. The menu names can differ by plan.
 3. In a new chat, say: *"Build my personal finance dashboard."*
 
