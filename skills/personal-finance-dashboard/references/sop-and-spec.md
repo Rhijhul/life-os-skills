@@ -25,7 +25,7 @@ The page never contains hard-coded personal figures. It reads everything from th
    - **Absent (published on claude.ai):** the script calls `await window.claude.use('db')`. For each collection in `COLLS` it subscribes with `db.collection(name).onSnapshot(cb)`; each snapshot replaces `S[name]` with `{ [doc.id]: doc.data() }`. Rendering is batched with `requestAnimationFrame` and re-runs whenever any collection updates.
 2. The collection list is fixed in code:
    ```js
-   const COLLS = ['months','targets','cards','actions','mf','corpus','trend','loans','settings','ppf','nps','invest','perks','ccspend','insurance'];
+   const COLLS = ['months','targets','cards','actions','mf','corpus','trend','loans','settings','ppf','nps','invest','perks','ccspend','insurance','rewards'];
    ```
    `corpus` is reserved (unused in the sample). A new collection needs one line here plus a render function.
 3. Data from claude.ai arrives **deep-frozen**. Code must never mutate `S.*` objects; it builds copies (`Object.assign({}, doc, changes)`).
@@ -302,7 +302,7 @@ A new document starts each April.
 | features | string[] | Up to 3 short lines |
 | early_exit | `{from, to, policy_years}` | Return-of-premium window |
 | since | date | Continuous cover since |
-| history | array | `[{y, amt, gst, note}]` premium history for the chart |
+| history | array | `[{y, amt, gst, note}]` premium history for the chart. `y` is the financial year (`2025-26`). The first term and the first health policy that have a history feed the Combined chart (4.14). |
 
 ### 2.13 `invest/*` (investment documents)
 
@@ -319,6 +319,18 @@ A new document starts each April.
 | `watch` | `{asof, source, research_note, reports:[{date, title, take}], rows:[{ticker, name, sector, qvgm, lo, hi, ltp, status, note}]}` |
 | `returns` | `{asof, mf_asof, basis, basis_mf, lots:{TICKER:[[date, qty, price]]}, us:{basis, lots:{TICKER:[[date, usd_amount, usd_price]]}}, mf:{fundId:{cfs:[[date, -amount]], cost, mv}}, nps:{basis, cfs}, mf_lifetime:{label, xirr}, rates:{epf:{label, rate}, ppf:{…}, ef:{…}, hm:{…}}, pending:[{what, qty_or_amount, seen}]}` |
 | `flows` | `{asof, from 'YYYY-MM', stocks_from, stocks_note, basis, note, cols:['stock_buy','stock_sell','mf_buy','mf_sell','us_buy'], months:{YYYY-MM:[5 numbers]}}` |
+
+### 2.14 `rewards/main` (card points and cashback; one document)
+
+| Key | Type | Meaning |
+|---|---|---|
+| asof, source, note | string | Freshness line and one note under the wallet |
+| programs | array | One per points programme: `{id, card, short, unit 'RP'\|'MR'\|…, bal, asof, src, rule (expiry rule, one line), route (default route id), routes:[{id, label, v (₹ per point)}], expiring:[{date, pts, est}]}`. Cards that earn into one points account get ONE row. Partner programmes added by a transfer carry `partner: true`. |
+| redemptions | array | `{id, date, card (program id), pts, kind 'voucher'\|'transfer'\|'credit'\|'booking'\|'other', partner, ppts, pid, value, useby}`. Written by the page's "Record a redemption" form; the card balance goes down by itself. |
+| routing | array | "Which card for which spend": `{spend, card, ret}` |
+| watch | string[] | Short reminders (expiry traps, where to check) |
+| points | object | Statement-by-statement history for the main points card: `{label, note, rows:[{m, date, open, earned, bonus, red, adj, close}]}`. `adj` = points removed (refund reversals, EMI conversions, lapses); explain large removals in `note`. |
+| cashback | object | `{note, series:[{key, label}], rows:[{m, <key>: ₹}]}`, one series per cashback card |
 
 Rules:
 
@@ -760,7 +772,7 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 
 ### 4.10 Cards (`#cards`)
 
-Four views: Spending, All cards, Card detail, Benefits & targets.
+Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 
 **Spending view:**
 
@@ -782,6 +794,16 @@ Four views: Spending, All cards, Card detail, Benefits & targets.
 **Amex monthly bonus:** a month counts when ≥₹20,000 and ≥4 transactions of ₹1,500+ post in that calendar month.
 
 **Benefits & targets:** lounges, perks, ticks for unlocked or used benefits (saved to `perks`, or to `localStorage` offline).
+
+**Rewards** (`rewards/main`):
+
+- KPI tiles: points worth (at the redemption picked per card), next expiry, redeemed this calendar year, cashback over the last 12 statements, points removed on the main points card.
+- Points wallet: one row per points account with an editable balance, a "Redeem as" picker (₹ per point; the pick is remembered in the browser), worth with a mini bar, and when/where the balance was last updated.
+- Redemptions: "Record a redemption" form (date, card, points, what you got, partner and partner points for transfers, ₹ value, use-by). Saving lowers the card balance; a transfer adds or tops up a partner row. Remove reverses it.
+- Coming up to expire: points from `expiring` plus vouchers with a use-by date; estimated monthly lots after the first two are grouped.
+- Which card for which spend (`routing`) and reminders (`watch`).
+- Charts: points by statement (base vs bonus; tooltip with redeemed, removed and balance) and cashback by statement (one colour per `cashback.series`).
+- Offline, balance edits and redemptions are kept in this browser only.
 
 ### 4.11 Trends (`#trends`)
 
@@ -877,8 +899,9 @@ Four views: Spending, All cards, Card detail, Benefits & targets.
    - one-line note
 2. **Card statements:** for each new statement, append rows to `ccspend/tx-<card>-<FY>` with category indexes. Update `ccspend/meta.cards[card].months/bills/last_stmt/tx`, and `meta.to`/`asof`. Then update `cards/<card>.bills[due month]`.
 3. **Loans:** update `outstanding` (and `emis_left`) after each EMI.
-4. **Actions:** add next month's to-dos; mark done ones.
-5. State the bank floor in the summary: `travel_fund + bank_floor`, plus the crash figure `travel_fund + crash_floor`.
+4. **Rewards:** add the new statement to `rewards/main.points.rows` and `cashback.rows`; update each programme's `bal`, `asof`, `src` and `expiring`. Keep redemptions the page recorded.
+5. **Actions:** add next month's to-dos; mark done ones.
+6. State the bank floor in the summary: `travel_fund + bank_floor`, plus the crash figure `travel_fund + crash_floor`.
 
 ### 5.4 Documents to collect each month
 
@@ -942,6 +965,7 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 6. [CALC] Categorise with the 18-category list. Ask only about merchants you can't place.
 7. [CALC] Write `ccspend/tx-<card>-<FY>` (April split), `ccspend/meta`, `cards/<id>` (bills by due month), and `perks/<id>` (targets from step 3).
 8. [ASK] Which card spends are paid back by someone else (so own spend = net).
+9. [ASK] Points balances and expiry per programme (from each card app), and how they like to redeem. [LOOKUP] ₹ per point for each redemption route. [CALC] Write `rewards/main`; cards that earn into one points account get one row.
 
 ### Stage 2 — Investments
 
@@ -1003,4 +1027,5 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] Totals reconcile across Overview, Wealth mix and Investments.
 - [ ] Theme switch: Light by default, Dark readable, choice remembered.
 - [ ] Performance vs benchmark: every fund has its own index; the 3M / 6M / 12M / Since bought buttons all draw.
-- [ ] Half-yearly check renders with no reviews, one review and several.
+- [ ] Half-yearly check renders with no reviews, one review and several; the Retirement panel does not scroll sideways at 400px.
+- [ ] Rewards: wallet total = Σ worth; recording and removing a redemption moves the balance both ways.

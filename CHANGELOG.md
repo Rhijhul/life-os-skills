@@ -2,6 +2,13 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.2 · 16-Nov-2026
+
+- **Cards → Rewards:** points wallet with ₹ per point for each redemption route, one row per points account, editable balances, a "Record a redemption" form (vouchers, transfers to partners, statement credit), expiry list, which-card-for-which-spend, points by statement and cashback by statement. New collection `rewards/main`.
+- **Insurance:** Combined view works with any insurer (uses the first term and health policy that have a history).
+- **Fixes:** Retirement panel no longer scrolls sideways on phones; card colours and names fall back cleanly for any card id; the term cover tile names the insurer from the data.
+- **Docs:** SOP schema 2.14 (`rewards/main`), Rewards view, monthly rewards step, onboarding question for points; SKILL rule "one row per points account".
+
 ## Personal Finance Dashboard v1.1 · 15-Nov-2026
 
 - **Performance vs benchmark** for mutual funds and US stocks: 3M / 6M / 12M / Since bought, one row per holding against its own index; "since bought" puts the same buys into the index on the same dates.

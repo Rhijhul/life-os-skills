@@ -13,6 +13,7 @@ What the finished page covers:
 - investments (Indian stocks, mutual funds, US stocks, EPF, PPF, NPS)
 - a retirement-at-60 projection
 - goals, bills, loans, insurance and to-dos
+- card rewards: points wallet, redemptions, expiry and cashback
 
 It also includes:
 - each fund and US stock against its own benchmark (3M / 6M / 12M / since bought);
@@ -60,6 +61,7 @@ The skill works with any agent that can read files and run Python. Hosting the p
    - Compare every fund with its own official index, never a category average.
    - If an index has no data, rebuild it from component prices or use a labelled proxy, and say "approximate" in one line.
 8. **Keep notes short.** Notes under charts are one or two lines; analyst notes are at most 8 one-line bullets.
+9. **One row per points account.** Cards that earn into one rewards balance share one wallet row in `rewards/main`.
 
 ## Workflow
 

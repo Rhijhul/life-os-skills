@@ -291,7 +291,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   .todo label .amt { grid-column: 3; }
 }
 @media (prefers-reduced-motion: no-preference) { .meter > i, .mini > i { transition: width .4s ease-out; } }
-:root{--r:14px}.wrap{gap:32px}.bar-top nav{width:100%;margin:0;flex-wrap:nowrap;overflow:auto}.bar-top nav a{white-space:nowrap}.bar-top .in{gap:5px 14px}.pagehead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:0 0 12px}.pagehead h2{font:500 clamp(1.7rem,4vw,2.5rem)/1.15 Georgia,serif;letter-spacing:-.04em}.pagehead a,.panel a{color:var(--accent)}.hero{margin-top:0}.floor{background:linear-gradient(120deg,#123c3b,#185d52);color:white;justify-content:center}.planbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(14px,3vw,28px);display:grid;gap:15px}.planstats,.controls,.twop{display:grid;gap:14px}.planstats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.planstats strong{display:block;font:500 1.8rem Georgia,serif;color:var(--accent)}.controls{grid-template-columns:repeat(auto-fit,minmax(135px,1fr));margin-top:12px}.controls label{display:grid;gap:4px;font-size:.82rem}.controls input,.controls select{min-width:0;width:100%;box-sizing:border-box}.twop{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}.mixrow{display:grid;grid-template-columns:6rem 1fr auto;align-items:center;gap:10px;margin:9px 0;font-size:.87rem}.mixrow i{height:8px;border-radius:5px;display:block}.mixrow span{background:var(--track);border-radius:5px}.planbox summary{cursor:pointer;font-weight:600}.planbox details p{margin-top:8px}.planbox details{border-top:1px solid var(--line);padding-top:10px}#curve svg{width:100%;height:auto;max-height:235px;display:block}#wealth .panel{display:grid;align-content:start;gap:10px}section{scroll-margin-top:110px}
+:root{--r:14px}.wrap{gap:32px}.bar-top nav{width:100%;margin:0;flex-wrap:nowrap;overflow:auto}.bar-top nav a{white-space:nowrap}.bar-top .in{gap:5px 14px}.pagehead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:0 0 12px}.pagehead h2{font:500 clamp(1.7rem,4vw,2.5rem)/1.15 Georgia,serif;letter-spacing:-.04em}.pagehead a,.panel a{color:var(--accent)}.hero{margin-top:0}.floor{background:linear-gradient(120deg,#123c3b,#185d52);color:white;justify-content:center}.planbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(14px,3vw,28px);display:grid;grid-template-columns:minmax(0,1fr);gap:15px}.planstats,.controls,.twop{display:grid;gap:14px}.planstats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.planstats strong{display:block;font:500 1.8rem Georgia,serif;color:var(--accent)}.controls{grid-template-columns:repeat(auto-fit,minmax(135px,1fr));margin-top:12px}.controls label{display:grid;gap:4px;font-size:.82rem}.controls input,.controls select{min-width:0;width:100%;box-sizing:border-box}.twop{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}.mixrow{display:grid;grid-template-columns:6rem 1fr auto;align-items:center;gap:10px;margin:9px 0;font-size:.87rem}.mixrow i{height:8px;border-radius:5px;display:block}.mixrow span{background:var(--track);border-radius:5px}.planbox summary{cursor:pointer;font-weight:600}.planbox details p{margin-top:8px}.planbox details{border-top:1px solid var(--line);padding-top:10px}#curve svg{width:100%;height:auto;max-height:235px;display:block}#wealth .panel{display:grid;align-content:start;gap:10px}section{scroll-margin-top:110px}
 .modelinputs input[type=number]{width:clamp(4rem,10vw,8rem);box-sizing:border-box}.modelinputs th{white-space:normal}#curve svg{cursor:crosshair;touch-action:pan-y}#readout{margin:6px 0;background:var(--bg)}
 .plotarea{position:relative}#curve #readout{position:absolute;pointer-events:none;z-index:2;width:max-content;border-radius:7px;margin:0;padding:5px 9px;background:#163e38;color:#fff;box-shadow:0 2px 8px #0002;line-height:1.2}#readout small,#readout strong{display:block}#readout small{font-size:.68rem}#readout strong{font-size:.9rem;font-variant-numeric:tabular-nums}.planbox{gap:8px;padding:clamp(12px,2vw,21px)}.planbox details{padding-top:6px}.holdingline{display:flex;justify-content:space-between;gap:8px;padding:4px 0;font-size:.84rem;border-bottom:1px solid var(--line)}#wealth summary{cursor:pointer}#heldtotal{color:var(--accent)}#curve svg{max-height:200px;width:100%}
 .ret-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}
@@ -426,6 +426,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 .theme-row{display:inline-flex;align-items:center;gap:2px;margin-top:10px;padding:3px;border-radius:999px;background:var(--side-ctl,#151d31);border:1px solid var(--side-line,#263049);width:max-content}.theme-row button{display:grid;place-items:center;width:30px;height:26px;border:0;border-radius:999px;padding:0;background:transparent;color:#8f98ab;cursor:pointer;transition:background .15s,color .15s}.theme-row button:hover{color:#eef0f5}.theme-row button[aria-pressed=true]{background:#eef0f5;color:#111a2e}@media(max-width:959px){.bar-top:not(.open) .theme-row{display:none}}
 .moment[data-go]{cursor:pointer;transition:border-color .12s,box-shadow .12s}.moment[data-go]:hover,.moment[data-go]:focus-visible{border-color:var(--accent);box-shadow:0 2px 8px rgba(17,26,46,.08)}
 .moment .mbar{margin-top:4px}.moment .mkey{font-size:.72rem;gap:2px 10px}
+#cards-rewards{display:flex;flex-direction:column;gap:12px}#rw-wallet{min-width:760px;table-layout:fixed}#rw-wallet .c1{width:24%}#rw-wallet .c2{width:16%}#rw-wallet .c3{width:27%}#rw-wallet .c4{width:15%}#rw-wallet .c5{width:18%}#rw-wallet td:nth-child(1),#rw-wallet th:nth-child(1){padding-right:4px}#rw-wallet td:nth-child(2),#rw-wallet th:nth-child(2){padding-left:4px}#rw-wallet td:nth-child(3),#rw-wallet th:nth-child(3){padding-left:26px}#rw-wallet td{vertical-align:middle;padding-block:9px}#rw-wallet tfoot td{border-top:1px solid var(--line);border-bottom:0;font-weight:600;padding-top:10px}.rw-card{display:grid;gap:1px}.rw-card small,.rw-upd small,.rw-rate{display:block;font-size:.72rem;color:var(--muted);line-height:1.3}.rw-sel{width:100%;font-size:.8rem;padding:3px 6px;background:transparent}.rw-fixed{display:block;font-size:.82rem;padding:3px 0}.rw-rate{margin-top:2px}.rw-upd{font-size:.8rem}.rw-val{display:grid;gap:3px;min-width:6.5rem}.rw-val .mini>i{background:var(--saffron)}#rw-exp,#rw-route{font-size:.82rem}.rw-watch{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;color:var(--muted)}.rw-unit{font-size:.72rem;color:var(--muted);margin-left:3px}.rw-bal{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:4px;width:100%}#rw-wallet .rw-bal input{width:4.6rem;flex:none;text-align:left;font-family:var(--mono);padding:3px 6px;background:transparent;border-color:transparent;border-bottom:1px dashed var(--line);border-radius:4px}.rw-bal input:hover,.rw-bal input:focus{border-color:var(--line);background:var(--bg)}.rw-bal input::placeholder{color:var(--accent);font-family:var(--body)}.rw-bal .rw-unit{flex:none;margin-left:0}
+#rw-redp .sec-head{align-items:center}.rw-addbtn{font-size:.8rem;color:var(--accent);border-color:var(--accent);background:transparent;padding:4px 12px;border-radius:999px}.rw-addbtn[aria-expanded=true]{background:var(--accent-soft)}.rw-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9.5rem),1fr));gap:8px 12px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}.rw-form label{display:grid;gap:3px;font-size:.74rem;color:var(--muted);font-weight:600}#rw-form input,#rw-form select{width:100%;box-sizing:border-box;font-size:.84rem;font-weight:400;padding:5px 8px}.rw-f-act{display:flex;gap:8px;align-items:end}.rw-save{background:var(--accent);color:var(--surface);border-color:var(--accent)}#rw-red{font-size:.82rem}#rw-red.has{min-width:640px}.rw-sub{display:block;font-size:.72rem;color:var(--muted)}.rw-del{border:0;background:none;color:var(--muted);font-size:.74rem;text-decoration:underline;padding:0}.rw-del.armed{color:var(--bad)}
 </style>
 
 <div class="bar-top"><div class="in">
@@ -661,7 +663,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   </section>
 
 <section id="cards" hidden>
-  <div class="pagehead"><div class="cards-title"><h2>Cards</h2><div id="cards-switch" role="group" aria-label="Cards view"><button type="button" data-view="spend" aria-controls="cards-spend" aria-pressed="true">Spending</button><button type="button" data-view="all" aria-controls="cards-all" aria-pressed="false">All cards</button><button type="button" data-view="detail" aria-controls="cards-single" aria-pressed="false">Card detail</button><button type="button" data-view="perks" aria-controls="cards-perks" aria-pressed="false">Benefits &amp; targets</button></div></div><span class="small muted" id="cards-period"></span></div>
+  <div class="pagehead"><div class="cards-title"><h2>Cards</h2><div id="cards-switch" role="group" aria-label="Cards view"><button type="button" data-view="spend" aria-controls="cards-spend" aria-pressed="true">Spending</button><button type="button" data-view="all" aria-controls="cards-all" aria-pressed="false">All cards</button><button type="button" data-view="detail" aria-controls="cards-single" aria-pressed="false">Card detail</button><button type="button" data-view="perks" aria-controls="cards-perks" aria-pressed="false">Benefits &amp; targets</button><button type="button" data-view="rewards" aria-controls="cards-rewards" aria-pressed="false">Rewards</button></div></div><span class="small muted" id="cards-period"></span></div>
   <div id="cards-spend">
     <div class="ccs-controls"><label>Period <select id="ccs-span"><option value="12">Last 12 statements</option><option value="13">All 13 statements</option></select></label><label>Card <select id="ccs-card"></select></label><span class="small muted">Hover or tap the charts to read them; click a month, category or merchant to filter the list below.</span></div>
     <div class="kpis" id="ccs-kpis"></div>
@@ -682,6 +684,33 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <label class="small">Show <select id="perk-filter"><option value="targets">Cards with targets</option><option value="all">All cards</option></select></label></div>
     <div class="kpis" id="perk-sum"></div>
     <div id="perk-list" class="perk-list"></div>
+  </div>
+  <div id="cards-rewards" hidden>
+    <div class="kpis" id="rw-kpis"></div>
+    <div class="panel"><h3>Points wallet</h3><div class="tbl"><table id="rw-wallet"></table></div><p class="small muted" id="rw-note"></p></div>
+    <div class="panel" id="rw-redp"><div class="sec-head"><h3>Redemptions</h3><button type="button" class="rw-addbtn" id="rw-add" aria-expanded="false" aria-controls="rw-form">Record a redemption</button></div>
+      <form id="rw-form" class="rw-form" autocomplete="off" hidden>
+        <label>Date<input type="date" name="date"></label>
+        <label>Card<select name="card"></select></label>
+        <label>Points used<input type="number" name="pts" min="1" step="1" inputmode="numeric"></label>
+        <label>Got<select name="kind"><option value="voucher">Gift card / voucher</option><option value="transfer">Transfer to partner</option><option value="credit">Statement credit</option><option value="booking">Flights / hotels</option><option value="other">Products / other</option></select></label>
+        <label class="rw-f-tr" hidden>Partner<input type="text" name="partner" list="rw-partners" placeholder="Accor ALL"></label>
+        <label class="rw-f-tr" hidden>Partner points received<input type="number" name="ppts" min="1" step="1" inputmode="numeric"></label>
+        <label>₹ value received<input type="number" name="val" min="0" step="1" inputmode="numeric" placeholder="optional"></label>
+        <label class="rw-f-use">Use by<input type="date" name="use"></label>
+        <div class="rw-f-act"><button type="submit" class="rw-save">Save</button><button type="button" id="rw-cancel">Cancel</button></div>
+      </form>
+      <datalist id="rw-partners"><option value="Accor ALL"><option value="Marriott Bonvoy"><option value="IHG One Rewards"><option value="Wyndham Rewards"><option value="Singapore KrisFlyer"><option value="Air India Maharaja Club"><option value="Qatar Privilege Club"><option value="British Airways Avios"></datalist>
+      <div class="tbl"><table id="rw-red"></table></div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h3>Coming up to expire</h3><div class="tbl"><table id="rw-exp"></table></div><ul class="small rw-watch" id="rw-watch"></ul></div>
+      <div class="panel"><h3>Which card for which spend</h3><div class="tbl"><table id="rw-route"></table></div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h3 id="rw-pts-h">Points by statement</h3><div class="chart" id="rw-hdfc"></div></div>
+      <div class="panel"><h3>Cashback by statement</h3><div class="chart" id="rw-cash"></div></div>
+    </div>
   </div>
   <div id="cards-all" class="tbl" hidden><table><thead><tr><th>Card</th><th>Annual fee</th><th>Waiver / spend benchmark</th><th>Spend this card year</th></tr></thead><tbody id="card-rows"></tbody></table></div>
 </section>
@@ -733,7 +762,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 (() => {
   const SELF_B64 = '';/*@@SELF@@*/
   const PAGE_BUILT = '';/*@@BUILT@@*/
-  const COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'corpus', 'trend', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance'];
+  const COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'corpus', 'trend', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'rewards'];
   const S = Object.fromEntries(COLLS.map((c) => [c, {}]));
   let db = null, canWrite = true, sel = null, scheduled = false, loaded = new Set();
   const $ = (id) => document.getElementById(id);
@@ -801,7 +830,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const eq = meta.asof || asof('eq');
       const d0 = tidy(eq || asof('mf') || asof('us'));
       $('last-upd').textContent = d0 ? 'Updated ' + d0 : ''; }
-    [renderOverview, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderPpf, renderTargets, renderWeights, renderCards, renderPerks, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
+    [renderOverview, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderPpf, renderTargets, renderWeights, renderCards, renderPerks, renderRewards, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
     $('close-btn').disabled = !canWrite;
     $('close-msg').textContent = M().notion_closed ? 'Saved to Notion on ' + M().notion_closed + '.' : '';
     if (aid && $(aid) && $(aid) !== a && $(aid).tagName === 'INPUT') { $(aid).value = aval; $(aid).focus(); }
@@ -915,7 +944,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const cmp = R.map((r, i) => ({ r, exp: i && R[i - 1].next ? R[i - 1].next.value : null })).filter((x) => x.exp != null).slice(-4);
     const cvals = cmp.flatMap((x) => [x.r.actual, x.exp]), cmax = Math.max(1, ...cvals), clo = cvals.length ? Math.min(...cvals) * 0.85 : 0, ch = (v) => 8 + (v - clo) / Math.max(1, cmax - clo) * 92;
     const cols = cmp.length ? '<div class="prv-cols" role="list">' + cmp.map(({ r, exp }) => { const g = r.actual - exp, ok = g >= 0;
-      return '<button type="button" class="prv-col" role="listitem" data-prv="' + esc(fmtDay(r.date) + ': actual ' + inr(r.actual) + ' vs plan ' + inr(exp) + ' → ' + (ok ? 'beat' : 'missed') + ' by ' + inr(Math.abs(g)) + ' (' + pc(g / exp * 100) + ')') + '"><span class="prv-gap ' + (ok ? 'pos' : 'neg') + '">' + (ok ? '+' : '−') + esc(short(Math.abs(g))) + '</span><span class="prv-bars"><i class="pl" style="height:' + ch(exp) + '%"></i><i class="' + (ok ? 'ok' : 'miss') + '" style="height:' + ch(r.actual) + '%"></i></span><small>' + esc(new Date(r.date + 'T00:00:00').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })) + '</small></button>'; }).join('') + '</div><p class="small muted prv-cd" id="prv-cd">Grey = plan, colour = actual. Tap a column.</p>' : '<p class="small muted">Beat/miss columns start from the May 2027 review.</p>';
+      return '<button type="button" class="prv-col" role="listitem" data-prv="' + esc(fmtDay(r.date) + ': actual ' + inr(r.actual) + ' vs plan ' + inr(exp) + ' → ' + (ok ? 'beat' : 'missed') + ' by ' + inr(Math.abs(g)) + ' (' + pc(g / exp * 100) + ')') + '"><span class="prv-gap ' + (ok ? 'pos' : 'neg') + '">' + (ok ? '+' : '−') + esc(short(Math.abs(g))) + '</span><span class="prv-bars"><i class="pl" style="height:' + ch(exp) + '%"></i><i class="' + (ok ? 'ok' : 'miss') + '" style="height:' + ch(r.actual) + '%"></i></span><small>' + esc(new Date(r.date + 'T00:00:00').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })) + '</small></button>'; }).join('') + '</div><p class="small muted prv-cd" id="prv-cd">Grey = plan, colour = actual. Tap a column.</p>' : '<p class="small muted">Beat/miss columns start from the second review.</p>';
     el.innerHTML = '<div class="prv-head"><h3>Half-yearly check</h3><span class="chip ' + (isDue ? 'warn' : 'good') + '">' + (isDue ? (last ? 'Review due now' : 'No review yet') : 'Next review ' + esc(fmtDay(due))) + '</span><span class="small muted">Every May &amp; Nov vs the previous review’s path</span>' + (can ? '<span class="prv-act"><span class="small muted" id="prv-msg" aria-live="polite"></span><button type="button" id="prv-save"' + (R.some((r) => r.date.slice(0, 7) === today.slice(0, 7)) ? ' disabled title="Already recorded this month"' : '') + '>Record this review</button></span>' : '') + '</div>' + (live || cmp.length ? '<div class="prv-top"><div>' + live + '</div><div>' + cols + '</div></div>' : '') +
       (R.length ? '<div class="tbl"><table><thead><tr><th>Review</th><th class="n">Actual corpus</th><th class="n">Plan expected</th><th class="n">Gap</th><th class="n">Projected at 60</th><th class="n">Needed</th><th class="n">Expect next</th><th>Status</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : '') +
       '';
@@ -1518,7 +1547,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const item=cards.find(v=>v.id===selectedCard)||cards[0];
     const {id,c,start}=item;
     selectedCard=id;
-    const renewal=r=>r.start?MON[r.start-1]+' '+(year+(r.start<month?1:0)):'Month unknown';
+    const ysDay=(cid,mo)=>{try{const cy=ccYearOf(cid);if(!cy)return null;const [d,mn]=cy.label.split(' ');return MON.indexOf(mn)+1===mo&&+d>1?+d:null;}catch(e){return null;}};
+    const renewal=r=>r.start?(ysDay(r.id,r.start)?ysDay(r.id,r.start)+' ':'')+MON[r.start-1]+' '+(year+(r.start<month?1:0)):'Month unknown';
     $('cards-period').textContent=mlabel(sel,true)+' · '+cards.length+' cards';
     $('card-list').innerHTML=cards.map(r=>'<button type="button" data-pick="'+esc(r.id)+'" aria-pressed="'+(r.id===id)+'"><b>'+esc(r.c.name)+'</b><small>'+renewal(r)+'</small></button>').join('');
     $('card-picker').innerHTML=cards.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.c.name)+' · '+renewal(r)+'</option>').join('');
@@ -1536,11 +1566,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const bars=bills.map((b,i)=>'<button type="button" class="bill-mark" data-mark="'+i+'" aria-label="'+esc(b.caption)+'"><b>'+esc(b.exact)+'</b><span class="bar-slot"><i class="'+(b.estimate?'estimated':'')+'" style="height:'+((b.amount||0)/peak*100)+'%"></i></span><span>'+esc(mlabel(b.k))+'</span></button>').join('');
     const {spendField,spend,waiver,benchmark,benchmarkField,goal}=item;
     const waiverLabel=waiver?(spend==null?'Enter annual spend':spend>=waiver?'Waiver reached':inr(waiver-spend)+' left to waiver'):benchmark!=null?'Prior annual spend '+inr(benchmark):'Awaiting 12-month spend';
-    const input=(field,label,value)=>'<label>'+label+'<input data-card-field="'+esc(field)+'" type="number" min="0" step="any" value="'+esc(value??'')+'"></label>';
+    const input=(field,label,value)=>'<label>'+label+'<input data-card-field="'+esc(field)+'" type="number" min="0" step="any" value="'+esc(value==null?'':typeof value==='number'?Math.round(value):value)+'"></label>';
     $('card-detail').innerHTML='<div class="card-heading"><h3>'+esc(c.name)+'</h3><span class="chip '+(bills[2].estimate?'warn':bills[2].state==='Paid'?'good':'info')+'">'+bills[2].state+'</span></div>'+
       '<div class="card-heading"><b>Last 3 bills · by due month</b><small class="muted">Avg. issued '+(issued.length?inr(issued.reduce((s,b)=>s+b.amount,0)/issued.length):'—')+'</small></div><div class="card-bars">'+bars+'</div><div class="bill-caption" id="card-caption" aria-live="polite"></div>'+
       '<div class="card-waiver"><div><small>Annual fee</small><b>'+esc(c.fee?inr(c.fee):feeTxt(key))+'</b></div><div><small>'+ (waiver?'Fee waiver':'Spending benchmark') +(waiver?' · '+inr(waiver):'')+'</small><b>'+esc(waiverLabel)+'</b>'+(goal>0 && spend!=null?'<progress value="'+Math.min(spend,goal)+'" max="'+goal+'"></progress>':waiver>0?'<span class="spend-unknown" aria-label="Annual spend unknown"></span>':'')+'</div></div>'+
-      '<details id="card-settings"><summary>More details &amp; settings</summary><p>'+esc(c.milestones||'No reward milestone recorded.')+'</p><div class="controls"><label>Card year starts<select data-card-field="cycle"><option value="">Unknown</option>'+MON.map((m,i)=>'<option value="'+(i+1)+'"'+(start===i+1?' selected':'')+'>'+m+'</option>').join('')+'</select></label>'+input(spendField,'Spend this card year (₹)',spend)+input('waiver','Waiver threshold (₹)',waiver)+(!waiver?input(benchmarkField,'Prior annual spend (₹)',benchmark):'')+'</div></details>';
+      '<details id="card-settings"><summary>More details &amp; settings</summary><p>'+esc(c.milestones||'No reward milestone recorded.')+'</p><div class="controls"><label>Card year starts<select data-card-field="cycle"><option value="">Unknown</option>'+MON.map((m,i)=>'<option value="'+(i+1)+'"'+(start===i+1?' selected':'')+'>'+((start===i+1&&ysDay(id,i+1))?ysDay(id,i+1)+' '+m:m)+'</option>').join('')+'</select></label>'+input(spendField,'Spend this card year (₹)',spend)+input('waiver','Waiver threshold (₹)',waiver)+(!waiver?input(benchmarkField,'Prior annual spend (₹)',benchmark):'')+'</div></details>';
     const chart=$('card-detail').querySelector('.card-bars');
     const inspect=i=>{
       $('card-caption').textContent=bills[i].caption;
@@ -1576,6 +1606,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     $('cards-single').hidden=view!=='detail';
     $('cards-all').hidden=view!=='all';
     $('cards-perks').hidden=view!=='perks';
+    $('cards-rewards').hidden=view!=='rewards';
     for(const button of $('cards-switch').children) button.setAttribute('aria-pressed',button.dataset.view===view);
   }
   $('cards-switch').onclick=e=>{if(e.target.dataset.view) showCardsView(e.target.dataset.view);};
@@ -1586,6 +1617,123 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if(button.dataset.enter){$('card-settings').open=true;$('card-settings').querySelector('input').focus();}
     else $('cards-switch').querySelector('[data-view=detail]').focus({preventScroll:true});
   };
+
+  // ---------- Rewards: points wallet, expiry, routing, cashback ----------
+  let rwRoute = {}; try { rwRoute = JSON.parse(localStorage.getItem('pf-rw-route') || '{}') || {}; } catch (e) {}
+  let rwOff = {}; try { rwOff = JSON.parse(localStorage.getItem('pf-rw-bal') || '{}') || {}; } catch (e) {}
+  function saveRwBal(id, raw) {
+    const v = raw === '' || raw == null ? null : Math.max(0, Math.round(Number(raw)));
+    if (raw !== '' && !Number.isFinite(Number(raw))) return;
+    if (window.__SNAPSHOT__) { rwOff[id] = v; try { localStorage.setItem('pf-rw-bal', JSON.stringify(rwOff)); } catch (e) {} renderRewards(); toast('Saved in this browser only'); return; }
+    if (!db || !canWrite) return;
+    const R = (S.rewards || {}).main; if (!R) return;
+    const d = new Date(), iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const progs = (R.programs || []).map((p) => (p.id === id ? Object.assign({}, p, { bal: v, asof: iso, src: 'Edited on page' }) : Object.assign({}, p)));
+    db.doc('rewards/main').update({ programs: progs }).then(() => toast('Balance saved')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  const fmtPts = (v) => (num(v) == null ? '—' : Math.round(Number(v)).toLocaleString('en-IN'));
+  const shortPts = (v) => { const n = Math.abs(v); return n >= 1000 ? (v / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'K' : String(Math.round(v)); };
+  const rwD = (d) => { const x = new Date(d); return isNaN(x) ? String(d || '') : fmtD(x); };
+  const RW_KIND = { voucher: 'Gift card / voucher', transfer: 'Transfer to partner', credit: 'Statement credit', booking: 'Flights / hotels', other: 'Products / other' };
+  const rwToday = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  function rwDoc() {
+    if (window.__SNAPSHOT__) { try { const d = JSON.parse(localStorage.getItem('pf-rw-doc') || 'null'); if (d) return d; } catch (e) {} }
+    return (S.rewards || {}).main;
+  }
+  function rwSave(patch, msg) {
+    if (window.__SNAPSHOT__) { const d = Object.assign(JSON.parse(JSON.stringify(rwDoc() || {})), patch); try { localStorage.setItem('pf-rw-doc', JSON.stringify(d)); } catch (e) {} renderRewards(); toast(msg + ' in this browser only'); return; }
+    if (!db || !canWrite) return;
+    db.doc('rewards/main').update(patch).then(() => toast(msg)).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  const rwProgs = (R) => { const offB = window.__SNAPSHOT__ ? rwOff : {}; return (R.programs || []).map((p) => { const q = JSON.parse(JSON.stringify(p)); if (q.id in offB) q.bal = offB[q.id]; return q; }); };
+  const rwClearOff = (ids) => { if (!window.__SNAPSHOT__) return; ids.forEach((i) => { if (i) delete rwOff[i]; }); try { localStorage.setItem('pf-rw-bal', JSON.stringify(rwOff)); } catch (e) {} };
+  function rwKind() { const f = $('rw-form'); if (!f) return; const k = f.querySelector('[name=kind]').value; f.querySelectorAll('.rw-f-tr').forEach((n) => { n.hidden = k !== 'transfer'; }); f.querySelector('.rw-f-use').hidden = k === 'transfer'; }
+  function rwRecord() {
+    const f = $('rw-form'), g = (n) => f.querySelector('[name=' + n + ']'), R = rwDoc(); if (!R) return;
+    const card = g('card').value, pts = Math.round(Number(g('pts').value)), kind = g('kind').value;
+    const val = g('val').value === '' ? null : Math.max(0, Number(g('val').value)), date = g('date').value || rwToday();
+    const partner = g('partner').value.trim(), ppts = g('ppts').value === '' ? null : Math.round(Number(g('ppts').value));
+    if (!card || !(pts > 0)) { toast('Enter the card and the points used'); return; }
+    if (kind === 'transfer' && (!partner || !(ppts > 0))) { toast('Enter the partner and the points received'); return; }
+    const progs = rwProgs(R), src = progs.find((p) => p.id === card); if (!src) return;
+    src.bal = Math.max(0, (num(src.bal) || 0) - pts); src.asof = rwToday(); src.src = 'Redemption logged';
+    let pid = '';
+    if (kind === 'transfer') {
+      pid = 'x-' + partner.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      let pp = progs.find((p) => p.id === pid);
+      if (!pp) { const accor = /accor/i.test(partner); pp = { id: pid, card: partner, short: partner, unit: 'pts', bal: 0, partner: true, rule: 'Partner programme', route: 'v', routes: [{ id: 'v', label: accor ? 'Hotel stays (€0.02 a point)' : 'Bookings, approx', v: accor ? 2 : 1 }] }; progs.push(pp); }
+      pp.bal = (num(pp.bal) || 0) + ppts; pp.asof = rwToday(); pp.src = 'Transfer from ' + (src.short || src.card);
+    }
+    const reds = (R.redemptions || []).map((x) => Object.assign({}, x));
+    reds.push({ id: 'r' + Date.now(), date, card, pts, kind, partner: kind === 'transfer' ? partner : '', ppts: kind === 'transfer' ? ppts : null, pid, value: val, useby: kind === 'transfer' ? '' : (g('use').value || '') });
+    rwClearOff([card, pid]);
+    rwSave({ programs: progs, redemptions: reds }, 'Redemption saved');
+    f.reset(); g('date').value = rwToday(); rwKind(); f.hidden = true; $('rw-add').setAttribute('aria-expanded', 'false');
+  }
+  function rwDelete(id) {
+    const R = rwDoc(); if (!R) return;
+    const x = (R.redemptions || []).find((y) => y.id === id); if (!x) return;
+    const progs = rwProgs(R).map((q) => { if (q.id === x.card) q.bal = (num(q.bal) || 0) + (num(x.pts) || 0); if (x.pid && q.id === x.pid) q.bal = Math.max(0, (num(q.bal) || 0) - (num(x.ppts) || 0)); return q; });
+    const left = (R.redemptions || []).filter((y) => y.id !== id);
+    const progs2 = progs.filter((q) => !(q.partner && !num(q.bal) && !left.some((y) => y.pid === q.id)));
+    rwClearOff([x.card, x.pid]);
+    rwSave({ programs: progs2, redemptions: left.map((y) => Object.assign({}, y)) }, 'Redemption removed');
+  }
+  function renderRewards() {
+    const el = $('rw-wallet'); if (!el) return;
+    const R = rwDoc();
+    if (!R) { el.innerHTML = '<tr><td class="muted">No reward balances loaded yet.</td></tr>'; return; }
+    const offB = window.__SNAPSHOT__ ? rwOff : {};
+    const P = (R.programs || []).map((p) => (p.id in offB ? Object.assign({}, p, { bal: offB[p.id], src: 'Edited in this browser' }) : p)), now = new Date();
+    const rwDis = ((db && canWrite) || window.__SNAPSHOT__) ? '' : ' disabled';
+    const pick = (p) => { const rt = p.routes || []; return rt.find((r) => r.id === rwRoute[p.id]) || rt.find((r) => r.id === p.route) || rt[0] || { id: '', label: '—', v: 0 }; };
+    const vals = P.map((p) => { const r = pick(p); return { p, r, v: num(p.bal) == null ? null : num(p.bal) * r.v }; });
+    const total = vals.reduce((a, x) => a + (x.v || 0), 0), maxV = Math.max(1, ...vals.map((x) => x.v || 0));
+    const ex = []; P.forEach((p) => (p.expiring || []).forEach((e) => ex.push(Object.assign({ card: p.short || p.card, unit: p.unit }, e))));
+    const name = (id) => { const q = P.find((p) => p.id === id); return q ? (q.short || q.card) : id; };
+    const reds = (R.redemptions || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)) || String(b.id).localeCompare(String(a.id)));
+    reds.forEach((x) => { if (x.useby) ex.push({ card: name(x.card), label: (num(x.value) ? inr(x.value) + ' ' : '') + (x.kind === 'voucher' ? 'voucher' : RW_KIND[x.kind] || ''), date: x.useby, basis: 'use by' }); });
+    ex.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const up = ex.filter((e) => new Date(e.date) >= now), nx = up[0];
+    const cb = (R.cashback || {}).rows || [], cbS = (R.cashback || {}).series || [], cb12 = cb.slice(-12).reduce((a, r) => a + cbS.reduce((b, x) => b + (num(r[x.key]) || 0), 0), 0);
+    const hdD = R.points || {}, hdL = hdD.label || 'Card', hd = hdD.rows || [], adj12 = hd.slice(-12).reduce((a, r) => a + (num(r.adj) || 0), 0);
+    $('rw-kpis').innerHTML = kpi('Points worth', esc(inr(total)), 'at the redemption picked per card') +
+      (nx ? kpi('Next expiry', esc(fmtPts(nx.pts)) + '<span class="rw-unit">' + esc(nx.unit) + '</span>', esc(nx.card + ' · ' + rwD(nx.date) + ' · ' + daysTo(new Date(nx.date)) + ' days')) : '') +
+      kpi('Redeemed this year', esc(inr(reds.filter((x) => String(x.date).slice(0, 4) === String(now.getFullYear())).reduce((a, x) => a + (num(x.value) || 0), 0))), esc(reds.filter((x) => String(x.date).slice(0, 4) === String(now.getFullYear())).length + ' recorded')) +
+      (cbS.length ? kpi('Cashback earned', esc(inr(cb12)), esc(cbS.map((x) => x.label).join(' + ') + ', last 12 statements')) : '') +
+      (hd.length ? kpi(esc(hdL) + ' points removed', esc(fmtPts(adj12)), 'adjusted or lapsed, last 12 statements') : '');
+    el.innerHTML = '<colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"></colgroup><thead><tr><th>Card</th><th>Points</th><th>Redeem as</th><th class="n">Worth</th><th>Updated</th></tr></thead><tbody>' + vals.map(({ p, r, v }) =>
+      '<tr><td><span class="rw-card"><b>' + esc(p.card) + '</b><small>' + esc(p.rule || '') + '</small></span></td>' +
+      '<td><label class="rw-bal"><input type="number" min="0" step="1" inputmode="numeric" placeholder="Add" value="' + esc(num(p.bal) == null ? '' : Math.round(p.bal)) + '" data-rwbal="' + esc(p.id) + '" aria-label="' + esc(p.card) + ' points balance"' + rwDis + '><span class="rw-unit">' + esc(p.unit) + '</span></label></td>' +
+      '<td>' + ((p.routes || []).length > 1 ? '<select class="rw-sel" data-rwroute="' + esc(p.id) + '" aria-label="Redemption for ' + esc(p.card) + '">' + p.routes.map((o) => '<option value="' + esc(o.id) + '"' + (o.id === r.id ? ' selected' : '') + '>' + esc(o.label) + '</option>').join('') + '</select>' : '<span class="rw-fixed">' + esc(r.label) + '</span>') + '<small class="rw-rate">₹' + esc(Number(r.v).toFixed(2)) + ' a point</small></td>' +
+      '<td class="n"><span class="rw-val"><b>' + esc(v == null ? '—' : inr(v)) + '</b><span class="mini"><i style="width:' + ((v || 0) / maxV * 100).toFixed(1) + '%"></i></span></span></td>' +
+      '<td class="rw-upd">' + (p.asof ? esc(rwD(p.asof)) : '<span class="muted">—</span>') + (p.src ? '<small>' + esc(p.src) + '</small>' : '') + '</td></tr>').join('') +
+      '</tbody><tfoot><tr><td>Total</td><td></td><td></td><td class="n"><b>' + esc(inr(total)) + '</b></td><td></td></tr></tfoot>';
+    $('rw-note').textContent = R.note || '';
+    { const f = $('rw-form'), cs = f.querySelector('[name=card]'), keep = cs.value;
+      cs.innerHTML = P.map((p) => '<option value="' + esc(p.id) + '">' + esc(p.card) + '</option>').join(''); if (keep) cs.value = keep;
+      const dd = f.querySelector('[name=date]'); if (!dd.value) dd.value = rwToday();
+      const off = !((db && canWrite) || window.__SNAPSHOT__); $('rw-add').disabled = off; }
+    $('rw-red').className = reds.length ? 'has' : '';
+    $('rw-red').innerHTML = reds.length ? '<thead><tr><th>Date</th><th>Card</th><th class="n">Points</th><th>Got</th><th class="n">₹ value</th><th class="n">₹ a point</th><th>Use by</th><th></th></tr></thead><tbody>' + reds.map((x) =>
+      '<tr><td>' + esc(rwD(x.date)) + '</td><td>' + esc(name(x.card)) + '</td><td class="n">' + esc(fmtPts(x.pts)) + '</td><td>' + esc(RW_KIND[x.kind] || x.kind) + (x.partner ? '<small class="rw-sub">' + esc(fmtPts(x.ppts) + ' ' + x.partner) + '</small>' : '') + '</td>' +
+      '<td class="n">' + esc(num(x.value) == null ? '—' : inr(x.value)) + '</td><td class="n">' + esc(num(x.value) && num(x.pts) ? '₹' + (x.value / x.pts).toFixed(2) : '—') + '</td><td>' + esc(x.useby ? rwD(x.useby) : '—') + '</td>' +
+      '<td><button type="button" class="rw-del" data-rwdel="' + esc(x.id) + '">Remove</button></td></tr>').join('') + '</tbody>' : '<tbody><tr><td class="muted small">None recorded yet. Use "Record a redemption" when you redeem or transfer points; the card balance goes down by itself.</td></tr></tbody>';
+    const er = [], seen = {};
+    up.forEach((e) => { const k = e.card + (e.est ? '~' : ''); seen[k] = (seen[k] || 0) + 1; if (e.est && seen[k] > 2) { const last = er[er.length - 1]; if (last && last.grp === k) { last.pts += e.pts; last.to = e.date; } else er.push({ grp: k, card: e.card, pts: e.pts, date: e.date, to: e.date, est: true }); } else er.push(Object.assign({}, e)); });
+    $('rw-exp').innerHTML = er.length ? '<thead><tr><th>When</th><th>Card</th><th class="n">Points</th><th>Basis</th></tr></thead><tbody>' + er.slice(0, 6).map((e) => '<tr><td>' + esc(e.to && e.to !== e.date ? MON[new Date(e.date).getMonth()] + '–' + MON[new Date(e.to).getMonth()] + ' ' + new Date(e.to).getFullYear() : rwD(e.date)) + '</td><td>' + esc(e.card) + '</td><td class="n">' + esc(e.label || fmtPts(e.pts)) + '</td><td class="small muted">' + esc(e.basis || (e.est ? 'estimated' : 'from the app')) + '</td></tr>').join('') + '</tbody>' : '<tbody><tr><td class="muted">Nothing due.</td></tr></tbody>';
+    $('rw-watch').innerHTML = (R.watch || []).map((w) => '<li>' + esc(w) + '</li>').join('');
+    $('rw-route').innerHTML = '<thead><tr><th>Spend</th><th>Card</th><th>Return</th></tr></thead><tbody>' + (R.routing || []).map((x) => '<tr><td>' + esc(x.spend) + '</td><td>' + esc(x.card) + '</td><td class="small">' + esc(x.ret) + '</td></tr>').join('') + '</tbody>';
+    { const h = $('rw-pts-h'); if (h) h.textContent = hdL + ' points by statement'; }
+    if (hd.length) svgStack($('rw-hdfc'), hd.map((r) => ({ key: r.m, base: Math.max(0, (num(r.earned) || 0) - (num(r.bonus) || 0)), bonus: num(r.bonus) || 0, r })),
+      [{ key: 'base', label: 'Base points', color: 'var(--accent)' }, { key: 'bonus', label: 'Bonus and milestone', color: 'var(--saffron)' }], (x) => mlabel(x.key),
+      { h: 240, ym: true, values: true, fmt: fmtPts, fmtShort: shortPts, label: hdL + ' points earned by statement month', tipTitle: (x) => mlabel(x.key, true) + ' statement',
+        tipExtra: (x) => '<small>Redeemed ' + esc(fmtPts(x.r.red)) + ' · removed ' + esc(fmtPts(x.r.adj)) + '</small><small>Balance ' + esc(fmtPts(x.r.close)) + '</small>',
+        readText: (i) => '<b>' + esc(mlabel(hd[i].m, true)) + '</b> · earned ' + esc(fmtPts(hd[i].earned)) + ' · balance ' + esc(fmtPts(hd[i].close)) + (num(hd[i].adj) ? ' <span class="muted">· removed ' + esc(fmtPts(hd[i].adj)) + '</span>' : '') });
+    if (cb.length && cbS.length) svgStack($('rw-cash'), cb.map((r) => { const o = { key: r.m, note: r.note }; cbS.forEach((x) => { o['s_' + x.key] = num(r[x.key]) || 0; }); return o; }),
+      cbS.map((x, i) => ({ key: 's_' + x.key, label: x.label, color: ['var(--saffron)', 'var(--c3)', 'var(--accent)', 'var(--c4)'][i % 4] })), (x) => mlabel(x.key),
+      { h: 240, ym: true, values: true, label: 'Cashback by statement month', tipTitle: (x) => mlabel(x.key, true) + ' statements', tipExtra: (x) => (x.note ? '<small>' + esc(x.note) + '</small>' : '') });
+  }
 
   let perkFilter = 'targets';
   const perkPeriod = (p, card) => {
@@ -2181,7 +2329,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   // donut: equity vs debt (multi-asset shown as hybrid) across my mutual funds
   function renderMfSplit(rows, val) {
     const el = $('mf-split'); if (!el) return;
-    const kind = (r) => r.bucket === 'debt' || (!r.bucket && /debt|duration|liquid|gilt/i.test(r.category || '')) ? 'Debt' : r.bucket === 'mixed' || (!r.bucket && /multi asset|hybrid/i.test(r.category || '')) ? 'Hybrid (multi-asset)' : 'Equity';
+    const kind = (r) => /debt/i.test(r.category || '') ? 'Debt' : /multi asset|hybrid/i.test(r.category || '') ? 'Hybrid (multi-asset)' : 'Equity';
     const col = { Equity: 'var(--accent)', Debt: 'var(--c3)', 'Hybrid (multi-asset)': 'var(--saffron)' };
     const g = {}; rows.forEach((r) => { const k = kind(r); (g[k] = g[k] || { v: 0, n: [] }).v += r.value; g[k].n.push(r.fund); });
     const segs = ['Equity', 'Debt', 'Hybrid (multi-asset)'].filter((k) => g[k]).map((k) => ({ k, v: g[k].v, p: g[k].v / val * 100, funds: g[k].n }));
@@ -2313,6 +2461,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const stackSolo = {};
   function svgStack(el, rows, series, xlab, o = {}) {
     const id = el.id, solo = stackSolo[id];
+    const FS = o.fmtShort || short, FL = o.fmt || inr;
     const vis = series.filter((s) => !solo || s.key === solo);
     const W = o.w || 560, H = o.h || 230, ml = 54, mb = o.ym ? 32 : 24, mt = o.values ? 20 : 12, mr = 8;
     const val = (r, k) => Math.max(0, num(r[k]) || 0);
@@ -2322,20 +2471,20 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const band = (W - ml - mr) / Math.max(1, rows.length), bw = Math.min(34, band * 0.68);
     const cx = (i) => ml + band * i + band / 2;
     let s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"><rect x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent"/>';
-    ticks.forEach((t) => { s += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(t) + '" y2="' + y(t) + '" stroke="var(--track)"/><text x="' + (ml - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + esc(short(t)) + '</text>'; });
+    ticks.forEach((t) => { s += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(t) + '" y2="' + y(t) + '" stroke="var(--track)"/><text x="' + (ml - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + esc(FS(t)) + '</text>'; });
     rows.forEach((r, i) => {
       let acc = 0;
       vis.forEach((se) => { const v = val(r, se.key); if (!v) return; s += '<rect x="' + (cx(i) - bw / 2) + '" y="' + y(acc + v) + '" width="' + bw + '" height="' + Math.max(0.5, y(acc) - y(acc + v)) + '" fill="' + se.color + '" data-i="' + i + '"' + (o.pick === i ? '' : o.pick != null ? ' opacity=".45"' : '') + '/>'; acc += v; });
     });
     if (o.ym) rows.forEach((r, i) => { const [yy, mm] = r.key.split('-'); s += '<text x="' + cx(i) + '" y="' + (H - 18) + '" text-anchor="middle" class="xm">' + MON[Number(mm) - 1] + '</text>' + (i === 0 || mm === '01' ? '<text x="' + cx(i) + '" y="' + (H - 4) + '" text-anchor="middle" class="xy">' + yy + '</text>' : ''); });
     else { const step = Math.ceil(rows.length / (o.ticks || 7)); rows.forEach((r, i) => { if (i % step === 0 || i === rows.length - 1) s += '<text x="' + cx(i) + '" y="' + (H - 6) + '" text-anchor="middle">' + esc(xlab(r)) + '</text>'; }); }
-    if (o.values) rows.forEach((r, i) => { const t = tot(r); if (t > 0) s += '<text x="' + cx(i) + '" y="' + (y(t) - 5) + '" text-anchor="middle" class="bv">' + esc(short(t).replace('₹', '').replace(/\.0+(?=[KL])/, '')) + '</text>'; });
+    if (o.values) rows.forEach((r, i) => { const t = tot(r); if (t > 0) s += '<text x="' + cx(i) + '" y="' + (y(t) - 5) + '" text-anchor="middle" class="bv">' + esc(FS(t).replace('₹', '').replace(/\.0+(?=[KL])/, '')) + '</text>'; });
     const legend = '<div class="legend clickable" role="group" aria-label="Show one series">' + series.map((se) => '<button type="button" data-solo="' + esc(se.key) + '" aria-pressed="' + (solo === se.key) + '"' + (solo && solo !== se.key ? ' class="dim"' : '') + '><i class="sw" style="background:' + se.color + '"></i>' + esc(se.label) + '</button>').join('') + (solo ? '<button type="button" data-solo="" class="reset">Show all</button>' : '') + '</div>';
     el.innerHTML = (o.legendTop === false ? '' : legend) + '<div class="chart-wrap">' + s + '</svg></div>' + (o.readId ? '' : '<p class="small chart-read"></p>');
     el.querySelectorAll('[data-solo]').forEach((b) => b.onclick = () => { stackSolo[id] = b.dataset.solo && stackSolo[id] !== b.dataset.solo ? b.dataset.solo : null; svgStack(el, rows, series, xlab, o); });
     const svg = el.querySelector('svg');
-    const tip = (i) => { const r = rows[i]; return '<small>' + esc(o.tipTitle ? o.tipTitle(r) : xlab(r)) + '</small><strong>' + esc(inr(tot(r))) + '</strong>' + vis.filter((se) => num(r[se.key])).slice().reverse().map((se) => tipRow(se.color, se.label, esc(short(num(r[se.key]))))).join('') + (o.tipExtra ? o.tipExtra(r) : ''); };
-    scrub(svg, { xs: rows.map((_, i) => cx(i)), band: Math.max(8, band * 0.92), top: mt - 4, bottom: H - mb, start: o.pick != null ? o.pick : rows.length - 1, tip, label: o.label || 'Stacked chart', rest: o.pick, read: o.readId ? o.readId : el.querySelector('.chart-read'), readText: o.readText || ((i) => '<b>' + esc(o.tipTitle ? o.tipTitle(rows[i]) : xlab(rows[i])) + '</b> · ' + esc(inr(tot(rows[i])))), onClick: o.onClick });
+    const tip = (i) => { const r = rows[i]; return '<small>' + esc(o.tipTitle ? o.tipTitle(r) : xlab(r)) + '</small><strong>' + esc(FL(tot(r))) + '</strong>' + vis.filter((se) => num(r[se.key])).slice().reverse().map((se) => tipRow(se.color, se.label, esc(FS(num(r[se.key]))))).join('') + (o.tipExtra ? o.tipExtra(r) : ''); };
+    scrub(svg, { xs: rows.map((_, i) => cx(i)), band: Math.max(8, band * 0.92), top: mt - 4, bottom: H - mb, start: o.pick != null ? o.pick : rows.length - 1, tip, label: o.label || 'Stacked chart', rest: o.pick, read: o.readId ? o.readId : el.querySelector('.chart-read'), readText: o.readText || ((i) => '<b>' + esc(o.tipTitle ? o.tipTitle(rows[i]) : xlab(rows[i])) + '</b> · ' + esc(FL(tot(rows[i])))), onClick: o.onClick });
   }
 
   // horizontal bars you can click
@@ -2405,8 +2554,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     });
   }
   // ---- credit-card spending (statement data, Oct 2025 onward) ----
-  const CC_COL = { regalia: 'var(--accent)', amex: 'var(--c3)', sbicash: 'var(--c6)', flipkart: 'var(--saffron)', amazon: 'var(--c5)', travelone: 'var(--c6)', swiggy: 'var(--c7)', tataneu: 'var(--good)', other: 'var(--c4)' };
-  const CC_SHORT = { regalia: 'Regalia Gold', amex: 'Amex MRCC', sbicash: 'SBI Cashback', flipkart: 'Axis Flipkart', amazon: 'Amazon Pay', travelone: 'TravelOne', swiggy: 'Swiggy', tataneu: 'Tata Neu', axisrewards: 'Axis Rewards', coral: 'Coral', myzone: 'MyZone', federal: 'OneCard', uni: 'Uni Gold' };
+  const CC_COL = { regalia: 'var(--accent)', amex: 'var(--c3)', sbicash: 'var(--c6)', amazon: 'var(--c5)', other: 'var(--c4)' };
+  const CC_SHORT = { regalia: 'Regalia Gold', amex: 'Amex MRCC', sbicash: 'SBI Cashback', amazon: 'Amazon Pay' };
   const ccName = (id) => CC_SHORT[id] || ((S.cards[id] || {}).name) || id;
   const ccMeta = () => (S.ccspend || {}).meta || null;
   let ccCache = null;
@@ -2446,13 +2595,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     return { v: ccSum(id, a, b), to: last };
   }
 
-  const MERCH = [[/AMAZON/, 'Amazon'], [/FLIPKART/, 'Flipkart'], [/MAKE ?MY ?TRIP|MAKEMYTRIP|\bMMT\b/, 'MakeMyTrip'], [/INDIAN HOTELS|\bTAJ\b/, 'Taj (IHCL)'], [/GYFTR/, 'Gyftr vouchers'], [/SMARTBUY/, 'HDFC SmartBuy'], [/SWIGGY|BUNDL/, 'Swiggy'], [/ZOMATO/, 'Zomato'], [/MYNTRA/, 'Myntra'], [/INFINITI RETAIL|CROMA/, 'Croma'], [/POLICY ?BAZAAR/, 'Policybazaar'], [/AIRTEL/, 'Airtel'], [/YATRA/, 'Yatra'], [/UBER/, 'Uber'], [/BLINKIT|BLINK COMMERCE/, 'Blinkit'], [/ZEPTO/, 'Zepto'], [/BIGBASKET/, 'BigBasket'], [/NYKAA/, 'Nykaa'], [/MARRIOT|COURTYARD/, 'Marriott'], [/CONRA?D/, 'Conrad'], [/HYATT/, 'Hyatt'], [/INDIGO|INTERGLOBE/, 'IndiGo'], [/AIR INDIA/, 'Air India'], [/TATA ?PAYMENTS|TATA ?NEU/, 'Tata Neu'], [/MYGATE/, 'MyGate'], [/APPLE/, 'Apple'], [/GOOGLE|YOUTUBE/, 'Google'], [/IRCTC/, 'IRCTC'], [/PAYTM/, 'Paytm']];
+  const MERCH = [[/AMAZON/, 'Amazon'], [/FLIPKART/, 'Flipkart'], [/MAKE ?MY ?TRIP|MAKEMYTRIP|\bMMT\b/, 'MakeMyTrip'], [/INDIAN HOTELS|\bTAJ\b/, 'Taj (IHCL)'], [/GYFTR/, 'Gyftr vouchers'], [/SMARTBUY/, 'HDFC SmartBuy'], [/SWIGGY|BUNDL/, 'Swiggy'], [/ZOMATO/, 'Zomato'], [/MYNTRA/, 'Myntra'], [/CUSTCAP/, 'CustCap (wallet loads)'], [/INFINITI RETAIL|CROMA/, 'Croma'], [/POLICY ?BAZAAR/, 'Policybazaar'], [/AIRTEL/, 'Airtel'], [/YATRA/, 'Yatra'], [/UBER/, 'Uber'], [/BLINKIT|BLINK COMMERCE/, 'Blinkit'], [/ZEPTO/, 'Zepto'], [/BIGBASKET/, 'BigBasket'], [/NYKAA/, 'Nykaa'], [/MARRIOT|COURTYARD/, 'Marriott'], [/CONRA?D/, 'Conrad'], [/HYATT/, 'Hyatt'], [/INDIGO|INTERGLOBE/, 'IndiGo'], [/AIR INDIA/, 'Air India'], [/TATA ?PAYMENTS|TATA ?NEU/, 'Tata Neu'], [/MYGATE/, 'MyGate'], [/APPLE/, 'Apple'], [/GOOGLE|YOUTUBE/, 'Google'], [/IRCTC/, 'IRCTC'], [/PAYTM/, 'Paytm']];
   const merchKey = (m) => { const u = String(m).toUpperCase(); for (const [rx, k] of MERCH) if (rx.test(u)) return k; return u.replace(/[^A-Z ]/g, ' ').trim().split(/\s+/).slice(0, 2).map((w) => w.charAt(0) + w.slice(1).toLowerCase()).join(' '); };
   const ccState = { span: '12', card: 'all', cat: null, month: null, q: '', sort: 'date', limit: 25, view: 'list' };
   function ccSeries(months) {
     const meta = ccMeta(), big = Object.keys(meta.cards || {}).sort((a, b) => Object.values((meta.cards[b] || {}).months || {}).reduce((x, y) => x + y, 0) - Object.values((meta.cards[a] || {}).months || {}).reduce((x, y) => x + y, 0)).slice(0, 7);
     const rows = months.map((k) => { const r = { key: k }; let other = 0; Object.entries(meta.cards).forEach(([id, c]) => { const v = num((c.months || {})[k]); if (v == null) return; if (big.includes(id)) r[id] = v; else other += v; }); r.other = other; return r; });
-    const series = big.map((id) => ({ key: id, label: CC_SHORT[id], color: CC_COL[id] })).concat([{ key: 'other', label: 'Other cards', color: CC_COL.other }]);
+    const series = big.map((id, i) => ({ key: id, label: ccName(id), color: CC_COL[id] || ['var(--accent)', 'var(--c3)', 'var(--c6)', 'var(--c5)', 'var(--saffron)', 'var(--c7)', 'var(--good)'][i % 7] })).concat([{ key: 'other', label: 'Other cards', color: CC_COL.other }]);
     return { rows, series };
   }
   const CCS_HTML = $('cards-spend') ? $('cards-spend').innerHTML : '';
@@ -2716,7 +2865,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const leg = (segs) => '<div class="ins-leg">' + segs.map((x, i) => '<button type="button" data-k="' + i + '"' + (x.priv ? ' class="ins-priv"' : '') + '><i style="background:' + x.c + '"></i><span>' + esc(x.l) + '</span><b>' + esc(short(x.v)) + '</b></button>').join('') + '</div>';
     const tile = (emo, label, v, sub, segs, priv) => '<div class="moment ins-pub" data-go="insurance" role="link" tabindex="0" title="Open insurance"><span class="mhead"><span class="emo" aria-hidden="true">' + emo + '</span><span class="label">' + esc(label) + '</span></span><span class="v' + (priv ? ' ins-priv' : '') + '">' + v + '</span>' + (() => { const t = segs.reduce((a, x) => a + x.v, 0) || 1; return '<div class="ins-split mbar">' + segs.map((x) => '<i title="' + esc(x.l) + '" style="width:' + (x.v / t * 100) + '%;background:' + x.c + '"></i>').join('') + '</div><div class="ins-key mkey">' + segs.map((x) => '<span' + (x.priv ? ' class="ins-priv"' : '') + '><i style="background:' + x.c + '"></i>' + esc(x.l) + ' ' + esc(short(x.v)) + '</span>').join('') + '</div>'; })() + (sub ? '<span class="msub">' + sub + '</span>' : '') + '</div>';
     const out = [], term = all.filter((p) => p.kind === 'term').sort((a, b) => (a.order ?? 9) - (b.order ?? 9));
-    if (term.length) { const segs = term.map((p, i) => ({ l: p.scope === 'Work' ? 'Employer' : 'Personal', v: num(p.cover) || 0, c: i ? 'var(--c3)' : 'var(--accent)', priv: p.scope === 'Work' })), tot = segs.reduce((a, x) => a + x.v, 0), loan = num((S.loans.home || {}).outstanding);
+    if (term.length) { const segs = term.map((p, i) => ({ l: p.scope === 'Work' ? 'Employer group' : (p.insurer || 'Personal').replace(/ Life| Allianz/g, ''), v: num(p.cover) || 0, c: i ? 'var(--c3)' : 'var(--accent)', priv: p.scope === 'Work' })), tot = segs.reduce((a, x) => a + x.v, 0), loan = num((S.loans.home || {}).outstanding);
       out.push(tile('🛡️', 'Term life cover', esc(short(tot)), loan ? '<span class="ins-priv">' + (tot / loan).toFixed(1) + '×</span> the home loan left (' + esc(short(loan)) + ')' : 'Personal + employer', segs, true)); }
     const hp = all.filter((p) => p.kind === 'health' && p.scope !== 'Parents'), asp = hp.find((p) => num(p.base)), gmc = hp.find((p) => p !== asp), par = all.find((p) => p.scope === 'Parents');
     if (hp.length) { const segs = [];
@@ -2790,10 +2939,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (insHist === 'all') {
       const fyOf = (d) => { const y = +d.slice(0, 4), m = +d.slice(5, 7), a = m >= 4 ? y : y - 1; return a + '-' + String(a + 1).slice(2); };
       const nd = new Date(), curFy = fyOf(nd.getFullYear() + '-' + String(nd.getMonth() + 1).padStart(2, '0'));
-      const T = {}, H = {}, tp = Object.values(pol).find((x) => x.kind === 'term' && (x.history || []).length) || {}, hpol = Object.values(pol).find((x) => x.kind === 'health' && (x.history || []).length) || {};
-      (tp.history || []).forEach((r) => { const k = r.y === 'Now' ? curFy : /^\d{4}$/.test(r.y) && tp.start && tp.start.slice(0, 4) === r.y ? fyOf(tp.start) : r.y; T[k] = num(r.amt) || 0; });
-      (hpol.history || []).forEach((r) => { H[r.y] = num(r.amt) || 0; });
-      const tStart = tp.start ? fyOf(tp.start) : null;
+      const T = {}, H = {};
+      const tP = Object.values(pol).find((x) => x.kind === 'term' && (x.history || []).length) || {}, hP = Object.values(pol).find((x) => x.kind === 'health' && (x.history || []).length) || {};
+      ((tP || {}).history || []).forEach((r) => { const k = r.y === 'Now' ? curFy : /^\d{4}$/.test(r.y) && tP.start && tP.start.slice(0, 4) === r.y ? fyOf(tP.start) : r.y; T[k] = num(r.amt) || 0; });
+      ((hP || {}).history || []).forEach((r) => { H[r.y] = num(r.amt) || 0; });
+      const tStart = tP.start ? fyOf(tP.start) : null;
       const crow = [...new Set(Object.keys(H).concat(Object.keys(T)))].sort().map((k) => ({ key: k, health: H[k] || 0, term: T[k] || 0, gap: tStart && k > tStart && T[k] == null }));
       const gaps = crow.filter((r) => r.gap).length;
       $('ins-hist-sub').textContent = 'Health + term, incl. GST, by financial year' + (gaps ? ' · term premiums for ' + gaps + ' year' + (gaps > 1 ? 's' : '') + ' not on file' : '');
@@ -2825,6 +2975,9 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   document.addEventListener('change', (ev) => {
     const t = ev.target;
     if (t.id === 'perk-filter') { perkFilter = t.value; renderPerks(); return; }
+    if (t.dataset && t.dataset.rwbal) { saveRwBal(t.dataset.rwbal, t.value); return; }
+    if (t.name === 'kind' && t.closest && t.closest('#rw-form')) { rwKind(); return; }
+    if (t.dataset && t.dataset.rwroute) { rwRoute[t.dataset.rwroute] = t.value; try { localStorage.setItem('pf-rw-route', JSON.stringify(rwRoute)); } catch (e) {} renderRewards(); return; }
     if (t.id === 'trend-range') { renderTrends(); return; }
     if (t.id === 'month') { sel = t.value; try { localStorage.setItem('md-month', sel); } catch (e) {} render(); return; }
     if (t.id === 'month-year') { const k = months().filter((x) => x.startsWith(t.value)).pop(); if (k) { sel = k; try { localStorage.setItem('md-month', sel); } catch (e) {} render(); } return; }
@@ -2974,6 +3127,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     renderInvest();
   });
 
+  document.addEventListener('submit', (ev) => { if (ev.target && ev.target.id === 'rw-form') { ev.preventDefault(); rwRecord(); } });
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest && ev.target.closest('#rw-add, #rw-cancel, [data-rwdel]'); if (!a) return;
+    if (a.id === 'rw-add' || a.id === 'rw-cancel') { const f = $('rw-form'), open = a.id === 'rw-add' ? f.hidden : false; f.hidden = !open; $('rw-add').setAttribute('aria-expanded', String(open)); if (open) { rwKind(); f.querySelector('[name=pts]').focus(); } return; }
+    if (!a.classList.contains('armed')) { a.classList.add('armed'); a.textContent = 'Confirm'; setTimeout(() => { if (a.isConnected) { a.classList.remove('armed'); a.textContent = 'Remove'; } }, 4000); return; }
+    rwDelete(a.dataset.rwdel);
+  });
   async function start() {
     if (window.__SNAPSHOT__) {
       document.querySelectorAll('.nojs-note').forEach((n) => n.remove());

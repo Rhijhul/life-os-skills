@@ -22,6 +22,8 @@ Connectors read data. They never send email, place orders or change accounts as 
 | Salary and bank | Salary slip; account balances | Mail connector for salary-credit alerts | Salary slip; balance screenshots |
 | Loans | Loan statement | Mail connector for EMI and statement emails | Latest loan statement |
 | Insurance | Policy schedule; renewal receipts | Mail connector or Drive for policy PDFs | Policy schedule PDFs and premium receipts |
+| Card rewards | Points balances and expiry per programme | Mail connector for statements; card apps (screenshots) | Statement points summary; each app's points and expiring-points screens |
+| Benchmarks | Index returns per fund and for US stocks | Market-data or aggregator tools; web search | Fund factsheets (benchmark name and returns) |
 | Notes, record of truth (optional) | The user's notes app | Notion MCP: read pages, create the monthly "Save this month" page | Not needed |
 | Scheduling (optional) | Agent's scheduler | Scheduled-task tools, for the weekly refresh | A checklist the user pastes each week |
 
