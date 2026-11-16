@@ -1,6 +1,6 @@
 # Personal Finance Dashboard: skill package
 
-A portable skill for building your own interactive personal-finance dashboard with an AI assistant. It covers cards, spending and rewards points, investments, retirement, loans and insurance.
+A portable skill for building your own interactive personal-finance dashboard with an AI assistant. It covers cards, spending and rewards points, savings accounts, net worth, tax, investments, retirement, loans and insurance.
 
 ## How to use it
 
@@ -17,7 +17,7 @@ It works in five stages:
 1. Setup
 2. Cards: statements for the last 12 months, plus points balances from each card app
 3. Investments: broker holdings and tradebook, mutual-fund statement (CAS), US holdings, EPF/PPF/NPS balances
-4. Salary, cash and loans
+4. Salary, savings accounts, tax, cash and loans: payslip, bank balances, AIS/TIS, last filed returns
 5. Insurance: policy schedules
 
 Connectors such as your broker, an investment aggregator, email or Notion can speed this up. They are optional.

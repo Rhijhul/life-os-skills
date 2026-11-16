@@ -28,7 +28,8 @@
 },
 "notion_parent": "",
 "last_updated": "2026-11-14T09:00:00Z",
-"last_updated_by": "sample data"
+"last_updated_by": "sample data",
+"emi_topup_day": 2
 }
 },
 "loans": {
@@ -6201,6 +6202,187 @@
 }
 ]
 }
+}
+},
+"bank": {
+"hdfc": {
+"name": "HDFC Bank",
+"order": 1,
+"role": "Salary account",
+"tag": "Salary",
+"need": "floor",
+"bal": 206400,
+"asof": "2026-11-14",
+"src": "Sample",
+"hist": {
+"2026-10": 197100,
+"2026-11": 206400
+},
+"note": "Salary lands here; card bills are paid from it and the travel fund sits in it."
+},
+"axis": {
+"name": "Axis Bank",
+"order": 2,
+"role": "Running account",
+"tag": "Running",
+"need": "float",
+"bal": 5200,
+"asof": "2026-11-14",
+"src": "Sample",
+"hist": {
+"2026-11": 5200
+},
+"note": "Petty cash and card auto-debits."
+},
+"kotak": {
+"name": "Kotak Bank",
+"order": 3,
+"role": "Emergency fund",
+"tag": "Emergency",
+"need": "target",
+"target": "ef",
+"bal": 112000,
+"asof": "2026-11-14",
+"src": "Sample",
+"hist": {
+"2026-11": 112000
+}
+},
+"idfc": {
+"name": "IDFC First Bank",
+"order": 4,
+"role": "Home-loan EMI account",
+"tag": "EMI",
+"need": "emi",
+"loan": "home",
+"bal": 900,
+"asof": "2026-11-14",
+"src": "Sample",
+"hist": {
+"2026-11": 900
+},
+"note": "EMI money is moved here after salary; the EMI is debited on the 5th."
+},
+"federal": {
+"name": "Federal Bank",
+"order": 5,
+"role": "US investing account",
+"tag": "US transfers",
+"need": null,
+"bal": 3100,
+"asof": "2026-11-14",
+"src": "Sample",
+"hist": {
+"2026-11": 3100
+}
+}
+},
+"tax": {
+"fy2026-27": {
+"fy": "2026-27",
+"label": "Tax year 2026-27",
+"regime": "new",
+"asof": "2026-11-14",
+"src": "Sample payslip and capital-gains reports",
+"salary": {
+"ytd_gross": 826000,
+"ytd_to": "2026-10",
+"monthly": 118000,
+"extras_note": "",
+"bonus": null,
+"pt_ytd": 1400,
+"epf_ytd": 75600
+},
+"tds": {
+"months": {
+"2026-04": 6900,
+"2026-05": 6900,
+"2026-06": 6900,
+"2026-07": 6900,
+"2026-08": 6900,
+"2026-09": 7100,
+"2026-10": 7100
+},
+"monthly_next": 7100,
+"src": "Payslip"
+},
+"cg": [
+{
+"id": "mf",
+"src": "Mutual funds (sample report)",
+"asof": "2026-11-10",
+"stcg_eq": 4200,
+"ltcg_eq": 38600,
+"stcg_other": 0,
+"note": "Sample: one equity fund switched in June"
+},
+{
+"id": "stocks",
+"src": "Indian stocks (sample tax P&L)",
+"asof": "2026-11-12",
+"stcg_eq": -6100,
+"ltcg_eq": 12400,
+"note": "Sample: two sales"
+},
+{
+"id": "us",
+"src": "US stocks",
+"asof": "2026-11-12",
+"stcg_other": 0,
+"ltcg_other": 0,
+"note": "No US sales this year"
+}
+],
+"spec": {
+"cy": 0,
+"src": "No intraday trades"
+},
+"other": {
+"div_in": 2800,
+"div_us": 0,
+"us_tax_withheld": 0,
+"interest_sb": null
+},
+"losses_cf": [],
+"lrs": {
+"ytd": 24000
+},
+"returns": [
+{
+"ay": "2026-27",
+"fy": "2025-26",
+"form": "ITR-2",
+"filed": "2026-07-22",
+"regime": "new",
+"income": 1210000,
+"tax": 0,
+"tds": 18400,
+"adv_tax": 0,
+"sa_tax": 0,
+"tcs": 0,
+"refund": 18400,
+"refund_got": true
+},
+{
+"ay": "2025-26",
+"fy": "2024-25",
+"form": "ITR-1",
+"filed": "2025-07-30",
+"regime": "new",
+"income": 1080000,
+"tax": 49920,
+"tds": 52300,
+"adv_tax": 0,
+"sa_tax": 0,
+"tcs": 0,
+"refund": 2380,
+"refund_got": true
+}
+],
+"todo": [
+"November payslip",
+"Savings-account interest for the year"
+]
 }
 }
 }

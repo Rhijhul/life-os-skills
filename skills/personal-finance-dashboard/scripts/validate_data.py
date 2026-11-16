@@ -9,7 +9,7 @@ from collections import defaultdict
 d = json.load(open(sys.argv[1], encoding='utf-8'))
 E, W = [], []
 err, warn = E.append, W.append
-COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'trend']
+COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'trend', 'rewards', 'bank', 'tax']
 for c in COLLS:
     if c not in d: warn(f'collection "{c}" missing (its section will show as not loaded)')
 st = (d.get('settings') or {}).get('main')
@@ -36,6 +36,17 @@ nongold = [r for r in eq if r.get('ticker') != 'GOLDBEES']
 if nongold:
     w = sum(r.get('weight') or 0 for r in nongold)
     if abs(w - 100) > 0.6: warn(f'stock weights add to {w:.2f}% (should be ~100%, excluding GoldBEES)')
+for bid, b in (d.get('bank') or {}).items():
+    if not b.get('name'): err(f'bank/{bid}: name is required')
+    if b.get('need') not in (None, 'floor', 'float', 'target', 'emi', 'hold'): err(f'bank/{bid}.need must be floor|float|target|emi|hold|null')
+    if b.get('need') == 'emi' and b.get('loan', 'home') not in loans: warn(f'bank/{bid}: loan "{b.get("loan", "home")}" not found in loans')
+    if b.get('need') == 'target' and b.get('target', 'ef') not in (d.get('targets') or {}): warn(f'bank/{bid}: target "{b.get("target", "ef")}" not found in targets')
+    if b.get('need') == 'hold' and b.get('keep') is None: warn(f'bank/{bid}: need "hold" without keep')
+    if b.get('bal') is not None and not isinstance(b['bal'], (int, float)): err(f'bank/{bid}.bal must be a number')
+for tid, t in (d.get('tax') or {}).items():
+    if not re.fullmatch(r'fy\d{4}-\d{2}', tid): err(f'tax/{tid}: id must be fy<YYYY-YY>')
+    if t.get('regime') not in ('new', 'old'): warn(f'tax/{tid}.regime should be new or old')
+    if not isinstance((t.get('salary') or {}).get('ytd_gross'), (int, float)): warn(f'tax/{tid}.salary.ytd_gross missing')
 for fid, f in (d.get('mf') or {}).items():
     if fid != 'usstocks' and f.get('bucket', 'equity') not in ('equity', 'mixed', 'debt', 'us'): err(f'mf/{fid}.bucket must be equity|mixed|debt|us')
 cc = d.get('ccspend') or {}

@@ -25,7 +25,7 @@ The page never contains hard-coded personal figures. It reads everything from th
    - **Absent (published on claude.ai):** the script calls `await window.claude.use('db')`. For each collection in `COLLS` it subscribes with `db.collection(name).onSnapshot(cb)`; each snapshot replaces `S[name]` with `{ [doc.id]: doc.data() }`. Rendering is batched with `requestAnimationFrame` and re-runs whenever any collection updates.
 2. The collection list is fixed in code:
    ```js
-   const COLLS = ['months','targets','cards','actions','mf','corpus','trend','loans','settings','ppf','nps','invest','perks','ccspend','insurance','rewards'];
+   const COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'corpus', 'trend', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'rewards', 'bank', 'tax'];
    ```
    `corpus` is reserved (unused in the sample). A new collection needs one line here plus a render function.
 3. Data from claude.ai arrives **deep-frozen**. Code must never mutate `S.*` objects; it builds copies (`Object.assign({}, doc, changes)`).
@@ -94,7 +94,9 @@ Conventions:
 | birth | string `YYYY-MM-DD` | Date of birth; retirement month = birth year + 60, same month |
 | bank_floor | number | Minimum salary-account balance after bills (default 50000) |
 | crash_floor | number | Lower floor allowed during a market crash (default 40000) |
-| axis_float | number | Small float kept for card auto-debits (label "card float") |
+| axis_float | number | Petty cash kept in the running account (also covers card auto-debits) |
+| emi_topup_day | number | Day the EMI money must reach the EMI account (default 3); before it the EMI account is not flagged as short |
+| sbi_locker | `{amt, fund_by 'MM-DD', until 'MM-DD', note}` | Optional yearly locker fee held in the EMI account from `fund_by` until `until` (or until `months/<YYYY-MM>.locker_debited`) |
 | regular_threshold | number | Free cash needed at month start before regular stock buying |
 | regular_max | number | Monthly cap for regular stock buying |
 | dip_max | number | Monthly cap when buying a market dip |
@@ -106,7 +108,7 @@ Conventions:
 | life_cover | number | Optional stored total (the page recomputes it) |
 | epf_monthly | number | Monthly EPF contribution (you + employer, excluding EPS) |
 | epf_pension | number | EPS pension share inside the EPF balance (excluded from the corpus) |
-| home_value | number | Your estimate of the home's market value |
+| home_value | number | Your estimate of the home's market value (editable in the Net worth panel and under Facts) |
 | loan_original | number | Original home-loan principal (fallback if `loans/home.original` is missing) |
 | stock_buy_yearly, us_buy_yearly | number | Yearly Indian / US direct-stock buying used by the retirement model |
 | us_target_pct | number | Comparison point for the US share of retirement equity |
@@ -332,6 +334,33 @@ A new document starts each April.
 | points | object | Statement-by-statement history for the main points card: `{label, note, rows:[{m, date, open, earned, bonus, red, adj, close}]}`. `adj` = points removed (refund reversals, EMI conversions, lapses); explain large removals in `note`. |
 | cashback | object | `{note, series:[{key, label}], rows:[{m, <key>: ₹}]}`, one series per cashback card |
 
+### 2.15 `bank/<accountId>` (savings accounts; one per bank account)
+
+| Key | Type | Meaning |
+|---|---|---|
+| name, role, tag, order | string / number | Bank name, one-line role, short pill text, display order |
+| need | `'floor'` \| `'float'` \| `'target'` \| `'emi'` \| `'hold'` \| null | What the account must hold: floor = goal reserve + `bank_floor` (salary account); float = `axis_float` (petty cash); target = a `targets` goal (emergency fund, whole balance earmarked); emi = next EMI of `loan` (+ locker fee in season); hold = `keep` (e.g. a tenant's deposit); null = all free |
+| target, loan | string | `targets` id for need `target`; `loans` id for need `emi` |
+| keep, keep_note | number, string | Amount and reason for need `hold` (editable on the page) |
+| bal, asof, src | number, date, string | Current balance, date, source ("Typed in" when edited on the page) |
+| hist | `{YYYY-MM: balance}` | Month-end balances (the page writes the current month when you type a balance) |
+| note | string | One line shown in the detail row |
+
+### 2.16 `tax/fy<YYYY-YY>` (one per tax year, e.g. `fy2026-27`)
+
+| Key | Type | Meaning |
+|---|---|---|
+| fy, label, regime, asof, src | string | Tax year, label, `new` or `old`, freshness and sources |
+| salary | `{ytd_gross, ytd_to 'YYYY-MM', monthly, extras_note, bonus, pt_ytd, epf_ytd}` | Payslip April-to-date gross, monthly gross for the rest of the year, bonus (typed on the page) |
+| tds | `{months:{YYYY-MM: ₹}, monthly_next, src}` | TDS deducted per month and the expected monthly figure to March |
+| cg | array | `{id, src, asof, stcg_eq, ltcg_eq, stcg_other, stcg_other_loss, ltcg_other, note}` per source (mutual funds, Indian stocks, US stocks) |
+| spec | `{cy, src}` | Intraday (speculative) profit or loss this year |
+| other | `{div_in, div_us, us_tax_withheld, interest_sb}` | Dividends, US tax withheld, savings interest (typed on the page) |
+| losses_cf | array | `{ay, kind, amt, last_ay}` losses carried forward |
+| lrs | `{ytd}` | Money sent abroad this year (TCS context) |
+| returns | array, newest first | `{ay, fy, form, filed, regime, income, tax, tds, adv_tax, sa_tax, tcs, refund, refund_got}` past returns; missing values show "—" |
+| todo | string[] | Documents still needed this year |
+
 Rules:
 
 - The `returns` cash flows are negative for money put in and positive for money taken out.
@@ -546,11 +575,14 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 
 ### 4.2 Overview (`#overview`)
 
-**Hero floor card ("Protected salary-account balance"):**
+**Hero card ("Spare cash"):**
 
-- `floor = travel_fund + bank_floor`
-- `crash = travel_fund + crash_floor`
-- Shows both numbers and the travel fund.
+- Big number = Σ over all `bank` accounts except need `target` (emergency fund) of `max(0, bal − what it must hold)`, with the latest balance date.
+- One compact row per account: name · free ₹ · why (above the floor / above petty cash / EMI held or "top up by <date>" / above the deposit / all free). The salary-account row turns amber under ₹10K above the floor and red below it. Rows open Savings.
+- A highlighted line: "Move ₹X to <salary account>", listing the free money sitting in other accounts.
+- Tap the card for the floor breakdown: `floor = goal reserve (travel_fund) + bank_floor`, `crash = travel_fund + crash_floor`.
+
+**Needs attention** (pills under the hero; red, then amber, then blue; tap opens the section): card bills / EMI overdue or due in 3 days; savings accounts short of what they must hold (the EMI account only from `emi_topup_day`); salary account under ₹10K above its floor; balances older than 35 days; points expiring in 60 days, vouchers in 30; insurance renewals in 30 days; half-yearly review due; tax refund not received 45 days after filing; locker fee to move in the next 5 days.
 
 **Tiles:**
 
@@ -559,8 +591,8 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
     - **Regular mode:** `free_cash ≥ regular_threshold`; `bought + amt ≤ regular_max`; `after ≥ bank_floor + axis_float`.
     - **Dip mode:** `bought + amt ≤ dip_max`; `after ≥ bank_floor`.
     - **Crash mode:** `after ≥ crash_floor + axis_float`.
-- **Free cash:** `months.free_cash`; chip "Below the floor" if `deploy < 0`.
-- **Own card spend:** `card_net`, with the change vs the previous month and the bill total.
+- **Net worth:** financial assets + `home_value` − active loans (loans with `paid_by` left out), change vs last month; tap opens the Net worth section.
+- **Card spend:** `card_net`, with the change vs the previous month.
 - **Net invested** (FY Apr–Mar or calendar Jan–Dec toggle): see 4.6.
 
 **Money moments** (8 cards):
@@ -599,7 +631,16 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
   - "What drove the spending change": category deltas between the last two statement months, from `ccspend` (collapsible).
   - "One-off items": transactions over ₹10K.
 
-### 4.4 Wealth mix (`#wealth`)
+### 4.4 Net worth (`#wealth`)
+
+**Net worth card** (top of the section; two equal halves split by a thin line):
+
+- Left: net worth (big) and change vs last month; then three ruled rows, label left and full-rupee value right: Financial assets, + Home (editable, same field as Facts), − Home loan (red).
+- Rows are interactive: hover, focus or tap highlights the row, dims the others and fills a detail line (share of what you own and monthly change; share of the home still on loan and the equity; EMI, rate and end year). Financial assets opens Investments, Home loan opens Loans, Home focuses the value. Default line: "Net worth = financial assets + home − home loan".
+- Right: "Net worth by month" columns (one per month, value on top, latest solid, hover/tap readout). Earlier months use today's home value and loan.
+- Phones: the chart moves under the rows.
+
+**Savings → wealth link:** at render time (never in the database) the emergency fund = the `target` account's balance; "Other bank cash" = all balances − goal reserve − emergency fund − `hold` amounts; Cash class = goal reserve + emergency + other bank cash. The latest `trend` point gets the same difference.
 
 **Tracked corpus over time:**
 
@@ -675,7 +716,7 @@ Outputs:
 
 - Reviews happen every May and November. "Record this review" (online only, one per month) saves `{date, actual, next:{date, value}, proj60, need, end, spend, path}`, where `actual` = today's corpus, `next.value` = the plan's corpus 6 months ahead, and `path` = the monthly projected corpus in ₹ thousands from that month to 60.
 - On the curve: a dashed grey line = the plan saved at the first review (its `path`); green dots joined by a line = the actual corpus at each review (plus today). The x-axis starts at the first review.
-- Panel: a "Today vs plan" box (actual vs the last review's path interpolated to today, ₹ and %), plan-vs-actual columns for the last 4 reviews (green beat / red miss, gap above, tap for numbers), and a table (actual, plan expected, gap, projected at 60, needed, expect next, status On track / Behind path / Short at 60).
+- Panel: a "Today vs plan" box on one line, "Today vs <date> plan – ₹corpus | Plan ₹X · ahead/behind ₹Y (%) · at 60: ₹A Cr vs ₹B Cr needed" (actual vs the last review's path interpolated to today; full width until the beat/miss columns exist), plan-vs-actual columns for the last 4 reviews (green beat / red miss, gap above, tap for numbers), and a table (actual, plan expected, gap, projected at 60, needed, expect next, status On track / Behind path / Short at 60).
 - A chip shows "Next review <date>" or "Review due now".
 
 ### 4.6 Investments (`#invest`)
@@ -845,6 +886,21 @@ Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 - Editable home value.
 - Life cover = `life_cover_personal + employer_cover_multiple × ctc_fixed` (CTC editable; kept per browser).
 
+### 4.16 Savings accounts (`#savings`)
+
+- Tiles: Total balance · Earmarked (what each account must hold; the whole emergency-fund balance) · Available balance (total − earmarked).
+- Share bar: one segment per bank (hover/tap tooltip with ₹ and %); the legend shows ₹ and % and jumps to the card.
+- One slim card per account (same soft tint for all): bank name and balance (borderless; click to edit, Enter saves), then the need label and one chip: "₹X above", "Short ₹X", "% · ₹X to go", "Top up by <date>", "All free". Tap the name for the detail line (need breakdown, updated date, change vs last month, note; `keep` edited there).
+- EMI account: holds the next EMI from `emi_topup_day` until it is paid; optional locker fee (`settings.sbi_locker`) from `fund_by` until `until`. Bills shows "Locker fee: move to the EMI account" (tick `locker_paid`) and "Locker fee debited" (tick `locker_debited`).
+- Online, a typed balance saves to `bank/<id>` (bal, asof today, src "Typed in", hist for the month); offline it stays in the browser.
+
+### 4.17 Tax (`#tax`)
+
+- Uses the latest `tax/fy*` document. New regime (tax year 2026-27): salary for the year = `ytd_gross + monthly × months left + bonus` − ₹75,000 standard deduction; slab income adds dividends, savings interest and net non-equity short-term gains. Slabs 0–4L nil, then 5% steps per 4L to 24L, 30% above; 87A rebate to ₹12L; 4% cess.
+- Capital gains: short-term losses set off first against slab-rate gains, then 20% equity STCG, then LTCG; LTCG 12.5% above ₹1.25L (meter of the exemption used and left). Intraday losses stay apart.
+- KPIs: tax for the year, TDS so far (and by March), likely to pay / refund (advance tax flagged above ₹10K), last return refund. TDS-by-month bars (actual solid, expected striped). Past returns table, losses carried forward, "Still needed" list.
+- Bonus and savings interest are editable (online to the tax doc, offline to the browser). The eye toggle masks the section. A tracker, not tax advice.
+
 ---
 
 ## 5. Refresh and maintenance SOP
@@ -901,14 +957,17 @@ Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 3. **Loans:** update `outstanding` (and `emis_left`) after each EMI.
 4. **Rewards:** add the new statement to `rewards/main.points.rows` and `cashback.rows`; update each programme's `bal`, `asof`, `src` and `expiring`. Keep redemptions the page recorded.
 5. **Actions:** add next month's to-dos; mark done ones.
-6. State the bank floor in the summary: `travel_fund + bank_floor`, plus the crash figure `travel_fund + crash_floor`.
+6. **Savings:** type each balance on the Savings page (or write `bank/<id>` bal, asof, src, hist). The emergency-fund account should match `months.emergency_fund`.
+7. **Tax:** from the payslip update `tax/fy*` salary (`ytd_gross`, `ytd_to`) and `tds.months`; after any sale add capital-gains rows; once a year add the filed return to `returns` and set `refund_got` when it arrives.
+8. State the bank floor in the summary: `travel_fund + bank_floor`, plus the crash figure `travel_fund + crash_floor`.
 
 ### 5.4 Documents to collect each month
 
 - Credit-card statements, or exports from the card apps.
 - Salary slip.
-- Savings-account balances.
-- Broker tradebook.
+- Savings-account balances (one per account).
+- Broker tradebook and tax P&L (after any sale).
+- AIS/TIS once a quarter (dividends, TDS); last year's filed return once a year.
 - Mutual-fund CAS (CAMS + KFintech).
 - Home-loan statement.
 
@@ -984,7 +1043,8 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 1. [ASK] Monthly take-home salary and other income (rent, interest, freelance; if any).
 2. [ASK] Fixed annual CTC (for the employer life cover) and the employer cover multiple (often 3×).
 3. [ASK] Monthly EPF contribution (you + employer, excluding EPS).
-4. [ASK] Savings accounts: salary account, emergency-fund account, goal accounts, with current balances.
+4. [ASK] Savings accounts: for each bank account, its role and what it must hold (salary floor, petty cash, emergency fund, EMI money, a deposit held for someone, or nothing), plus the current balance. Any yearly charge (e.g. a locker fee) and when it is debited. → `bank/*`, `settings.axis_float`, `settings.emi_topup_day`, `settings.sbi_locker`.
+4a. [DOC] Tax: latest payslip (April-to-date gross and TDS), AIS/TIS, capital-gains reports, last filed returns. [CALC] Write `tax/fy<YYYY-YY>`.
 5. [ASK] Bank floor (minimum balance after bills), crash floor, small card float.
 6. [ASK] Stock-buying rules, if any: regular threshold, regular monthly cap, dip cap. Defaults are offered if none.
 7. [ASK] Loans: for each, name, lender, original amount, outstanding, EMI, rate, end, and who pays it. [DOC] Latest home-loan statement.
@@ -1028,4 +1088,6 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] Theme switch: Light by default, Dark readable, choice remembered.
 - [ ] Performance vs benchmark: every fund has its own index; the 3M / 6M / 12M / Since bought buttons all draw.
 - [ ] Half-yearly check renders with no reviews, one review and several; the Retirement panel does not scroll sideways at 400px.
+- [ ] Spare cash = Σ free money per account; the "Move to" line lists only accounts with free money; the Savings tiles and Net worth card agree with it.
+- [ ] Tax: totals match a hand calculation for the sample; editing bonus or interest updates the estimate; works offline.
 - [ ] Rewards: wallet total = Σ worth; recording and removing a redemption moves the balance both ways.

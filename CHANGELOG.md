@@ -2,6 +2,16 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.3 · 17-Nov-2026
+
+- **Savings accounts (new):** one slim card per bank with a click-to-edit balance and what it must hold (salary floor, petty cash, emergency fund, next EMI, a deposit held for someone, or nothing); Total / Earmarked / Available tiles and a share bar. New collection `bank/*`.
+- **Overview:** first card is now "Spare cash": free money per account and a "Move ₹X to <salary account>" line; Needs attention pills (bills due, accounts short, low floor, stale balances, expiring points, renewals, review due, tax refund pending); Net worth tile; shorter tile text.
+- **Net worth (new section):** financial assets + home − loans in a 50:50 card, interactive rows (hover detail, click through to Investments / Loans), editable home value, net worth by month columns with values. Savings balances now feed the emergency fund and a new "Other bank cash" line in the Cash class.
+- **Tax (new):** tax-year estimate under the new regime (2026-27 slabs, 87A rebate, cess), capital-gains set-off and LTCG exemption meter, TDS by month, past returns, losses carried forward, refund alert. New collection `tax/fy*`.
+- **Retirement:** "Today vs plan" on one concise line; tracked corpus chart on a real time axis.
+- **Optional yearly charge** (e.g. a bank locker fee) held in the EMI account in season, with Bills ticks (`settings.sbi_locker`).
+- **Docs and scripts:** SOP schema 2.15–2.16 and views 4.16–4.17, onboarding and monthly steps for balances and tax; SKILL rules 10–11; `validate_data.py` checks `bank` and `tax`.
+
 ## Personal Finance Dashboard v1.2 · 16-Nov-2026
 
 - **Cards → Rewards:** points wallet with ₹ per point for each redemption route, one row per points account, editable balances, a "Record a redemption" form (vouchers, transfers to partners, statement credit), expiry list, which-card-for-which-spend, points by statement and cashback by statement. New collection `rewards/main`.

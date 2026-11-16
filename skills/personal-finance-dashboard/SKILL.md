@@ -8,7 +8,8 @@ description: Build and maintain an interactive Indian personal-finance dashboard
 This skill builds a personal-finance dashboard for one person, using their own data. It is one self-contained HTML page with a small database behind it. Every visual, chart and interaction comes from a tested template.
 
 What the finished page covers:
-- monthly cash flow and a protected bank balance
+- monthly cash flow and spare cash across your bank accounts (what each must hold, what to move)
+- savings accounts, net worth (assets + home − loans) and a tax-year estimate
 - card spending
 - investments (Indian stocks, mutual funds, US stocks, EPF, PPF, NPS)
 - a retirement-at-60 projection
@@ -62,6 +63,8 @@ The skill works with any agent that can read files and run Python. Hosting the p
    - If an index has no data, rebuild it from component prices or use a labelled proxy, and say "approximate" in one line.
 8. **Keep notes short.** Notes under charts are one or two lines; analyst notes are at most 8 one-line bullets.
 9. **One row per points account.** Cards that earn into one rewards balance share one wallet row in `rewards/main`.
+10. **Every bank account says what it must hold.** Each `bank/<id>` record has a `need` (floor, float, target, emi, hold or none); spare cash is everything above it. The emergency-fund account is never counted as spare.
+11. **Tax is a tracker, not advice.** Build `tax/fy<YYYY-YY>` only from the user's payslip, AIS/TIS, capital-gains reports and filed returns; leave unknowns `null` and list them in `todo`.
 
 ## Workflow
 
@@ -76,7 +79,7 @@ Follow `references/sop-and-spec.md` section 6. The stages are:
 1. Setup
 2. Cards
 3. Investments
-4. Salary, cash and loans
+4. Salary, savings accounts, tax, cash and loans
 5. Insurance
 
 How to run each stage:
@@ -117,13 +120,13 @@ Run the checklist in SOP section 7:
 - no horizontal scroll at 400px;
 - light and dark mode are both readable;
 - the eye toggle hides salary and investment figures but not card spending or bills;
-- totals reconcile across Overview, Wealth mix and Investments.
+- totals reconcile across Overview, Net worth, Savings and Investments.
 
 ### 6. Set up the routine
 
 Follow SOP section 5:
 - weekly portfolio refresh;
-- monthly cash-flow update with the documents list;
+- monthly cash-flow update with the documents list (including each bank balance and the payslip for Tax);
 - yearly rollovers.
 
 Every refresh writes only changed records, pinned to the version it read, in one batch. It updates `settings/main.last_updated` and never republishes the page. If the platform supports scheduled tasks, create the weekly one.
