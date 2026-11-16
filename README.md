@@ -10,7 +10,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 | Skill | What it builds | Status |
 |---|---|---|
-| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, card rewards, savings accounts, net worth, tax, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.3 |
+| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, card rewards, savings accounts, net worth, tax, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.4 |
 | Card statement analyser | Category spend, milestone and fee-waiver tracking from monthly statements | Planned |
 | Insurance review | Term and health cover gaps, premium history, renewals | Planned |
 
@@ -42,7 +42,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Try it in 10 seconds:** download [`sample-dashboard.html`](skills/personal-finance-dashboard/assets/sample-dashboard.html) and open it in Chrome or Safari.
 
-**What's new in v1.3** (17-Nov-2026): see the [changelog](CHANGELOG.md).
+**What's new in v1.4** (17-Nov-2026): see the [changelog](CHANGELOG.md).
 
 ## How to use a skill
 

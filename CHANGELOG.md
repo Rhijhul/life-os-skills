@@ -2,6 +2,15 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.4 · 17-Nov-2026
+
+- **Bills:** next month's card bills show under this month as soon as their statements arrive, with a Paid tick for paying early and reminders 3 days before each due date, across the month change.
+- **Month picker:** the next month appears as "<Mon> · next" once its first bill is in (trial); the page still opens on the current month, and empty sections say when they start.
+- **Overview:** Needs attention moved to the top of To-do, with a count badge on the To-do link, so the Overview is shorter.
+- **Wealth:** "Where the money is" bar is interactive (hover/tap readout, card highlight, click to card); the Cash group has its own accent colour.
+- **Layout:** sidebar spacing scales with window height so it never scrolls; action chips and labels stay on one line; GoldBEES row matches the stocks.
+- **Docs:** SOP for the next-month bills, upcoming month, Needs attention placement, sidebar spacing and the interactive bar.
+
 ## Personal Finance Dashboard v1.3 · 17-Nov-2026
 
 - **Savings accounts (new):** one slim card per bank with a click-to-edit balance and what it must hold (salary floor, petty cash, emergency fund, next EMI, a deposit held for someone, or nothing); Total / Earmarked / Available tiles and a share bar. New collection `bank/*`.

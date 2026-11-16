@@ -565,10 +565,11 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 ### 4.1 Sidebar
 
 - Brand (H1) and eye toggle.
-- Month picker: prev/next buttons, a month `<select>` and a year `<select>`, over all `months` docs.
+- Month picker: prev/next buttons, a month `<select>` and a year `<select>`, over all `months` docs. The next calendar month is listed as "<Mon> · next" as soon as a card bill for it exists (no `months` record needed). The page opens on the current calendar month (a saved choice wins).
 - "Updated …" line from `settings.main.last_updated`.
 - Status chip (month open/closed).
-- Nav (five groups).
+- Nav (five groups). The To-do link shows a count badge of Needs attention items, coloured by the most urgent; hidden when there are none.
+- Spacing scales with window height (`clamp()` on link padding, group-label padding and gaps) so the whole sidebar fits without scrolling from about 680px tall; below 730px tall links use 1px padding.
 - "Download offline copy" button.
 - Theme switch at the bottom: a minimal sun / moon pill. Light is the default whatever the device setting; the choice is kept per browser (`localStorage` `pf-theme`) and works offline. On phones it sits inside the open Sections menu.
 - The active nav link is highlighted by a scroll spy (top threshold 80px). A clicked link stays lit until the user scrolls with wheel, touch or keys.
@@ -582,7 +583,7 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 - A highlighted line: "Move ₹X to <salary account>", listing the free money sitting in other accounts.
 - Tap the card for the floor breakdown: `floor = goal reserve (travel_fund) + bank_floor`, `crash = travel_fund + crash_floor`.
 
-**Needs attention** (pills under the hero; red, then amber, then blue; tap opens the section): card bills / EMI overdue or due in 3 days; savings accounts short of what they must hold (the EMI account only from `emi_topup_day`); salary account under ₹10K above its floor; balances older than 35 days; points expiring in 60 days, vouchers in 30; insurance renewals in 30 days; half-yearly review due; tax refund not received 45 days after filing; locker fee to move in the next 5 days.
+**Needs attention** (shown at the top of To-do, not on the Overview; red, then amber, then blue; tap opens the section): card bills / EMI overdue or due in 3 days; savings accounts short of what they must hold (the EMI account only from `emi_topup_day`); salary account under ₹10K above its floor; balances older than 35 days; points expiring in 60 days, vouchers in 30; insurance renewals in 30 days; half-yearly review due; tax refund not received 45 days after filing; locker fee to move in the next 5 days.
 
 **Tiles:**
 
@@ -646,6 +647,8 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 
 - Line chart of `trend` with range (6M/1Y/All) and view (Weekly/Monthly).
 - Hover readout; "Snapshots & data entry" opens `invest/snapshot`.
+
+**Where the money is** (snapshot): group cards (Market-linked, Ring-fenced debt, Retirement locked, Cash for goals, Cash) each with a left accent; a stacked bar of every holding — hover/tap a segment to light it and outline its card, with a line under the bar (holding · ₹ · % of total · its group ₹ and %); click jumps to the card; hovering a card lights its segment; arrow keys when focused. Component cards carry a top accent in their group colour.
 
 **Tracked holdings by class:**
 
@@ -782,6 +785,8 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 - Chips: Paid / Due in N days / Overdue N days.
 - Header: outstanding total and the total of issued bills plus EMI.
 - Offline, ticks save to `localStorage` (`pf-off-ticks`).
+- **Due next month:** card bills whose due month is next month (statements that arrived this month) show in a block under this month's bills until next month's record exists: due-in-days chip, "Paid early" chip, ₹ still to pay, and a Paid tick that writes `cards/<id>.paid[<next month>]`. Needs attention warns 3 days before each such due date, across the month change.
+- **Upcoming month:** when the next month is picked before its record exists, status reads "Upcoming", Bills shows its card bills (ticks work; EMI and premium ticks open on the 1st), Stock budget and Card spend read "Starts in <Mon>", Income shows a note instead of an empty split; saving income or month ticks waits for the month record.
 
 ### 4.8 Targets (`#targets`)
 
@@ -856,6 +861,7 @@ Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 
 - `actions` for the selected month, sorted by due date, with amount.
 - Ticking writes `actions/<id>.done` (offline: `localStorage`).
+- Needs attention sits in its own box above the list (see 4.2): live checks, not records, so they clear by themselves.
 
 ### 4.13 Loans (`#loans`)
 
