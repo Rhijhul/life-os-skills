@@ -10,7 +10,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 | Skill | What it builds | Status |
 |---|---|---|
-| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, card rewards, savings accounts, net worth, tax, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.4 |
+| [Personal Finance Dashboard](skills/personal-finance-dashboard) | An interactive dashboard (India-first) covering monthly cash flow and a cash-flow forecast, cards and spending, investments (stocks, mutual funds, US stocks, EPF/PPF/NPS), a retirement-at-60 projection, card rewards, savings accounts, net worth, tax, goals, loans, bills and insurance. Works offline as a single file. | ✅ v1.5 |
 | Card statement analyser | Category spend, milestone and fee-waiver tracking from monthly statements | Planned |
 | Insurance review | Term and health cover gaps, premium history, renewals | Planned |
 
@@ -24,6 +24,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 <tr><td><img src="docs/images/performance.png" alt="Mutual funds vs their own benchmarks"></td><td><img src="docs/images/cards.png" alt="Cards and spending"></td></tr>
 <tr><td><img src="docs/images/rewards.png" alt="Card rewards"></td><td><img src="docs/images/insurance.png" alt="Insurance"></td></tr>
 <tr><td><img src="docs/images/targets.png" alt="Targets"></td><td><img src="docs/images/dark.png" alt="Dark mode"></td></tr>
+<tr><td colspan="2"><img src="docs/images/cashflow.png" alt="Cash flow ahead: summary cards, monthly surplus or shortfall, salary-account buffer forecast"></td></tr>
 <tr><td><img src="docs/images/mobile.png" alt="Phone view" width="260"></td><td></td></tr>
 </table>
 
@@ -42,7 +43,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Try it in 10 seconds:** download [`sample-dashboard.html`](skills/personal-finance-dashboard/assets/sample-dashboard.html) and open it in Chrome or Safari.
 
-**What's new in v1.4** (17-Nov-2026): see the [changelog](CHANGELOG.md).
+**What's new in v1.5** (18-Nov-2026): Cash flow ahead, a forecast to the financial-year end with action cards and editable months;: see the [changelog](CHANGELOG.md).
 
 ## How to use a skill
 

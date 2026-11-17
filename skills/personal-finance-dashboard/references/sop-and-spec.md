@@ -117,6 +117,7 @@ Conventions:
 | notion_parent | string | Notion page id for "Save this month" (optional) |
 | last_updated | ISO timestamp | Shown in the sidebar; set by every refresh |
 | last_updated_by | string | "weekly refresh", "monthly update", etc. |
+| cf | object | Cash flow assumptions and overrides: `hike_pct`, `hike_month` (1–12, month the raised pay is for), `net_share` (share of a gross raise that reaches take-home, default 0.64), `sip_step_pct`, `sip_step_from` (`YYYY-MM`, empty = with the raise), `stock_default` (future stock buys per month), `avg_n` (months averaged for card spend), `rent_until` (optional end date for other income), `ovr` `{YYYY-MM: {salary, other_income, sip, stocks}}` (one forecast month only), `saved` `{YYYY-MM: {at, rows[{k, inn, out, me}]}}` (dated forecast copies). Offline: `localStorage` `pf-cf` |
 
 ### 2.2 `months/<YYYY-MM>` (one per month)
 
@@ -135,6 +136,8 @@ Conventions:
 | emergency_fund, travel_fund | number | Balances after the additions |
 | free_cash | number | Salary-account balance after this month's bills, EMI and transfers |
 | other_credits | object | `{label: amount}` money received from others (optional) |
+| other_credits_meta | object | `{label: {date, desc, type, account, status, covers_card, pay_m}}` details for those receipts, written when one is edited on the Cash flow page (optional) |
+| sip_src, direct_equity_src | string | Where an edited `sip` / `direct_equity` came from (e.g. "Edited in Cash flow · 18 Nov 2026") |
 | stock_buys | array | `[{date, ticker, qty, price}]` (optional; feeds the stock budget) |
 | note | string | One or two sentences of context |
 
@@ -339,7 +342,7 @@ A new document starts each April.
 | Key | Type | Meaning |
 |---|---|---|
 | name, role, tag, order | string / number | Bank name, one-line role, short pill text, display order |
-| need | `'floor'` \| `'float'` \| `'target'` \| `'emi'` \| `'hold'` \| null | What the account must hold: floor = goal reserve + `bank_floor` (salary account); float = `axis_float` (petty cash); target = a `targets` goal (emergency fund, whole balance earmarked); emi = next EMI of `loan` (+ locker fee in season); hold = `keep` (e.g. a tenant's deposit); null = all free |
+| need | `'floor'` \| `'float'` \| `'target'` \| `'emi'` \| `'hold'` \| `'locked'` \| null | What the account must hold: floor = goal reserve + `bank_floor` (salary account); float = `axis_float` (petty cash); target = a `targets` goal (emergency fund, whole balance earmarked); emi = next EMI of `loan` (+ locker fee in season); hold = `keep` (e.g. a tenant's deposit); locked = the whole balance (a fixed deposit under lien, not spare cash); null = all free |
 | target, loan | string | `targets` id for need `target`; `loans` id for need `emi` |
 | keep, keep_note | number, string | Amount and reason for need `hold` (editable on the page) |
 | bal, asof, src | number, date, string | Current balance, date, source ("Typed in" when edited on the page) |
@@ -365,6 +368,20 @@ Rules:
 
 - The `returns` cash flows are negative for money put in and positive for money taken out.
 - `flows` holds monthly gross amounts (positive numbers).
+
+### 2.17 `inflows/<id>` (other money in; one per receipt)
+
+| Key | Type | Meaning |
+|---|---|---|
+| date, m | date, `YYYY-MM` | Receipt date and its month |
+| amt | number | Amount |
+| desc, type | string | Description; type: Family reimbursement, Employer reimbursement, Flex claim, Tax refund, Gift, Other |
+| account | string | `bank` id it landed in |
+| status | `actual` \| `expected` | Expected receipts count in forecast months only; in a recorded month they are listed but not counted until marked actual |
+| covers_card, pay_m | boolean, `YYYY-MM` | The receipt repays a card payment made in month `pay_m`; that month's card payments rise by the same amount, so the two net out while keeping timing differences |
+| added, edited | date | Audit dates |
+
+Offline, entries and edits are kept in `localStorage` `pf-inflows`. Receipts already in `months.other_credits` are shown alongside and edited in place (each receipt counts once).
 
 ---
 
@@ -565,11 +582,11 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 ### 4.1 Sidebar
 
 - Brand (H1) and eye toggle.
-- Month picker: prev/next buttons, a month `<select>` and a year `<select>`, over all `months` docs. The next calendar month is listed as "<Mon> · next" as soon as a card bill for it exists (no `months` record needed). The page opens on the current calendar month (a saved choice wins).
+- Month picker: prev/next buttons, a month `<select>` and a year `<select>`, over all `months` docs. Years come from the month records; the next year is listed greyed "<year> (Jan)" until its first month record exists. The next calendar month is listed as "<Mon> · next" as soon as a card bill for it exists (no `months` record needed). The page opens on the current calendar month (a saved choice wins).
 - "Updated …" line from `settings.main.last_updated`.
 - Status chip (month open/closed).
 - Nav (five groups). The To-do link shows a count badge of Needs attention items, coloured by the most urgent; hidden when there are none.
-- Spacing scales with window height (`clamp()` on link padding, group-label padding and gaps) so the whole sidebar fits without scrolling from about 680px tall; below 730px tall links use 1px padding.
+- The nav fills the full sidebar height (groups spread top to bottom). Spacing scales with window height (`clamp()` on link padding, group-label padding and gaps) so the whole sidebar fits without scrolling from about 680px tall; below 730px tall links use 1px padding.
 - "Download offline copy" button.
 - Theme switch at the bottom: a minimal sun / moon pill. Light is the default whatever the device setting; the choice is kept per browser (`localStorage` `pf-theme`) and works offline. On phones it sits inside the open Sections menu.
 - The active nav link is highlighted by a scroll spy (top threshold 80px). A clicked link stays lit until the user scrolls with wheel, touch or keys.
@@ -631,6 +648,26 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 - **What changed this month:** card spend, investments, saved and income vs the previous month, with arrows.
   - "What drove the spending change": category deltas between the last two statement months, from `ccspend` (collapsible).
   - "One-off items": transactions over ₹10K.
+
+### 4.3b Cash flow ahead (`#cashflow`)
+
+Money in and out per month: recorded months from `months/*`, then a forecast to the financial-year end (31 March). Salary, other income, mutual funds and stocks are the **same fields** the Income and Investments sections use, so an edit in either place shows everywhere.
+
+- **Header:** date range, year select (record years + next year greyed), 3M / 6M / YTD history window (default 3M; `localStorage` `pf-cf-win`). 3M = the selected month and two before; YTD = January to the selected month. Months before the first record are dropped; missing months show "no record". Months after the selected one stay recorded until the latest record, then the live forecast runs to 31 March. A past financial year shows its records and the newest forecast saved in that year, with its date.
+- **Summary cards** (buffer = salary-account balance − goal reserve; minimum = `bank_floor`):
+
+  | Card | Formula | Click |
+  |---|---|---|
+  | Restore minimum buffer | `max(0, minimum − latest verified buffer)`, dated; "Minimum maintained · ₹X above" when 0 | Opens Savings and flashes the salary account |
+  | Monthly adjustment needed | `max(0, −Σ forecast nets ÷ n)` over the forecast months shown; positive → "Average monthly surplus"; 0 → "Balanced on average"; none → "No forecast available". Excludes today's top-up | Opens Adjust assumptions |
+  | Extra spending room | `max(0, lowest of {latest verified buffer, projected month-end buffers shown} − minimum)`. A monthly deficit alone does not make it 0. Month-end balances only; daily dips are not checked | Selects the limiting month and opens its calculation |
+
+  "Needs reconciliation" when the account balance or a forecast month-end is missing. An "i" on each card explains it (hover or tap).
+- **Monthly surplus / shortfall:** one bar per month (money in − money out), Recorded band blue, Forecast band gold, year boundaries marked, current month labelled "(Now)". Hover dims the others and shows "in − out = net" under the chart; click or Enter selects the month.
+- **Salary-account buffer line:** recorded after-bills figures (`months.free_cash`), a diamond for the latest bank balance (from `bank`, need `floor`), dashed forecast month-ends carried forward from it (`previous + in − out`; nothing in that balance is deducted twice), the minimum as a dashed line. One point per month: in the bank balance's month the diamond replaces the after-bills point (the saved figure and the difference are in its tooltip). Hover shows a guide line and a readout; click selects.
+- **Side panel (selected month):** Money in (salary, other income, other money in with ✎ per receipt and "+ Add money in"), Money out (card payments = own spend + card payments repaid by others, EMI, mutual funds, stocks, goal savings, one-offs), Monthly surplus/shortfall, "View entries & calculation". Recorded months write to `months/<YYYY-MM>`; forecast months save an override for that month only (`cf.ovr`); an empty box returns to the default; 0 is allowed.
+- **Forecast defaults:** salary = latest record (+ approx. net raise from the month after `hike_month`: gross monthly × `hike_pct` × `net_share`); other income = latest record (until `rent_until` if set); mutual funds = SIP schedule (Σ `mf.sip` excluding US stocks), stepped up by `sip_step_pct` from `sip_step_from` (or the raise); stocks = `stock_default`; cards = average own spend of the last `avg_n` months; EMI = active loans not paid by others; goal savings = latest month; one-offs = locker fee (if set) and the PPF yearly minimum in March.
+- **Adjust assumptions** (side drawer): raise month and %, SIP step-up % and start month, future stocks, averaging window; live preview; Apply saves `settings.cf` and a dated forecast copy; Reset; Esc closes. The footer lists the links (Income & Investments), the SIP schedule, the stock default, a raise that lands after the window, and "Save this forecast".
 
 ### 4.4 Net worth (`#wealth`)
 
@@ -820,6 +857,8 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 
 Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 
+Card statements update the Cards section the day they arrive: a month still collecting statements is marked "so far", and rolling totals use complete months only.
+
 **Spending view:**
 
 - Period selector (last 12 statements, financial years) and card filter.
@@ -898,6 +937,7 @@ Five views: Spending, All cards, Card detail, Benefits & targets, Rewards.
 - Share bar: one segment per bank (hover/tap tooltip with ₹ and %); the legend shows ₹ and % and jumps to the card.
 - One slim card per account (same soft tint for all): bank name and balance (borderless; click to edit, Enter saves), then the need label and one chip: "₹X above", "Short ₹X", "% · ₹X to go", "Top up by <date>", "All free". Tap the name for the detail line (need breakdown, updated date, change vs last month, note; `keep` edited there).
 - EMI account: holds the next EMI from `emi_topup_day` until it is paid; optional locker fee (`settings.sbi_locker`) from `fund_by` until `until`. Bills shows "Locker fee: move to the EMI account" (tick `locker_paid`) and "Locker fee debited" (tick `locker_debited`).
+- Locked accounts (need `locked`, e.g. a fixed deposit under a lien) count as earmarked and never as spare cash.
 - Online, a typed balance saves to `bank/<id>` (bal, asof today, src "Typed in", hist for the month); offline it stays in the browser.
 
 ### 4.17 Tax (`#tax`)
@@ -1051,6 +1091,7 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 3. [ASK] Monthly EPF contribution (you + employer, excluding EPS).
 4. [ASK] Savings accounts: for each bank account, its role and what it must hold (salary floor, petty cash, emergency fund, EMI money, a deposit held for someone, or nothing), plus the current balance. Any yearly charge (e.g. a locker fee) and when it is debited. → `bank/*`, `settings.axis_float`, `settings.emi_topup_day`, `settings.sbi_locker`.
 4a. [DOC] Tax: latest payslip (April-to-date gross and TDS), AIS/TIS, capital-gains reports, last filed returns. [CALC] Write `tax/fy<YYYY-YY>`.
+4b. [ASK] Cash flow: expected raise (% and the month it is for), any SIP step-up and from when, planned monthly stock buying, and whether other income has an end date. → `settings.cf`.
 5. [ASK] Bank floor (minimum balance after bills), crash floor, small card float.
 6. [ASK] Stock-buying rules, if any: regular threshold, regular monthly cap, dip cap. Defaults are offered if none.
 7. [ASK] Loans: for each, name, lender, original amount, outstanding, EMI, rate, end, and who pays it. [DOC] Latest home-loan statement.
@@ -1096,4 +1137,5 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] Half-yearly check renders with no reviews, one review and several; the Retirement panel does not scroll sideways at 400px.
 - [ ] Spare cash = Σ free money per account; the "Move to" line lists only accounts with free money; the Savings tiles and Net worth card agree with it.
 - [ ] Tax: totals match a hand calculation for the sample; editing bonus or interest updates the estimate; works offline.
+- [ ] Cash flow: a salary or other-income edit in Cash flow shows in Income and back; a forecast-month override changes that month only; adding, editing and deleting a receipt works online and offline; a top-up of the "Restore minimum buffer" amount clears that card and lifts every projection; a positive average can show ₹0 spending room when one month breaches the minimum.
 - [ ] Rewards: wallet total = Σ worth; recording and removing a redemption moves the balance both ways.

@@ -1,6 +1,6 @@
 # Personal Finance Dashboard: skill package
 
-A portable skill for building your own interactive personal-finance dashboard with an AI assistant. It covers cards, spending and rewards points, savings accounts, net worth, tax, investments, retirement, loans and insurance.
+A portable skill for building your own interactive personal-finance dashboard with an AI assistant. It covers cash flow and a forecast to the year end, cards, spending and rewards points, savings accounts, net worth, tax, investments, retirement, loans and insurance.
 
 ## How to use it
 

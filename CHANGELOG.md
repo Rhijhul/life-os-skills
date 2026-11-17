@@ -2,6 +2,19 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.5 · 18-Nov-2026
+
+- **Cash flow ahead (new section):** recorded months plus a forecast to the financial-year end (31 March), with a 3M / 6M / YTD history window, year select and calendar spacing.
+  - **Summary cards:** *Restore minimum buffer* (top-up needed to bring the salary account back to its minimum, dated; opens Savings), *Monthly adjustment needed* (average forecast gap, or average surplus; opens the assumptions), *Extra spending room* (one-off spending today that keeps the minimum through the forecast; selects the limiting month).
+  - **Charts:** monthly surplus / shortfall (Recorded and Forecast bands, hover readout, click to select) and the salary-account buffer line (recorded after-bills figures, latest bank balance, month-end forecast, minimum line; hover and click).
+  - **Month panel:** money in and out for the selected month. Salary, other income, mutual funds and stocks are the same month records Income and Investments use, so edits show everywhere; forecast months take one-month overrides.
+  - **Other money in:** new `inflows/*` collection; each receipt is editable; a receipt that repays a card payment is matched to that payment's month and counts once.
+  - **Adjust assumptions** drawer: raise month and %, SIP step-up % and start month, future stock buying, card-spend averaging; live preview, Apply (saves a dated forecast copy) and Reset. New `settings.main.cf`.
+- **Cards:** statements update card totals the day they arrive (month marked "so far" until complete).
+- **Savings:** new account need `locked` (e.g. a fixed deposit under a lien), never counted as spare cash.
+- **Sidebar:** nav fills the full height; the next year is listed (greyed) in the year picker until its first month.
+- **Docs and scripts:** SOP schema for `inflows` and `settings.cf`, Cash flow view 4.3b, onboarding question and checklist items; SKILL rule 12 (one monthly record, shared everywhere); `validate_data.py` checks `inflows`, `cf` and the `locked` need. Sample profile shows "Other income" instead of rent.
+
 ## Personal Finance Dashboard v1.4 · 17-Nov-2026
 
 - **Bills:** next month's card bills show under this month as soon as their statements arrive, with a Paid tick for paying early and reminders 3 days before each due date, across the month change.

@@ -63,8 +63,9 @@ The skill works with any agent that can read files and run Python. Hosting the p
    - If an index has no data, rebuild it from component prices or use a labelled proxy, and say "approximate" in one line.
 8. **Keep notes short.** Notes under charts are one or two lines; analyst notes are at most 8 one-line bullets.
 9. **One row per points account.** Cards that earn into one rewards balance share one wallet row in `rewards/main`.
-10. **Every bank account says what it must hold.** Each `bank/<id>` record has a `need` (floor, float, target, emi, hold or none); spare cash is everything above it. The emergency-fund account is never counted as spare.
+10. **Every bank account says what it must hold.** Each `bank/<id>` record has a `need` (floor, float, target, emi, hold, locked or none); spare cash is everything above it. The emergency-fund account is never counted as spare.
 11. **Tax is a tracker, not advice.** Build `tax/fy<YYYY-YY>` only from the user's payslip, AIS/TIS, capital-gains reports and filed returns; leave unknowns `null` and list them in `todo`.
+12. **One monthly record, shared everywhere.** Salary, other income, mutual funds and stocks live once in `months/<YYYY-MM>`; Income, Investments and Cash flow read and edit the same fields. Other money in goes to `inflows/*`; a receipt that repays a card payment is matched to that payment's month, and each receipt counts once.
 
 ## Workflow
 

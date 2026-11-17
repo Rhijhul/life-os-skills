@@ -147,7 +147,28 @@ td select { padding: 3px 6px; }
 .bill .day { grid-row: span 3; text-align: center; font-family: var(--mono); line-height: 1.1; border-right: 1px solid var(--line); padding-right: 8px; }
 .bill .day b { display: block; font-size: 1.35rem; font-weight: 500; }
 .bill.paid { opacity: .7; }
-.bill-next{margin-top:14px}body.mo-up #income .income{display:none}.up-note{margin:0;padding:12px 14px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);color:var(--muted);font-size:.86rem}.bill-next .sec-head{margin-bottom:8px}.bill-next h3{margin:0;font-size:1rem}
+.cf-head{align-items:flex-end;flex-wrap:wrap;gap:10px}.cf-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.cf-tools select,.cf-drawer select,.cf-drawer input{font:inherit;font-size:.84rem;padding:4px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink)}.cf-adjbtn{font:inherit;font-size:.84rem;padding:4px 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);cursor:pointer}.cf-adjbtn.on{border-color:var(--accent);color:var(--accent)}
+.cf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,340px);gap:16px;align-items:stretch}.cf-main{display:grid;gap:16px;min-width:0}.cf-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cf-k{display:grid;gap:3px;padding:2px 16px;border-left:1px solid var(--line)}.cf-k:first-child{border-left:0;padding-left:0}.cf-k span{font-size:.78rem;color:var(--muted)}.cf-k b{font-size:1.35rem;font-variant-numeric:tabular-nums}.cf-k b.pos{color:var(--good)}.cf-k b.neg{color:var(--bad)}.cf-k small{font-size:.74rem;color:var(--muted)}
+.cf-ph{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;margin-bottom:6px}.cf-ph span{display:flex;flex-wrap:wrap;gap:4px 12px}.cf-chart{min-width:0;overflow:hidden}.cf-svg{display:block}.cf-ax{font-size:10.5px;fill:var(--muted)}.cf-mon{font-size:11px;fill:var(--muted)}.cf-mon.on{fill:var(--ink);font-weight:700}.cf-v{font-size:10.5px;fill:var(--ink);font-weight:600}.cf-band-r{fill:color-mix(in srgb,var(--accent) 6%,transparent)}.cf-band-f{fill:color-mix(in srgb,var(--saffron) 11%,transparent)}.cf-band-t{font-size:10.5px;fill:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.cf-bar.up{fill:var(--good)}.cf-bar.dn{fill:var(--bad)}.cf-bar.est{fill-opacity:.45;stroke-width:1.2;stroke-dasharray:3 2}.cf-bar.est.up{stroke:var(--good)}.cf-bar.est.dn{stroke:var(--bad)}.cf-gap{fill:none;stroke:var(--muted);stroke-dasharray:3 3}.cf-hit{cursor:pointer;outline:none}.cf-hit:hover .cf-bar,.cf-hit:focus-visible .cf-bar{filter:brightness(1.12)}.cf-pick{fill:color-mix(in srgb,var(--accent) 10%,transparent);stroke:var(--accent);stroke-width:1}.cf-hit:focus-visible .cf-mon{text-decoration:underline}
+.cf-pt.rec{fill:var(--accent)}.cf-pt.fc{fill:var(--surface);stroke:var(--accent);stroke-width:2}.cf-pt.low{stroke:var(--bad)}.cf-pt.rec.low{fill:var(--bad)}.cf-ver{fill:var(--saffron)}.cf-min{font-size:10.5px;fill:var(--warn);font-weight:600}.cf-un{font-size:13px;fill:var(--warn);font-weight:700}#cf-linekey .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px}#cf-linekey .k.rec{background:var(--accent)}#cf-linekey .k.fc{border:2px solid var(--accent);width:6px;height:6px}#cf-linekey .k.ver{background:var(--saffron);border-radius:1px;transform:rotate(45deg)}
+.cf-side{display:flex;flex-direction:column;gap:18px}.cf-side .cf-blk{gap:10px;padding:14px 16px}.cf-side .cf-net{padding:14px 16px}.cf-sh{display:flex;justify-content:space-between;align-items:center;gap:8px}.cf-sh h3{margin:0;font-size:1.1rem}.cf-blk{display:grid;gap:6px;padding:10px 12px;border-radius:10px;border:1px solid var(--line)}.cf-blk.in{background:color-mix(in srgb,var(--good) 5%,transparent)}.cf-blk.out{background:color-mix(in srgb,var(--bad) 4%,transparent)}.cf-bh{display:flex;justify-content:space-between;font-size:.92rem}.cf-li,.cf-oi{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.85rem}.cf-li>span,.cf-oi>span{display:flex;flex-direction:column;min-width:0}.cf-li small,.cf-oi small{font-size:.72rem;color:var(--muted)}.cf-li b,.cf-oi b{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}.cf-kt{all:unset;box-sizing:border-box;display:grid;grid-template-rows:auto auto 1fr;align-content:start;gap:8px;padding:16px 18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);cursor:pointer;position:relative;overflow:hidden;transition:border-color .15s,box-shadow .15s,transform .15s;min-width:0}.cf-kt::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--muted);opacity:.5}.cf-kt.good::before{background:var(--good);opacity:1}.cf-kt.bad::before{background:var(--bad);opacity:1}.cf-kt:hover,.cf-kt:focus-visible{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:0 6px 18px color-mix(in srgb,var(--ink) 9%,transparent);transform:translateY(-1px)}.cf-kt:disabled{cursor:default}.cf-kt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cf-kt-h{display:flex;justify-content:space-between;align-items:center;gap:8px}.cf-kt-l{font-size:.82rem;color:var(--muted);font-weight:600;letter-spacing:.02em}.cf-kt-c{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;background:color-mix(in srgb,var(--muted) 12%,transparent);color:var(--muted)}.cf-kt.good .cf-kt-c{background:color-mix(in srgb,var(--good) 13%,transparent);color:var(--good)}.cf-kt.bad .cf-kt-c{background:color-mix(in srgb,var(--bad) 12%,transparent);color:var(--bad)}
+.cf-kt-v{font-size:1.55rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--ink);line-height:1.1}.cf-kt.bad .cf-kt-v{color:var(--bad)}.cf-kt.good .cf-kt-v{color:var(--good)}.cf-kt-v small{font-size:.75rem;font-weight:500;color:var(--muted);margin-left:3px}.cf-kt-viz{display:block;height:34px;align-self:center}.cf-kt-viz svg{width:100%;height:34px;display:block}.cf-kt-f{font-size:.8rem;color:var(--muted)}.cf-kt-f em{font-style:normal;color:var(--bad);font-weight:600}
+.cf-kz{stroke:var(--line)}.cf-kt-viz rect.up{fill:var(--good)}.cf-kt-viz rect.dn{fill:var(--bad);opacity:.8}.cf-kmin{stroke:var(--warn);stroke-dasharray:3 3;stroke-width:1}.cf-kline{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linejoin:round}.cf-kt.bad .cf-kline{stroke:var(--bad)}.cf-kdot{fill:var(--surface);stroke:var(--accent);stroke-width:1.6}.cf-kt.bad .cf-kdot{stroke:var(--bad)}
+.cf-meter{position:relative;display:block;height:10px;margin-top:9px;border-radius:999px;background:var(--track,color-mix(in srgb,var(--ink) 8%,transparent))}.cf-meter .fill{position:absolute;inset:0 auto 0 0;border-radius:999px;background:var(--good)}.cf-meter .fill.dn{background:var(--bad)}.cf-meter .min{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--warn);border-radius:1px}.cf-meter-l{position:relative;display:block;height:14px;margin-top:3px;font-size:.66rem;color:var(--muted)}.cf-meter-l span{position:absolute;top:0;white-space:nowrap}.cf-meter-l span+span{transform:translateX(-50%);color:var(--warn);font-weight:600}
+.cf-kt.warn::before{background:var(--warn);opacity:1}.cf-kt.warn .cf-kt-v{color:var(--warn);font-size:1.15rem}.cf-kt-v small{font-size:.75rem;font-weight:500;color:var(--muted);margin-left:5px}.cf-kt{overflow:visible}.cf-kt::before{border-radius:14px 0 0 14px}
+.cf-kt-i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;border:1px solid var(--line);font-size:.68rem;font-weight:700;font-style:italic;color:var(--muted);cursor:help;flex:none}.cf-kt-i:hover,.cf-kt-i:focus-visible{color:var(--accent);border-color:var(--accent);outline:none}
+.cf-kt-tip{position:absolute;left:12px;right:12px;top:calc(100% + 6px);z-index:20;padding:10px 12px;border-radius:10px;background:var(--ink);color:var(--surface);font-size:.76rem;line-height:1.45;font-weight:400;box-shadow:0 10px 24px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(-3px);transition:opacity .15s,transform .15s;pointer-events:none}.cf-kt:hover .cf-kt-tip,.cf-kt:focus-visible .cf-kt-tip,.cf-kt.tip .cf-kt-tip{opacity:1;visibility:visible;transform:none}
+.cf-hit.dim{opacity:.45}.cf-hit{transition:opacity .12s}
+@media (max-width:560px){.cf-kpis{grid-template-columns:minmax(0,1fr)}}
+.cf-lhit{cursor:pointer;outline:none}.cf-guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:0}.cf-lhit:hover .cf-guide,.cf-lhit.on .cf-guide,.cf-lhit:focus-visible .cf-guide{opacity:.7}.cf-lread{margin:4px 0 0;min-height:1.4em;color:var(--muted)}.cf-lread b{color:var(--ink);margin-right:4px}.cf-key{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:flex-start;margin:0 0 6px;font-size:.8rem;color:var(--muted)}.cf-key span{display:inline-flex;align-items:center;gap:7px;line-height:1}.cf-key svg{flex:none;display:block}.cf-rec line{stroke:var(--saffron);stroke-width:1.6;stroke-dasharray:2 3}.cf-rec line.hit{stroke:transparent;stroke-width:12;stroke-dasharray:none;cursor:help}.cf-rec text{font-size:10.5px;fill:var(--saffron);font-weight:600}.cfa-l{display:grid;gap:3px;font-size:.72rem;color:var(--muted);min-width:0}.cfa-l small{font-size:.68rem;color:var(--warn)}.cfa-l.w{grid-column:1/-1}.cfa-src{grid-column:1/-1;margin:0;font-size:.72rem;color:var(--muted)}.cfa-act .cfa-del{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}.cf-li.cf-osub{border-top:1px dashed var(--line);padding-top:6px}.cf-lt{font-style:normal;display:inline-flex;align-items:center;gap:2px}.cf-oi{padding-left:10px}.cf-lk{font-size:.75rem;margin-left:5px;color:var(--accent)}
+.cf-amt{width:7.2em;text-align:right;font:inherit;font-size:.85rem;font-weight:600;font-variant-numeric:tabular-nums;padding:3px 7px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}.cf-amt:disabled{border-color:transparent;background:transparent;color:var(--ink)}.cf-x{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:1rem;padding:0 4px}.cf-addbtn,.cf-calc,.cf-savefc{font:inherit;font-size:.82rem;padding:5px 10px;border:1px dashed var(--line);border-radius:7px;background:transparent;color:var(--accent);cursor:pointer;text-align:left}.cf-calc{border-style:solid}.cf-calcbox{line-height:1.5;color:var(--muted)}
+.cf-addf{display:grid;grid-template-columns:1fr 1fr;gap:6px}.cf-addf input,.cf-addf select{font:inherit;font-size:.8rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0}.cfa-cov{grid-column:1/-1;font-size:.78rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.cfa-act{grid-column:1/-1;display:flex;gap:6px}.cfa-act button,.cf-dact button{font:inherit;font-size:.82rem;padding:5px 12px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:var(--surface);cursor:pointer}.cfa-act .ghost,.cf-dact .ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.cf-net{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;font-size:1rem}.cf-net.up{background:color-mix(in srgb,var(--good) 12%,transparent);color:var(--good)}.cf-net.dn{background:color-mix(in srgb,var(--bad) 12%,transparent);color:var(--bad)}.cf-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;margin-top:12px}.cf-link b{color:var(--accent)}.cf-pen{border:0;background:transparent;color:var(--accent);cursor:pointer;padding:0 3px}
+.cf-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px,100vw);z-index:60;background:var(--surface);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(0,0,0,.18);padding:18px max(18px,env(safe-area-inset-right,0px)) 18px 18px;display:flex;flex-direction:column;gap:12px;overflow:auto}.cf-dh{display:flex;justify-content:space-between;align-items:center;font-size:1.05rem}.cf-dh button{border:0;background:transparent;font-size:1.4rem;color:var(--muted);cursor:pointer}.cf-drawer label{display:grid;gap:4px;font-size:.84rem;color:var(--muted)}.cf-drawer label small{font-size:.72rem}.cf-dact{display:flex;gap:8px;margin-top:4px}
+@media (max-width:900px){.cf-grid{grid-template-columns:minmax(0,1fr)}.cf-side{position:static}}@media (max-width:560px){.cf-kpis{grid-template-columns:minmax(0,1fr)}.cf-k{border-left:0;padding:6px 0;border-top:1px solid var(--line)}.cf-k:first-child{border-top:0}}
+.bill-next{margin-top:14px}.cf-panel{display:grid;gap:12px}.cf-ctl{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:.84rem}.cf-ctl label{display:inline-flex;align-items:center;gap:6px;color:var(--muted)}.cf-ctl input{width:5.2em;font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);font-variant-numeric:tabular-nums}.cf-ctl select{font:inherit;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}.cf-legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.76rem;color:var(--muted)}.cf-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}.cf-legend .est i{background:repeating-linear-gradient(135deg,var(--muted) 0 2px,transparent 2px 4px);border:1px dashed var(--muted)}.cf-bars{display:flex;align-items:stretch;gap:clamp(4px,1.4vw,14px);height:250px;padding-top:6px}.cf-m>b{margin-bottom:14px}.cf-flex{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;color:var(--muted)}.cf-flex button{font:inherit;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer}.cf-flex input{width:6.5em}.cf-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 4px 2px 9px;border-radius:999px;background:color-mix(in srgb,var(--saffron) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--saffron) 40%,var(--line));color:var(--ink);font-size:.78rem}.cf-chip button{border:0!important;background:transparent!important;padding:0 4px!important;color:var(--muted)!important}.cf-m{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;padding:0;cursor:pointer;color:var(--muted);font:inherit;font-size:.72rem;border-radius:8px}.cf-m .pair{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center;gap:3px}.cf-m .cwrap{width:42%;max-width:30px;display:flex;flex-direction:column;align-items:stretch;position:relative}.cf-m .cwrap em{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-style:normal;font-size:.62rem;color:var(--muted);white-space:nowrap;padding-bottom:1px}.cf-m .col{flex:1;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden}.cf-m .col i{display:block;width:100%;background:var(--c)}.cf-m.est .col i{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 60%,transparent) 0 4px,color-mix(in srgb,var(--c) 18%,transparent) 4px 8px)}.cf-m.est .col{outline:1px dashed color-mix(in srgb,var(--ink) 25%,transparent);outline-offset:-1px}.cf-m b{font-weight:600;color:var(--ink);font-size:.7rem;white-space:nowrap}.cf-m.on b,.cf-m.on span{color:var(--ink)}.cf-bars:hover .cf-m:not(:hover){opacity:.5}.cf-m.on{background:color-mix(in srgb,var(--accent) 7%,transparent)}.cf-m .nowtag{font-size:.62rem;color:var(--accent);font-weight:600}.cf-fc{display:grid;gap:4px}.cf-line{position:relative;height:96px;margin-top:14px}.cf-line svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.cf-dot{position:absolute;transform:translate(-50%,50%);width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--surface)}.cf-dot.est{background:var(--surface);border:2px solid color-mix(in srgb,var(--accent) 60%,transparent)}.cf-dot.low{background:var(--bad)}.cf-dot.est.low{border-color:var(--bad);background:var(--surface)}.cf-val{position:absolute;transform:translate(-50%,-6px);font-size:.66rem;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}.cf-floor{position:absolute;right:0;font-size:.62rem;color:var(--bad);transform:translateY(-100%)}.cf-read{margin:0;min-height:2.6em;line-height:1.45}.cf-read b{font-weight:600}.cf-note{margin:0}.cf-m>span:last-child{white-space:nowrap}@media(max-width:760px){.cf-m .cwrap em{display:none}.cf-m>b{margin-bottom:2px}.cf-m .nowtag{display:none}.cf-bars{height:190px}.cf-m b{display:none}.cf-val{display:none}.cf-m .col{width:44%}}body.mo-up #income .income{display:none}.up-note{margin:0;padding:12px 14px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);color:var(--muted);font-size:.86rem}.bill-next .sec-head{margin-bottom:8px}.bill-next h3{margin:0;font-size:1rem}
 .bill.alert { border-color: var(--bad); }
 .bill label { display: flex; gap: 6px; align-items: center; font-size: 0.8rem; cursor: pointer; }
 .bill input { accent-color: var(--accent); }
@@ -441,7 +462,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 .moment .mbar{margin-top:4px}.moment .mkey{font-size:.72rem;gap:2px 10px}
 #cards-rewards{display:flex;flex-direction:column;gap:12px}#rw-wallet{min-width:760px;table-layout:fixed}#rw-wallet .c1{width:24%}#rw-wallet .c2{width:16%}#rw-wallet .c3{width:27%}#rw-wallet .c4{width:15%}#rw-wallet .c5{width:18%}#rw-wallet td:nth-child(1),#rw-wallet th:nth-child(1){padding-right:4px}#rw-wallet td:nth-child(2),#rw-wallet th:nth-child(2){padding-left:4px}#rw-wallet td:nth-child(3),#rw-wallet th:nth-child(3){padding-left:26px}#rw-wallet td{vertical-align:middle;padding-block:9px}#rw-wallet tfoot td{border-top:1px solid var(--line);border-bottom:0;font-weight:600;padding-top:10px}.rw-card{display:grid;gap:1px}.rw-card small,.rw-upd small,.rw-rate{display:block;font-size:.72rem;color:var(--muted);line-height:1.3}.rw-sel{width:100%;font-size:.8rem;padding:3px 6px;background:transparent}.rw-fixed{display:block;font-size:.82rem;padding:3px 0}.rw-rate{margin-top:2px}.rw-upd{font-size:.8rem}.rw-val{display:grid;gap:3px;min-width:6.5rem}.rw-val .mini>i{background:var(--saffron)}#rw-exp,#rw-route{font-size:.82rem}.rw-watch{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;color:var(--muted)}.rw-pill{margin-left:auto;align-self:center;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.74rem;white-space:nowrap;font-variant-numeric:tabular-nums}.rw-unit{font-size:.72rem;color:var(--muted);margin-left:3px}.rw-bal{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:4px;width:100%}#rw-wallet .rw-bal input{width:4.6rem;flex:none;text-align:left;font-family:var(--mono);padding:3px 6px;background:transparent;border-color:transparent;border-bottom:1px dashed var(--line);border-radius:4px}.rw-bal input:hover,.rw-bal input:focus{border-color:var(--line);background:var(--bg)}.rw-bal input::placeholder{color:var(--accent);font-family:var(--body)}.rw-bal .rw-unit{flex:none;margin-left:0}
 #rw-redp .sec-head{align-items:center}.rw-addbtn{font-size:.8rem;color:var(--accent);border-color:var(--accent);background:transparent;padding:4px 12px;border-radius:999px}.rw-addbtn[aria-expanded=true]{background:var(--accent-soft)}.rw-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9.5rem),1fr));gap:8px 12px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}.rw-form label{display:grid;gap:3px;font-size:.74rem;color:var(--muted);font-weight:600}#rw-form input,#rw-form select{width:100%;box-sizing:border-box;font-size:.84rem;font-weight:400;padding:5px 8px}.rw-f-act{display:flex;gap:8px;align-items:end}.rw-save{background:var(--accent);color:var(--surface);border-color:var(--accent)}#rw-red{font-size:.82rem}#rw-red.has{min-width:640px}.rw-sub{display:block;font-size:.72rem;color:var(--muted)}.rw-del{border:0;background:none;color:var(--muted);font-size:.74rem;text-decoration:underline;padding:0}.rw-del.armed{color:var(--bad)}
-@media(min-width:960px){:root[data-look="new"] .bar-top .in{gap:clamp(5px,calc((100vh - 690px) / 30),9px);padding:clamp(10px,calc((100vh - 690px) / 16),16px) 12px 10px}:root[data-look="new"] .bar-top nav{margin-top:2px}:root[data-look="new"] .bar-top nav a{padding:clamp(2px,calc((100vh - 690px) / 32),6px) 10px;font-size:.86rem;line-height:1.35}:root[data-look="new"] .ng{padding:clamp(4px,calc((100vh - 690px) / 25),10px) 10px 2px}.theme-row{margin-top:6px}}@media(min-width:960px) and (max-height:730px){:root[data-look="new"] .bar-top nav a{padding:1px 10px;font-size:.82rem}:root[data-look="new"] .ng{padding:3px 10px 1px}.theme-row{margin-top:2px}}
+@media(min-width:960px){:root[data-look="new"] .bar-top .in{gap:6px;padding:12px 12px 10px}:root[data-look="new"] .bar-top nav{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;margin:2px 0 0;min-height:0}:root[data-look="new"] .bar-top nav a{padding:2px 10px;font-size:.86rem;line-height:1.35}:root[data-look="new"] .ng{padding:5px 10px 1px}.theme-row{margin-top:8px}}@media(min-width:960px) and (max-height:730px){:root[data-look="new"] .bar-top nav a{padding:1px 10px;font-size:.82rem}:root[data-look="new"] .ng{padding:2px 10px 0}:root[data-look="new"] .bar-top .in{gap:4px;padding-block:8px 6px}.theme-row{margin-top:3px}}
 </style>
 
 <div class="bar-top"><div class="in">
@@ -452,7 +473,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   <button type="button" id="dl-btn" class="online-only">Download offline copy</button>
   <button type="button" id="menu-btn" aria-expanded="false" aria-controls="sec-nav">☰ Sections</button>
   <nav aria-label="Sections" id="sec-nav">
-    <span class="ng n1">Today</span><a class="n1" href="#overview">Overview</a><span class="ng n2">Money in &amp; out</span><a class="n2" href="#income">Income</a><a class="n2" href="#savings">Savings</a><a class="n2" href="#tax">Tax</a><span class="ng n3">Wealth</span><a class="n3" href="#wealth">Wealth mix</a><a class="n3" href="#plan">Retirement</a><a class="n3" href="#invest">Investments</a><a class="n1" href="#bills">Bills</a><span class="ng n4">Plans</span><a class="n4" href="#targets">Targets</a><a class="n3" href="#ppf">PPF &amp; NPS</a><a class="n2" href="#cards">Cards</a><a class="n2" href="#trends">Trends</a><a class="n1" href="#todo">To-do<b class="nav-badge" id="todo-badge" hidden></b></a><a class="n4" href="#loans">Loans</a><a class="n4" href="#insurance">Insurance</a><span class="ng n5">Reference</span><a class="n5" href="#facts">Facts</a>
+    <span class="ng n1">Today</span><a class="n1" href="#overview">Overview</a><span class="ng n2">Money in &amp; out</span><a class="n2" href="#income">Income</a><a class="n2" href="#cashflow">Cash flow</a><a class="n2" href="#savings">Savings</a><a class="n2" href="#tax">Tax</a><span class="ng n3">Wealth</span><a class="n3" href="#wealth">Wealth mix</a><a class="n3" href="#plan">Retirement</a><a class="n3" href="#invest">Investments</a><a class="n1" href="#bills">Bills</a><span class="ng n4">Plans</span><a class="n4" href="#targets">Targets</a><a class="n3" href="#ppf">PPF &amp; NPS</a><a class="n2" href="#cards">Cards</a><a class="n2" href="#trends">Trends</a><a class="n1" href="#todo">To-do<b class="nav-badge" id="todo-badge" hidden></b></a><a class="n4" href="#loans">Loans</a><a class="n4" href="#insurance">Insurance</a><span class="ng n5">Reference</span><a class="n5" href="#facts">Facts</a>
   </nav>
   <div class="theme-row" role="group" aria-label="Theme"><button type="button" data-theme-set="light" aria-pressed="true" aria-label="Light theme" title="Light"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 1.8v2.2M10 16v2.2M1.8 10H4M16 10h2.2M4.2 4.2l1.6 1.6M14.2 14.2l1.6 1.6M4.2 15.8l1.6-1.6M14.2 5.8l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M16.5 12.3A7 7 0 0 1 7.7 3.5a7 7 0 1 0 8.8 8.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></button></div>
 
@@ -512,6 +533,31 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         <p class="small muted">Invested = SIP + direct stocks. Saved = emergency fund + goal reserve additions. EMI = all loan EMIs that month (see Loans). Spent = your own card spend (bills paid this month). Left = what stays in the bank.</p>
         <div class="close-row online-only"><button type="button" id="close-btn">Save this month to Notion</button><span class="small muted" id="close-msg" aria-live="polite"></span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="cashflow" hidden>
+    <div class="pagehead cf-head"><div><h2>Cash flow ahead</h2><span class="small muted"><b id="cf-range"></b> · <span id="cf-sub"></span></span></div>
+      <div class="cf-tools"><select id="cf-year" aria-label="Year"></select><div class="seg" id="cf-win" role="group" aria-label="History shown"><button type="button" data-win="3M">3M</button><button type="button" data-win="6M">6M</button><button type="button" data-win="YTD">YTD</button></div><button type="button" class="cf-adjbtn" id="cf-adj">Adjust assumptions ⚙</button></div></div>
+    <div class="cf-grid">
+      <div class="cf-main">
+        <div class="cf-kpis" id="cf-kpis"></div>
+        <div class="panel"><div class="cf-ph"><b>Monthly surplus / shortfall</b><span class="small muted">Money in − money out · click a month</span></div><div class="cf-chart" id="cf-bars" role="group" aria-label="Monthly surplus or shortfall"></div><p class="small cf-lread" id="cf-bread" aria-live="polite"></p></div>
+        <div class="panel"><div class="cf-ph"><b>HDFC buffer</b><span class="small muted">Goal reserve excluded · hover or click a month</span></div><div class="cf-key" id="cf-linekey"></div><div class="cf-chart" id="cf-line"></div><p class="small cf-lread" id="cf-lread" aria-live="polite"></p></div>
+      </div>
+      <aside class="panel cf-side" id="cf-side" aria-live="polite"></aside>
+    </div>
+    <div class="cf-foot small muted" id="cf-foot"></div>
+    <div class="cf-drawer" id="cf-drawer" hidden role="dialog" aria-label="Adjust assumptions">
+      <div class="cf-dh"><b>Adjust assumptions</b><button type="button" id="cf-dclose" aria-label="Close">×</button></div>
+      <p class="small muted">Charts update as you type (preview). Apply saves the assumptions and a dated copy of this forecast.</p>
+      <label>Appraisal credited in<select data-cfd="hike_month"><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><small>New pay shows in the next month's record</small></label>
+      <label>Appraisal hike %<input type="number" min="0" max="50" step="0.5" data-cfd="hike_pct"></label>
+      <label>SIP step-up %<input type="number" min="0" max="100" step="1" data-cfd="sip_step_pct"></label>
+      <label>SIP step-up starts in<select data-cfd="sip_step_from" id="cf-stepfrom"></select><small>Month and year of the first higher SIP</small></label>
+      <label>Future stocks per month ₹<input type="number" min="0" step="500" data-cfd="stock_default"></label>
+      <label>Card spend: average of last<select data-cfd="avg_n"><option value="2">2 months</option><option value="3">3 months</option><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months</option></select></label>
+      <div class="cf-dact"><button type="button" id="cf-dapply">Apply</button><button type="button" class="ghost" id="cf-dreset">Reset to defaults</button></div>
     </div>
   </section>
 
@@ -798,7 +844,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 (() => {
   const SELF_B64 = '';/*@@SELF@@*/
   const PAGE_BUILT = '';/*@@BUILT@@*/
-  const COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'corpus', 'trend', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'rewards', 'bank', 'tax'];
+  const COLLS = ['months', 'targets', 'cards', 'actions', 'mf', 'corpus', 'trend', 'loans', 'settings', 'ppf', 'nps', 'invest', 'perks', 'ccspend', 'insurance', 'rewards', 'bank', 'tax', 'inflows'];
   const S = Object.fromEntries(COLLS.map((c) => [c, {}]));
   let db = null, canWrite = true, sel = null, scheduled = false, loaded = new Set();
   const $ = (id) => document.getElementById(id);
@@ -887,7 +933,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     document.querySelectorAll('main > section').forEach((s) => (s.hidden = false));
     const msel = $('month');
     { const yr = sel.slice(0, 4), years = [...new Set(ks.map((k) => k.slice(0, 4)))].reverse(), ysel = $('month-year');
-      ysel.replaceChildren(...years.map((y) => new Option(y, y))); ysel.value = yr;
+      const fut = String(+years[0] + 1); ysel.replaceChildren(...[fut].concat(years).map((y) => { const o = new Option(y === fut ? y + ' (Jan)' : y, y); if (y === fut) { o.disabled = true; o.title = 'Opens with the January ' + y + ' month record'; } return o; })); ysel.value = yr;
       msel.replaceChildren(...ks.filter((k) => k.startsWith(yr)).reverse().map((k) => new Option(MON[Number(k.slice(5)) - 1] + (!S.months[k] ? ' · next' : S.months[k].status === 'open' ? ' · now' : ''), k)));
       const ix = ks.indexOf(sel); $('m-prev').disabled = ix <= 0; $('m-next').disabled = ix >= ks.length - 1;
       $('m-prev').title = ix > 0 ? mlabel(ks[ix - 1], true) : ''; $('m-next').title = ix < ks.length - 1 ? mlabel(ks[ix + 1], true) : ''; }
@@ -897,7 +943,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const eq = meta.asof || asof('eq');
       const d0 = tidy(eq || asof('mf') || asof('us'));
       $('last-upd').textContent = d0 ? 'Updated ' + d0 : ''; }
-    [renderOverview, renderAlerts, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderPpf, renderTargets, renderWeights, renderCards, renderPerks, renderRewards, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance, renderSavings, renderTax].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
+    [renderOverview, renderAlerts, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderCashflow, renderPpf, renderTargets, renderWeights, renderCards, renderPerks, renderRewards, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance, renderSavings, renderTax].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
     { const up = isUp(); document.body.classList.toggle('mo-up', up); const n = $('inc-up');
       if (n) { n.hidden = !up; if (up) n.textContent = 'Income for ' + mlabel(sel, true) + ' starts once salary lands. Last month\'s split stays under ' + mlabel(months().slice(-1)[0], true) + '.'; }
       if (up) { const mn = MON[+sel.slice(5) - 1]; $('t-stock').textContent = '—'; $('t-stock-sub').textContent = 'Starts in ' + mn; } }
@@ -1278,7 +1324,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     try { bkList().forEach((a) => { const b = num(a.bal), n = bkNeed(a); const nm = a.name.replace(/ Bank$/, '');
       if (b != null && n && n.v != null && !n.goal) { if (b < n.v && (!n.by || n.win)) add('bad', nm + ' short ' + short(n.v - b) + (a.need === 'emi' ? (n.l === 'Locker fee' ? ' for the locker fee' : ' for the ' + n.d.split(' · ')[0].replace(/ \d{4}$/, '') + ' EMI' + (n.lock ? ' + locker' : '')) : a.need === 'floor' ? ' of its floor' : ''), 'savings', 5);
         else if (a.need === 'floor' && b - n.v < 10000) add('warn', nm + ' only ' + short(b - n.v) + ' above its floor', 'savings', 20); }
-      if (a.asof && dd(a.asof) < -35) add('info', nm + ' balance is ' + (-dd(a.asof)) + ' days old', 'savings', 80); }); } catch (e) {}
+      if (a.need !== 'locked' && a.asof && dd(a.asof) < -35) add('info', nm + ' balance is ' + (-dd(a.asof)) + ' days old', 'savings', 80); }); } catch (e) {}
     // reward points expiring within 60 days
     const RW = (S.rewards || {}).main || {};
     (RW.programs || []).forEach((p) => (p.expiring || []).forEach((x) => { if (!x.date || !num(x.pts)) return; const k = dd(x.date); if (k >= 0 && k <= 60) add(k <= 21 ? 'warn' : 'info', (p.short || p.card) + ': ' + Math.round(num(x.pts)).toLocaleString('en-IN') + ' ' + (p.unit || 'pts') + ' expire ' + fmtIso(x.date).replace(/ \d{4}$/, '') + (x.est ? ' (est.)' : ''), 'cards', 30 + k); }));
@@ -1309,7 +1355,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const L = bkList().filter((a) => num(a.bal) != null), big = $('floor'), list = $('fr-list'), mv = $('fr-move'), sub = $('fr-sub');
     if (!L.length) { big.textContent = '—'; sub.textContent = 'Add balances on the Savings page'; list.innerHTML = ''; mv.hidden = true; return; }
     const rows = [], efA = L.filter((a) => a.need === 'target');
-    L.filter((a) => a.need !== 'target').forEach((a) => { const b = num(a.bal), n = bkNeed(a), nm = a.name.replace(/ Bank$/, ''); let free = b, note = 'all free', cls = '';
+    L.filter((a) => a.need !== 'target' && a.need !== 'locked').forEach((a) => { const b = num(a.bal), n = bkNeed(a), nm = a.name.replace(/ Bank$/, ''); let free = b, note = 'all free', cls = '';
       if (n && n.v != null) { free = Math.max(0, b - n.v);
         if (a.need === 'floor') { note = b >= n.v ? 'above ' + inr(n.v) + ' floor' : 'short ' + inr(n.v - b) + ' of the floor'; cls = b < n.v ? 'bad' : (b - n.v < 10000 ? 'warn' : ''); }
         else if (a.need === 'float') note = 'above ' + inr(n.v) + ' petty cash';
@@ -1318,7 +1364,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
           note = b >= n.v ? what + ' held' : (n.win ? 'short ' + inr(n.v - b) + ' for ' + what : what + ' · top up by ' + fmtD(n.by).replace(/ \d{4}$/, '')); cls = b < n.v && n.win ? 'bad' : ''; } }
       rows.push({ a, nm, free, note, cls }); });
     const tot = rows.reduce((x, r) => x + r.free, 0), out = rows.filter((r) => r.a.need !== 'floor' && r.free > 0), mvAmt = out.reduce((x, r) => x + r.free, 0);
-    const dates = L.map((a) => a.asof).filter(Boolean).sort();
+    const dates = L.filter((a) => a.need !== 'locked').map((a) => a.asof).filter(Boolean).sort();
     big.textContent = inr(tot);
     sub.textContent = 'across ' + rows.length + ' accounts' + (dates.length ? ' · ' + fmtIso(dates[dates.length - 1]) : '');
     list.innerHTML = rows.map((r) => '<div class="fr-row" data-goto="savings" title="Open Savings"><b>' + esc(r.nm) + '</b><span class="fv' + (r.free ? '' : ' z') + '">' + esc(inr(r.free)) + '</span><span class="fn ' + r.cls + '">' + esc(r.note) + '</span></div>').join('');
@@ -1423,6 +1469,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     // spending drivers from card statements: bills paid this month = previous month's statements
     const meta = ccMeta(), sm = ymAdd(sel, -1), sm2 = ymAdd(sel, -2);
     const has = meta && ccTx().some((t) => t.s === sm) && ccTx().some((t) => t.s === sm2);
+    if (has && ccPart(sm)) { const pp = ccPart(sm); $('drv-sub').textContent = mlabel(sm, true) + ' statements still coming in (' + pp.n + ' of ' + pp.N + '); the comparison appears once all are in.'; $('drv-bars').innerHTML = ''; $('drv-note').textContent = ''; $('oneoff').hidden = true; return; }
     if (!has) { $('drv-sub').textContent = 'Needs card statements for ' + mlabel(sm, true) + ' and ' + mlabel(sm2, true) + '.'; $('drv-bars').innerHTML = ''; $('drv-note').textContent = ''; $('oneoff').hidden = true; return; }
     const by = (k) => { const o = {}; ccTx().filter((t) => t.s === k).forEach((t) => (o[t.c] = (o[t.c] || 0) + t.a)); return o; };
     const A = by(sm), B = by(sm2), cats = [...new Set([...Object.keys(A), ...Object.keys(B)])];
@@ -1535,6 +1582,327 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const inc = (num(m.salary) || 0) + (num(m.other_income) || 0); if (!inc) return null;
     return ((num(m.sip) || 0) + (num(m.direct_equity) || 0) + (num(m.ef_add) || 0) + (num(m.travel_add) || 0) + (num(m.emi_principal) || 0)) / inc;
   };
+
+  // ---------- Cash flow ahead (v139): shared monthly records + forecast to the financial-year end ----------
+  // Actual months read the same months/<YYYY-MM> records as Income (salary, other_income), Investments (sip, direct_equity) and Cards (card_net).
+  // Forecast months use settings.cf (assumptions + per-month overrides). Other money in = inflows/* + legacy months.other_credits.
+  const CF_OFF = 'pf-cf', CF_MON_OFF = 'pf-cf-month', CF_IN_OFF = 'pf-inflows';
+  const CF_DEF = { hike_pct: 8, hike_month: 3, sip_step_pct: 0, sip_step_from: '', stock_default: 15000, avg_n: 4, rent_until: '', net_share: 0.64, ovr: {}, saved: {} };
+  const cfNowK = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); };
+  let cfLineInfo = {}, cfBarInfo = {};
+  let cfDraft = null, cfPick = null, cfLastE = null, cfAdd = false, cfEdit = null, cfShowCalc = false;
+  const cfWin = () => { try { return localStorage.getItem('pf-cf-win') || '3M'; } catch (e) { return '3M'; } };
+  function cfCfg() { let off = {}; if (window.__SNAPSHOT__) { try { off = JSON.parse(localStorage.getItem(CF_OFF) || '{}') || {}; } catch (e) {} }
+    const c = Object.assign({}, CF_DEF, set().cf || {}, off); c.ovr = Object.assign({}, c.ovr || {}); c.saved = Object.assign({}, c.saved || {}); return c; }
+  function cfSave(patch, msg) {
+    if (window.__SNAPSHOT__) { try { const o = JSON.parse(localStorage.getItem(CF_OFF) || '{}') || {}; localStorage.setItem(CF_OFF, JSON.stringify(Object.assign(o, patch))); } catch (e) {} render(); toast((msg || 'Saved') + ' in this browser'); return; }
+    if (!db || !canWrite) { toast('This view can\'t save.'); return; }
+    const c = Object.assign({}, set().cf || {}, patch);
+    db.doc('settings/main').update({ cf: c }).then(() => toast(msg || 'Saved')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  // One write path for a recorded month (Income and Cash flow both use it)
+  function monthWrite(k, patch, msg) {
+    if (window.__SNAPSHOT__ || !db) {
+      try { Object.keys(patch).forEach((f) => { if (f === 'salary' || f === 'other_income') localStorage.setItem(incomeKey(k, f), JSON.stringify(patch[f])); });
+        const o = JSON.parse(localStorage.getItem(CF_MON_OFF) || '{}') || {}, rest = Object.assign({}, patch); delete rest.salary; delete rest.other_income; delete rest.salary_expected; if (Object.keys(rest).length) o[k] = Object.assign({}, o[k] || {}, rest); localStorage.setItem(CF_MON_OFF, JSON.stringify(o)); } catch (e) {}
+      if (S.months[k]) Object.assign(S.months[k], patch); render(); toast((msg || 'Saved') + ' in this browser'); return; }
+    if (!canWrite) return;
+    db.doc('months/' + k).update(patch).then(() => toast(msg || 'Saved')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  function cfRestoreOffline() { if (!window.__SNAPSHOT__) return; try { const o = JSON.parse(localStorage.getItem(CF_MON_OFF) || '{}') || {}; Object.entries(o).forEach(([k, p]) => { if (S.months[k]) Object.assign(S.months[k], p); }); } catch (e) {}
+    try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; const inf = Object.assign({}, S.inflows || {}); L.forEach((e) => { if (e.__del) delete inf[e.id]; else inf[e.id] = e; }); S.inflows = inf; } catch (e) {} }
+  const CF_TYPES = ['Family reimbursement', 'Employer reimbursement', 'Flex claim', 'Tax refund', 'Gift', 'Other'];
+  const CF_ACR = ['emi', 'sip', 'ef', 'fd', 'ppf', 'nps', 'gst', 'tds', 'hdfc', 'sbi', 'icici', 'ac', 'tv'];
+  const cfPretty = (key) => String(key).replace(/_/g, ' ').replace(/\b\w+/g, (w, i) => CF_ACR.includes(w.toLowerCase()) ? w.toUpperCase() : i > 0 && ['from', 'to', 'for', 'of', 'and', 'by'].includes(w.toLowerCase()) ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1));
+  // Edit a receipt kept in a month record (months.other_credits + other_credits_meta): the record stays the source
+  function cfLegacySave(e, patch, remove) {
+    const m = S.months[e.m] || {}, oc = Object.assign({}, m.other_credits || {}), meta = Object.assign({}, m.other_credits_meta || {});
+    if (remove) { delete oc[e.key]; delete meta[e.key]; } else { oc[e.key] = patch.amt; const mt = Object.assign({}, patch); delete mt.amt; meta[e.key] = mt; }
+    monthWrite(e.m, { other_credits: oc, other_credits_meta: meta }, remove ? 'Removed from ' + mlabel(e.m, true) : mlabel(e.m, true) + ' record updated');
+  }
+  function cfInflows() {
+    const out = Object.entries(S.inflows || {}).map(([id, e]) => Object.assign({ id, src: 'entry' }, e));
+    Object.entries(S.months || {}).forEach(([k, m]) => Object.entries(m.other_credits || {}).forEach(([key, v]) => { if (!num(v)) return;
+      const mt = (m.other_credits_meta || {})[key] || {};
+      out.push(Object.assign({ id: 'oc:' + k + ':' + key, key, date: null, m: k, desc: cfPretty(key), type: 'Family reimbursement', account: 'hdfc', status: 'actual', covers_card: true, pay_m: k, src: 'months/' + k + ' · other_credits', legacy: true }, mt, { amt: num(v), m: k, legacy: true, key })); }));
+    return out.map((e) => Object.assign(e, { m: e.m || String(e.date || '').slice(0, 7) })).sort((a, b) => String(a.date || a.m + '-00').localeCompare(String(b.date || b.m + '-00')));
+  }
+  function cfInflowSave(e, upd) {
+    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push(e); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} S.inflows = Object.assign({}, S.inflows || {}, { [e.id]: e }); render(); toast((upd ? 'Updated' : 'Added') + ' in this browser'); return; }
+    if (!canWrite) return; const d = Object.assign({}, e); delete d.id;
+    db.doc('inflows/' + e.id).set(d).then(() => toast(upd ? 'Updated' : 'Added')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  function cfInflowDel(id) {
+    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push({ id, __del: true }); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} const inf = Object.assign({}, S.inflows || {}); delete inf[id]; S.inflows = inf; render(); toast('Removed in this browser'); return; }
+    if (!canWrite) return; db.doc('inflows/' + id).delete().then(() => toast('Removed')).catch(() => toast('Couldn\'t remove. Try again in a moment.'));
+  }
+  function cfModel(cfIn) {
+    const ks = months(); if (!ks.length) return null;
+    const st = set(), cf = cfIn || cfCfg(), n = Math.max(2, Math.min(6, +cf.avg_n || 4)), latest = ks[ks.length - 1], lastR = S.months[latest] || {};
+    const E = ks.includes(sel) ? sel : latest, live = true;
+    const win = cfWin(), first = ks[0];
+    let h0 = win === 'YTD' ? E.slice(0, 4) + '-01' : ymAdd(E, win === '6M' ? -5 : -2); if (h0 < first) h0 = first;
+    const hist = []; for (let k = h0; k <= E; k = ymAdd(k, 1)) hist.push(k);
+    const inflows = cfInflows();
+    const recentK = ks.filter((k) => k <= latest).slice(-n), avg = (f) => recentK.reduce((a, k) => a + (num(f(S.months[k] || {})) || 0), 0) / (recentK.length || 1);
+    const loans = Object.values(S.loans || {}).filter((l) => l.status !== 'Closed' && num(l.outstanding) > 0 && !/paid by/i.test((l.rate || '') + ' ' + (l.note || '')));
+    const emi = loans.reduce((a, l) => a + (num(l.emi) || 0), 0) || num(lastR.emi) || 0;
+    const td = (typeof txDoc === 'function' ? txDoc() : null) || {}, gross = num((td.salary || {}).monthly) || 0;
+    const sipSched = Object.entries(S.mf || {}).filter(([id]) => id !== 'usstocks').reduce((a, [, f]) => a + (num(f.sip) || 0), 0);
+    const hikeNet = Math.round(gross * (num(cf.hike_pct) || 0) / 100 * (num(cf.net_share) || 0.64));
+    const hm = Math.min(12, Math.max(1, +cf.hike_month || 3)), effMon = hm % 12 + 1;
+    const lc = st.sbi_locker || {}, lAmt = num(lc.amt) || 0, lMon = +String(lc.fund_by || '03-20').split('-')[0];
+    const pp = (() => { const k = Object.keys(S.ppf || {}).sort().pop(); return k ? S.ppf[k] : null; })();
+    const covered = (k) => inflows.filter((e) => e.covers_card && (e.pay_m || e.m) === k).reduce((a, e) => a + (num(e.amt) || 0), 0);
+    const inOf = (k, actual) => inflows.filter((e) => e.m === k && (actual ? e.status !== 'expected' : true));
+    const recRow = (k) => { const m = S.months[k]; if (!m) return { k, gap: true };
+      const oi = inOf(k, false), cardsOwn = num(m.card_net) || 0, cov = covered(k);
+      return { k, est: false, open: m.status === 'open', m,
+        inn: [['Salary', num(m.salary) || 0, 'salary'], ['Other income', num(m.other_income) || 0, 'other_income']].concat(oi.map((e) => [e.desc || e.type, e.status === 'expected' ? 0 : num(e.amt) || 0, 'other', e])),
+        out: [['Card payments', cardsOwn + cov, 'cards'], ['EMI', num(m.emi) || 0, 'emi'], ['Mutual funds', num(m.sip) || 0, 'sip'], ['Stocks', num(m.direct_equity) || 0, 'stocks'], ['Goal savings', (num(m.ef_add) || 0) + (num(m.travel_add) || 0), 'saved']],
+        cardsOwn, cov, fc: num(m.free_cash) }; };
+    // live forecast always runs from the latest recorded month to its financial-year end
+    const fyEnd = (k) => { const [y, mo] = k.split('-').map(Number); return (mo >= 4 ? y + 1 : y) + '-03'; };
+    const fcMap = {}; { const end = fyEnd(latest); let raised = false; for (let k = ymAdd(latest, 1); k <= end; k = ymAdd(k, 1)) {
+        const o = cf.ovr[k] || {}, mo = +k.slice(5); if (mo === effMon) raised = true;
+        const sal = o.salary != null ? num(o.salary) : num(lastR.salary) + (raised ? hikeNet : 0);
+        const other_income = o.other_income != null ? num(o.other_income) : (k <= String(cf.rent_until || '9999').slice(0, 7) ? num(lastR.other_income) || 0 : 0);
+        const stepped = cf.sip_step_from ? k >= cf.sip_step_from : raised; const sip = o.sip != null ? num(o.sip) : Math.round(sipSched * (stepped ? 1 + (num(cf.sip_step_pct) || 0) / 100 : 1));
+        const stocks = o.stocks != null ? num(o.stocks) : (num(cf.stock_default) ?? 12000);
+        const oi = inOf(k, false), cov = covered(k);
+        const one = []; if (mo === lMon && lAmt) one.push(['Locker fee', lAmt]); if (mo === 3 && pp && (num(pp.contributed) || 0) < (num(pp.min_yearly) || 0)) one.push(['PPF minimum', (num(pp.min_yearly) || 0) - (num(pp.contributed) || 0)]);
+        const billed = Object.values(S.cards || {}).reduce((a, c) => a + (num((c.bills || {})[k]) || 0), 0);
+        fcMap[k] = { k, est: true, o, raised, stepped, hike: raised && o.salary == null ? hikeNet : 0,
+          inn: [['Salary', sal, 'salary'], ['Other income', other_income, 'other_income']].concat(oi.map((e) => [e.desc || e.type, num(e.amt) || 0, 'other', e])),
+          out: [['Card payments', Math.round(avg((m) => m.card_net)) + cov, 'cards'], ['EMI', emi, 'emi'], ['Mutual funds', sip, 'sip'], ['Stocks', stocks, 'stocks'], ['Goal savings', (num(lastR.ef_add) || 0) + (num(lastR.travel_add) || 0), 'saved']].concat(one.length ? [['One-offs', one.reduce((a, x) => a + x[1], 0), 'one']] : []),
+          one, billed, cov }; } }
+    // a past financial year: the newest forecast saved during that year, shown with its date
+    const sk = Object.keys(cf.saved || {}).filter((x) => fyEnd(x) === fyEnd(E) && x <= E).sort().pop() || Object.keys(cf.saved || {}).filter((x) => fyEnd(x) === fyEnd(E)).sort()[0];
+    const saved = fyEnd(E) !== fyEnd(latest) && sk ? Object.assign({ k: sk }, cf.saved[sk]) : null, savedMap = {};
+    if (saved) (saved.rows || []).forEach((r) => { savedMap[r.k] = { k: r.k, est: true, savedRow: true, inn: [['Money in', r.inn, 'x']], out: [['Money out', r.out, 'x']], me: r.me }; });
+    const rows = hist.map(recRow);
+    for (let k = ymAdd(E, 1); k <= fyEnd(E); k = ymAdd(k, 1)) rows.push(S.months[k] ? recRow(k) : fcMap[k] || savedMap[k] || { k, gap: true, future: true });
+    while (rows.length && rows[rows.length - 1].gap && rows[rows.length - 1].future) rows.pop();
+    const sum = (a) => a.reduce((t, x) => t + (x[1] || 0), 0);
+    rows.concat(Object.values(fcMap)).forEach((r) => { if (!r.gap) { r.tin = sum(r.inn); r.tout = sum(r.out); r.net = r.tin - r.tout; } });
+    // HDFC buffer: verified opening = HDFC balance − goal reserve on its date; forecast month-ends carry it forward
+    const hd = bkList().find((a) => a.need === 'floor') || bkList().find((a) => a.id === 'hdfc'), reserve = num(lastR.travel_fund) || 0;
+    const ver = hd && num(hd.bal) != null && hd.asof ? { v: Math.round(num(hd.bal) - reserve), d: hd.asof, k: hd.asof.slice(0, 7) } : null;
+    let bal = ver && ver.k >= latest ? ver.v : null;
+    Object.values(fcMap).forEach((r) => { { if (bal == null) { r.me = null; r.unresolved = 'Type the HDFC balance on the Savings page'; } else { bal += r.net; r.me = Math.round(bal); } } });
+    return { rows, cf, E, live, win, latest, ver, saved, fcMap, hikeNet, effMon, sipSched, emi, avgCard: Math.round(avg((m) => m.card_net)), n, floor: num(st.bank_floor) ?? 50000, crash: num(st.crash_floor) ?? 40000, reserve };
+  }
+  const cfSvgW = (el) => Math.max(320, Math.round((el && el.clientWidth) || 700));
+  function renderCashflow() {
+    const sec = $('cashflow'); if (!sec) return;
+    const M0 = cfModel(cfDraft || null);
+    if (!M0) { $('cf-bars').innerHTML = '<p class="small muted">Cash flow appears once months are recorded.</p>'; return; }
+    const { rows, floor, E, live } = M0, data = rows.filter((r) => !r.gap), fc = rows.filter((r) => r.est);
+    if (cfLastE !== E || !cfPick || !rows.some((r) => r.k === cfPick && !r.gap)) cfPick = E; cfLastE = E;
+    // header
+    const y0 = rows[0].k, y1 = rows[rows.length - 1].k;
+    $('cf-range').textContent = mlabel(y0, true) + ' – ' + mlabel(y1, true);
+    $('cf-sub').textContent = rows.filter((r) => !r.est && !r.gap).length + ' recorded month' + (rows.filter((r) => !r.est && !r.gap).length === 1 ? '' : 's') + (rows.some((r) => r.gap) ? ' (' + rows.filter((r) => r.gap).length + ' without a record)' : '') +
+      (M0.saved ? ' + forecast saved ' + fmtIso(M0.saved.at) : fc.length ? ' + forecast to financial-year end (31 Mar)' : rows.some((r) => r.future) ? ' · no saved forecast for this period' : '');
+    { const ys = $('cf-year'); if (ys && document.activeElement !== ys) { const have = new Set(months().map((k) => k.slice(0, 4))), last = +[...have].sort().pop(), years = [...have]; years.push(String(last + 1)); years.sort().reverse(); ys.innerHTML = years.map((yy) => '<option value="' + yy + '"' + (yy === E.slice(0, 4) ? ' selected' : '') + (have.has(yy) ? '' : ' disabled') + '>Year ' + yy + (have.has(yy) ? '' : ' (Jan)') + '</option>').join(''); } }
+    $('cf-win').querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.win === M0.win));
+    $('cf-adj').classList.toggle('on', !!cfDraft);
+    // KPIs (displayed period only)
+    const fcs = fc.filter((r) => r.net != null), avgS = fcs.length ? fcs.reduce((a, r) => a + r.net, 0) / fcs.length : null;
+    const bufPts = fc.filter((r) => r.me != null), low = bufPts.reduce((a, r) => (a == null || r.me < a.me ? r : a), null), endR = bufPts[bufPts.length - 1];
+    const sinr = (v) => (v < 0 ? '−' : '') + inr(Math.abs(v)), above = (v) => v >= floor ? esc(inr(v - floor)) + ' above minimum' : esc(inr(floor - v)) + ' below minimum';
+    // Summary cards (v145): all from the shared records and the active forecast. Buffer = HDFC balance − goal reserve throughout.
+    const kver = M0.ver, fcShown = rows.filter((r) => r.est && r.net != null), mf = short(floor).replace('.0K', 'K');
+    const tile = (o) => '<button type="button" class="cf-kt ' + o.tone + '" data-cfk="' + o.act + '"' + (o.k ? ' data-k="' + o.k + '"' : '') + ' aria-label="' + esc(o.aria) + '"' + (o.tip ? ' aria-describedby="cf-tip-' + o.act + '"' : '') + '><span class="cf-kt-h"><span class="cf-kt-l">' + o.label + '</span>' + (o.tip ? '<span class="cf-kt-i" data-cftip="' + o.act + '" role="button" tabindex="0" aria-label="What this means">i</span>' : '') + '</span><b class="cf-kt-v">' + o.value + '</b><span class="cf-kt-f">' + o.foot + '</span>' + (o.tip ? '<span class="cf-kt-tip" id="cf-tip-' + o.act + '" role="tooltip">' + o.tip + '</span>' : '') + '</button>';
+    // 1. Restore minimum buffer: latest verified balance vs the minimum
+    let c1;
+    if (!kver) c1 = { tone: 'warn', act: 'savings', label: 'Restore minimum buffer', value: 'Needs reconciliation', foot: 'Type the HDFC balance on the Savings page', aria: 'Open Savings to enter the HDFC balance' };
+    else { const need = Math.max(0, floor - kver.v), dd = fmtIso(kver.d);
+      c1 = need > 0 ? { tone: 'bad', act: 'savings', label: 'Restore minimum buffer', value: esc(inr(need)) + '<small>needed now</small>', foot: 'Latest buffer ' + esc(inr(kver.v)) + ' (' + esc(dd.replace(/ \d{4}$/, '')) + ') · minimum ' + esc(inr(floor)), aria: 'Top-up needed; open Savings at HDFC',
+          tip: 'Based on the HDFC balance recorded on ' + esc(dd) + ', minus the goal reserve (' + esc(inr(M0.reserve)) + '). Card bills, transfers or credits still to come this month can change the month-end requirement.' }
+        : { tone: 'good', act: 'savings', label: 'Minimum maintained', value: esc(inr(kver.v - floor)) + '<small>above</small>', foot: esc(inr(kver.v - floor)) + ' above the ' + esc(inr(floor)) + ' minimum · ' + esc(dd.replace(/ \d{4}$/, '')), aria: 'Minimum maintained; open Savings at HDFC',
+          tip: 'Latest HDFC buffer ' + esc(inr(kver.v)) + ' on ' + esc(dd) + ' (balance minus goal reserve). Card bills, transfers or credits still to come this month can change it.' }; }
+    // 2. Monthly adjustment needed: average forecast net over the forecast months shown
+    let c2; const rng = fcShown.length ? mlabel(fcShown[0].k, true) + (fcShown.length > 1 ? '–' + mlabel(fcShown[fcShown.length - 1].k, true) : '') : '';
+    if (!fcShown.length) c2 = { tone: '', act: 'adjust', label: 'Monthly adjustment needed', value: 'No forecast available', foot: 'No forecast months in this view', aria: 'Open Adjust assumptions' };
+    else { const avg = Math.round(fcShown.reduce((a, r) => a + r.net, 0) / fcShown.length), gapN = fcShown.filter((r) => r.net < 0).length;
+      const tip2 = 'This average gap can be closed through lower spending, reduced planned investments or additional income. Monthly gaps vary (' + gapN + ' of ' + fcShown.length + ' months short). This excludes any top-up needed to restore today\'s minimum buffer.';
+      c2 = avg < 0 ? { tone: 'bad', act: 'adjust', label: 'Monthly adjustment needed', value: esc(inr(-avg)) + '<small>/month</small>', foot: 'Average forecast gap · ' + esc(rng), tip: tip2, aria: 'Average forecast gap; open Adjust assumptions' }
+        : avg > 0 ? { tone: 'good', act: 'adjust', label: 'Average monthly surplus', value: '+' + esc(inr(avg)) + '<small>/month</small>', foot: 'Forecast average · ' + esc(rng), tip: 'Average of the forecast months shown. ' + (gapN ? gapN + ' of ' + fcShown.length + ' months are still short on their own. ' : '') + 'This excludes any top-up needed to restore today\'s minimum buffer.', aria: 'Average monthly surplus; open Adjust assumptions' }
+        : { tone: '', act: 'adjust', label: 'Monthly adjustment needed', value: 'Balanced on average', foot: 'Forecast average · ' + esc(rng), aria: 'Open Adjust assumptions' }; }
+    // 3. Extra spending room: lowest of the latest verified buffer and the projected month-end buffers shown, minus the minimum
+    let c3; const unres = fcShown.some((r) => r.me == null && !r.savedRow);
+    if (!kver || unres) c3 = { tone: 'warn', act: 'room', label: 'Extra spending room', value: 'Needs reconciliation', foot: !kver ? 'Needs the latest HDFC balance' : 'Some forecast months have no balance', aria: 'Extra spending room needs reconciliation' };
+    else { const pts3 = [{ k: kver.k, v: kver.v, ver: true }].concat(fcShown.filter((r) => r.me != null).map((r) => ({ k: r.k, v: r.me }))), lim = pts3.reduce((a, p) => (p.v < a.v ? p : a)), room = Math.max(0, lim.v - floor);
+      const endK = fcShown.length ? fcShown[fcShown.length - 1].k : kver.k, basis = 'Based on the latest bank balance and projected month-end balances; daily cash dips within a month are not checked.';
+      c3 = room > 0 ? { tone: 'good', act: 'room', k: lim.ver ? (kver.k >= M0.latest ? M0.latest : kver.k) : lim.k, label: 'Extra spending room', value: esc(inr(room)) + '<small>available</small>', foot: 'One-off spending today that keeps the ' + esc(mf) + ' minimum through ' + esc(mlabel(endK, true)), tip: 'Lowest point: ' + esc(lim.ver ? 'bank balance ' + fmtIso(kver.d) : mlabel(lim.k, true) + ' month-end') + ' ' + esc(inr(lim.v)) + '. ' + basis, aria: 'Extra spending room; select the limiting month' }
+        : { tone: 'bad', act: 'room', k: lim.ver ? (kver.k >= M0.latest ? M0.latest : kver.k) : lim.k, label: 'Extra spending room', value: '₹0', foot: lim.v < floor ? 'Current plan falls ' + esc(inr(floor - lim.v)) + ' below minimum ' + (lim.ver ? 'now' : 'by ' + esc(mlabel(lim.k, true))) : 'Plan sits exactly at the minimum', tip: basis, aria: 'No extra spending room; select the limiting month' }; }
+    $('cf-kpis').innerHTML = tile(c1) + tile(c2) + tile(c3);
+    // bars: monthly surplus / shortfall
+    const bw = $('cf-bars'), W = cfSvgW(bw), H = 208, L = 52, Rt = 10, T = 30, B = 26, ph = H - T - B, N = rows.length, slot = (W - L - Rt) / N;
+    const nets = data.map((r) => r.net), maxA = Math.max(10000, ...nets.map((v) => Math.abs(v))), step = [5000, 10000, 20000, 25000, 50000, 100000].find((s) => maxA / s <= 4) || 100000;
+    const top = Math.max(step, Math.ceil(Math.max(0, ...nets) * 1.18 / step) * step), bot = Math.min(-step, Math.floor(Math.min(0, ...nets) * 1.12 / step) * step), yv = (v) => T + (top - v) / (top - bot) * ph;
+    let g = '';
+    for (let v = bot; v <= top + 1; v += step) g += '<line x1="' + L + '" x2="' + (W - Rt) + '" y1="' + yv(v).toFixed(1) + '" y2="' + yv(v).toFixed(1) + '" stroke="var(--line)"' + (v === 0 ? ' stroke-width="1.4" stroke="var(--muted)"' : '') + '/><text x="' + (L - 6) + '" y="' + (yv(v) + 4).toFixed(1) + '" text-anchor="end" class="cf-ax">' + (v === 0 ? '0' : (v > 0 ? '' : '−') + short(Math.abs(v)).replace('₹', '')) + '</text>';
+    const firstF = rows.findIndex((r) => r.est);
+    const band = (i0, i1, lab, cls) => i1 < i0 ? '' : '<rect x="' + (L + i0 * slot + 2).toFixed(1) + '" y="' + (T - 22) + '" width="' + ((i1 - i0 + 1) * slot - 4).toFixed(1) + '" height="' + (ph + 22) + '" rx="6" class="' + cls + '"/><text x="' + (L + (i0 + i1 + 1) / 2 * slot).toFixed(1) + '" y="' + (T - 7) + '" text-anchor="middle" class="cf-band-t">' + lab + '</text>';
+    const histEnd = firstF < 0 ? N - 1 : firstF - 1;
+    g = band(0, histEnd, 'Recorded', 'cf-band-r') + (firstF >= 0 ? band(firstF, N - 1, M0.saved ? 'Saved forecast · ' + fmtIso(M0.saved.at) : 'Forecast', 'cf-band-f') : '') + g;
+    if (firstF > 0) g += '<line x1="' + (L + firstF * slot).toFixed(1) + '" x2="' + (L + firstF * slot).toFixed(1) + '" y1="' + (T - 22) + '" y2="' + (T + ph) + '" stroke="var(--muted)" stroke-dasharray="4 4"/>';
+    rows.forEach((r, i) => { const cx = L + (i + 0.5) * slot, bwid = Math.min(46, slot * 0.62), mon = MON[+r.k.slice(5) - 1], yr = r.k.slice(0, 4);
+      if (i > 0 && r.k.slice(5) === '01') g += '<line x1="' + (L + i * slot).toFixed(1) + '" x2="' + (L + i * slot).toFixed(1) + '" y1="' + T + '" y2="' + (T + ph + 4) + '" stroke="var(--line)"/>';
+      const lab = '<text x="' + cx.toFixed(1) + '" y="' + (T + ph + 16) + '" text-anchor="middle" class="cf-mon' + (r.k === cfPick ? ' on' : '') + '">' + mon + (i === 0 || r.k.slice(5) === '01' ? " '" + yr.slice(2) : '') + (r.k === cfNowK() ? ' (Now)' : '') + '</text>';
+      if (r.gap) { g += '<g class="cf-hit" data-k="' + r.k + '"><rect x="' + (cx - bwid / 2).toFixed(1) + '" y="' + (yv(0) - 6).toFixed(1) + '" width="' + bwid.toFixed(1) + '" height="12" rx="3" class="cf-gap"/><text x="' + cx.toFixed(1) + '" y="' + (yv(0) - 12).toFixed(1) + '" text-anchor="middle" class="cf-ax">no record</text>' + lab + '</g>'; return; }
+      const y0p = yv(0), yp = yv(r.net), hgt = Math.max(1.5, Math.abs(yp - y0p)), up = r.net >= 0;
+      g += '<g class="cf-hit' + (r.k === cfPick ? ' on' : '') + '" data-k="' + r.k + '" tabindex="0" role="button" aria-label="' + esc(mlabel(r.k, true) + ': ' + (up ? 'surplus ' : 'shortfall ') + inr(Math.abs(r.net))) + '">' +
+        
+        '<rect x="' + (cx - bwid / 2).toFixed(1) + '" y="' + Math.min(yp, y0p).toFixed(1) + '" width="' + bwid.toFixed(1) + '" height="' + hgt.toFixed(1) + '" rx="2" class="cf-bar ' + (up ? 'up' : 'dn') + (r.est ? ' est' : '') + '"/>' +
+        '<text x="' + cx.toFixed(1) + '" y="' + (up ? Math.min(yp, y0p) - 6 : Math.max(yp, y0p) + 15).toFixed(1) + '" text-anchor="middle" class="cf-v">' + (up ? '+' : '−') + esc(short(Math.abs(r.net)).replace('₹', '')) + '</text>' + lab + '<rect x="' + (L + i * slot).toFixed(1) + '" y="' + T + '" width="' + slot.toFixed(1) + '" height="' + (ph + 22) + '" fill="transparent"/></g>'; });
+    cfBarInfo = {}; rows.forEach((r) => { cfBarInfo[r.k] = r.gap ? 'no record' : (r.savedRow ? 'Saved forecast · ' : r.est ? 'Forecast · ' : 'Recorded · ') + 'in ' + inr(r.tin) + ' − out ' + inr(r.tout) + ' = ' + (r.net >= 0 ? 'surplus +' : 'shortfall −') + inr(Math.abs(r.net)) + (r.est && r.raised && r.hike ? ' · incl. raise' : ''); });
+    { const rd = $('cf-bread'); if (rd) rd.innerHTML = '<b>' + esc(mlabel(cfPick, true)) + '</b> ' + esc(cfBarInfo[cfPick] || ''); }
+    bw.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="' + H + '" class="cf-svg">' + g + '</svg>';
+    // HDFC buffer line
+    const lw = $('cf-line'), W2 = cfSvgW(lw), H2 = 184, T2 = 16, B2 = 28, ph2 = H2 - T2 - B2;
+    const pts = [];
+    rows.forEach((r, i) => { const cx = L + (i + 0.5) * slot * (W2 - L - Rt) / (W - L - Rt);
+      if (!r.est && !r.gap && r.fc != null) pts.push({ i, cx, v: r.fc, kind: 'rec', k: r.k });
+      if (r.est && r.me != null) pts.push({ i, cx, v: r.me, kind: 'fc', k: r.k });
+      if (r.est && r.me == null && !r.savedRow) pts.push({ i, cx, v: null, kind: 'un', k: r.k, why: r.unresolved }); });
+    const ver = M0.ver; let verPt = null;
+    if (ver) { const i = rows.findIndex((r) => r.k === ver.k); if (i >= 0) { const dim = new Date(+ver.d.slice(0, 4), +ver.d.slice(5, 7), 0).getDate(), frac = 0.5 + 0 * dim; verPt = { cx: L + (i + frac) * slot * (W2 - L - Rt) / (W - L - Rt), v: ver.v };
+      const j = pts.findIndex((p) => p.kind === 'rec' && p.k === ver.k); if (j >= 0) { verPt.after = pts[j].v; pts.splice(j, 1); } } }
+    const vs = pts.filter((p) => p.v != null).map((p) => p.v).concat(verPt ? [verPt.v] : []).concat([floor]);
+    const st2 = 5000, vmax = Math.ceil((Math.max(...vs) + 4000) / st2) * st2, vmin = Math.floor((Math.min(...vs) - 4000) / st2) * st2, yy = (v) => T2 + (vmax - v) / (vmax - vmin) * ph2;
+    const tstep = (vmax - vmin) / st2 > 8 ? Math.ceil((vmax - vmin) / st2 / 8) * st2 : st2;
+    let g2 = '';
+    for (let v = vmin; v <= vmax; v += tstep) g2 += '<line x1="' + L + '" x2="' + (W2 - Rt) + '" y1="' + yy(v).toFixed(1) + '" y2="' + yy(v).toFixed(1) + '" stroke="var(--line)"/><text x="' + (L - 6) + '" y="' + (yy(v) + 4).toFixed(1) + '" text-anchor="end" class="cf-ax">' + short(v).replace('₹', '') + '</text>';
+    g2 += '<line x1="' + L + '" x2="' + (W2 - Rt) + '" y1="' + yy(floor).toFixed(1) + '" y2="' + yy(floor).toFixed(1) + '" stroke="var(--warn)" stroke-width="1.5" stroke-dasharray="6 4"/><text x="' + (W2 - Rt - 4) + '" y="' + (yy(floor) - 5).toFixed(1) + '" text-anchor="end" class="cf-min">Minimum ' + esc(short(floor)) + '</text>';
+    const rec = pts.filter((p) => p.kind === 'rec'), fpts = pts.filter((p) => p.kind === 'fc');
+    const recL = verPt ? rec.concat([verPt]) : rec; if (recL.length > 1) g2 += '<polyline fill="none" stroke="var(--accent)" stroke-width="2.2" points="' + recL.map((p) => p.cx.toFixed(1) + ',' + yy(p.v).toFixed(1)).join(' ') + '"/>';
+    const fStart = verPt || rec[rec.length - 1];
+    if (fpts.length) g2 += '<polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 5" points="' + [fStart].concat(fpts).filter(Boolean).map((p) => p.cx.toFixed(1) + ',' + yy(p.v).toFixed(1)).join(' ') + '"/>';
+    pts.forEach((p) => { if (p.v == null) { g2 += '<text x="' + p.cx.toFixed(1) + '" y="' + (T2 + 14) + '" text-anchor="middle" class="cf-un" data-k="' + p.k + '">? <title>' + esc(p.why || 'Unresolved') + '</title></text>'; return; }
+      g2 += '<circle cx="' + p.cx.toFixed(1) + '" cy="' + yy(p.v).toFixed(1) + '" r="' + (p.kind === 'rec' ? 5 : 5) + '" class="cf-pt ' + p.kind + (p.v < floor ? ' low' : '') + '"><title>' + esc(mlabel(p.k, true) + (p.kind === 'rec' ? ' · recorded: HDFC after that month\'s bills, saved with the month record, ' : ' · forecast: HDFC month-end balance (previous month-end + money in − money out), ') + inr(p.v) + ', goal reserve excluded') + '</title></circle><text x="' + p.cx.toFixed(1) + '" y="' + (yy(p.v) - 10).toFixed(1) + '" text-anchor="middle" class="cf-v">' + esc(short(p.v).replace('₹', '')) + '</text>'; });
+    if (verPt) g2 += '<rect x="' + (verPt.cx - 5).toFixed(1) + '" y="' + (yy(verPt.v) - 5).toFixed(1) + '" width="10" height="10" transform="rotate(45 ' + verPt.cx.toFixed(1) + ' ' + yy(verPt.v).toFixed(1) + ')" class="cf-ver"><title>Latest bank balance: HDFC on ' + esc(fmtIso(ver.d)) + ' (Savings page) minus goal reserve: ' + esc(inr(verPt.v)) + (verPt.after != null ? '. Replaces the after-bills figure saved with the ' + mlabel(ver.k, true) + ' record (' + inr(verPt.after) + '); difference ' + (verPt.v - verPt.after < 0 ? '−' : '+') + inr(Math.abs(verPt.v - verPt.after)) + ', not itemised' : '') + '. The forecast starts here.</title></rect><text x="' + verPt.cx.toFixed(1) + '" y="' + (yy(verPt.v) - 11).toFixed(1) + '" text-anchor="middle" class="cf-v">' + esc(short(verPt.v).replace('₹', '')) + '</text><text x="' + verPt.cx.toFixed(1) + '" y="' + (yy(verPt.v) + 20).toFixed(1) + '" text-anchor="middle" class="cf-ax">' + esc(fmtIso(ver.d).replace(/ \d{4}$/, '')) + ' bank</text>';
+    const sl2 = slot * (W2 - L - Rt) / (W - L - Rt);
+    rows.forEach((r, i) => { const cx = L + (i + 0.5) * sl2; g2 += '<text x="' + cx.toFixed(1) + '" y="' + (H2 - 10) + '" text-anchor="middle" class="cf-mon' + (r.k === cfPick ? ' on' : '') + '">' + MON[+r.k.slice(5) - 1] + (r.k === cfNowK() ? ' (Now)' : '') + '</text>';
+      g2 += '<g class="cf-lhit" data-k="' + r.k + '" tabindex="0" role="button" aria-label="' + esc(mlabel(r.k, true)) + '"><line x1="' + cx.toFixed(1) + '" x2="' + cx.toFixed(1) + '" y1="' + T2 + '" y2="' + (T2 + ph2) + '" class="cf-guide"/><rect x="' + (L + i * sl2).toFixed(1) + '" y="' + T2 + '" width="' + sl2.toFixed(1) + '" height="' + (ph2 + 18) + '" fill="transparent"/></g>'; });
+    cfLineInfo = {}; rows.forEach((r) => { const p = pts.find((x) => x.k === r.k), isV = verPt && ver.k === r.k;
+      cfLineInfo[r.k] = r.gap ? 'no record' : isV ? 'Bank balance ' + fmtIso(ver.d) + ' (goal reserve excluded) ' + sinr(verPt.v) + ' · ' + (verPt.v >= floor ? inr(verPt.v - floor) + ' above' : inr(floor - verPt.v) + ' below') + ' the ' + short(floor) + ' minimum' + (verPt.after != null ? ' · after-bills figure saved with the month ' + inr(verPt.after) : '')
+        : !p ? (r.savedRow ? 'Saved forecast ' + (r.me != null ? sinr(r.me) : '—') : 'No HDFC figure for this month') : p.v == null ? 'Needs input: ' + (p.why || 'HDFC balance') : (p.kind === 'rec' ? 'Recorded after bills ' : 'Forecast month-end ') + sinr(p.v) + ' · ' + (p.v >= floor ? inr(p.v - floor) + ' above' : inr(floor - p.v) + ' below') + ' the minimum' + (p.kind === 'fc' && r.net != null ? ' · month ' + (r.net >= 0 ? '+' : '−') + inr(Math.abs(r.net)) : ''); });
+    { const rd = $('cf-lread'), k = cfPick; if (rd) rd.innerHTML = '<b>' + esc(mlabel(k, true)) + '</b> ' + esc(cfLineInfo[k] || ''); }
+    lw.innerHTML = '<svg viewBox="0 0 ' + W2 + ' ' + H2 + '" width="100%" height="' + H2 + '" class="cf-svg">' + g2 + '</svg>';
+    const sym = (k) => '<svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true">' + (k === 'rec' ? '<line x1="1" x2="21" y1="6" y2="6" stroke="var(--accent)" stroke-width="2.2"/><circle cx="11" cy="6" r="3.5" fill="var(--accent)"/>' : k === 'ver' ? '<rect x="7" y="2" width="8" height="8" transform="rotate(45 11 6)" fill="var(--saffron)"/>' : '<line x1="1" x2="21" y1="6" y2="6" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/><circle cx="11" cy="6" r="3.5" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"/>') + '</svg>';
+    $('cf-linekey').innerHTML = '<span title="HDFC after that month\'s bills, as saved with each month record">' + sym('rec') + 'Recorded</span>' + (verPt ? '<span title="' + esc('HDFC balance on ' + fmtIso(ver.d) + ' (Savings page) minus goal reserve') + '">' + sym('ver') + 'Latest bank balance</span>' : '') + (fpts.length ? '<span title="Month-end balance carried forward from the latest bank balance: previous month-end + money in − money out">' + sym('fc') + 'Forecast</span>' : '') + (pts.some((p) => p.kind === 'un') ? '<span>? needs input</span>' : '');
+    cfSide(M0);
+    // footer
+    $('cf-foot').innerHTML = '<span class="cf-link">⛓ <b>Connected to Income &amp; Investments</b></span><span>Future MF: SIP schedule ' + esc(inr(M0.sipSched)) + (num(M0.cf.sip_step_pct) ? ' (+' + esc(String(M0.cf.sip_step_pct)) + '% from ' + (M0.cf.sip_step_from ? mlabel(M0.cf.sip_step_from, true) : 'the ' + MON[M0.effMon - 1] + ' record') + ')' : '') + '</span><span>Future stocks: ' + esc(inr(num(M0.cf.stock_default) ?? 12000)) + '/month <button type="button" class="cf-pen" data-cfdrawer="1" aria-label="Change in assumptions">✎</button></span>' + (M0.hikeNet && !fc.some((r) => r.raised) ? '<span>Appraisal: ~' + esc(inr(M0.hikeNet)) + '/month more from the ' + MON[M0.effMon - 1] + ' record (after this window)</span>' : '') + (Object.keys(M0.fcMap).length ? '<button type="button" class="cf-savefc" id="cf-savefc">Save this forecast</button>' : '');
+    if (cfDraft) cfDrawerFill();
+  }
+  function cfSide(M0) {
+    const r = M0.rows.find((x) => x.k === cfPick) || M0.rows[M0.rows.length - 1], el = $('cf-side'); if (!el || !r) return;
+    const dis = ((db && canWrite) || window.__SNAPSHOT__) ? '' : ' disabled', canEdit = !r.savedRow && !r.gap;
+    const status = r.gap ? 'No record' : r.savedRow ? 'Saved forecast' : r.est ? 'Forecast' : r.open ? 'In progress' : 'Recorded';
+    const LINK = '<span class="cf-lk" title="Shared with the Income and Investments sections">⛓</span>';
+    const box = (field, v, label) => '<input type="text" inputmode="numeric" class="cf-amt" data-cfm="' + field + '" data-k="' + r.k + '" value="' + esc(v == null ? '' : Math.round(v).toLocaleString('en-IN')) + '" aria-label="' + esc(label) + '"' + (canEdit ? dis : ' disabled') + '>';
+    const line = (lab, v, extra, field, sub) => '<div class="cf-li"><span><em class="cf-lt">' + esc(lab) + (extra || '') + '</em>' + (sub ? '<small>' + sub + '</small>' : '') + '</span>' + (field ? box(field, v, lab) : '<b>' + esc(inr(v)) + '</b>') + '</div>';
+    let h = '<div class="cf-sh"><h3>' + esc(mlabel(r.k, true)) + '</h3><span class="chip ' + (r.est ? 'info' : r.gap ? 'warn' : 'good') + '">' + status + '</span></div>';
+    if (r.gap) { el.innerHTML = h + '<p class="small muted">No monthly record for ' + esc(mlabel(r.k, true)) + '. Records start ' + esc(mlabel(months()[0], true)) + '; this gap is kept so the months line up.</p>'; return; }
+    const sum = (a) => a.reduce((t, x) => t + (x[1] || 0), 0), ovr = r.o || {};
+    const inS = r.inn.filter((x) => x[2] !== 'other'), oth = r.inn.filter((x) => x[2] === 'other');
+    h += '<div class="cf-blk in"><div class="cf-bh"><b>Money in</b><b>' + esc(inr(sum(r.inn))) + '</b></div>';
+    if (r.savedRow) h += line('Money in (saved)', r.tin);
+    else { inS.forEach((x) => { h += line(x[0], x[1], LINK, x[2], r.est ? (ovr[x[2]] != null ? 'this month only' : x[2] === 'salary' && r.hike ? 'incl. ~' + inr(r.hike) + ' raise' : 'forecast default') : 'same record as Income'); });
+      h += '<div class="cf-li cf-osub"><span>Other money in</span><b>' + esc(inr(sum(oth))) + '</b></div>';
+      const form = (e) => { const ed = !!e, lg = ed && e.legacy, st = ed ? e.status : (r.est ? 'expected' : 'actual'), cov = ed ? !!e.covers_card : true, pm = ed ? (e.pay_m || e.m) : r.k;
+        const dv = ed ? (e.date || '') : r.k + '-' + (r.est ? '15' : String(Math.min(28, new Date().getDate())).padStart(2, '0'));
+        return '<div class="cf-addf" data-edit="' + (ed ? esc(e.id) : '') + '"><label class="cfa-l">Date' + (lg && !e.date ? ' <small>not recorded</small>' : '') + '<input type="date" id="cfa-date" value="' + dv + '"' + (lg ? ' min="' + e.m + '-01" max="' + e.m + '-31"' : '') + '></label><label class="cfa-l">Amount<input type="text" inputmode="numeric" id="cfa-amt" placeholder="₹ amount" value="' + (ed ? esc(String(e.amt)) : '') + '"></label><label class="cfa-l w">Description<input type="text" id="cfa-desc" placeholder="Description" value="' + (ed ? esc(e.desc || '') : '') + '"></label><label class="cfa-l">Type<select id="cfa-type">' + CF_TYPES.map((t) => '<option' + (ed && e.type === t ? ' selected' : '') + '>' + t + '</option>').join('') + '</select></label><label class="cfa-l">Received in<select id="cfa-acc">' + bkList().map((a) => '<option value="' + esc(a.id) + '"' + (ed && e.account === a.id ? ' selected' : '') + '>' + esc(a.name) + '</option>').join('') + '</select></label><label class="cfa-l">Status<select id="cfa-st"><option value="actual"' + (st === 'actual' ? ' selected' : '') + '>Actual</option><option value="expected"' + (st === 'expected' ? ' selected' : '') + '>Expected</option></select></label>' +
+          '<label class="cfa-cov"><input type="checkbox" id="cfa-cov"' + (cov ? ' checked' : '') + (ed ? ' data-touched="1"' : '') + '> Repays a card payment I made in <select id="cfa-paym">' + M0.rows.filter((x) => !x.gap && !x.savedRow).map((x) => '<option value="' + x.k + '"' + (x.k === pm ? ' selected' : '') + '>' + esc(mlabel(x.k, true)) + '</option>').join('') + '</select></label>' +
+          (ed ? '<p class="cfa-src">Source: ' + esc(lg ? 'months/' + e.m + ' record (other_credits · ' + e.key + '); saving updates that record' : 'entry added ' + (e.added ? fmtIso(e.added) : '') + ' (inflows)') + '</p>' : '') +
+          '<div class="cfa-act"><button type="button" id="cfa-save">' + (ed ? 'Save' : 'Add') + '</button>' + (ed ? '<button type="button" class="ghost cfa-del" data-cfdel="' + esc(e.id) + '"' + dis + '>Delete</button>' : '') + '<button type="button" id="cfa-cancel" class="ghost">Cancel</button></div></div>'; };
+      oth.forEach((x) => { const e = x[3]; h += '<div class="cf-oi"><span>' + esc(e.desc || e.type) + (e.status === 'expected' ? '<small>' + (r.est ? 'expected' : 'expected · not counted until received') + '</small>' : '') + '</span><b>' + esc(inr(e.amt)) + '</b><button type="button" class="cf-pen" data-cfedit="' + esc(e.id) + '" aria-label="Edit ' + esc(e.desc || e.type) + '"' + dis + '>✎</button></div>' + (cfEdit === e.id ? form(e) : ''); });
+      h += cfAdd ? form(null)
+        : '<button type="button" class="cf-addbtn" id="cfa-open"' + dis + '>+ Add money in</button>'; }
+    h += '</div><div class="cf-blk out"><div class="cf-bh"><b>Money out</b><b>' + esc(inr(sum(r.out))) + '</b></div>';
+    if (r.savedRow) h += line('Money out (saved)', r.tout);
+    else r.out.forEach((x) => { const f = x[2];
+      if (f === 'sip' || f === 'stocks') h += line(x[0], x[1], LINK, f, r.est ? (ovr[f] != null ? 'this month only' : f === 'sip' ? 'SIP schedule' + (r.stepped && num(M0.cf.sip_step_pct) ? ' +' + M0.cf.sip_step_pct + '%' : '') : 'default ' + inr(num(M0.cf.stock_default) ?? 12000)) : (f === 'sip' ? (r.m.sip_src || 'monthly record') : (r.m.direct_equity_src || 'from stock buys')));
+      else h += line(x[0], x[1], '', null, f === 'cards' ? (r.cov ? 'own spend ' + inr(x[1] - r.cov) + ' + ' + inr(r.cov) + ' paid for others' : r.est ? 'average of last ' + M0.n + ' months' + (r.billed ? ' · ' + inr(r.billed) + ' already billed' : '') : 'own spend') : f === 'one' ? r.one.map((o) => o[0] + ' ' + inr(o[1])).join(' · ') : ''); });
+    const net = sum(r.inn) - sum(r.out);
+    h += '</div><div class="cf-net ' + (net >= 0 ? 'up' : 'dn') + '"><b>Monthly ' + (net >= 0 ? 'surplus' : 'shortfall') + '</b><b>' + (net >= 0 ? '+' : '−') + esc(inr(Math.abs(net))) + '</b></div>';
+    h += '<button type="button" class="cf-calc" id="cf-calc">' + (cfShowCalc ? 'Hide' : 'View') + ' entries &amp; calculation ↗</button>';
+    if (cfShowCalc) h += '<div class="cf-calcbox small">' + (r.est
+      ? 'Salary: ' + (ovr.salary != null ? 'your override' : 'latest recorded salary' + (r.hike ? ' + estimated raise ' + inr(r.hike) + ' (gross × ' + M0.cf.hike_pct + '% × ' + M0.cf.net_share + ')' : '')) + '. Other income: ' + (ovr.other_income != null ? 'your override' : 'latest recorded other income') + '. Card payments: average own spend of the last ' + M0.n + ' months (' + inr(M0.avgCard) + ') plus card payments repaid by others. EMI: active loans (' + inr(M0.emi) + '). Mutual funds: ' + (ovr.sip != null ? 'your override' : 'SIP schedule (' + inr(M0.sipSched) + ')') + '. Stocks: ' + (ovr.stocks != null ? 'your override' : 'default from assumptions') + '. Buffer: previous month-end + money in − money out = ' + (r.me != null ? inr(r.me) : 'unresolved') + '.'
+      : 'Salary and other_income: months/' + r.k + ' (the same record the Income section edits). Mutual funds: months/' + r.k + '.sip' + (r.m.sip_src ? ' (' + esc(r.m.sip_src) + ')' : '') + '. Stocks: months/' + r.k + '.direct_equity. Card payments: own spend (card_net ' + inr(r.cardsOwn) + ')' + (r.cov ? ' + ' + inr(r.cov) + ' paid for others and repaid (listed under Other money in)' : '') + '. Free cash after bills: ' + (r.fc != null ? inr(r.fc) : '—') + ' (recorded).') + '</div>';
+    el.innerHTML = h;
+  }
+  // drawer
+  function cfDrawerFill() { const d = cfDraft || cfCfg(), f = $('cf-drawer'); if (!f) return;
+    { const sf = $('cf-stepfrom'), ks = months(), l0 = ks[ks.length - 1]; if (sf && l0 && !sf.options.length) { let o = '<option value="">With the appraisal</option>'; for (let i = 1; i <= 24; i++) { const k = ymAdd(l0, i); o += '<option value="' + k + '">' + mlabel(k, true) + '</option>'; } sf.innerHTML = o; } }
+    f.querySelectorAll('[data-cfd]').forEach((i) => { const k = i.dataset.cfd; if (document.activeElement !== i) i.value = d[k] ?? ''; }); }
+  function cfOpenDrawer() { cfDraft = Object.assign({}, cfCfg()); const f = $('cf-drawer'); f.hidden = false; document.body.classList.add('cf-open'); cfDrawerFill(); renderCashflow(); setTimeout(() => { const i = f.querySelector('[data-cfd]'); if (i) i.focus(); }, 30); }
+  function cfCloseDrawer() { cfDraft = null; const f = $('cf-drawer'); if (f) f.hidden = true; document.body.classList.remove('cf-open'); renderCashflow(); }
+  function cfSnapshotRows(M0) { return Object.values(M0.fcMap).map((r) => ({ k: r.k, inn: Math.round(r.tin), out: Math.round(r.tout), me: r.me })); }
+  document.addEventListener('input', (ev) => { const t = ev.target; if (!t.dataset || !t.dataset.cfd || !cfDraft) return; const k = t.dataset.cfd; let v = t.value;
+    if (k !== 'rent_until' && k !== 'sip_step_from') { v = Number(v); if (!Number.isFinite(v) || v < 0) return; } cfDraft[k] = v; renderCashflow(); });
+  document.addEventListener('click', (ev) => {
+    const t = ev.target; if (!t.closest) return;
+    const w = t.closest('#cf-win button'); if (w) { try { localStorage.setItem('pf-cf-win', w.dataset.win); } catch (e) {} renderCashflow(); return; }
+    if (t.closest('#cf-adj') || t.closest('[data-cfdrawer]')) { cfOpenDrawer(); return; }
+    if (t.closest('#cf-dclose')) { cfCloseDrawer(); return; }
+    if (t.closest('#cf-dreset')) { cfDraft = Object.assign({}, cfCfg(), { hike_pct: CF_DEF.hike_pct, hike_month: CF_DEF.hike_month, sip_step_pct: CF_DEF.sip_step_pct, sip_step_from: '', stock_default: CF_DEF.stock_default, avg_n: CF_DEF.avg_n, rent_until: CF_DEF.rent_until }); cfDrawerFill(); renderCashflow(); return; }
+    if (t.closest('#cf-dapply')) { const d = cfDraft || cfCfg(); const patch = { hike_pct: num(d.hike_pct), hike_month: num(d.hike_month), sip_step_pct: num(d.sip_step_pct), sip_step_from: d.sip_step_from || '', stock_default: num(d.stock_default), avg_n: num(d.avg_n), rent_until: d.rent_until };
+      const M1 = cfModel(Object.assign({}, cfCfg(), patch)); const saved = Object.assign({}, cfCfg().saved || {}); if (M1 && Object.keys(M1.fcMap).length) saved[M1.latest] = { at: new Date().toISOString().slice(0, 10), rows: cfSnapshotRows(M1) };
+      cfDraft = null; const f = $('cf-drawer'); f.hidden = true; document.body.classList.remove('cf-open'); cfSave(Object.assign(patch, { saved }), 'Assumptions applied'); return; }
+    if (t.closest('#cf-savefc')) { const M1 = cfModel(); if (!M1) return; const saved = Object.assign({}, cfCfg().saved || {}); saved[M1.latest] = { at: new Date().toISOString().slice(0, 10), rows: cfSnapshotRows(M1) }; cfSave({ saved }, 'Forecast saved (from ' + mlabel(M1.latest, true) + ')'); return; }
+    const ti = t.closest('#cf-kpis [data-cftip]'); if (ti) { ev.stopPropagation(); const c = ti.closest('.cf-kt'), on = !c.classList.contains('tip'); document.querySelectorAll('#cf-kpis .cf-kt.tip').forEach((n) => n.classList.remove('tip')); c.classList.toggle('tip', on); return; }
+    const kt = t.closest('#cf-kpis [data-cfk]'); if (kt) { const a = kt.dataset.cfk;
+      if (a === 'adjust') { cfOpenDrawer(); return; }
+      if (a === 'room') { if (kt.dataset.k) { cfPick = kt.dataset.k; cfShowCalc = true; cfAdd = false; cfEdit = null; renderCashflow(); const c = $('cf-calc'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } return; }
+      if (a === 'savings') { const l = document.querySelector('a[href="#savings"]'); if (l) l.click(); setTimeout(() => { const c = $('bk-hdfc'); if (!c) return; c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.classList.add('flash'); setTimeout(() => c.classList.remove('flash'), 1600); }, 120); return; } }
+    const lh = t.closest('#cf-line .cf-lhit'); if (lh) { cfPick = lh.dataset.k; cfAdd = false; cfEdit = null; renderCashflow(); return; }
+    const hit = t.closest('#cf-bars .cf-hit'); if (hit) { cfPick = hit.dataset.k; cfAdd = false; renderCashflow(); return; }
+    const pe = t.closest('[data-cfedit]'); if (pe) { cfEdit = cfEdit === pe.dataset.cfedit ? null : pe.dataset.cfedit; cfAdd = false; renderCashflow(); const a = $('cfa-amt'); if (a) a.focus(); return; }
+    if (t.closest('#cfa-open')) { cfAdd = true; cfEdit = null; renderCashflow(); const a = $('cfa-amt'); if (a) a.focus(); return; }
+    if (t.closest('#cfa-cancel')) { cfAdd = false; cfEdit = null; renderCashflow(); return; }
+    if (t.closest('#cf-calc')) { cfShowCalc = !cfShowCalc; renderCashflow(); return; }
+    const del = t.closest('[data-cfdel]'); if (del && $('cf-side').contains(del)) { const id = del.dataset.cfdel, old = cfInflows().find((x) => x.id === id); cfEdit = null; if (old && old.legacy) cfLegacySave(old, null, true); else cfInflowDel(id); return; }
+    if (t.closest('#cfa-save')) { const amt = Math.round(Number(String($('cfa-amt').value).replace(/[₹,\s]/g, ''))), date = $('cfa-date').value;
+      const fm = t.closest('.cf-addf'), eid = fm ? fm.dataset.edit : '', old = eid ? cfInflows().find((x) => x.id === eid) : null;
+      if (!Number.isFinite(amt) || amt <= 0) { toast('Enter an amount above 0'); return; }
+      if (!date && !(old && old.legacy)) { toast('Enter a date'); return; }
+      if (old && old.legacy) { if (date && date.slice(0, 7) !== old.m) { toast('This receipt belongs to the ' + mlabel(old.m, true) + ' record: pick a date in that month'); return; }
+        const cov = $('cfa-cov').checked; cfEdit = null; cfLegacySave(old, { amt, date: date || null, desc: $('cfa-desc').value.trim() || old.desc, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: cov, pay_m: cov ? $('cfa-paym').value : null }); return; }
+      const e = { id: old ? old.id : 'in' + Date.now().toString(36), date, m: date.slice(0, 7), amt, desc: $('cfa-desc').value.trim() || $('cfa-type').value, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: $('cfa-cov').checked, pay_m: $('cfa-cov').checked ? $('cfa-paym').value : null, added: old ? old.added : new Date().toISOString().slice(0, 10) };
+      if (old) e.edited = new Date().toISOString().slice(0, 10);
+      if (e.type === 'Flex claim' || e.type === 'Tax refund' || e.type === 'Gift') { if (!$('cfa-cov').dataset.touched) { e.covers_card = false; e.pay_m = null; } }
+      cfAdd = false; cfEdit = null; cfInflowSave(e, !!old); return; }
+  });
+  document.addEventListener('change', (ev) => { const t = ev.target;
+    if (t.id === 'cfa-cov') t.dataset.touched = '1';
+    if (t.id === 'cf-year') { const k = navMonths().filter((x) => x.startsWith(t.value)).pop(); if (k) { sel = k; cfPick = null; try { localStorage.setItem('md-month', sel); } catch (e) {} render(); } return; }
+    if (!t.dataset || !t.dataset.cfm) return; ev.stopPropagation();
+    const f = t.dataset.cfm, k = t.dataset.k, raw = String(t.value).replace(/[₹,\s]/g, ''), M0 = cfModel(), r = M0 && M0.rows.find((x) => x.k === k); if (!r) return;
+    const v = raw === '' ? null : Math.round(Number(raw)); if (raw !== '' && (!Number.isFinite(v) || v < 0)) { toast('Enter 0 or a positive number'); return; }
+    if (!r.est) { const fld = { salary: 'salary', other_income: 'other_income', sip: 'sip', stocks: 'direct_equity' }[f]; if (!fld || v == null) return;
+      const patch = { [fld]: v }; if (fld === 'sip' || fld === 'direct_equity') patch[fld + '_src'] = 'Edited in Cash flow · ' + fmtIso(new Date().toISOString().slice(0, 10)); if (fld === 'salary') patch.salary_expected = false;
+      monthWrite(k, patch, mlabel(k, true) + ' updated'); return; }
+    const ovr = Object.assign({}, cfCfg().ovr || {}), o = Object.assign({}, ovr[k] || {}); if (v == null) delete o[f]; else o[f] = v; if (Object.keys(o).length) ovr[k] = o; else delete ovr[k];
+    cfSave({ ovr }, v == null ? 'Back to the forecast default' : mlabel(k, true) + ' only');
+  });
+  document.addEventListener('focusin', (ev) => { const t = ev.target; if (t.dataset && t.dataset.cfm) { t.value = t.value.replace(/,/g, ''); try { t.select(); } catch (e) {} } });
+  document.addEventListener('keydown', (ev) => { const t = ev.target; if (ev.key === 'Escape' && cfDraft) { cfCloseDrawer(); return; } if (ev.key === 'Enter' && t.dataset && (t.dataset.cfm || t.dataset.cfd)) t.blur();
+    if ((ev.key === 'Enter' || ev.key === ' ') && t.classList && (t.classList.contains('cf-hit') || t.classList.contains('cf-lhit'))) { ev.preventDefault(); cfPick = t.dataset.k; renderCashflow(); setTimeout(() => { const n = document.querySelector('#cf-bars .cf-hit[data-k="' + cfPick + '"]'); if (n) n.focus(); }, 0); } });
+  document.addEventListener('pointerover', (ev) => { const g = ev.target.closest && ev.target.closest('#cf-line .cf-lhit'); const rd = $('cf-lread'); if (!rd) return;
+    document.querySelectorAll('#cf-line .cf-lhit.on').forEach((n) => n !== g && n.classList.remove('on'));
+    const k = g ? g.dataset.k : (ev.target.closest && ev.target.closest('#cf-line') ? null : undefined); if (k === undefined) return;
+    if (g) g.classList.add('on'); const kk = k || cfPick; rd.innerHTML = '<b>' + esc(mlabel(kk, true)) + '</b> ' + esc(cfLineInfo[kk] || ''); });
+  document.addEventListener('pointerover', (ev) => { if (!ev.target.closest) return; const g = ev.target.closest('#cf-bars .cf-hit'), rd = $('cf-bread'); if (!rd) return;
+    const inB = ev.target.closest('#cf-bars'); if (!g && inB) return; const k = g ? g.dataset.k : cfPick; if (!g && !rd.dataset.h) return; rd.dataset.h = g ? '1' : '';
+    document.querySelectorAll('#cf-bars .cf-hit').forEach((n) => n.classList.toggle('dim', !!g && n !== g)); rd.innerHTML = '<b>' + esc(mlabel(k, true)) + '</b> ' + esc(cfBarInfo[k] || ''); });
+  document.addEventListener('focusin', (ev) => { const g = ev.target.closest && ev.target.closest('#cf-bars .cf-hit'); if (!g) return; const rd = $('cf-bread'); if (rd) rd.innerHTML = '<b>' + esc(mlabel(g.dataset.k, true)) + '</b> ' + esc(cfBarInfo[g.dataset.k] || ''); });
+  document.addEventListener('focusin', (ev) => { const g = ev.target.closest && ev.target.closest('#cf-line .cf-lhit'); if (!g) return; const rd = $('cf-lread'); if (rd) rd.innerHTML = '<b>' + esc(mlabel(g.dataset.k, true)) + '</b> ' + esc(cfLineInfo[g.dataset.k] || ''); });
+  { let rt, cw = 0; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const w = ($('cf-bars') || {}).clientWidth || 0; if (w && Math.abs(w - cw) > 30) { cw = w; try { renderCashflow(); } catch (e) {} } }, 150); }); }
 
   function renderBills() {
     const m = M(), st = set();
@@ -1740,7 +2108,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       if(spend==null && ccMeta() && (ccMeta().cards[id]||{}).tx){ const cy=ccYearOf(id); if(cy){ spend=ccSum(id,cy.start,cy.end); auto=ccLast(id); } }
       const benchmarkField='priorSpend/'+cycle;
       let benchmark=cardSetting(id,benchmarkField,null);
-      if(benchmark==null && ccMeta() && (ccMeta().cards[id]||{}).tx){ const mc=ccMeta().cards[id].months||{}; benchmark=Object.entries(mc).filter(([k])=>k>ymAdd(ccMeta().to,-12)).reduce((a,[,v])=>a+v,0); }
+      if(benchmark==null && ccMeta() && (ccMeta().cards[id]||{}).tx){ const mc=ccMeta().cards[id].months||{}; benchmark=Object.entries(mc).filter(([k])=>k>ymAdd(ccDone(),-12)&&k<=ccDone()).reduce((a,[,v])=>a+v,0); }
       const goal=waiver>0?waiver:benchmark;
       return {id,c,start,spendField,spend,auto,waiver,benchmark,benchmarkField,goal,until:start?(start-month+12)%12:99};
     }).sort((a,b)=>a.c.order-b.c.order || a.c.name.localeCompare(b.c.name));
@@ -2781,6 +3149,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const CC_SHORT = { regalia: 'Regalia Gold', amex: 'Amex MRCC', sbicash: 'SBI Cashback', amazon: 'Amazon Pay' };
   const ccName = (id) => CC_SHORT[id] || ((S.cards[id] || {}).name) || id;
   const ccMeta = () => (S.ccspend || {}).meta || null;
+  // Statements are added as they arrive: meta.to = latest statement month (may be partial), meta.done_to = last month with every card's statement in
+  const ccDone = () => { const m = ccMeta(); return m ? (m.done_to && m.done_to < m.to ? m.done_to : m.to) : null; };
+  const ccPart = (k) => { const m = ccMeta(), d = ccDone(); if (!m || !d || k <= d) return null; const C = Object.values(m.cards || {});
+    return { n: C.filter((c) => (c.last_stmt || '').slice(0, 7) >= k).length, N: C.filter((c) => (c.months || {})[d] != null && c.last_stmt).length }; };
+  const ccLbl = (k, long) => mlabel(k, long) + (ccPart(k) ? (long ? ' (so far)' : '*') : '');
   let ccCache = null;
   function ccTx() {
     const C = S.ccspend || {}, key = Object.keys(C).map((k) => k + ':' + ((C[k].rows || []).length)).join('|');
@@ -2792,7 +3165,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     ccCache = { key, rows }; return rows;
   }
   const ymAdd = (ym, n) => { const [y, m] = ym.split('-').map(Number), d = new Date(y, m - 1 + n, 1); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); };
-  function ccMonthsList(span) { const meta = ccMeta(); if (!meta) return []; const out = []; let k = span === '13' ? meta.from : ymAdd(meta.to, -11); while (k <= meta.to) { out.push(k); k = ymAdd(k, 1); } return out; }
+  function ccMonthsList(span, end) { const meta = ccMeta(); if (!meta) return []; const to = end || meta.to, out = []; let k = span === '13' ? meta.from : ymAdd(to, -11); while (k <= to) { out.push(k); k = ymAdd(k, 1); } return out; }
   const ccSum = (id, a, b) => ccTx().filter((t) => (id === 'all' || t.id === id) && t.d >= a && t.d <= b).reduce((s, t) => s + t.a, 0);
   const isoD = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   const fmtIso = (s) => { if (!s) return '—'; const [y, m, d] = s.split('-').map(Number); return d + ' ' + MON[m - 1] + ' ' + y; };
@@ -2856,9 +3229,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     let crow = rows, cser = series;
     if (ccState.card !== 'all') { cser = [{ key: ccState.card, label: ccName(ccState.card), color: CC_COL[ccState.card] || 'var(--accent)' }]; crow = ms.map((k) => ({ key: k, [ccState.card]: num((meta.cards[ccState.card].months || {})[k]) || 0 })); }
     const pick = ccState.month ? ms.indexOf(ccState.month) : null;
-    svgStack($('ccs-month'), crow, cser, (r) => mlabel(r.key), { h: 300, ym: true, values: true, label: 'Card spend by statement month', pick: pick >= 0 ? pick : null, tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click to list this month</small>',
-      readText: (i) => '<b>' + esc(mlabel(crow[i].key, true)) + '</b> · ' + esc(inr(cser.reduce((a, s) => a + Math.max(0, num(crow[i][s.key]) || 0), 0))) + ' <span class="muted">· click a month to list its transactions</span>',
+    svgStack($('ccs-month'), crow, cser, (r) => ccLbl(r.key), { h: 300, ym: true, values: true, label: 'Card spend by statement month', pick: pick >= 0 ? pick : null, tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click to list this month</small>',
+      readText: (i) => '<b>' + esc(ccLbl(crow[i].key, true)) + '</b> · ' + esc(inr(cser.reduce((a, s) => a + Math.max(0, num(crow[i][s.key]) || 0), 0))) + ' <span class="muted">· click a month to list its transactions</span>',
       onClick: (i) => { ccState.month = ccState.month === crow[i].key ? null : crow[i].key; ccState.limit = 25; renderCcSpend(); } });
+    { const host = $('ccs-month'); let pn = $('ccs-part'); if (!pn && host) { pn = document.createElement('p'); pn.id = 'ccs-part'; pn.className = 'small muted'; pn.style.margin = '4px 0 0'; host.insertAdjacentElement('afterend', pn); }
+      const pk = ms.find((k) => ccPart(k)), pp = pk && ccPart(pk); if (pn) { pn.hidden = !pp; if (pp) pn.textContent = '* ' + mlabel(pk, true) + ' so far: ' + pp.n + ' of ' + pp.N + ' card statements in. Rolling 12-month totals stop at ' + mlabel(ccDone(), true) + ' until the month is complete.'; } }
     // categories
     const cats = Object.entries(byCat).sort((a, b) => b[1] - a[1]).map(([c, v]) => ({ key: c, label: c, v, sub: Math.round(v / total * 100) + '%' }));
     hbarList($('ccs-cats'), cats, { active: ccState.cat, onPick: (it) => { ccState.cat = ccState.cat === it.key ? null : it.key; ccState.limit = 25; renderCcSpend(); } });
@@ -2874,7 +3249,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const c = meta.cards[id], cy = ccYearOf(id), last = ccLast(id), first = ccFirst(id);
       const yt = ((S.perks[id] || {}).targets || []).filter((t) => t.period === 'year' && t.threshold);
       if (id === 'coral' && !yt.length) yt.push({ threshold: 200000, reward: '2,000 RP milestone' });
-      const l12 = Object.entries(c.months || {}).filter(([k]) => k > ymAdd(meta.to, -12)).reduce((s, [, v]) => s + v, 0);
+      const l12 = Object.entries(c.months || {}).filter(([k]) => k > ymAdd(ccDone(), -12) && k <= ccDone()).reduce((s, [, v]) => s + v, 0);
       let cur = null, prev = null, prevPartial = false;
       if (cy && c.tx) { cur = ccSum(id, cy.start, cy.end); prev = ccSum(id, cy.pstart, cy.pend); prevPartial = !first || first > cy.pstart; }
       const fee = (S.cards[id] || {}).fee;
@@ -2971,9 +3346,9 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (!el || !cel) return;
     if (!meta) { el.innerHTML = cel.innerHTML = '<p class="small muted">' + (loaded.has('ccspend') ? 'No card statements saved yet.' : 'Loading card statements…') + '</p>'; return; }
     const ms = ccMonthsList('13'), { rows, series } = ccSeries(ms);
-    const r12 = rows.slice(-12), sp12 = (keys) => r12.reduce((a, r) => a + keys.reduce((t, k) => t + (num(r[k]) || 0), 0), 0);
-    svgStack(el, rows, series, (r) => mlabel(r.key), { w: 1000, h: 250, ym: true, values: true, label: 'Card spend by statement month and card', legendExtra: (solo) => '<span class="rw-pill" title="Rolling 12 statements' + (r12.length ? ', ' + mlabel(r12[0].key) + '–' + mlabel(r12[r12.length - 1].key) : '') + ', purchases minus refunds">12 mo · ' + esc(inr(sp12(solo ? [solo] : series.map((se) => se.key)))) + '</span>', tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click for the transactions</small>', onClick: (i) => openCcSpend({ month: rows[i].key, span: '13', cat: null }) });
-    const ms12 = ccMonthsList('12'), byCat = {};
+    const r12 = rows.filter((r) => r.key <= ccDone()).slice(-12), sp12 = (keys) => r12.reduce((a, r) => a + keys.reduce((t, k) => t + (num(r[k]) || 0), 0), 0);
+    svgStack(el, rows, series, (r) => ccLbl(r.key), { w: 1000, h: 250, ym: true, values: true, label: 'Card spend by statement month and card', legendExtra: (solo) => '<span class="rw-pill" title="Rolling 12 statements' + (r12.length ? ', ' + mlabel(r12[0].key) + '–' + mlabel(r12[r12.length - 1].key) : '') + ', purchases minus refunds">12 mo · ' + esc(inr(sp12(solo ? [solo] : series.map((se) => se.key)))) + '</span>', tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click for the transactions</small>', onClick: (i) => openCcSpend({ month: rows[i].key, span: '13', cat: null }) });
+    const ms12 = ccMonthsList('12', ccDone()), byCat = {};
     ccTx().filter((t) => t.s >= ms12[0] && t.s <= ms12[ms12.length - 1]).forEach((t) => (byCat[t.c] = (byCat[t.c] || 0) + t.a));
     const tot = Object.values(byCat).reduce((a, b) => a + b, 0);
     const bm = {}; ccTx().filter((t) => t.s >= ms12[0] && t.s <= ms12[ms12.length - 1]).forEach((t) => { const k = merchKey(t.m); bm[k] = bm[k] || { v: 0, n: 0 }; bm[k].v += t.a; bm[k].n++; });
@@ -3199,6 +3574,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       return base; }
     if (a.need === 'target') { const T = S.targets[a.target || 'ef'] || {}, t = num(T.target); return t == null ? null : { v: t, l: 'Target', d: T.label || 'Goal', goal: true }; }
     if (a.need === 'hold') return { v: num(a.keep), l: 'Must hold', d: a.keep_note || 'Not yours to spend', edit: true };
+    if (a.need === 'locked') return { v: num(a.bal), l: 'Locked', d: a.keep_note || 'Locked deposit; not spare cash', goal: true, locked: true };
     return null;
   }
   function bkSave(id, patch, msg) {
@@ -3228,7 +3604,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const ago = (d) => { const n = -daysTo(new Date(d + 'T00:00:00')); return n <= 0 ? 'today' : n === 1 ? 'yesterday' : n + ' days ago'; };
     $('bk-sum').textContent = known.length + ' of ' + L.length + ' accounts with a balance' + (old ? ' · oldest: ' + old.a.name + ', ' + ago(old.a.asof) : '');
     $('bk-kpis').innerHTML = kpi('Total balance', esc(inr(tot)), esc(known.length + ' of ' + L.length + ' accounts')) +
-      kpi('Earmarked', esc(inr(held)), esc(short1.length ? short1.map((r) => r.a.name).join(', ') + ' below what it must hold' : 'floor, card float, EMI, deposit, emergency fund')) +
+      kpi('Earmarked', esc(inr(held)), esc(short1.length ? short1.map((r) => r.a.name).join(', ') + ' below what it must hold' : 'floor, card float, EMI, deposit, emergency fund, locked FD')) +
       kpi('Available balance', '<span class="' + (tot - held > 0 ? 'pos' : '') + '">' + esc(inr(tot - held)) + '</span>', 'yours to spend or invest');
     $('bk-stack').innerHTML = known.filter((r) => r.b > 0).map((r) => '<i data-bkseg="' + esc(r.a.id) + '" data-tip="' + esc(r.a.name + '|' + inr(r.b) + '|' + (tot ? (r.b / tot * 100).toFixed(1) : 0) + '% of ' + inr(tot)) + '" style="flex:' + r.b + ';background:' + r.a.col + '"></i>').join('');
     { const st0 = $('bk-stack'), wrap = st0.parentElement; let tip = wrap.querySelector(':scope > .ctip');
@@ -3255,12 +3631,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         let chip = '';
         if (b == null) chip = '<span class="chip warn">Add balance</span>';
         else if (n.v == null) chip = '<span class="chip warn">Add amount</span>';
+        else if (n.locked) chip = '<span class="chip info">Locked' + (a.matures ? ' · renews ' + esc(fmtD(new Date(a.matures + 'T00:00:00')).replace(/^\d+ /, '')) : '') + '</span>';
         else if (n.goal) chip = b >= n.v ? '<span class="chip good">Target reached</span>' : '<span class="chip info">' + Math.round(b / n.v * 100) + '% · ' + esc(short(n.v - b)) + ' to go</span>';
         else if (b < n.v && n.by && !n.win) chip = '<span class="chip info">Top up by ' + esc(fmtD(n.by).replace(/ \d{4}$/, '')) + '</span>';
         else chip = b >= n.v ? '<span class="chip good">' + esc(short(b - n.v)) + ' above</span>' : '<span class="chip bad">Short ' + esc(short(n.v - b)) + '</span>';
-        const lab = '<span class="small muted">' + esc(n.l) + ' ' + esc(n.v == null ? '—' : short(n.v)) + '</span>';
+        const lab = '<span class="small muted">' + (n.locked ? esc(n.d) : esc(n.l) + ' ' + esc(n.v == null ? '—' : short(n.v))) + '</span>';
         need = '<div class="bk-need">' + lab + chip + '</div>';
-        if (n.goal && b != null && n.v) meter = '<div class="meter bk-meter"><i style="width:' + Math.min(100, b / n.v * 100).toFixed(1) + '%"></i></div>';
+        if (n.goal && !n.locked && b != null && n.v) meter = '<div class="meter bk-meter"><i style="width:' + Math.min(100, b / n.v * 100).toFixed(1) + '%"></i></div>';
       }
       const more = [n && n.edit ? esc(n.d) + ' ' + box('data-bkkeep="' + esc(a.id) + '"', n.v, 'amount', a.name + ' amount to hold') : (n && n.d ? esc(n.d) : ''), a.asof ? 'Updated ' + esc(fmtD(new Date(a.asof + 'T00:00:00'))) : esc(a.src || ''), chg, a.note ? esc(a.note) : ''].filter(Boolean).join(' · ');
       return '<div class="bkcard" id="bk-' + esc(a.id) + '"><div class="bk-top"><span class="bk-name" data-bkmore="' + esc(a.id) + '" title="' + esc(a.role || '') + '"><b>' + esc(a.name) + '</b></span>' +
@@ -3563,7 +3940,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       canWrite = false;
       document.body.classList.add('offline'); if (window.__TEMPLATE__) document.body.classList.add('template');
       COLLS.forEach((c) => { S[c] = window.__SNAPSHOT__[c] || {}; loaded.add(c); });
-      restoreIncome(); restoreTodos(); applyOffTicks(); try { const hv = localStorage.getItem('pf-home-value'); if (hv !== null) { const v = JSON.parse(hv); if (v === null || (Number.isFinite(v) && v >= 0)) (S.settings.main = S.settings.main || {}).home_value = v; } } catch (e) {}
+      restoreIncome(); cfRestoreOffline(); restoreTodos(); applyOffTicks(); try { const hv = localStorage.getItem('pf-home-value'); if (hv !== null) { const v = JSON.parse(hv); if (v === null || (Number.isFinite(v) && v >= 0)) (S.settings.main = S.settings.main || {}).home_value = v; } } catch (e) {}
       $('offline-note').textContent = 'Snapshot saved ' + (window.__SNAPSHOT_DATE__ || '') + '. Income, home value, bill ticks, benefit ticks and to-do ticks you change here are kept in this browser only and do not update the claude.ai version; everything else is view-only.';
       render(); return;
     }

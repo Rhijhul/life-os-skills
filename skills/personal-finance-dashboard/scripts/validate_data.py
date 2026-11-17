@@ -38,11 +38,21 @@ if nongold:
     if abs(w - 100) > 0.6: warn(f'stock weights add to {w:.2f}% (should be ~100%, excluding GoldBEES)')
 for bid, b in (d.get('bank') or {}).items():
     if not b.get('name'): err(f'bank/{bid}: name is required')
-    if b.get('need') not in (None, 'floor', 'float', 'target', 'emi', 'hold'): err(f'bank/{bid}.need must be floor|float|target|emi|hold|null')
+    if b.get('need') not in (None, 'floor', 'float', 'target', 'emi', 'hold', 'locked'): err(f'bank/{bid}.need must be floor|float|target|emi|hold|locked|null')
     if b.get('need') == 'emi' and b.get('loan', 'home') not in loans: warn(f'bank/{bid}: loan "{b.get("loan", "home")}" not found in loans')
     if b.get('need') == 'target' and b.get('target', 'ef') not in (d.get('targets') or {}): warn(f'bank/{bid}: target "{b.get("target", "ef")}" not found in targets')
     if b.get('need') == 'hold' and b.get('keep') is None: warn(f'bank/{bid}: need "hold" without keep')
     if b.get('bal') is not None and not isinstance(b['bal'], (int, float)): err(f'bank/{bid}.bal must be a number')
+if not any(b.get('need') == 'floor' for b in (d.get('bank') or {}).values()) and d.get('bank'): warn('no bank account has need "floor": Cash flow needs the salary account to draw its buffer')
+for iid, e in (d.get('inflows') or {}).items():
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(e.get('date', ''))): err(f'inflows/{iid}.date must be YYYY-MM-DD')
+    if not isinstance(e.get('amt'), (int, float)) or e['amt'] <= 0: err(f'inflows/{iid}.amt must be a positive number')
+    if e.get('status') not in ('actual', 'expected'): err(f'inflows/{iid}.status must be actual|expected')
+    if e.get('covers_card') and not re.fullmatch(r'\d{4}-\d{2}', str(e.get('pay_m', ''))): err(f'inflows/{iid}: covers_card needs pay_m YYYY-MM')
+cf = (st or {}).get('cf') or {}
+if cf.get('sip_step_from') and not re.fullmatch(r'\d{4}-\d{2}', str(cf['sip_step_from'])): err('settings.main.cf.sip_step_from must be YYYY-MM or empty')
+for k in (cf.get('ovr') or {}):
+    if not re.fullmatch(r'\d{4}-\d{2}', k): err(f'settings.main.cf.ovr: key {k} must be YYYY-MM')
 for tid, t in (d.get('tax') or {}).items():
     if not re.fullmatch(r'fy\d{4}-\d{2}', tid): err(f'tax/{tid}: id must be fy<YYYY-YY>')
     if t.get('regime') not in ('new', 'old'): warn(f'tax/{tid}.regime should be new or old')
