@@ -2,6 +2,11 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.5.1 · 18-Nov-2026
+
+- **Cash flow:** the minimum buffer is editable at the top right of the buffer chart ("Minimum buffer ₹…"). It saves to `settings.main.bank_floor` (offline: this browser) and updates the summary cards, the minimum line, the salary-account floor on Savings and the Overview checks at once.
+- **Docs:** SOP for the editable minimum; sample dashboard, screenshot and zip refreshed.
+
 ## Personal Finance Dashboard v1.5 · 18-Nov-2026
 
 - **Cash flow ahead (new section):** recorded months plus a forecast to the financial-year end (31 March), with a 3M / 6M / YTD history window, year select and calendar spacing.

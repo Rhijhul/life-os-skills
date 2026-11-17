@@ -92,7 +92,7 @@ Conventions:
 | Key | Type | Meaning |
 |---|---|---|
 | birth | string `YYYY-MM-DD` | Date of birth; retirement month = birth year + 60, same month |
-| bank_floor | number | Minimum salary-account balance after bills (default 50000) |
+| bank_floor | number | Minimum salary-account balance after bills (default 50000); editable on the Cash flow page ("Minimum buffer") |
 | crash_floor | number | Lower floor allowed during a market crash (default 40000) |
 | axis_float | number | Petty cash kept in the running account (also covers card auto-debits) |
 | emi_topup_day | number | Day the EMI money must reach the EMI account (default 3); before it the EMI account is not flagged as short |
@@ -664,6 +664,7 @@ Money in and out per month: recorded months from `months/*`, then a forecast to 
 
   "Needs reconciliation" when the account balance or a forecast month-end is missing. An "i" on each card explains it (hover or tap).
 - **Monthly surplus / shortfall:** one bar per month (money in − money out), Recorded band blue, Forecast band gold, year boundaries marked, current month labelled "(Now)". Hover dims the others and shows "in − out = net" under the chart; click or Enter selects the month.
+- **Minimum buffer** (top right of the buffer chart): an editable amount, saved to `settings.main.bank_floor` (offline: `localStorage` `pf-bank-floor`). The same value drives the summary cards, the minimum line, the salary-account floor on Savings and the Overview checks; the goal reserve is excluded.
 - **Salary-account buffer line:** recorded after-bills figures (`months.free_cash`), a diamond for the latest bank balance (from `bank`, need `floor`), dashed forecast month-ends carried forward from it (`previous + in − out`; nothing in that balance is deducted twice), the minimum as a dashed line. One point per month: in the bank balance's month the diamond replaces the after-bills point (the saved figure and the difference are in its tooltip). Hover shows a guide line and a readout; click selects.
 - **Side panel (selected month):** Money in (salary, other income, other money in with ✎ per receipt and "+ Add money in"), Money out (card payments = own spend + card payments repaid by others, EMI, mutual funds, stocks, goal savings, one-offs), Monthly surplus/shortfall, "View entries & calculation". Recorded months write to `months/<YYYY-MM>`; forecast months save an override for that month only (`cf.ovr`); an empty box returns to the default; 0 is allowed.
 - **Forecast defaults:** salary = latest record (+ approx. net raise from the month after `hike_month`: gross monthly × `hike_pct` × `net_share`); other income = latest record (until `rent_until` if set); mutual funds = SIP schedule (Σ `mf.sip` excluding US stocks), stepped up by `sip_step_pct` from `sip_step_from` (or the raise); stocks = `stock_default`; cards = average own spend of the last `avg_n` months; EMI = active loans not paid by others; goal savings = latest month; one-offs = locker fee (if set) and the PPF yearly minimum in March.
