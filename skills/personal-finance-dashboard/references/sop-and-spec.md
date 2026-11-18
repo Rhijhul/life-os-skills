@@ -117,6 +117,8 @@ Conventions:
 | notion_parent | string | Notion page id for "Save this month" (optional) |
 | last_updated | ISO timestamp | Shown in the sidebar; set by every refresh |
 | last_updated_by | string | "weekly refresh", "monthly update", etc. |
+| card_limits | `{asof, issuers:[{id, name, cards[], limit, prev, changed, status 'confirmed'\|'provisional', note}]}` | Credit limits per issuer (cards sharing one limit are listed together and counted once). Editable on Cards → Spending; offline `localStorage` `pf-card-limits` |
+| tax_refund_plan | string | Optional one-line plan for the expected refund, shown on the Tax page (default "planned for the goal reserve") |
 | cf | object | Cash flow assumptions and overrides: `hike_pct`, `hike_month` (1–12, month the raised pay is for), `net_share` (share of a gross raise that reaches take-home, default 0.64), `sip_step_pct`, `sip_step_from` (`YYYY-MM`, empty = with the raise), `stock_default` (future stock buys per month), `avg_n` (months averaged for card spend), `rent_until` (optional end date for other income), `ovr` `{YYYY-MM: {salary, other_income, sip, stocks}}` (one forecast month only), `saved` `{YYYY-MM: {at, rows[{k, inn, out, me}]}}` (dated forecast copies). Offline: `localStorage` `pf-cf` |
 
 ### 2.2 `months/<YYYY-MM>` (one per month)
@@ -153,7 +155,7 @@ Conventions:
 | cycle_start | number | Statement cycle start day |
 | due_day | number | Payment due day |
 | due_days | object | Optional per-month override `{YYYY-MM: day}` |
-| bills | object | `{YYYY-MM (due month): amount}` |
+| bills | object | `{YYYY-MM (due month): amount}`: the full statement amount, keyed by the month it is due (statement month + 1 for most cards). Keep it for every due month you have; Trends "Card bills by card · by due month" reads it |
 | paid | object | `{YYYY-MM: true}` |
 | anniv_spend | number \| null | Optional override of spend this card year |
 
@@ -181,6 +183,8 @@ Conventions:
 | cats | string[] | Category names; transaction rows refer to them by index |
 | source | string | How the data was compiled |
 | cards | object | `{cardId: {name, months:{YYYY-MM: net spend}, bills:{YYYY-MM: bill}, coverage:{YYYY-MM: note}, last_stmt, tx, year_start:'MM-DD', year_basis, lifetime_free?}}` |
+
+Optional extra category `EMIs, fees & cashback` for statement-item lines (EMI instalments, fees, cashback credits, EMI conversions), so each statement's rows add up to its bill. These lines count in card spend but are left out of milestones, Top merchants and Biggest purchases. A card whose statement has no transaction detail gets one row per statement with merchant `<Card> statement total (no transaction detail)`.
 
 The 18 sample categories, in index order:
 
@@ -330,7 +334,7 @@ A new document starts each April.
 | Key | Type | Meaning |
 |---|---|---|
 | asof, source, note | string | Freshness line and one note under the wallet |
-| programs | array | One per points programme: `{id, card, short, unit 'RP'\|'MR'\|…, bal, asof, src, rule (expiry rule, one line), route (default route id), routes:[{id, label, v (₹ per point)}], expiring:[{date, pts, est}]}`. Cards that earn into one points account get ONE row. Partner programmes added by a transfer carry `partner: true`. |
+| programs | array | One per points programme: `{id, card, short, unit 'RP'\|'MR'\|…, bal, asof, src, rule (expiry rule, one line), route (default route id), routes:[{id, label, v (₹ per point)}], expiring:[{date, pts, est}]}` plus optional `unlocking` (points not yet usable) and `tier {name, until, next, next_at, earned, note}` for tiered programmes (stored for reference). When the programme lists exact expiry dates per batch, enter each batch with `est: false`. Cards that earn into one points account get ONE row. Partner programmes added by a transfer carry `partner: true`. |
 | redemptions | array | `{id, date, card (program id), pts, kind 'voucher'\|'transfer'\|'credit'\|'booking'\|'other', partner, ppts, pid, value, useby}`. Written by the page's "Record a redemption" form; the card balance goes down by itself. |
 | routing | array | "Which card for which spend": `{spend, card, ret}` |
 | watch | string[] | Short reminders (expiry traps, where to check) |
@@ -347,6 +351,7 @@ A new document starts each April.
 | keep, keep_note | number, string | Amount and reason for need `hold` (editable on the page) |
 | bal, asof, src | number, date, string | Current balance, date, source ("Typed in" when edited on the page) |
 | hist | `{YYYY-MM: balance}` | Month-end balances (the page writes the current month when you type a balance) |
+| bal_at, in_adj | ISO timestamp, number | Set by the page: `bal_at` when a balance is typed; `in_adj` = money in added since (see `inflows.bk`), reset to 0 on a typed balance |
 | note | string | One line shown in the detail row |
 
 ### 2.16 `tax/fy<YYYY-YY>` (one per tax year, e.g. `fy2026-27`)
@@ -355,13 +360,13 @@ A new document starts each April.
 |---|---|---|
 | fy, label, regime, asof, src | string | Tax year, label, `new` or `old`, freshness and sources |
 | salary | `{ytd_gross, ytd_to 'YYYY-MM', monthly, extras_note, bonus, pt_ytd, epf_ytd}` | Payslip April-to-date gross, monthly gross for the rest of the year, bonus (typed on the page) |
-| tds | `{months:{YYYY-MM: ₹}, monthly_next, src}` | TDS deducted per month and the expected monthly figure to March |
+| tds | `{months:{YYYY-MM: ₹}, monthly_next, src, q26as:{Q1, Q2, Q3, Q4}}` | TDS deducted per month and the expected monthly figure to March |
 | cg | array | `{id, src, asof, stcg_eq, ltcg_eq, stcg_other, stcg_other_loss, ltcg_other, note}` per source (mutual funds, Indian stocks, US stocks) |
 | spec | `{cy, src}` | Intraday (speculative) profit or loss this year |
 | other | `{div_in, div_us, us_tax_withheld, interest_sb}` | Dividends, US tax withheld, savings interest (typed on the page) |
 | losses_cf | array | `{ay, kind, amt, last_ay}` losses carried forward |
 | lrs | `{ytd}` | Money sent abroad this year (TCS context) |
-| returns | array, newest first | `{ay, fy, form, filed, regime, income, tax, tds, adv_tax, sa_tax, tcs, refund, refund_got}` past returns; missing values show "—" |
+| returns | array, newest first | `{ay, fy, form, filed, everified, status, ack, regime, income, tax, tds, adv_tax, sa_tax, tcs, refund, refund_got}` past returns (`everified` date and `status` from the e-filing portal, e.g. "Under processing"); missing values show "—" |
 | todo | string[] | Documents still needed this year |
 
 Rules:
@@ -378,8 +383,13 @@ Rules:
 | desc, type | string | Description; type: Family reimbursement, Employer reimbursement, Flex claim, Tax refund, Gift, Other |
 | account | string | `bank` id it landed in |
 | status | `actual` \| `expected` | Expected receipts count in forecast months only; in a recorded month they are listed but not counted until marked actual |
-| covers_card, pay_m | boolean, `YYYY-MM` | The receipt repays a card payment made in month `pay_m`; that month's card payments rise by the same amount, so the two net out while keeping timing differences |
+| covers_card, pay_m | boolean, `YYYY-MM` | Legacy (ignored since v1.6): card spend is always the full statement and money paid back is income |
+| bk | `{acct, amt, at}` \| null | Set by the page: what this receipt added to the receiving account's balance, so an edit or delete undoes exactly that |
 | added, edited | date | Audit dates |
+
+**Rule: card spend = full statement amounts everywhere; money anyone pays you back (family, employer, pass-throughs) is Other money in for the month it arrives.** No transaction tagging or matching.
+
+**Bank balance:** saving an `actual` receipt dated on or after the receiving account's balance date adds it to that account's `bal` (and `hist`); an edit moves the difference (or between accounts) and a delete takes it back. Nothing changes for `expected` receipts, receipts dated before the balance date, or once a new balance has been typed (`bk.at` no longer matches `bal_at`/`asof`). Offline the balance change is kept in `pf-bank-bal`.
 
 Offline, entries and edits are kept in `localStorage` `pf-inflows`. Receipts already in `months.other_credits` are shown alongside and edited in place (each receipt counts once).
 
@@ -666,8 +676,8 @@ Money in and out per month: recorded months from `months/*`, then a forecast to 
 - **Monthly surplus / shortfall:** one bar per month (money in − money out), Recorded band blue, Forecast band gold, year boundaries marked, current month labelled "(Now)". Hover dims the others and shows "in − out = net" under the chart; click or Enter selects the month.
 - **Minimum buffer** (top right of the buffer chart): an editable amount, saved to `settings.main.bank_floor` (offline: `localStorage` `pf-bank-floor`). The same value drives the summary cards, the minimum line, the salary-account floor on Savings and the Overview checks; the goal reserve is excluded.
 - **Salary-account buffer line:** recorded after-bills figures (`months.free_cash`), a diamond for the latest bank balance (from `bank`, need `floor`), dashed forecast month-ends carried forward from it (`previous + in − out`; nothing in that balance is deducted twice), the minimum as a dashed line. One point per month: in the bank balance's month the diamond replaces the after-bills point (the saved figure and the difference are in its tooltip). Hover shows a guide line and a readout; click selects.
-- **Side panel (selected month):** Money in (salary, other income, other money in with ✎ per receipt and "+ Add money in"), Money out (card payments = own spend + card payments repaid by others, EMI, mutual funds, stocks, goal savings, one-offs), Monthly surplus/shortfall, "View entries & calculation". Recorded months write to `months/<YYYY-MM>`; forecast months save an override for that month only (`cf.ovr`); an empty box returns to the default; 0 is allowed.
-- **Forecast defaults:** salary = latest record (+ approx. net raise from the month after `hike_month`: gross monthly × `hike_pct` × `net_share`); other income = latest record (until `rent_until` if set); mutual funds = SIP schedule (Σ `mf.sip` excluding US stocks), stepped up by `sip_step_pct` from `sip_step_from` (or the raise); stocks = `stock_default`; cards = average own spend of the last `avg_n` months; EMI = active loans not paid by others; goal savings = latest month; one-offs = locker fee (if set) and the PPF yearly minimum in March.
+- **Side panel (selected month):** Money in (salary, other income, other money in with ✎ per receipt and "+ Add money in"), Money out (card payments = full statement amounts, EMI, mutual funds, stocks, goal savings, one-offs), Monthly surplus/shortfall, "View entries & calculation". Recorded months write to `months/<YYYY-MM>`; forecast months save an override for that month only (`cf.ovr`); an empty box returns to the default; 0 is allowed.
+- **Forecast defaults:** salary = latest record (+ approx. net raise from the month after `hike_month`: gross monthly × `hike_pct` × `net_share`); other income = latest record (until `rent_until` if set); mutual funds = SIP schedule (Σ `mf.sip` excluding US stocks), stepped up by `sip_step_pct` from `sip_step_from` (or the raise); stocks = `stock_default`; cards = median of the last `avg_n` months of (card bills − money received back), so one unusual month does not swing it; EMI = active loans not paid by others; goal savings = latest month; one-offs = locker fee (if set) and the PPF yearly minimum in March.
 - **Adjust assumptions** (side drawer): raise month and %, SIP step-up % and start month, future stocks, averaging window; live preview; Apply saves `settings.cf` and a dated forecast copy; Reset; Esc closes. The footer lists the links (Income & Investments), the SIP schedule, the stock default, a raise that lands after the window, and "Save this forecast".
 
 ### 4.4 Net worth (`#wealth`)
@@ -862,7 +872,8 @@ Card statements update the Cards section the day they arrive: a month still coll
 
 **Spending view:**
 
-- Period selector (last 12 statements, financial years) and card filter.
+- Period toggle 3M / 6M / 12M (last 3, 6 or 12 statements; default 12M) and card filter.
+- **Credit limits** panel: Total credit limit (confirmed + provisional), Last billed (all cards; each card's latest statement balance, the figure banks report to credit bureaus) with available limit, Credit utilisation (Healthy under 10%, Fine under 30%, High above; 0–30% meter). One row per issuer: last billed | equal-length bar (fill = % used, amber above 30%, hover for used, limit, available) | limit; a recent limit change shows as a tag. Click a row to edit the limit and status. Paying a bill does not reset utilisation until the next statement.
 - KPI tiles: total, per month, biggest card, biggest category, heaviest month.
 - Stacked bars by statement month and card (top 7 cards by spend plus "Other cards"). Click a month to filter.
 - "Where the money went": category bars.
@@ -879,12 +890,14 @@ Card statements update the Cards section the day they arrive: a month still coll
 
 **Amex monthly bonus:** a month counts when ≥₹20,000 and ≥4 transactions of ₹1,500+ post in that calendar month.
 
-**Benefits & targets:** lounges, perks, ticks for unlocked or used benefits (saved to `perks`, or to `localStorage` offline).
+**Benefits & targets:** one-line intro, four summary tiles (targets hit, close to a target, vouchers, lounge access), then one full-width card per issuer: left Lounge + Benefits (+ warning), right the targets grid; ticks for unlocked or used benefits (saved to `perks`, or to `localStorage` `pf-perks` offline).
+
+**Style:** All cards, Card detail, Benefits & targets and Rewards use a gold card style (gradient KPI tiles with a coloured stripe and hover lift, gold-tinted panels); Spending uses the dashboard's standard colours.
 
 **Rewards** (`rewards/main`):
 
 - KPI tiles: points worth (at the redemption picked per card), next expiry, redeemed this calendar year, cashback over the last 12 statements, points removed on the main points card.
-- Points wallet: one row per points account with an editable balance, a "Redeem as" picker (₹ per point; the pick is remembered in the browser), worth with a mini bar, and when/where the balance was last updated.
+- Points wallet: one row per points account with an editable balance, a "Redeem as" picker (₹ per point; the pick is remembered in the browser), worth (value, with "x% of wallet" below), and when/where the balance was last updated.
 - Redemptions: "Record a redemption" form (date, card, points, what you got, partner and partner points for transfers, ₹ value, use-by). Saving lowers the card balance; a transfer adds or tops up a partner row. Remove reverses it.
 - Coming up to expire: points from `expiring` plus vouchers with a use-by date; estimated monthly lots after the first two are grouped.
 - Which card for which spend (`routing`) and reminders (`watch`).
@@ -895,6 +908,7 @@ Card statements update the Cards section the day they arrive: a month still coll
 
 - Month-over-month lines and bars across `months` (income, card spend, invested, saved, free cash).
 - Goal balances over time (travel + vouchers, emergency).
+- Card bills by card · by due month (from `cards.bills`, last 13 months); click a month to open that statement month (due month − 1) in Cards.
 - Interactive readouts.
 
 ### 4.12 To-do (`#todo`)
@@ -938,7 +952,8 @@ Card statements update the Cards section the day they arrive: a month still coll
 - Share bar: one segment per bank (hover/tap tooltip with ₹ and %); the legend shows ₹ and % and jumps to the card.
 - One slim card per account (same soft tint for all): bank name and balance (borderless; click to edit, Enter saves), then the need label and one chip: "₹X above", "Short ₹X", "% · ₹X to go", "Top up by <date>", "All free". Tap the name for the detail line (need breakdown, updated date, change vs last month, note; `keep` edited there).
 - EMI account: holds the next EMI from `emi_topup_day` until it is paid; optional locker fee (`settings.sbi_locker`) from `fund_by` until `until`. Bills shows "Locker fee: move to the EMI account" (tick `locker_paid`) and "Locker fee debited" (tick `locker_debited`).
-- Locked accounts (need `locked`, e.g. a fixed deposit under a lien) count as earmarked and never as spare cash.
+- Locked accounts (need `locked`, e.g. a fixed deposit under a lien) count as earmarked and never as spare cash. Their card is the same size as the others: "Locker lien" (or "Locked deposit") and a "Locked · <month year>" tag with the details in its tooltip.
+- The detail line shows "+ ₹X money in since" when receipts have moved the balance after it was typed.
 - Online, a typed balance saves to `bank/<id>` (bal, asof today, src "Typed in", hist for the month); offline it stays in the browser.
 
 ### 4.17 Tax (`#tax`)
@@ -1070,7 +1085,7 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 5. [CALC] Parse transactions into `[date, merchant, categoryIndex, amount, billMonth]`, with refunds negative. Exclude payments, cashback, fees, interest and EMI principal.
 6. [CALC] Categorise with the 18-category list. Ask only about merchants you can't place.
 7. [CALC] Write `ccspend/tx-<card>-<FY>` (April split), `ccspend/meta`, `cards/<id>` (bills by due month), and `perks/<id>` (targets from step 3).
-8. [ASK] Which card spends are paid back by someone else (so own spend = net).
+8. [ASK] Which card spends are paid back by someone else: record each repayment as Other money in when it arrives (card spend stays the full statement).
 9. [ASK] Points balances and expiry per programme (from each card app), and how they like to redeem. [LOOKUP] ₹ per point for each redemption route. [CALC] Write `rewards/main`; cards that earn into one points account get one row.
 
 ### Stage 2 — Investments
@@ -1139,4 +1154,6 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] Spare cash = Σ free money per account; the "Move to" line lists only accounts with free money; the Savings tiles and Net worth card agree with it.
 - [ ] Tax: totals match a hand calculation for the sample; editing bonus or interest updates the estimate; works offline.
 - [ ] Cash flow: a salary or other-income edit in Cash flow shows in Income and back; a forecast-month override changes that month only; adding, editing and deleting a receipt works online and offline; a top-up of the "Restore minimum buffer" amount clears that card and lifts every projection; a positive average can show ₹0 spending room when one month breaches the minimum.
+- [ ] Money in: an actual receipt dated on or after the account's balance date raises that balance; editing the amount or account moves it; deleting takes it back; online and offline.
+- [ ] Cards: 3M / 6M / 12M change the tiles, charts and list; credit-limit rows, utilisation and hover readouts match the sample; statement-item lines are excluded from milestones.
 - [ ] Rewards: wallet total = Σ worth; recording and removing a redemption moves the balance both ways.

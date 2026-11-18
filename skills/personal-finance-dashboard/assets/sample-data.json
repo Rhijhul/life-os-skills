@@ -29,7 +29,52 @@
 "notion_parent": "",
 "last_updated": "2026-11-14T09:00:00Z",
 "last_updated_by": "sample data",
-"emi_topup_day": 2
+"emi_topup_day": 2,
+"card_limits": {
+"asof": "2026-11-14",
+"issuers": [
+{
+"id": "hdfc",
+"name": "HDFC Bank",
+"cards": [
+"regalia"
+],
+"limit": 450000,
+"prev": 400000,
+"changed": "2026-10-20",
+"status": "confirmed",
+"note": "Sample limit increase"
+},
+{
+"id": "amex",
+"name": "American Express",
+"cards": [
+"amex"
+],
+"limit": 250000,
+"status": "confirmed"
+},
+{
+"id": "sbi",
+"name": "SBI Card",
+"cards": [
+"sbicash"
+],
+"limit": 180000,
+"status": "confirmed"
+},
+{
+"id": "icici",
+"name": "ICICI Bank",
+"cards": [
+"amazon"
+],
+"limit": 300000,
+"status": "provisional",
+"note": "Sample: not yet confirmed"
+}
+]
+}
 }
 },
 "loans": {
@@ -6383,6 +6428,20 @@
 "November payslip",
 "Savings-account interest for the year"
 ]
+}
+},
+"inflows": {
+"in_sample1": {
+"date": "2026-11-12",
+"m": "2026-11",
+"amt": 2400,
+"desc": "Shared dinner repaid",
+"type": "Family reimbursement",
+"account": "axis",
+"status": "actual",
+"covers_card": false,
+"pay_m": null,
+"added": "2026-11-12"
 }
 }
 }

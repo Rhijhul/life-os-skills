@@ -43,7 +43,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Try it in 10 seconds:** download [`sample-dashboard.html`](skills/personal-finance-dashboard/assets/sample-dashboard.html) and open it in Chrome or Safari.
 
-**What's new in v1.5.1** (18-Nov-2026): Cash flow ahead, a forecast to the financial-year end with action cards, editable months and an editable minimum buffer;: see the [changelog](CHANGELOG.md).
+**What's new in v1.6** (19-Nov-2026): card spend as full statements with money paid back as income, receipts that update bank balances, a Credit limits panel with utilisation, a 3M / 6M / 12M card-spend toggle and a redesigned Benefits view: see the [changelog](CHANGELOG.md).
 
 ## How to use a skill
 

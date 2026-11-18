@@ -228,12 +228,26 @@ button.comp:hover { border-color: var(--gc); }
 .qtrack { height: 12px; background: var(--track); border-radius: 3px; overflow: hidden; }
 .qtrack i { display: block; height: 100%; border-radius: 3px; }
 .qrow .num { text-align: right; }
-.perk-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 12px; align-items: start; }
+.perk-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.perk-head p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;max-width:none}@media (max-width:760px){.perk-head p{white-space:normal}}
+.perk-sum{gap:12px;margin:12px 0 18px}.perk-sum .tile.ps{position:relative;border-radius:14px;padding:14px 16px 12px 18px;background:linear-gradient(180deg,color-mix(in srgb,var(--saffron) 9%,var(--surface)),var(--surface));border:1px solid color-mix(in srgb,var(--saffron) 28%,var(--line));box-shadow:0 1px 0 color-mix(in srgb,var(--saffron) 12%,transparent);overflow:hidden;display:grid;gap:4px;align-content:start;transition:transform .15s,box-shadow .15s}
+.perk-sum .tile.ps::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--saffron)}.perk-sum .tile.ps:hover{transform:translateY(-1px);box-shadow:0 6px 16px color-mix(in srgb,var(--saffron) 18%,transparent)}
+.perk-sum .tile.ps .label{color:color-mix(in srgb,var(--saffron) 70%,var(--ink));font-weight:700;letter-spacing:.06em}.perk-sum .tile.ps .v{font-size:1.7rem;font-weight:700;line-height:1.1}.perk-sum .tile.ps .small{line-height:1.4}
+.perk-sum .tile.ps.ps-hit::before{background:var(--good)}.perk-sum .tile.ps.ps-vouch::before{background:var(--bad)}.perk-sum .tile.ps.ps-lounge::before{background:var(--accent)}
+#perk-list .perk{background:color-mix(in srgb,var(--saffron) 6%,var(--surface));border-color:color-mix(in srgb,var(--saffron) 24%,var(--line))}#perk-list .perk .perk-right{border-left-color:color-mix(in srgb,var(--saffron) 30%,var(--line))}#perk-list .perk-t{border-top-color:color-mix(in srgb,var(--saffron) 30%,var(--line))}#perk-list .perk .perk-inputs input{background:var(--surface)}
+
 .perk > summary { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; cursor: pointer; list-style: none; }
 .perk > summary::-webkit-details-marker { display: none; }
 .perk > summary .goal-arrow { margin-left: auto; width: 7px; height: 7px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
 .perk[open] > summary .goal-arrow { transform: rotate(225deg); }
-.perk-body { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.perk-body { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 12px 28px; margin-top: 10px; align-items: start; }
+.perk-body.solo { grid-template-columns: minmax(0, 1fr); }
+.perk-left { display: grid; gap: 10px; align-content: start; }
+.perk-right { display: grid; gap: 6px; align-content: start; padding-left: 22px; border-left: 1px solid var(--line); min-width: 0; }
+.perk-tg { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 0 22px; }
+.perk-auto { margin: 2px 0 0; }
+.perk > summary b { font-size: 1rem; }
+@media (max-width: 820px) { .perk-body { grid-template-columns: minmax(0, 1fr); } .perk-right { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 10px; } }
 .perk-body .facts { font-size: 0.84rem; gap: 3px; }
 .perk-t { display: flex; flex-direction: column; gap: 4px; padding: 6px 0; border-top: 1px dashed var(--line); }
 .perk-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
@@ -247,9 +261,17 @@ svg.scrubbable{cursor:crosshair;touch-action:pan-y;outline-offset:3px;border-rad
 .chart-read{min-height:1.3em;margin:4px 0 0;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}.chart-read .rd{white-space:nowrap}
 .legend.clickable{display:flex;flex-wrap:wrap;gap:4px 6px;margin-bottom:6px}.legend.clickable button{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:.74rem;cursor:pointer}
 .legend.clickable button[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft)}.legend.clickable button.dim{opacity:.45}.legend.clickable .reset{color:var(--accent)}
-.hbars{display:grid;gap:3px}.hbar{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr) 6.2rem;gap:10px;align-items:center;width:100%;padding:4px 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font-size:.82rem;text-align:left;cursor:pointer}
+.hbars{display:grid;gap:3px}.cats-panel{display:flex;flex-direction:column}.cats-panel #ccs-cats{flex:1;align-content:space-between}.hbar{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr) 6.2rem;gap:10px;align-items:center;width:100%;padding:4px 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font-size:.82rem;text-align:left;cursor:pointer}
 .hbar:hover,.hbar.on{background:var(--track)}.hbar.on{outline:1px solid var(--accent)}.hb-t{height:9px;background:var(--track);border-radius:4px;overflow:hidden}.hb-t i{display:block;height:100%;border-radius:4px}.hb-v{text-align:right;white-space:nowrap}.hb-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ccs-controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;margin-bottom:10px}.ccs-controls label{display:grid;gap:3px;font-size:.8rem}
+.lim-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:6px 0 14px}.lim-k{display:grid;gap:4px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.lim-k span{font-size:.78rem;color:var(--muted);font-weight:600}.lim-k b{font-size:1.4rem;font-variant-numeric:tabular-nums}.lim-k b.up{color:var(--good)}.lim-k sup{font-size:.7em;color:var(--warn)}.lim-k small{font-size:.76rem;color:var(--muted)}.lim-meter{display:block;height:6px;border-radius:99px;background:color-mix(in srgb,var(--ink) 8%,transparent);margin-top:4px;overflow:hidden}.lim-meter i{display:block;height:100%;background:var(--accent);border-radius:99px}.lim-meter-z{position:relative;overflow:visible}.lim-meter-z em{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--muted);opacity:.6}.lim-k .chip{margin-left:6px;font-size:.68rem}
+.lim-rows{display:grid;gap:6px}.lim-row{border:1px solid var(--line);border-radius:10px;background:var(--surface);transition:border-color .15s}.lim-row:hover,.lim-row.on{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}.lim-hd{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:minmax(0,1.25fr) 7.5rem minmax(140px,1.4fr) 7.5rem;gap:18px;align-items:center;padding:10px 14px;cursor:pointer}.lim-hd:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.lim-n{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0}.lim-n b{font-size:.92rem}.lim-n small{flex-basis:100%;font-size:.74rem;color:var(--muted)}.lim-bar{display:block;height:10px}.lim-bar .l{display:block;height:100%;border-radius:99px;background:color-mix(in srgb,var(--accent) 22%,transparent);overflow:hidden}.lim-bar .u{display:block;height:100%;background:var(--accent);border-radius:99px}.lim-v{display:grid;text-align:right}.lim-v b{font-variant-numeric:tabular-nums}.lim-v small{font-size:.72rem;color:var(--muted)}
+.lim-det{padding:0 14px 12px;display:grid;gap:8px;color:var(--muted)}.lim-det p{margin:0}.lim-cards{display:flex;flex-wrap:wrap;gap:6px 18px}.lim-cards b{color:var(--ink);font-variant-numeric:tabular-nums}.lim-cards em{font-style:normal;font-size:.72rem}.lim-ed{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.lim-ed label{display:inline-flex;gap:6px;align-items:center}.lim-ed input,.lim-ed select{font:inherit;font-size:.82rem;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}.lim-ed input{width:7.5em;text-align:right}
+.lim-used{display:grid;text-align:right}.lim-used b{font-variant-numeric:tabular-nums;font-size:.9rem}.lim-used small{font-size:.72rem;color:var(--muted)}
+.lim-bar{position:relative;display:flex;align-items:center;gap:10px;height:auto;outline:none;cursor:default}.lim-track{flex:1;display:block;height:10px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);overflow:hidden}.lim-track .u{display:block;height:100%;border-radius:99px;background:var(--accent)}.lim-track .u.hi{background:var(--warn)}.lim-pct{font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:right}
+.lim-tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translate(-50%,4px);background:var(--ink);color:var(--surface);font-size:.74rem;line-height:1.45;padding:7px 10px;border-radius:8px;white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .12s,transform .12s;pointer-events:none;z-index:5;box-shadow:0 6px 16px rgba(0,0,0,.18)}.lim-tip b{color:var(--surface)}.lim-bar:hover .lim-tip,.lim-bar:focus-visible .lim-tip{opacity:1;visibility:visible;transform:translate(-50%,0)}.lim-bar:hover .lim-track,.lim-bar:focus-visible .lim-track{box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 30%,transparent)}
+@media (max-width:640px){.lim-hd{grid-template-columns:minmax(0,1fr) auto auto}.lim-bar{grid-column:1/-1;grid-row:2}}
+.ccs-controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;margin-bottom:10px}.ccs-per{display:grid;gap:3px;font-size:.8rem}.ccs-per .seg{display:inline-flex;width:max-content}.ccs-per .seg button{padding:6px 14px}.ccs-controls label{display:grid;gap:3px;font-size:.8rem}
 #cards-spend .grid2{margin:12px 0}#cards-spend .panel{min-width:0}#cards-spend .panel+.panel{margin-top:12px}#cards-spend .grid2 .panel+.panel{margin-top:0}
 #ccs-years{min-width:820px}#ccs-years td:nth-child(2){min-width:12rem;max-width:16rem}#ccs-qtab{min-width:600px}#ccs-tx{min-width:560px}@media (max-width:600px){.hbar{grid-template-columns:minmax(0,7.5rem) minmax(0,1fr) 5.4rem}}.cy-t{display:grid;gap:3px;margin:3px 0 7px}.cy-t .meter{height:6px}#ccs-years td,#ccs-years th{vertical-align:top}#ccs-years td:nth-child(4){min-width:15rem}
 .qc{display:inline-block;padding:2px 7px;border-radius:6px;font-size:.78rem;white-space:nowrap}.qc.hit,.mchip.hit{background:var(--accent-soft);color:var(--accent);font-weight:600}.qc.miss,.mchip.miss{background:var(--track);color:var(--muted)}.qc.part,.mchip.part{background:var(--saffron-soft);color:var(--saffron)}
@@ -284,6 +306,10 @@ tr.clickrow{cursor:pointer}tr.clickrow:hover td{background:var(--track)}#month-t
 .pos { color: var(--good); } .neg { color: var(--bad); }
 .notes ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
 .hb { display: flex; flex-direction: column; gap: 7px; }
+.mix-panel { display: flex; flex-direction: column; }
+.mix-panel #ch-mix { flex: 1; justify-content: space-evenly; gap: 12px; padding: 6px 0 4px; }
+.mix-panel #ch-mix .r { font-size: 0.9rem; }
+.mix-panel #ch-mix .r i { height: 16px; }
 .hb .r { display: grid; grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr) 6.5rem; gap: 10px; align-items: center; font-size: 0.84rem; line-height: 1.3; }
 .hb .r .hl { display: flex; flex-direction: column; min-width: 0; }
 .hb .r .hl > * { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -460,9 +486,26 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 .theme-row{display:inline-flex;align-items:center;gap:2px;margin-top:10px;padding:3px;border-radius:999px;background:var(--side-ctl,#151d31);border:1px solid var(--side-line,#263049);width:max-content}.theme-row button{display:grid;place-items:center;width:30px;height:26px;border:0;border-radius:999px;padding:0;background:transparent;color:#8f98ab;cursor:pointer;transition:background .15s,color .15s}.theme-row button:hover{color:#eef0f5}.theme-row button[aria-pressed=true]{background:#eef0f5;color:#111a2e}@media(max-width:959px){.bar-top:not(.open) .theme-row{display:none}}
 .moment[data-go]{cursor:pointer;transition:border-color .12s,box-shadow .12s}.moment[data-go]:hover,.moment[data-go]:focus-visible{border-color:var(--accent);box-shadow:0 2px 8px rgba(17,26,46,.08)}
 .moment .mbar{margin-top:4px}.moment .mkey{font-size:.72rem;gap:2px 10px}
-#cards-rewards{display:flex;flex-direction:column;gap:12px}#rw-wallet{min-width:760px;table-layout:fixed}#rw-wallet .c1{width:24%}#rw-wallet .c2{width:16%}#rw-wallet .c3{width:27%}#rw-wallet .c4{width:15%}#rw-wallet .c5{width:18%}#rw-wallet td:nth-child(1),#rw-wallet th:nth-child(1){padding-right:4px}#rw-wallet td:nth-child(2),#rw-wallet th:nth-child(2){padding-left:4px}#rw-wallet td:nth-child(3),#rw-wallet th:nth-child(3){padding-left:26px}#rw-wallet td{vertical-align:middle;padding-block:9px}#rw-wallet tfoot td{border-top:1px solid var(--line);border-bottom:0;font-weight:600;padding-top:10px}.rw-card{display:grid;gap:1px}.rw-card small,.rw-upd small,.rw-rate{display:block;font-size:.72rem;color:var(--muted);line-height:1.3}.rw-sel{width:100%;font-size:.8rem;padding:3px 6px;background:transparent}.rw-fixed{display:block;font-size:.82rem;padding:3px 0}.rw-rate{margin-top:2px}.rw-upd{font-size:.8rem}.rw-val{display:grid;gap:3px;min-width:6.5rem}.rw-val .mini>i{background:var(--saffron)}#rw-exp,#rw-route{font-size:.82rem}.rw-watch{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;color:var(--muted)}.rw-pill{margin-left:auto;align-self:center;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.74rem;white-space:nowrap;font-variant-numeric:tabular-nums}.rw-unit{font-size:.72rem;color:var(--muted);margin-left:3px}.rw-bal{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:4px;width:100%}#rw-wallet .rw-bal input{width:4.6rem;flex:none;text-align:left;font-family:var(--mono);padding:3px 6px;background:transparent;border-color:transparent;border-bottom:1px dashed var(--line);border-radius:4px}.rw-bal input:hover,.rw-bal input:focus{border-color:var(--line);background:var(--bg)}.rw-bal input::placeholder{color:var(--accent);font-family:var(--body)}.rw-bal .rw-unit{flex:none;margin-left:0}
+#cards-rewards{display:flex;flex-direction:column;gap:12px}#rw-wallet .rw-val{display:grid;justify-items:end;gap:1px}#rw-wallet .rw-val b{font-size:1rem;font-variant-numeric:tabular-nums}#rw-wallet .rw-val small{font-size:.72rem;color:var(--muted)}#rw-wallet{min-width:760px;table-layout:fixed}#rw-wallet .c1{width:24%}#rw-wallet .c2{width:16%}#rw-wallet .c3{width:27%}#rw-wallet .c4{width:15%}#rw-wallet .c5{width:18%}#rw-wallet td:nth-child(1),#rw-wallet th:nth-child(1){padding-right:4px}#rw-wallet td:nth-child(2),#rw-wallet th:nth-child(2){padding-left:4px}#rw-wallet td:nth-child(3),#rw-wallet th:nth-child(3){padding-left:26px}#rw-wallet td{vertical-align:middle;padding-block:9px}#rw-wallet tfoot td{border-top:1px solid var(--line);border-bottom:0;font-weight:600;padding-top:10px}.rw-card{display:grid;gap:1px}.rw-card small,.rw-upd small,.rw-rate{display:block;font-size:.72rem;color:var(--muted);line-height:1.3}.rw-sel{width:100%;font-size:.8rem;padding:3px 6px;background:transparent}.rw-fixed{display:block;font-size:.82rem;padding:3px 0}.rw-rate{margin-top:2px}.rw-upd{font-size:.8rem}.rw-val{display:grid;gap:3px;min-width:6.5rem}.rw-val .mini>i{background:var(--saffron)}#rw-exp,#rw-route{font-size:.82rem}.rw-watch{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;color:var(--muted)}.rw-pill{margin-left:auto;align-self:center;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.74rem;white-space:nowrap;font-variant-numeric:tabular-nums}.rw-unit{font-size:.72rem;color:var(--muted);margin-left:3px}.rw-bal{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:4px;width:100%}#rw-wallet .rw-bal input{width:4.6rem;flex:none;text-align:left;font-family:var(--mono);padding:3px 6px;background:transparent;border-color:transparent;border-bottom:1px dashed var(--line);border-radius:4px}.rw-bal input:hover,.rw-bal input:focus{border-color:var(--line);background:var(--bg)}.rw-bal input::placeholder{color:var(--accent);font-family:var(--body)}.rw-bal .rw-unit{flex:none;margin-left:0}
 #rw-redp .sec-head{align-items:center}.rw-addbtn{font-size:.8rem;color:var(--accent);border-color:var(--accent);background:transparent;padding:4px 12px;border-radius:999px}.rw-addbtn[aria-expanded=true]{background:var(--accent-soft)}.rw-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9.5rem),1fr));gap:8px 12px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}.rw-form label{display:grid;gap:3px;font-size:.74rem;color:var(--muted);font-weight:600}#rw-form input,#rw-form select{width:100%;box-sizing:border-box;font-size:.84rem;font-weight:400;padding:5px 8px}.rw-f-act{display:flex;gap:8px;align-items:end}.rw-save{background:var(--accent);color:var(--surface);border-color:var(--accent)}#rw-red{font-size:.82rem}#rw-red.has{min-width:640px}.rw-sub{display:block;font-size:.72rem;color:var(--muted)}.rw-del{border:0;background:none;color:var(--muted);font-size:.74rem;text-decoration:underline;padding:0}.rw-del.armed{color:var(--bad)}
 @media(min-width:960px){:root[data-look="new"] .bar-top .in{gap:6px;padding:12px 12px 10px}:root[data-look="new"] .bar-top nav{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;margin:2px 0 0;min-height:0}:root[data-look="new"] .bar-top nav a{padding:2px 10px;font-size:.86rem;line-height:1.35}:root[data-look="new"] .ng{padding:5px 10px 1px}.theme-row{margin-top:8px}}@media(min-width:960px) and (max-height:730px){:root[data-look="new"] .bar-top nav a{padding:1px 10px;font-size:.82rem}:root[data-look="new"] .ng{padding:2px 10px 0}:root[data-look="new"] .bar-top .in{gap:4px;padding-block:8px 6px}.theme-row{margin-top:3px}}
+
+/* v159: Cards section, one gold style for every view (Spending, All cards, Card detail, Benefits, Rewards) */
+#cards .kpis{gap:12px;margin:12px 0 18px}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis>.tile{position:relative;border-radius:14px;padding:14px 16px 12px 18px;background:linear-gradient(180deg,color-mix(in srgb,var(--saffron) 9%,var(--surface)),var(--surface));border:1px solid color-mix(in srgb,var(--saffron) 28%,var(--line));box-shadow:0 1px 0 color-mix(in srgb,var(--saffron) 12%,transparent);overflow:hidden;display:grid;gap:4px;align-content:start;transition:transform .15s,box-shadow .15s}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis>.tile::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--saffron)}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis>.tile:hover{transform:translateY(-1px);box-shadow:0 6px 16px color-mix(in srgb,var(--saffron) 18%,transparent)}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis>.tile .label{color:color-mix(in srgb,var(--saffron) 70%,var(--ink));font-weight:700;letter-spacing:.06em}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis>.tile .v{font-size:1.7rem;font-weight:700;line-height:1.1}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis:not(.perk-sum)>.tile:nth-child(5n+1)::before{background:var(--accent)}#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis:not(.perk-sum)>.tile:nth-child(5n+2)::before{background:var(--saffron)}#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis:not(.perk-sum)>.tile:nth-child(5n+3)::before{background:var(--good)}#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis:not(.perk-sum)>.tile:nth-child(5n+4)::before{background:var(--c3)}#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .kpis:not(.perk-sum)>.tile:nth-child(5n+5)::before{background:var(--c6)}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .panel{background:color-mix(in srgb,var(--saffron) 6%,var(--surface));border:1px solid color-mix(in srgb,var(--saffron) 24%,var(--line));border-radius:14px}
+#cards .panel+.panel,#cards .grid2{margin-top:14px}#cards .grid2{gap:14px}
+#cards :is(#cards-all,#cards-single,#cards-perks,#cards-rewards) .panel .tbl,#cards #cards-all.tbl{background:var(--surface);border-radius:10px}
+#cards #cards-all.tbl{border:1px solid color-mix(in srgb,var(--saffron) 24%,var(--line));border-radius:14px;padding:6px 10px;margin-top:12px;background:color-mix(in srgb,var(--saffron) 6%,var(--surface))}
+#cards #cards-all tbody tr:hover{background:color-mix(in srgb,var(--saffron) 10%,transparent)}
+#cards .ccs-controls{margin-bottom:4px}
+#cards #card-list button{border-radius:10px}#cards #card-list button{background:color-mix(in srgb,var(--saffron) 5%,var(--surface));border:1px solid color-mix(in srgb,var(--saffron) 22%,var(--line))}#cards #card-list{display:grid;gap:6px}#cards #card-list button[aria-pressed="true"]{background:color-mix(in srgb,var(--saffron) 14%,var(--surface));border-color:color-mix(in srgb,var(--saffron) 45%,var(--line))}
+
 </style>
 
 <div class="bar-top"><div class="in">
@@ -515,7 +558,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
             <label class="inc-f"><span>Salary</span><span class="inp"><i>₹</i><input id="in-salary" type="number" min="0" step="any" data-month-field="salary"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2.5l2.5 2.5L5.5 13H3v-2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><small id="in-salary-note" class="muted"></small></label>
             <label class="inc-f"><span>Other income</span><span class="inp"><i>₹</i><input id="in-other_income" type="number" min="0" step="any" data-month-field="other_income"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2.5l2.5 2.5L5.5 13H3v-2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span></label>
           </div>
-          <div class="inc-total"><span>Total income</span><b class="num" id="in-total">—</b></div>
+          <div class="inc-total"><span>Total income</span><b class="num" id="in-total">—</b></div><small class="muted" id="in-other"></small>
         </div>
         <div class="panel inc-chg">
           <div><h3>What changed this month?</h3><p class="small muted" id="chg-sub"></p></div>
@@ -530,7 +573,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         <div class="split-legend" id="split-legend"></div>
         <div id="split-detail" class="split-detail" hidden></div>
         <h3 class="sep-h">Month by month</h3><div class="chart" id="split-hist"></div>
-        <p class="small muted">Invested = SIP + direct stocks. Saved = emergency fund + goal reserve additions. EMI = all loan EMIs that month (see Loans). Spent = your own card spend (bills paid this month). Left = what stays in the bank.</p>
+        <p class="small muted">Invested = SIP + direct stocks. Saved = emergency fund + goal reserve additions. EMI = all loan EMIs that month (see Loans). Spent = card bills paid this month (full statements). Income includes money received back (other money in, from Cash flow). Left = what stays in the bank.</p>
         <div class="close-row online-only"><button type="button" id="close-btn">Save this month to Notion</button><span class="small muted" id="close-msg" aria-live="polite"></span></div>
       </div>
     </div>
@@ -746,11 +789,12 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 <section id="cards" hidden>
   <div class="pagehead"><div class="cards-title"><h2>Cards</h2><div id="cards-switch" role="group" aria-label="Cards view"><button type="button" data-view="spend" aria-controls="cards-spend" aria-pressed="true">Spending</button><button type="button" data-view="all" aria-controls="cards-all" aria-pressed="false">All cards</button><button type="button" data-view="detail" aria-controls="cards-single" aria-pressed="false">Card detail</button><button type="button" data-view="perks" aria-controls="cards-perks" aria-pressed="false">Benefits &amp; targets</button><button type="button" data-view="rewards" aria-controls="cards-rewards" aria-pressed="false">Rewards</button></div></div><span class="small muted" id="cards-period"></span></div>
   <div id="cards-spend">
-    <div class="ccs-controls"><label>Period <select id="ccs-span"><option value="12">Last 12 statements</option><option value="13">All 13 statements</option></select></label><label>Card <select id="ccs-card"></select></label><span class="small muted">Hover or tap the charts to read them; click a month, category or merchant to filter the list below.</span></div>
+    <div class="ccs-controls"><div class="ccs-per"><span>Period</span><div class="seg" id="ccs-span" role="group" aria-label="Period"><button type="button" data-span="3" title="Last 3 statements">3M</button><button type="button" data-span="6" title="Last 6 statements">6M</button><button type="button" data-span="12" title="Last 12 statements">12M</button></div></div><label>Card <select id="ccs-card"></select></label><span class="small muted">Hover or tap the charts to read them; click a month, category or merchant to filter the list below.</span></div>
     <div class="kpis" id="ccs-kpis"></div>
+    <div class="panel" id="ccs-limits" hidden></div>
     <div class="grid2">
       <div class="panel"><h3>Spend by statement month</h3><div class="chart" id="ccs-month"></div><h3 class="mt">Biggest purchases</h3><div id="ccs-big" class="biglist"></div></div>
-      <div class="panel"><h3>Where the money went</h3><div id="ccs-cats" class="hbars"></div></div>
+      <div class="panel cats-panel"><h3>Where the money went</h3><div id="ccs-cats" class="hbars"></div></div>
     </div>
     <div class="panel"><h3>Card years, fee waivers and milestones</h3><p class="small muted">Each card's year runs from its anniversary. Spend counts purchases minus refunds by transaction date, up to that card's last statement; payments, fees, interest and cashback are left out. Tap Benefits &amp; targets to override with the figure from the card app.</p><div class="tbl"><table id="ccs-years"></table></div></div>
     <div class="panel"><h3>Quarterly benefits: hit or missed</h3><p class="small muted">Calendar quarters, by transaction date. Green = target met; amber = quarter still open or statement not in yet.</p><div class="tbl"><table id="ccs-qtab"></table></div><div id="ccs-amex"></div></div>
@@ -761,9 +805,9 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   <div class="card-workspace"><div id="card-list" aria-label="Cards in priority order"></div><div id="card-detail" class="panel"></div></div>
   </div>
   <div id="cards-perks" hidden>
-    <div class="sec-head"><p class="small muted" style="max-width:70ch">Lounge access, perks and spend targets for each card. Enter what you have spent this month, quarter or card year (from the card app) and each target shows how close you are, how many days are left, and when an unlocked voucher must be used.</p>
+    <div class="sec-head perk-head"><p class="small muted">Lounges, perks and spend targets per card: type spend from the card app to see progress, days left and voucher expiry.</p>
       <label class="small">Show <select id="perk-filter"><option value="targets">Cards with targets</option><option value="all">All cards</option></select></label></div>
-    <div class="kpis" id="perk-sum"></div>
+    <div class="kpis perk-sum" id="perk-sum"></div>
     <div id="perk-list" class="perk-list"></div>
   </div>
   <div id="cards-rewards" hidden>
@@ -800,15 +844,15 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   <section id="trends" class="trends2" hidden>
     <div class="sec-head"><h2>Trends</h2><span class="small muted">Up to the selected month · hover, tap or use arrow keys on any chart</span><label class="small">Range <select id="trend-range"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="all">All</option></select></label></div>
     <div class="grid2">
-      <div class="panel"><h3>Card bills <span class="small muted">· by due month</span></h3><div class="legend"><span><i class="sw" style="background:var(--line)"></i>Total bill</span><span><i class="sw" style="background:var(--accent)"></i>Your own spend</span></div><div class="chart" id="ch-card"></div></div>
+      <div class="panel"><h3>Card bills <span class="small muted">· by due month</span></h3><div class="legend"><span><i class="sw" style="background:var(--accent)"></i>All cards, full statements</span></div><div class="chart" id="ch-card"></div></div>
       <div class="panel"><h3>Saved funds</h3><div class="legend"><span><i class="sw" style="background:var(--saffron)"></i>Goal reserve</span><span><i class="sw" style="background:var(--accent)"></i>Emergency</span></div><div class="chart" id="ch-funds"></div></div>
       <div class="panel"><h3>Savings rate</h3><p class="small muted">Invested + saved + loan principal, as a share of income</p><div class="chart" id="ch-rate"></div></div>
       <div class="panel"><h3>Total financial assets</h3><div class="chart" id="ch-corpus"></div></div>
-      <div class="panel wide"><h3>Card spend by card</h3><p class="small muted">From statements, purchases minus refunds. Click a card in the key to isolate it; click a month to see its transactions.</p><div class="chart" id="ch-ccmonth"></div></div>
+      <div class="panel wide"><h3>Card bills by card <span class="small muted">· by due month</span></h3><p class="small muted">Full statement amounts (purchases, EMIs and fees, minus refunds and cashback), in the month each bill is paid; the same numbers as the Card bills chart. Click a card in the key to isolate it; click a month to see that statement's transactions.</p><div class="chart" id="ch-ccmonth"></div></div>
       <div class="panel"><h3>Card spend by category</h3><p class="small muted">Top 10, last 12 statements. Click one to see its transactions.</p><div id="ch-cccat" class="hbars"></div></div>
       <div class="panel"><h3>Top merchants</h3><p class="small muted">Last 12 statements, all cards. Click one to see its transactions.</p><div id="ch-ccmerch" class="hbars"></div></div>
       <div class="panel"><h3>Investment returns vs market</h3><div class="legend"><span><i class="sw" style="background:var(--accent)"></i>1 year</span><span><i class="sw" style="background:var(--saffron)"></i>3 months</span></div><div class="div-bars" id="ch-inv"></div><p class="small muted">Value-weighted. Mutual funds use NAV returns; US stocks in dollars.</p></div>
-      <div class="panel"><h3>Where the equity money sits</h3><p class="small muted">Direct stocks, funds and US stocks together, by market cap</p><div class="hb" id="ch-mix"></div></div>
+      <div class="panel mix-panel"><h3>Where the equity money sits</h3><p class="small muted">Direct stocks, funds and US stocks together, by market cap</p><div class="hb" id="ch-mix"></div></div>
       <div class="panel wide"><h3>Month by month <span class="small muted" style="font-weight:400">· follows the Range above</span></h3><div class="tbl"><table id="month-table"></table></div></div>
     </div>
   </section>
@@ -850,6 +894,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (v) => (v == null || v === '' || isNaN(Number(v)) ? null : Number(v));
+  // v149 rule: card spend = full statement amounts (card_gross); money received back is income ("other money in")
+  const cardSpend = (m) => { if (!m) return null; const g = num(m.card_gross); return g != null ? g : num(m.card_net); };
+  function otherIn(k) { const m = (S.months || {})[k] || {}; let t = Object.values(m.other_credits || {}).reduce((a, v) => a + (num(v) || 0), 0);
+    Object.values(S.inflows || {}).forEach((e) => { if ((e.m || String(e.date || '').slice(0, 7)) === k && e.status !== 'expected') t += num(e.amt) || 0; }); return t; }
   const inr = (v) => (num(v) == null ? '—' : '₹' + Math.round(Number(v)).toLocaleString('en-IN'));
   const short = (v) => {
     v = num(v); if (v == null) return '—';
@@ -943,7 +991,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const eq = meta.asof || asof('eq');
       const d0 = tidy(eq || asof('mf') || asof('us'));
       $('last-upd').textContent = d0 ? 'Updated ' + d0 : ''; }
-    [renderOverview, renderAlerts, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderCashflow, renderPpf, renderTargets, renderWeights, renderCards, renderPerks, renderRewards, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance, renderSavings, renderTax].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
+    [renderOverview, renderAlerts, renderBuyNext, renderPlan, renderMoments, renderBills, renderIncome, renderCashflow, renderPpf, renderTargets, renderWeights, renderCards, renderLimits, renderPerks, renderRewards, renderCcSpend, renderGoals, renderInvest, renderInvYear, renderTrends, renderTodo, renderInsurance, renderSavings, renderTax].forEach((f) => { try { f(); } catch (e) { console.error('render', f.name, e); } });renderFacts();
     { const up = isUp(); document.body.classList.toggle('mo-up', up); const n = $('inc-up');
       if (n) { n.hidden = !up; if (up) n.textContent = 'Income for ' + mlabel(sel, true) + ' starts once salary lands. Last month\'s split stays under ' + mlabel(months().slice(-1)[0], true) + '.'; }
       if (up) { const mn = MON[+sel.slice(5) - 1]; $('t-stock').textContent = '—'; $('t-stock-sub').textContent = 'Starts in ' + mn; } }
@@ -1322,7 +1370,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (num(cm.emi) && !cm.emi_paid) { const day = num(st.emi_day) || 10; if (day < d) add('bad', 'Home-loan EMI not marked paid', 'bills', 0); else if (day - d <= 3) add('warn', 'EMI ' + short(cm.emi) + ' due ' + (day === d ? 'today' : 'in ' + (day - d) + 'd'), 'bills', 10); }
     // savings accounts
     try { bkList().forEach((a) => { const b = num(a.bal), n = bkNeed(a); const nm = a.name.replace(/ Bank$/, '');
-      if (b != null && n && n.v != null && !n.goal) { if (b < n.v && (!n.by || n.win)) add('bad', nm + ' short ' + short(n.v - b) + (a.need === 'emi' ? (n.l === 'Locker fee' ? ' for the locker fee' : ' for the ' + n.d.split(' · ')[0].replace(/ \d{4}$/, '') + ' EMI' + (n.lock ? ' + locker' : '')) : a.need === 'floor' ? ' of its floor' : ''), 'savings', 5);
+      if (b != null && n && n.v != null && !n.goal) { if (b < n.v && (!n.by || n.win)) add('bad', nm + ' short ' + short(n.v - b) + (a.need === 'emi' ? (n.l === 'Locker fee' ? ' for the April locker other_income' : ' for the ' + n.d.split(' · ')[0].replace(/ \d{4}$/, '') + ' EMI' + (n.lock ? ' + locker' : '')) : a.need === 'floor' ? ' of its floor' : ''), 'savings', 5);
         else if (a.need === 'floor' && b - n.v < 10000) add('warn', nm + ' only ' + short(b - n.v) + ' above its floor', 'savings', 20); }
       if (a.need !== 'locked' && a.asof && dd(a.asof) < -35) add('info', nm + ' balance is ' + (-dd(a.asof)) + ' days old', 'savings', 80); }); } catch (e) {}
     // reward points expiring within 60 days
@@ -1360,7 +1408,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         if (a.need === 'floor') { note = b >= n.v ? 'above ' + inr(n.v) + ' floor' : 'short ' + inr(n.v - b) + ' of the floor'; cls = b < n.v ? 'bad' : (b - n.v < 10000 ? 'warn' : ''); }
         else if (a.need === 'float') note = 'above ' + inr(n.v) + ' petty cash';
         else if (a.need === 'hold') note = 'above ' + inr(n.v) + ' deposit';
-        else if (a.need === 'emi') { const what = n.l === 'Locker fee' ? 'locker fee ' + inr(n.v) : inr(n.v) + (n.lock ? ' EMI + locker' : ' EMI');
+        else if (a.need === 'emi') { const what = n.l === 'Locker fee' ? 'locker other_income ' + inr(n.v) : inr(n.v) + (n.lock ? ' EMI + locker' : ' EMI');
           note = b >= n.v ? what + ' held' : (n.win ? 'short ' + inr(n.v - b) + ' for ' + what : what + ' · top up by ' + fmtD(n.by).replace(/ \d{4}$/, '')); cls = b < n.v && n.win ? 'bad' : ''; } }
       rows.push({ a, nm, free, note, cls }); });
     const tot = rows.reduce((x, r) => x + r.free, 0), out = rows.filter((r) => r.a.need !== 'floor' && r.free > 0), mvAmt = out.reduce((x, r) => x + r.free, 0);
@@ -1399,10 +1447,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     { const w = nwNow(), el = $('t-avail'), sub = $('t-avail-sub'); if (el) { if (w) { el.textContent = inr(w.nw); sub.innerHTML = w.chg != null ? '<span class="' + (w.chg >= 0 ? 'pos' : 'neg') + '">' + (w.chg >= 0 ? '+' : '−') + esc(short(Math.abs(w.chg))) + '</span> vs ' + esc(MON[+w.pd.slice(5, 7) - 1]) + ' · assets + home − loan' : 'Assets + home − loan'; } else { el.textContent = '—'; sub.textContent = 'Appears once holdings load'; } } }
     const fc = num(m.free_cash), th = st.regular_threshold ?? 60000;
     /* free-cash rule chip removed from the Overview (v113); the rule still drives the stock budget */
-    $('t-card').textContent = inr(m.card_net);
+    $('t-card').textContent = inr(cardSpend(m));
     const p = prevMonth();
-    if (p && num(p.card_net) != null && num(m.card_net) != null) {
-      const dd = m.card_net - p.card_net;
+    if (p && cardSpend(p) != null && cardSpend(m) != null) {
+      const dd = cardSpend(m) - cardSpend(p);
       $('t-card-sub').innerHTML = '<span style="color:var(' + (dd > 0 ? '--bad' : '--good') + ')">' + (dd > 0 ? '+' : '−') + esc(short(Math.abs(dd))) + '</span> vs ' + esc(mlabel(Object.keys(S.months).find((k) => S.months[k] === p)));
     } else $('t-card-sub').textContent = 'This month';
     $('t-sal').textContent = inr((num(m.salary) || 0) + (num(m.other_income) || 0));
@@ -1451,7 +1499,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (i === 3) {
       const bills = Object.entries(S.cards).map(([id, c]) => [c.name, num((c.bills || {})[sel]), (c.paid || {})[sel], (c.estimate || {})[sel]]).filter((b) => b[1]).sort((a, b) => b[1] - a[1]);
       const oth = Object.entries(m.other_credits || {}).reduce((a, [, v]) => a + (num(v) || 0), 0);
-      return head + bills.map(([n, v, pd, est]) => line(esc(n) + (est ? ' <span class="chip warn">estimate</span>' : pd ? '' : ' <span class="chip info">unpaid</span>'), v)).join('') + (oth ? line('Less: paid back by family', -oth) : '') + '<div class="small muted">Card bills ' + esc(inr(m.card_gross)) + ' − repayments = your own spend ' + esc(inr(m.card_net)) + '. <a href="#cards" data-goto-spend="1">See what was bought ↓</a></div>';
+      return head + bills.map(([n, v, pd, est]) => line(esc(n) + (est ? ' <span class="chip warn">estimate</span>' : pd ? '' : ' <span class="chip info">unpaid</span>'), v)).join('') + '<div class="small muted">Full statement amounts' + (oth ? '; ' + esc(inr(oth)) + ' received back is counted in income (other money in)' : '') + '. <a href="#cards" data-goto-spend="1">See what was bought ↓</a></div>';
     }
     return head + '<div class="small muted">Income minus everything above. Free cash recorded for the month: ' + esc(inr(m.free_cash)) + '.</div>';
   }
@@ -1461,10 +1509,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (!pm) { $('chg-sub').textContent = 'No earlier month to compare yet'; $('chg-list').innerHTML = ''; }
     else {
       $('chg-sub').textContent = 'vs ' + mlabel(pk, true);
-      const pinc = (num(pm.salary) || 0) + (num(pm.other_income) || 0), pinv = (num(pm.sip) || 0) + (num(pm.direct_equity) || 0), psp = num(pm.card_net) || 0;
+      const pinc = (num(pm.salary) || 0) + (num(pm.other_income) || 0) + otherIn(pk), pinv = (num(pm.sip) || 0) + (num(pm.direct_equity) || 0), psp = cardSpend(pm) || 0;
       const sv = (num(m.ef_add) || 0) + (num(m.travel_add) || 0), psv = (num(pm.ef_add) || 0) + (num(pm.travel_add) || 0);
       const row = (icon, label, d, goodUp, sub) => { const z = Math.abs(d) < 1; const good = z ? null : (d > 0) === goodUp; return '<div class="chg"><span class="ci">' + icon + '</span><span>' + esc(label) + (sub ? '<small class="muted">' + esc(sub) + '</small>' : '') + '</span><b class="num ' + (z ? 'muted' : good ? 'pos' : 'neg') + '">' + (z ? 'No change' : (d > 0 ? '↑ ' : '↓ ') + esc(inr(Math.abs(d)))) + '</b></div>'; };
-      $('chg-list').innerHTML = row(ic.sp, 'Own card spending', spent - psp, false, inr(psp) + ' → ' + inr(spent)) + row(ic.iv, 'Investments', inv - pinv, true, 'SIPs + direct stocks: ' + inr(pinv) + ' → ' + inr(inv)) + row(ic.sv, 'Saved to goals', sv - psv, true, '') + row(ic.in, 'Income', inc - pinc, true, '');
+      $('chg-list').innerHTML = row(ic.sp, 'Card spending', spent - psp, false, inr(psp) + ' → ' + inr(spent)) + row(ic.iv, 'Investments', inv - pinv, true, 'SIPs + direct stocks: ' + inr(pinv) + ' → ' + inr(inv)) + row(ic.sv, 'Saved to goals', sv - psv, true, '') + row(ic.in, 'Income', inc - pinc, true, '');
     }
     // spending drivers from card statements: bills paid this month = previous month's statements
     const meta = ccMeta(), sm = ymAdd(sel, -1), sm2 = ymAdd(sel, -2);
@@ -1492,21 +1540,21 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const ks = months().filter((k) => k < sel).slice(-3), prev = ks.map((k) => S.months[k]);
     const avg = (f) => prev.length ? prev.reduce((a, x) => a + (f(x) || 0), 0) / prev.length : null;
     const rate = (x) => { const i = (num(x.salary) || 0) + (num(x.other_income) || 0); return i ? ((num(x.sip) || 0) + (num(x.direct_equity) || 0) + (num(x.ef_add) || 0) + (num(x.travel_add) || 0) + (num(x.emi_principal) || 0)) / i * 100 : null; };
-    const r = rate(m), rA = avg(rate), sp = num(m.card_net), spA = avg((x) => num(x.card_net));
+    const r = rate(m), rA = avg(rate), sp = cardSpend(m), spA = avg((x) => cardSpend(x));
     const st = set(), hmc = num(m.travel_fund) || 0, floor = hmc + (num(st.bank_floor) || 60000), crash = hmc + (num(st.crash_floor) || 50000);
     const cmp = (v, a, lowGood, fmt) => a == null || v == null ? '' : '<small class="' + ((v <= a) === lowGood ? 'pos' : 'neg') + '">' + (v >= a ? '▲ ' : '▼ ') + fmt(Math.abs(v - a)) + ' vs 3-mo avg</small>';
     $('inc-glance').innerHTML =
       '<div><span class="label">Saved + invested</span><b class="num">' + (r == null ? '—' : r.toFixed(0) + '%') + '</b>' + cmp(r, rA, false, (d) => d.toFixed(0) + ' pts') + '<small class="muted">incl. loan principal</small></div>' +
-      '<div><span class="label">Own card spend</span><b class="num">' + esc(short(sp)) + '</b>' + cmp(sp, spA, true, short) + '</div>' +
+      '<div><span class="label">Card spend</span><b class="num">' + esc(short(sp)) + '</b>' + cmp(sp, spA, true, short) + '</div>' +
       '<div><span class="label">Free cash</span><b class="num">' + esc(short(m.free_cash)) + '</b><small class="muted">after bills, SIPs, EMI</small></div>' +
       '<div><span class="label">Bank floor</span><b class="num">' + esc(short(floor)) + '</b><small class="muted">goal reserve ' + esc(short(hmc)) + ' + ' + esc(short(num(st.bank_floor) || 60000)) + ' · crash ' + esc(short(crash)) + '</small></div>';
-    const rows = months().filter((k) => k <= sel).slice(-12).map((k) => { const x = S.months[k]; return { key: k, salary: num(x.salary) || 0, other_income: num(x.other_income) || 0, out: (num(x.sip) || 0) + (num(x.direct_equity) || 0) + (num(x.ef_add) || 0) + (num(x.travel_add) || 0) + (num(x.emi) || 0) + (num(x.card_net) || 0) }; });
-    svgStack($('inc-hist'), rows, [{ key: 'salary', label: 'Salary', color: 'var(--accent)' }, { key: 'other_income', label: 'Other income', color: 'var(--c6)' }], (r) => mlabel(r.key), { h: 170, ym: true, values: true, label: 'Income by month', tipTitle: (r) => mlabel(r.key, true), tipExtra: (r) => '<small>Went out: ' + esc(inr(r.out)) + ' · left ' + esc(inr(r.salary + r.other_income - r.out)) + '</small>', readText: (i) => '<b>' + esc(mlabel(rows[i].key, true)) + '</b> · income ' + esc(inr(rows[i].salary + rows[i].other_income)) + ' · out ' + esc(inr(rows[i].out)) });
+    const rows = months().filter((k) => k <= sel).slice(-12).map((k) => { const x = S.months[k]; return { key: k, salary: num(x.salary) || 0, other_income: num(x.other_income) || 0, out: (num(x.sip) || 0) + (num(x.direct_equity) || 0) + (num(x.ef_add) || 0) + (num(x.travel_add) || 0) + (num(x.emi) || 0) + (cardSpend(x) || 0), oth: otherIn(k) }; });
+    svgStack($('inc-hist'), rows, [{ key: 'salary', label: 'Salary', color: 'var(--accent)' }, { key: 'other_income', label: 'Other income', color: 'var(--c6)' }], (r) => mlabel(r.key), { h: 170, ym: true, values: true, label: 'Income by month', tipTitle: (r) => mlabel(r.key, true), tipExtra: (r) => '<small>' + (r.oth ? 'Money in ' + esc(inr(r.oth)) + ' · ' : '') + 'Went out: ' + esc(inr(r.out)) + ' · left ' + esc(inr(r.salary + r.other_income + r.oth - r.out)) + '</small>', readText: (i) => '<b>' + esc(mlabel(rows[i].key, true)) + '</b> · income ' + esc(inr(rows[i].salary + rows[i].other_income)) + ' · out ' + esc(inr(rows[i].out)) });
   }
   let splitH = 200;
   function renderSplitHist() {
     const ks = months().filter((k) => k <= sel).slice(-12);
-    const rows = ks.map((k) => { const m = S.months[k], inc = (num(m.salary) || 0) + (num(m.other_income) || 0); const inv = (num(m.sip) || 0) + (num(m.direct_equity) || 0), sv = (num(m.ef_add) || 0) + (num(m.travel_add) || 0), emi = num(m.emi) || 0, sp = num(m.card_net) || 0; return { key: k, inc, s0: inv, s1: sv, s2: emi, s3: sp, s4: Math.max(0, inc - inv - sv - emi - sp) }; });
+    const rows = ks.map((k) => { const m = S.months[k], inc = (num(m.salary) || 0) + (num(m.other_income) || 0) + otherIn(k); const inv = (num(m.sip) || 0) + (num(m.direct_equity) || 0), sv = (num(m.ef_add) || 0) + (num(m.travel_add) || 0), emi = num(m.emi) || 0, sp = cardSpend(m) || 0; return { key: k, inc, s0: inv, s1: sv, s2: emi, s3: sp, s4: Math.max(0, inc - inv - sv - emi - sp) }; });
     svgStack($('split-hist'), rows, SPLIT.map(([l, c], i) => ({ key: 's' + i, label: l, color: c })), (r) => mlabel(r.key), { h: splitH, ym: true, values: true, label: 'Income split month by month', pick: rows.length - 1, tipTitle: (r) => mlabel(r.key, true), tipExtra: (r) => '<small>Income ' + esc(inr(r.inc)) + ' · click to open this month</small>',
       readText: (i) => '<b>' + esc(mlabel(rows[i].key, true)) + '</b> · income ' + esc(inr(rows[i].inc)) + ' · saved and invested ' + (rows[i].inc ? Math.round((rows[i].s0 + rows[i].s1) / rows[i].inc * 100) : 0) + '% <span class="muted">(before loan principal) · click a month to open it</span>',
       onClick: (i) => { if (rows[i].key === sel) return; const ms = $('month'); ms.value = rows[i].key; ms.dispatchEvent(new Event('change', { bubbles: true })); } });
@@ -1534,11 +1582,11 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const dis = !canWrite && !window.__SNAPSHOT__;
     [['in-salary', 'salary'], ['in-other_income', 'other_income']].forEach(([id, f]) => { const el = $(id); if (document.activeElement !== el) el.value = m[f] ?? ''; el.disabled = dis; });
     $('in-salary-note').textContent = m.salary_expected ? 'Expected; replace with the actual credit' : (m.salary_note || '');
-    const inc = (num(m.salary) || 0) + (num(m.other_income) || 0);
-    $('in-total').textContent = inr(inc);
+    const oin = otherIn(sel), inc = (num(m.salary) || 0) + (num(m.other_income) || 0) + oin;
+    $('in-total').textContent = inr(inc); { const o = $('in-other'); if (o) o.textContent = oin ? 'incl. ' + inr(oin) + ' other money in (Cash flow)' : ''; }
     const inv = (num(m.sip) || 0) + (num(m.direct_equity) || 0);
     const saved = (num(m.ef_add) || 0) + (num(m.travel_add) || 0);
-    const emi = num(m.emi) || 0, spent = num(m.card_net) || 0, princ = num(m.emi_principal) || 0;
+    const emi = num(m.emi) || 0, spent = cardSpend(m) || 0, princ = num(m.emi_principal) || 0;
     const left = inc - inv - saved - emi - spent;
     const vals = [inv, saved, emi, spent, left];
     const subs = ['', '', '', '', ''];
@@ -1584,7 +1632,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   };
 
   // ---------- Cash flow ahead (v139): shared monthly records + forecast to the financial-year end ----------
-  // Actual months read the same months/<YYYY-MM> records as Income (salary, other_income), Investments (sip, direct_equity) and Cards (card_net).
+  // Actual months read the same months/<YYYY-MM> records as Income (salary, other_income), Investments (sip, direct_equity) and Cards (card_gross = full statements).
   // Forecast months use settings.cf (assumptions + per-month overrides). Other money in = inflows/* + legacy months.other_credits.
   const CF_OFF = 'pf-cf', CF_MON_OFF = 'pf-cf-month', CF_IN_OFF = 'pf-inflows';
   const CF_DEF = { hike_pct: 8, hike_month: 3, sip_step_pct: 0, sip_step_from: '', stock_default: 15000, avg_n: 4, rent_until: '', net_share: 0.64, ovr: {}, saved: {} };
@@ -1613,7 +1661,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; const inf = Object.assign({}, S.inflows || {}); L.forEach((e) => { if (e.__del) delete inf[e.id]; else inf[e.id] = e; }); S.inflows = inf; } catch (e) {} }
   const CF_TYPES = ['Family reimbursement', 'Employer reimbursement', 'Flex claim', 'Tax refund', 'Gift', 'Other'];
   const CF_ACR = ['emi', 'sip', 'ef', 'fd', 'ppf', 'nps', 'gst', 'tds', 'hdfc', 'sbi', 'icici', 'ac', 'tv'];
-  const cfPretty = (key) => String(key).replace(/_/g, ' ').replace(/\b\w+/g, (w, i) => CF_ACR.includes(w.toLowerCase()) ? w.toUpperCase() : i > 0 && ['from', 'to', 'for', 'of', 'and', 'by'].includes(w.toLowerCase()) ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1));
+  const cfPretty = (key) => String(key).replace(/_/g, ' ').replace(/\b\w+/g, (w, i) => CF_ACR.includes(w.toLowerCase()) ? w.toUpperCase() : i > 0 && ['from', 'to', 'for', 'of', 'and', 'by', 'with'].includes(w.toLowerCase()) ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1));
   // Edit a receipt kept in a month record (months.other_credits + other_credits_meta): the record stays the source
   function cfLegacySave(e, patch, remove) {
     const m = S.months[e.m] || {}, oc = Object.assign({}, m.other_credits || {}), meta = Object.assign({}, m.other_credits_meta || {});
@@ -1627,14 +1675,30 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       out.push(Object.assign({ id: 'oc:' + k + ':' + key, key, date: null, m: k, desc: cfPretty(key), type: 'Family reimbursement', account: 'hdfc', status: 'actual', covers_card: true, pay_m: k, src: 'months/' + k + ' · other_credits', legacy: true }, mt, { amt: num(v), m: k, legacy: true, key })); }));
     return out.map((e) => Object.assign(e, { m: e.m || String(e.date || '').slice(0, 7) })).sort((a, b) => String(a.date || a.m + '-00').localeCompare(String(b.date || b.m + '-00')));
   }
-  function cfInflowSave(e, upd) {
-    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push(e); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} S.inflows = Object.assign({}, S.inflows || {}, { [e.id]: e }); render(); toast((upd ? 'Updated' : 'Added') + ' in this browser'); return; }
+  // v163: money in moves the receiving account's balance. Applied only when the entry is Actual and dated on or after that
+  // account's balance date; e.bk remembers what was added so an edit or delete undoes exactly that, unless the balance was typed again since.
+  function cfBankFx(old, e) {
+    const A = (id) => bkList().find((x) => x.id === id), adj = {}, add = (id, d) => { if (d) adj[id] = (adj[id] || 0) + d; };
+    const valid = (b) => { const a = b && A(b.acct); return !!(a && bkStamp(a) === b.at); };
+    if (old && !valid(old.bk)) { if (e) e.bk = null; return ''; }  // older entry, or balance typed again since: leave balances alone
+    if (old) add(old.bk.acct, -num(old.bk.amt));
+    if (e) { const a = A(e.account), ok = e.status === 'actual' && a && num(a.bal) != null && String(e.date || '') >= String(a.asof || '');
+      e.bk = ok ? { acct: a.id, amt: e.amt, at: bkStamp(a) } : null; if (ok) add(a.id, e.amt); }
+    const parts = []; Object.entries(adj).forEach(([id, d]) => { if (!d) return; const a = A(id), v = Math.round(num(a.bal) + d);
+      const hist = Object.assign({}, a.hist || {}); hist[bkIso().slice(0, 7)] = v;
+      bkPut(id, { bal: v, hist, in_adj: Math.round((num(a.in_adj) || 0) + d) }); parts.push(a.name + ' ' + inr(v)); });
+    return parts.length ? ' · balance now ' + parts.join(', ') : '';
+  }
+  function cfInflowSave(e, upd, old) {
+    const note = cfBankFx(upd ? old : null, e);
+    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push(e); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} S.inflows = Object.assign({}, S.inflows || {}, { [e.id]: e }); render(); toast((upd ? 'Updated' : 'Added') + note + ' (this browser)'); return; }
     if (!canWrite) return; const d = Object.assign({}, e); delete d.id;
-    db.doc('inflows/' + e.id).set(d).then(() => toast(upd ? 'Updated' : 'Added')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+    db.doc('inflows/' + e.id).set(d).then(() => toast((upd ? 'Updated' : 'Added') + note)).catch(() => toast('Couldn\'t save. Try again in a moment.'));
   }
   function cfInflowDel(id) {
-    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push({ id, __del: true }); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} const inf = Object.assign({}, S.inflows || {}); delete inf[id]; S.inflows = inf; render(); toast('Removed in this browser'); return; }
-    if (!canWrite) return; db.doc('inflows/' + id).delete().then(() => toast('Removed')).catch(() => toast('Couldn\'t remove. Try again in a moment.'));
+    const old = (S.inflows || {})[id] ? Object.assign({ id }, S.inflows[id]) : null, note = old ? cfBankFx(old, null) : '';
+    if (window.__SNAPSHOT__ || !db) { try { const L = JSON.parse(localStorage.getItem(CF_IN_OFF) || '[]') || []; L.push({ id, __del: true }); localStorage.setItem(CF_IN_OFF, JSON.stringify(L)); } catch (x) {} const inf = Object.assign({}, S.inflows || {}); delete inf[id]; S.inflows = inf; render(); toast('Removed' + note + ' (this browser)'); return; }
+    if (!canWrite) return; db.doc('inflows/' + id).delete().then(() => toast('Removed' + note)).catch(() => toast('Couldn\'t remove. Try again in a moment.'));
   }
   function cfModel(cfIn) {
     const ks = months(); if (!ks.length) return null;
@@ -1644,7 +1708,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     let h0 = win === 'YTD' ? E.slice(0, 4) + '-01' : ymAdd(E, win === '6M' ? -5 : -2); if (h0 < first) h0 = first;
     const hist = []; for (let k = h0; k <= E; k = ymAdd(k, 1)) hist.push(k);
     const inflows = cfInflows();
-    const recentK = ks.filter((k) => k <= latest).slice(-n), avg = (f) => recentK.reduce((a, k) => a + (num(f(S.months[k] || {})) || 0), 0) / (recentK.length || 1);
+    const recentK = ks.filter((k) => k <= latest).slice(-n), cardTyp = (() => { const v = recentK.map((k) => Math.max(0, (cardSpend(S.months[k]) || 0) - otherIn(k))).sort((a, b) => a - b); if (!v.length) return 0; const h = v.length >> 1; return Math.round(v.length % 2 ? v[h] : (v[h - 1] + v[h]) / 2); })(), avg = (f) => recentK.reduce((a, k) => a + (num(f(S.months[k] || {})) || 0), 0) / (recentK.length || 1);
     const loans = Object.values(S.loans || {}).filter((l) => l.status !== 'Closed' && num(l.outstanding) > 0 && !/paid by/i.test((l.rate || '') + ' ' + (l.note || '')));
     const emi = loans.reduce((a, l) => a + (num(l.emi) || 0), 0) || num(lastR.emi) || 0;
     const td = (typeof txDoc === 'function' ? txDoc() : null) || {}, gross = num((td.salary || {}).monthly) || 0;
@@ -1653,14 +1717,14 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const hm = Math.min(12, Math.max(1, +cf.hike_month || 3)), effMon = hm % 12 + 1;
     const lc = st.sbi_locker || {}, lAmt = num(lc.amt) || 0, lMon = +String(lc.fund_by || '03-20').split('-')[0];
     const pp = (() => { const k = Object.keys(S.ppf || {}).sort().pop(); return k ? S.ppf[k] : null; })();
-    const covered = (k) => inflows.filter((e) => e.covers_card && (e.pay_m || e.m) === k).reduce((a, e) => a + (num(e.amt) || 0), 0);
+    const covered = () => 0; // v149: no matching; repayments are money in
     const inOf = (k, actual) => inflows.filter((e) => e.m === k && (actual ? e.status !== 'expected' : true));
     const recRow = (k) => { const m = S.months[k]; if (!m) return { k, gap: true };
-      const oi = inOf(k, false), cardsOwn = num(m.card_net) || 0, cov = covered(k);
+      const oi = inOf(k, false), cardsOwn = cardSpend(m) || 0, cov = 0, back = otherIn(k);
       return { k, est: false, open: m.status === 'open', m,
         inn: [['Salary', num(m.salary) || 0, 'salary'], ['Other income', num(m.other_income) || 0, 'other_income']].concat(oi.map((e) => [e.desc || e.type, e.status === 'expected' ? 0 : num(e.amt) || 0, 'other', e])),
         out: [['Card payments', cardsOwn + cov, 'cards'], ['EMI', num(m.emi) || 0, 'emi'], ['Mutual funds', num(m.sip) || 0, 'sip'], ['Stocks', num(m.direct_equity) || 0, 'stocks'], ['Goal savings', (num(m.ef_add) || 0) + (num(m.travel_add) || 0), 'saved']],
-        cardsOwn, cov, fc: num(m.free_cash) }; };
+        cardsOwn, cov, back, fc: num(m.free_cash) }; };
     // live forecast always runs from the latest recorded month to its financial-year end
     const fyEnd = (k) => { const [y, mo] = k.split('-').map(Number); return (mo >= 4 ? y + 1 : y) + '-03'; };
     const fcMap = {}; { const end = fyEnd(latest); let raised = false; for (let k = ymAdd(latest, 1); k <= end; k = ymAdd(k, 1)) {
@@ -1674,7 +1738,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         const billed = Object.values(S.cards || {}).reduce((a, c) => a + (num((c.bills || {})[k]) || 0), 0);
         fcMap[k] = { k, est: true, o, raised, stepped, hike: raised && o.salary == null ? hikeNet : 0,
           inn: [['Salary', sal, 'salary'], ['Other income', other_income, 'other_income']].concat(oi.map((e) => [e.desc || e.type, num(e.amt) || 0, 'other', e])),
-          out: [['Card payments', Math.round(avg((m) => m.card_net)) + cov, 'cards'], ['EMI', emi, 'emi'], ['Mutual funds', sip, 'sip'], ['Stocks', stocks, 'stocks'], ['Goal savings', (num(lastR.ef_add) || 0) + (num(lastR.travel_add) || 0), 'saved']].concat(one.length ? [['One-offs', one.reduce((a, x) => a + x[1], 0), 'one']] : []),
+          out: [['Card payments', cardTyp, 'cards'], ['EMI', emi, 'emi'], ['Mutual funds', sip, 'sip'], ['Stocks', stocks, 'stocks'], ['Goal savings', (num(lastR.ef_add) || 0) + (num(lastR.travel_add) || 0), 'saved']].concat(one.length ? [['One-offs', one.reduce((a, x) => a + x[1], 0), 'one']] : []),
           one, billed, cov }; } }
     // a past financial year: the newest forecast saved during that year, shown with its date
     const sk = Object.keys(cf.saved || {}).filter((x) => fyEnd(x) === fyEnd(E) && x <= E).sort().pop() || Object.keys(cf.saved || {}).filter((x) => fyEnd(x) === fyEnd(E)).sort()[0];
@@ -1690,7 +1754,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const ver = hd && num(hd.bal) != null && hd.asof ? { v: Math.round(num(hd.bal) - reserve), d: hd.asof, k: hd.asof.slice(0, 7) } : null;
     let bal = ver && ver.k >= latest ? ver.v : null;
     Object.values(fcMap).forEach((r) => { { if (bal == null) { r.me = null; r.unresolved = 'Type the HDFC balance on the Savings page'; } else { bal += r.net; r.me = Math.round(bal); } } });
-    return { rows, cf, E, live, win, latest, ver, saved, fcMap, hikeNet, effMon, sipSched, emi, avgCard: Math.round(avg((m) => m.card_net)), n, floor: num(st.bank_floor) ?? 50000, crash: num(st.crash_floor) ?? 40000, reserve };
+    return { rows, cf, E, live, win, latest, ver, saved, fcMap, hikeNet, effMon, sipSched, emi, avgCard: cardTyp, n, floor: num(st.bank_floor) ?? 50000, crash: num(st.crash_floor) ?? 40000, reserve };
   }
   const cfSvgW = (el) => Math.max(320, Math.round((el && el.clientWidth) || 700));
   function renderCashflow() {
@@ -1818,7 +1882,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       const form = (e) => { const ed = !!e, lg = ed && e.legacy, st = ed ? e.status : (r.est ? 'expected' : 'actual'), cov = ed ? !!e.covers_card : true, pm = ed ? (e.pay_m || e.m) : r.k;
         const dv = ed ? (e.date || '') : r.k + '-' + (r.est ? '15' : String(Math.min(28, new Date().getDate())).padStart(2, '0'));
         return '<div class="cf-addf" data-edit="' + (ed ? esc(e.id) : '') + '"><label class="cfa-l">Date' + (lg && !e.date ? ' <small>not recorded</small>' : '') + '<input type="date" id="cfa-date" value="' + dv + '"' + (lg ? ' min="' + e.m + '-01" max="' + e.m + '-31"' : '') + '></label><label class="cfa-l">Amount<input type="text" inputmode="numeric" id="cfa-amt" placeholder="₹ amount" value="' + (ed ? esc(String(e.amt)) : '') + '"></label><label class="cfa-l w">Description<input type="text" id="cfa-desc" placeholder="Description" value="' + (ed ? esc(e.desc || '') : '') + '"></label><label class="cfa-l">Type<select id="cfa-type">' + CF_TYPES.map((t) => '<option' + (ed && e.type === t ? ' selected' : '') + '>' + t + '</option>').join('') + '</select></label><label class="cfa-l">Received in<select id="cfa-acc">' + bkList().map((a) => '<option value="' + esc(a.id) + '"' + (ed && e.account === a.id ? ' selected' : '') + '>' + esc(a.name) + '</option>').join('') + '</select></label><label class="cfa-l">Status<select id="cfa-st"><option value="actual"' + (st === 'actual' ? ' selected' : '') + '>Actual</option><option value="expected"' + (st === 'expected' ? ' selected' : '') + '>Expected</option></select></label>' +
-          '<label class="cfa-cov"><input type="checkbox" id="cfa-cov"' + (cov ? ' checked' : '') + (ed ? ' data-touched="1"' : '') + '> Repays a card payment I made in <select id="cfa-paym">' + M0.rows.filter((x) => !x.gap && !x.savedRow).map((x) => '<option value="' + x.k + '"' + (x.k === pm ? ' selected' : '') + '>' + esc(mlabel(x.k, true)) + '</option>').join('') + '</select></label>' +
+
           (ed ? '<p class="cfa-src">Source: ' + esc(lg ? 'months/' + e.m + ' record (other_credits · ' + e.key + '); saving updates that record' : 'entry added ' + (e.added ? fmtIso(e.added) : '') + ' (inflows)') + '</p>' : '') +
           '<div class="cfa-act"><button type="button" id="cfa-save">' + (ed ? 'Save' : 'Add') + '</button>' + (ed ? '<button type="button" class="ghost cfa-del" data-cfdel="' + esc(e.id) + '"' + dis + '>Delete</button>' : '') + '<button type="button" id="cfa-cancel" class="ghost">Cancel</button></div></div>'; };
       oth.forEach((x) => { const e = x[3]; h += '<div class="cf-oi"><span>' + esc(e.desc || e.type) + (e.status === 'expected' ? '<small>' + (r.est ? 'expected' : 'expected · not counted until received') + '</small>' : '') + '</span><b>' + esc(inr(e.amt)) + '</b><button type="button" class="cf-pen" data-cfedit="' + esc(e.id) + '" aria-label="Edit ' + esc(e.desc || e.type) + '"' + dis + '>✎</button></div>' + (cfEdit === e.id ? form(e) : ''); });
@@ -1828,13 +1892,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (r.savedRow) h += line('Money out (saved)', r.tout);
     else r.out.forEach((x) => { const f = x[2];
       if (f === 'sip' || f === 'stocks') h += line(x[0], x[1], LINK, f, r.est ? (ovr[f] != null ? 'this month only' : f === 'sip' ? 'SIP schedule' + (r.stepped && num(M0.cf.sip_step_pct) ? ' +' + M0.cf.sip_step_pct + '%' : '') : 'default ' + inr(num(M0.cf.stock_default) ?? 12000)) : (f === 'sip' ? (r.m.sip_src || 'monthly record') : (r.m.direct_equity_src || 'from stock buys')));
-      else h += line(x[0], x[1], '', null, f === 'cards' ? (r.cov ? 'own spend ' + inr(x[1] - r.cov) + ' + ' + inr(r.cov) + ' paid for others' : r.est ? 'average of last ' + M0.n + ' months' + (r.billed ? ' · ' + inr(r.billed) + ' already billed' : '') : 'own spend') : f === 'one' ? r.one.map((o) => o[0] + ' ' + inr(o[1])).join(' · ') : ''); });
+      else h += line(x[0], x[1], '', null, f === 'cards' ? (r.est ? 'typical month (median of last ' + M0.n + ', net of money received back)' + (r.billed ? ' · ' + inr(r.billed) + ' already billed' : '') : 'full statements' + (r.back ? ' · ≈ ' + inr(Math.max(0, x[1] - r.back)) + ' after money received back' : '')) : f === 'one' ? r.one.map((o) => o[0] + ' ' + inr(o[1])).join(' · ') : ''); });
     const net = sum(r.inn) - sum(r.out);
     h += '</div><div class="cf-net ' + (net >= 0 ? 'up' : 'dn') + '"><b>Monthly ' + (net >= 0 ? 'surplus' : 'shortfall') + '</b><b>' + (net >= 0 ? '+' : '−') + esc(inr(Math.abs(net))) + '</b></div>';
     h += '<button type="button" class="cf-calc" id="cf-calc">' + (cfShowCalc ? 'Hide' : 'View') + ' entries &amp; calculation ↗</button>';
     if (cfShowCalc) h += '<div class="cf-calcbox small">' + (r.est
-      ? 'Salary: ' + (ovr.salary != null ? 'your override' : 'latest recorded salary' + (r.hike ? ' + estimated raise ' + inr(r.hike) + ' (gross × ' + M0.cf.hike_pct + '% × ' + M0.cf.net_share + ')' : '')) + '. Other income: ' + (ovr.other_income != null ? 'your override' : 'latest recorded other income') + '. Card payments: average own spend of the last ' + M0.n + ' months (' + inr(M0.avgCard) + ') plus card payments repaid by others. EMI: active loans (' + inr(M0.emi) + '). Mutual funds: ' + (ovr.sip != null ? 'your override' : 'SIP schedule (' + inr(M0.sipSched) + ')') + '. Stocks: ' + (ovr.stocks != null ? 'your override' : 'default from assumptions') + '. Buffer: previous month-end + money in − money out = ' + (r.me != null ? inr(r.me) : 'unresolved') + '.'
-      : 'Salary and other_income: months/' + r.k + ' (the same record the Income section edits). Mutual funds: months/' + r.k + '.sip' + (r.m.sip_src ? ' (' + esc(r.m.sip_src) + ')' : '') + '. Stocks: months/' + r.k + '.direct_equity. Card payments: own spend (card_net ' + inr(r.cardsOwn) + ')' + (r.cov ? ' + ' + inr(r.cov) + ' paid for others and repaid (listed under Other money in)' : '') + '. Free cash after bills: ' + (r.fc != null ? inr(r.fc) : '—') + ' (recorded).') + '</div>';
+      ? 'Salary: ' + (ovr.salary != null ? 'your override' : 'latest recorded salary' + (r.hike ? ' + estimated raise ' + inr(r.hike) + ' (gross × ' + M0.cf.hike_pct + '% × ' + M0.cf.net_share + ')' : '')) + '. Other income: ' + (ovr.other_income != null ? 'your override' : 'latest recorded other income') + '. Card payments: typical month = median of the last ' + M0.n + ' months\' card bills minus money received back (' + inr(M0.avgCard) + '); expected receipts are added as money in. EMI: active loans (' + inr(M0.emi) + '). Mutual funds: ' + (ovr.sip != null ? 'your override' : 'SIP schedule (' + inr(M0.sipSched) + ')') + '. Stocks: ' + (ovr.stocks != null ? 'your override' : 'default from assumptions') + '. Buffer: previous month-end + money in − money out = ' + (r.me != null ? inr(r.me) : 'unresolved') + '.'
+      : 'Salary and other_income: months/' + r.k + ' (the same record the Income section edits). Mutual funds: months/' + r.k + '.sip' + (r.m.sip_src ? ' (' + esc(r.m.sip_src) + ')' : '') + '. Stocks: months/' + r.k + '.direct_equity. Card payments: full statement amounts (card_gross ' + inr(r.cardsOwn) + ')' + (r.back ? '; ' + inr(r.back) + ' received back is under Other money in' : '') + '. Free cash after bills: ' + (r.fc != null ? inr(r.fc) : '—') + ' (recorded).') + '</div>';
     el.innerHTML = h;
   }
   // drawer
@@ -1873,11 +1937,10 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       if (!Number.isFinite(amt) || amt <= 0) { toast('Enter an amount above 0'); return; }
       if (!date && !(old && old.legacy)) { toast('Enter a date'); return; }
       if (old && old.legacy) { if (date && date.slice(0, 7) !== old.m) { toast('This receipt belongs to the ' + mlabel(old.m, true) + ' record: pick a date in that month'); return; }
-        const cov = $('cfa-cov').checked; cfEdit = null; cfLegacySave(old, { amt, date: date || null, desc: $('cfa-desc').value.trim() || old.desc, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: cov, pay_m: cov ? $('cfa-paym').value : null }); return; }
-      const e = { id: old ? old.id : 'in' + Date.now().toString(36), date, m: date.slice(0, 7), amt, desc: $('cfa-desc').value.trim() || $('cfa-type').value, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: $('cfa-cov').checked, pay_m: $('cfa-cov').checked ? $('cfa-paym').value : null, added: old ? old.added : new Date().toISOString().slice(0, 10) };
+        const cov = false; cfEdit = null; cfLegacySave(old, { amt, date: date || null, desc: $('cfa-desc').value.trim() || old.desc, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: cov, pay_m: cov ? $('cfa-paym').value : null }); return; }
+      const e = { id: old ? old.id : 'in' + Date.now().toString(36), date, m: date.slice(0, 7), amt, desc: $('cfa-desc').value.trim() || $('cfa-type').value, type: $('cfa-type').value, account: $('cfa-acc').value, status: $('cfa-st').value, covers_card: false, pay_m: null, added: old ? old.added : new Date().toISOString().slice(0, 10) };
       if (old) e.edited = new Date().toISOString().slice(0, 10);
-      if (e.type === 'Flex claim' || e.type === 'Tax refund' || e.type === 'Gift') { if (!$('cfa-cov').dataset.touched) { e.covers_card = false; e.pay_m = null; } }
-      cfAdd = false; cfEdit = null; cfInflowSave(e, !!old); return; }
+      cfAdd = false; cfEdit = null; cfInflowSave(e, !!old, old); return; }
   });
   document.addEventListener('change', (ev) => { const t = ev.target;
     if (t.id === 'cfa-cov') t.dataset.touched = '1';
@@ -1919,8 +1982,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (num(m.emi)) items.push({ id: 'emi', kind: 'emi', name: 'Home loan EMI', amt: num((S.loans.home || {}).emi) || num(m.emi), day: st.emi_day || 10, paid: !!m.emi_paid });
     { const lc = st.sbi_locker || {}, la = num(lc.amt) ?? 0, fb = String(lc.fund_by || '03-20').split('-');
       const un = String(lc.until || '04-02').split('-');
-      if (la && +sel.split('-')[1] === +fb[0]) items.push({ id: 'locker', kind: 'yr', flag: 'locker_paid', name: 'Locker fee, yearly: move to the EMI account', amt: la, day: +fb[1], paid: !!m.locker_paid });
-      if (la && +sel.split('-')[1] === +un[0]) items.push({ id: 'locker-d', kind: 'yr', flag: 'locker_debited', name: 'Locker fee debited (tick once it is paid)', amt: la, day: +un[1], paid: !!m.locker_debited }); }
+      if (la && +sel.split('-')[1] === +fb[0]) items.push({ id: 'locker', kind: 'yr', flag: 'locker_paid', name: 'SBI locker other_income, yearly: move to SBI (debited in April)', amt: la, day: +fb[1], paid: !!m.locker_paid });
+      if (la && +sel.split('-')[1] === +un[0]) items.push({ id: 'locker-d', kind: 'yr', flag: 'locker_debited', name: 'SBI locker other_income debited (tick once it leaves SBI)', amt: la, day: +un[1], paid: !!m.locker_debited }); }
     Object.entries(S.insurance || {}).filter(([, p]) => /month/i.test(p.prem_freq || '') && num(p.prem_now)).forEach(([k, p]) => { const f = 'ins_' + k + '_paid';
       items.push({ id: 'ins-' + k, kind: 'ins', flag: f, name: (p.kind === 'term' ? 'Term insurance' : 'Insurance') + ' (' + (p.insurer || p.name || '').replace(/ Life| Allianz/g, '') + ')', amt: num(p.prem_now), day: num(p.prem_day), paid: !!m[f] }); });
     items.sort((a, b) => (a.day || 99) - (b.day || 99));
@@ -2002,7 +2065,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       '- Income: ' + inr(inc) + ' (salary ' + inr(m.salary) + ' + other income ' + inr(m.other_income) + ')',
       '- SIP: ' + inr(m.sip) + ' · Direct stocks: ' + inr(m.direct_equity),
       '- Emergency fund: ' + inr(m.emergency_fund) + ' · Goal reserve: ' + inr(hm),
-      '- Card bills: ' + inr(m.card_gross) + ' total · own spend ' + inr(m.card_net),
+      '- Card bills: ' + inr(cardSpend(m)) + ' (full statements)' + (otherIn(sel) ? ' · money received back ' + inr(otherIn(sel)) : ''),
       '- Home loan EMI: ' + inr(m.emi) + ' (principal ' + inr(m.emi_principal) + ')',
       '- Free cash after commitments: ' + inr(m.free_cash),
       '- Bank floor: ' + inr(hm == null ? null : hm + (st.bank_floor ?? 50000)) + ' (crash ' + inr(hm == null ? null : hm + (st.crash_floor ?? 40000)) + ')',
@@ -2105,6 +2168,45 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const v=(map||{})[cycle];
     return v==null?fallback:v;
   }
+  // ---------- Credit limits (v148): settings.main.card_limits, one entry per issuer (shared limits counted once) ----------
+  let limOpen = null;
+  function limCfg() { let c = set().card_limits || null; if (window.__SNAPSHOT__) { try { const o = JSON.parse(localStorage.getItem('pf-card-limits') || 'null'); if (o) c = o; } catch (e) {} } return c; }
+  function limSave(c, msg) {
+    if (window.__SNAPSHOT__ || !db) { try { localStorage.setItem('pf-card-limits', JSON.stringify(c)); } catch (e) {} render(); toast((msg || 'Saved') + ' in this browser'); return; }
+    if (!canWrite) return; db.doc('settings/main').update({ card_limits: c }).then(() => toast(msg || 'Saved')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
+  }
+  function renderLimits() {
+    const el = $('ccs-limits'); if (!el) return; const c = limCfg();
+    if (!c || !(c.issuers || []).length) { el.hidden = true; return; } el.hidden = false;
+    const iss = c.issuers, last = (id) => { const b = ((S.cards || {})[id] || {}).bills || {}, k = Object.keys(b).sort().pop(); return k ? { k, v: num(b[k]) || 0 } : null; };
+    const rows = iss.map((x) => { const used = (x.cards || []).reduce((a, id) => a + ((last(id) || {}).v || 0), 0); return Object.assign({}, x, { used, pct: x.limit ? used / x.limit * 100 : 0 }); });
+    const tot = rows.reduce((a, r) => a + (num(r.limit) || 0), 0), conf = rows.filter((r) => r.status !== 'provisional').reduce((a, r) => a + (num(r.limit) || 0), 0), prov = rows.some((r) => r.status === 'provisional');
+    const used = rows.reduce((a, r) => a + r.used, 0), upct = tot ? used / tot * 100 : 0, mx = Math.max(1, ...rows.map((r) => num(r.limit) || 0));
+    const nm = (id) => ((S.cards || {})[id] || {}).name || id, dis = ((db && canWrite) || window.__SNAPSHOT__) ? '' : ' disabled';
+    const chg = rows.filter((r) => r.prev && r.changed).sort((a, b) => String(b.changed).localeCompare(String(a.changed)))[0];
+    let h = '<div class="sec-head"><h3>Credit limits</h3><span class="small muted">Shared limits counted once · ' + rows.length + ' issuers' + (c.asof ? ' · as of ' + esc(fmtIso(c.asof)) : '') + '</span></div>';
+    h += '<div class="lim-top"><div class="lim-k"><span>Total credit limit</span><b>' + esc(inr(tot)) + (prov ? '<sup>*</sup>' : '') + '</b><small>' + (prov ? esc(inr(conf)) + ' confirmed · *includes a provisional limit' : 'All limits confirmed') + '</small></div>' +
+      '<div class="lim-k"><span>Last billed (all cards)</span><b>' + esc(inr(used)) + '</b><small>' + esc(inr(tot - used)) + ' available · each card\'s latest bill</small></div>' +
+      (() => { const top = rows.filter((r) => r.limit).sort((a, b) => b.pct - a.pct)[0], band = upct < 10 ? ['good', 'Healthy'] : upct < 30 ? ['info', 'Fine'] : ['bad', 'High'];
+        return '<div class="lim-k" title="Credit bureaus look at balance ÷ limit; under 30% is good, under 10% is excellent"><span>Credit utilisation <span class="chip ' + band[0] + '">' + band[1] + '</span></span><b>' + upct.toFixed(1) + '%</b><small>' + (top ? 'Highest: ' + esc(top.name) + ' ' + top.pct.toFixed(1) + '% · keep each under 30%' : 'Keep each card under 30%') + '</small><span class="lim-meter lim-meter-z" aria-hidden="true"><i style="width:' + Math.min(100, upct / 30 * 100).toFixed(1) + '%"></i><em style="left:' + (10 / 30 * 100).toFixed(1) + '%"></em></span></div>'; })() + '</div>';
+    h += '<div class="lim-rows" role="list">' + rows.map((r) => { const op = limOpen === r.id;
+      return '<div class="lim-row' + (op ? ' on' : '') + '" role="listitem"><button type="button" class="lim-hd" data-lim="' + esc(r.id) + '" aria-expanded="' + op + '"><span class="lim-n"><b>' + esc(r.name) + '</b>' + (r.status === 'provisional' ? '<span class="chip warn">Provisional</span>' : '') + (r.prev && r.changed ? '<span class="chip good">+' + esc(short(r.limit - r.prev)) + '</span>' : '') + '<small>' + esc((r.cards || []).map((id) => { const n = nm(id), w = r.name.split(' ')[0]; return n.startsWith(r.name + ' ') ? n.slice(r.name.length + 1) : n.startsWith(w + ' ') ? n.slice(w.length + 1) : n; }).join(' · ')) + '</small></span>' +
+        '<span class="lim-used"><b>' + esc(inr(r.used)) + '</b><small>last billed</small></span>' +
+        '<span class="lim-bar" tabindex="0" role="img" aria-label="' + esc(r.name + ': ' + inr(r.used) + ' used of ' + inr(r.limit) + ', ' + r.pct.toFixed(1) + '%') + '"><span class="lim-track"><i class="u' + (r.pct >= 30 ? ' hi' : '') + '" style="width:' + Math.max(r.used > 0 ? 0.8 : 0, Math.min(100, r.pct)).toFixed(2) + '%"></i></span><span class="lim-pct">' + (r.pct < 0.1 && r.used > 0 ? '<0.1' : r.pct.toFixed(1)) + '%</span><span class="lim-tip" role="tooltip"><b>' + esc(inr(r.used)) + '</b> last billed of ' + esc(inr(r.limit)) + '<br>' + esc(inr(Math.max(0, (num(r.limit) || 0) - r.used))) + ' available · the balance banks report to credit bureaus</span></span>' +
+        '<span class="lim-v"><b>' + esc(inr(r.limit)) + '</b><small>limit</small></span></button>' +
+        (op ? '<div class="lim-det small"><div class="lim-cards">' + (r.cards || []).map((id) => { const l = last(id); return '<span>' + esc(nm(id)) + ' <b>' + (l ? esc(inr(l.v)) + '</b> <em>' + esc(mlabel(l.k)) + ' bill</em>' : '—</b>') + '</span>'; }).join('') + '</div>' +
+          (r.prev ? '<p>Previous limit ' + esc(inr(r.prev)) + ' → ' + esc(inr(r.limit)) + ' on ' + esc(fmtIso(r.changed)) + (r.note ? ' · ' + esc(r.note) : '') + '</p>' : r.note ? '<p>' + esc(r.note) + '</p>' : '') +
+          '<div class="lim-ed"><label>Limit ₹<input type="text" inputmode="numeric" data-limin="' + esc(r.id) + '" value="' + esc(String(r.limit)) + '"' + dis + '></label><label>Status<select data-limst="' + esc(r.id) + '"' + dis + '><option value="confirmed"' + (r.status !== 'provisional' ? ' selected' : '') + '>Confirmed</option><option value="provisional"' + (r.status === 'provisional' ? ' selected' : '') + '>Provisional</option></select></label><small>A new amount keeps the old one as the previous limit, dated today.</small></div></div>' : '') + '</div>'; }).join('') + '</div>';
+    h += '<p class="small muted">Limits are sanctioned credit, not debt. "Used" adds each card\'s latest statement, so it is a snapshot, not today\'s outstanding.</p>';
+    el.innerHTML = h;
+  }
+  document.addEventListener('click', (ev) => { const b = ev.target.closest && ev.target.closest('#ccs-limits [data-lim]'); if (!b) return; limOpen = limOpen === b.dataset.lim ? null : b.dataset.lim; renderLimits(); });
+  document.addEventListener('change', (ev) => { const t = ev.target; if (!t.dataset || !(t.dataset.limin || t.dataset.limst)) return;
+    const c = JSON.parse(JSON.stringify(limCfg() || { issuers: [] })), r = c.issuers.find((x) => x.id === (t.dataset.limin || t.dataset.limst)); if (!r) return; const today = new Date().toISOString().slice(0, 10);
+    if (t.dataset.limst) { r.status = t.value; limSave(c, r.name + ' marked ' + t.value); return; }
+    const v = Math.round(Number(String(t.value).replace(/[₹,\s]/g, ''))); if (!Number.isFinite(v) || v < 0) { toast('Enter 0 or a positive amount'); renderLimits(); return; }
+    if (v === r.limit) return; r.prev = r.limit; r.limit = v; r.changed = today; c.asof = today; limSave(c, r.name + ' limit ' + inr(v)); });
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' && ev.target.dataset && ev.target.dataset.limin) ev.target.blur(); });
   function renderCards() {
     const [year,month]=sel.split('-').map(Number);
     const cards=Object.entries(S.cards).map(([id,c])=>{
@@ -2130,7 +2232,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const {id,c,start}=item;
     selectedCard=id;
     const ysDay=(cid,mo)=>{try{const cy=ccYearOf(cid);if(!cy)return null;const [d,mn]=cy.label.split(' ');return MON.indexOf(mn)+1===mo&&+d>1?+d:null;}catch(e){return null;}};
-    const renewal=r=>r.start?(ysDay(r.id,r.start)?ysDay(r.id,r.start)+' ':'')+MON[r.start-1]+' '+(year+(r.start<month?1:0)):'Month unknown';
+    const renewal=r=>{ if(r.start>=1&&r.start<=12) return (ysDay(r.id,r.start)?ysDay(r.id,r.start)+' ':'')+MON[r.start-1]+' '+(year+(r.start<month?1:0)); let cy=null; try{cy=ccYearOf(r.id);}catch(e){} return cy&&cy.label?'Card year from '+cy.label:'Card year not set'; };
     $('cards-period').textContent=mlabel(sel,true)+' · '+cards.length+' cards';
     $('card-list').innerHTML=cards.map(r=>'<button type="button" data-pick="'+esc(r.id)+'" aria-pressed="'+(r.id===id)+'"><b>'+esc(r.c.name)+'</b><small>'+renewal(r)+'</small></button>').join('');
     $('card-picker').innerHTML=cards.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.c.name)+' · '+renewal(r)+'</option>').join('');
@@ -2151,7 +2253,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const input=(field,label,value)=>'<label>'+label+'<input data-card-field="'+esc(field)+'" type="number" min="0" step="any" value="'+esc(value==null?'':typeof value==='number'?Math.round(value):value)+'"></label>';
     $('card-detail').innerHTML='<div class="card-heading"><h3>'+esc(c.name)+'</h3><span class="chip '+(bills[2].estimate?'warn':bills[2].state==='Paid'?'good':'info')+'">'+bills[2].state+'</span></div>'+
       '<div class="card-heading"><b>Last 3 bills · by due month</b><small class="muted">Avg. issued '+(issued.length?inr(issued.reduce((s,b)=>s+b.amount,0)/issued.length):'—')+'</small></div><div class="card-bars">'+bars+'</div><div class="bill-caption" id="card-caption" aria-live="polite"></div>'+
-      '<div class="card-waiver"><div><small>Annual fee</small><b>'+esc(c.fee?inr(c.fee):feeTxt(key))+'</b></div><div><small>'+ (waiver?'Fee waiver':'Spending benchmark') +(waiver?' · '+inr(waiver):'')+'</small><b>'+esc(waiverLabel)+'</b>'+(goal>0 && spend!=null?'<progress value="'+Math.min(spend,goal)+'" max="'+goal+'"></progress>':waiver>0?'<span class="spend-unknown" aria-label="Annual spend unknown"></span>':'')+'</div></div>'+
+      '<div class="card-waiver"><div><small>Annual fee</small><b>'+esc(c.fee?inr(c.fee):feeTxt(id))+'</b></div><div><small>'+ (waiver?'Fee waiver':'Spending benchmark') +(waiver?' · '+inr(waiver):'')+'</small><b>'+esc(waiverLabel)+'</b>'+(goal>0 && spend!=null?'<progress value="'+Math.min(spend,goal)+'" max="'+goal+'"></progress>':waiver>0?'<span class="spend-unknown" aria-label="Annual spend unknown"></span>':'')+'</div></div>'+
       '<details id="card-settings"><summary>More details &amp; settings</summary><p>'+esc(c.milestones||'No reward milestone recorded.')+'</p><div class="controls"><label>Card year starts<select data-card-field="cycle"><option value="">Unknown</option>'+MON.map((m,i)=>'<option value="'+(i+1)+'"'+(start===i+1?' selected':'')+'>'+((start===i+1&&ysDay(id,i+1))?ysDay(id,i+1)+' '+m:m)+'</option>').join('')+'</select></label>'+input(spendField,'Spend this card year (₹)',spend)+input('waiver','Waiver threshold (₹)',waiver)+(!waiver?input(benchmarkField,'Prior annual spend (₹)',benchmark):'')+'</div></details>';
     const chart=$('card-detail').querySelector('.card-bars');
     const inspect=i=>{
@@ -2289,7 +2391,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       '<tr><td><span class="rw-card"><b>' + esc(p.card) + '</b><small>' + esc(p.rule || '') + '</small></span></td>' +
       '<td><label class="rw-bal"><input type="number" min="0" step="1" inputmode="numeric" placeholder="Add" value="' + esc(num(p.bal) == null ? '' : Math.round(p.bal)) + '" data-rwbal="' + esc(p.id) + '" aria-label="' + esc(p.card) + ' points balance"' + rwDis + '><span class="rw-unit">' + esc(p.unit) + '</span></label></td>' +
       '<td>' + ((p.routes || []).length > 1 ? '<select class="rw-sel" data-rwroute="' + esc(p.id) + '" aria-label="Redemption for ' + esc(p.card) + '">' + p.routes.map((o) => '<option value="' + esc(o.id) + '"' + (o.id === r.id ? ' selected' : '') + '>' + esc(o.label) + '</option>').join('') + '</select>' : '<span class="rw-fixed">' + esc(r.label) + '</span>') + '<small class="rw-rate">₹' + esc(Number(r.v).toFixed(2)) + ' a point</small></td>' +
-      '<td class="n"><span class="rw-val"><b>' + esc(v == null ? '—' : inr(v)) + '</b><span class="mini"><i style="width:' + ((v || 0) / maxV * 100).toFixed(1) + '%"></i></span></span></td>' +
+      '<td class="n"><span class="rw-val"><b>' + esc(v == null ? '—' : inr(v)) + '</b>' + (v != null && total ? '<small>' + Math.round(v / total * 100) + '% of wallet</small>' : '') + '</span></td>' +
       '<td class="rw-upd">' + (p.asof ? esc(rwD(p.asof)) : '<span class="muted">—</span>') + (p.src ? '<small>' + esc(p.src) + '</small>' : '') + '</td></tr>').join('') +
       '</tbody><tfoot><tr><td>Total</td><td></td><td></td><td class="n"><b>' + esc(inr(total)) + '</b></td><td></td></tr></tfoot>';
     $('rw-note').textContent = R.note || '';
@@ -2336,14 +2438,14 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (!P.length) { el.innerHTML = '<p class="small muted">No card benefits loaded yet.</p>'; return; }
     const dis = ((db && canWrite) || window.__SNAPSHOT__) ? '' : ' disabled';
     const hits = [], close = [], expiring = [];
-    const cards = P.filter(([, c]) => perkFilter === 'all' || (c.targets || []).length).map(([id, c]) => {
+    const cards = P.filter(([, c]) => perkFilter === 'all' || (c.targets || []).length).map(([id, c]) => { let autoTo = '';
       const periods = [...new Set((c.targets || []).filter((t) => t.kind !== 'use').map((t) => t.period))];
       const inputs = periods.map((p) => { const pp = perkPeriod(p, c), v = (c.spend || {})[pp.key]; return '<label class="small">Spend ' + esc(pp.label) + ' ₹<input type="number" min="0" step="100" value="' + esc(v ?? '') + '" data-perk="' + esc(id) + '" data-pkey="' + esc(pp.key) + '"' + dis + '></label>'; }).join('');
       const tg = (c.targets || []).map((t) => {
         const pp = perkPeriod(t.period, c), left = daysTo(pp.end);
         if (t.kind === 'use') { const used = !!(c.used || {})[pp.key + ':' + t.id]; return '<div class="perk-t"><label class="small"><input type="checkbox" data-perkuse="' + esc(id) + '" data-ukey="' + esc(pp.key + ':' + t.id) + '"' + (used ? ' checked' : '') + dis + '> ' + esc(t.reward) + '</label><span class="chip ' + (used ? 'good' : left <= 21 ? 'warn' : 'info') + '">' + (used ? 'Used' : left + ' days left to use') + '</span></div>'; }
         const typed = num((c.spend || {})[pp.key]), au = typed == null ? ccAutoPerk(id, t.period) : null, sp = typed != null ? typed : au ? au.v : null, pct = sp == null ? null : Math.min(1, sp / t.threshold), rem = sp == null ? null : t.threshold - sp;
-        const autoNote = au ? '<span class="small muted">From statements up to ' + esc(fmtIso(au.to)) + '; type the card-app figure above to override.</span>' : '';
+        if (au) autoTo = au.to > autoTo ? au.to : autoTo; const autoNote = '';
         const ukey = pp.key + ':' + t.id, ud = (c.unlocked || {})[ukey];
         let chip = sp == null ? '<span class="chip info">Enter spend</span>' : rem <= 0 ? '<span class="chip good">Hit 🎉</span>' : '<span class="chip ' + (left <= 21 ? 'warn' : 'info') + '">' + esc(short(rem)) + ' to go · ' + left + ' days</span>';
         if (sp != null && rem <= 0) hits.push(c.name + ': ' + t.reward); else if (sp != null) close.push({ name: c.name, reward: t.reward, rem, left });
@@ -2355,24 +2457,26 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         return '<div class="perk-t"><div class="perk-top"><span class="small"><b>' + esc(short(t.threshold)) + '</b> ' + esc(t.period === 'year' ? 'card year' : 'this ' + t.period) + ' → ' + esc(t.reward) + '</span>' + chip + '</div><div class="meter' + (rem != null && rem <= 0 ? '' : ' saffron') + '"><i style="width:' + ((pct || 0) * 100) + '%"></i></div>' + (t.note ? '<span class="small muted">' + esc(t.note) + '</span>' : '') + autoNote + (exp ? '<div class="perk-exp">' + exp + '</div>' : '') + '</div>';
       }).join('');
       return '<details class="panel perk"' + ((c.targets || []).length ? ' open' : '') + '><summary><b>' + esc(c.name) + '</b> <span class="small muted">' + esc(c.role || '') + '</span><i class="goal-arrow" aria-hidden="true"></i></summary>' +
-        '<div class="perk-body"><div><span class="label">Lounge</span><ul class="facts">' + (c.lounge || []).map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' +
+        '<div class="perk-body' + (tg ? '' : ' solo') + '"><div class="perk-left"><div><span class="label">Lounge</span><ul class="facts">' + (c.lounge || []).map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' +
         '<div><span class="label">Benefits</span><ul class="facts">' + (c.perks || []).map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' +
         (c.warn ? '<p class="small" style="color:var(--bad)">⚠️ ' + esc(c.warn) + '</p>' : '') +
-        (tg ? '<div><span class="label">Targets</span><div class="perk-inputs">' + inputs + '</div>' + tg + '</div>' : '') + '</div></details>';
+        '</div>' + (tg ? '<div class="perk-right"><span class="label">Targets</span><div class="perk-inputs">' + inputs + '</div><div class="perk-tg">' + tg + '</div>' + (autoTo ? '<p class="small muted perk-auto">Spend without a typed figure comes from statements up to ' + esc(fmtIso(autoTo)) + '; type the card-app figure above to override.</p>' : '') + '</div>' : '') + '</div></details>';
     });
     close.sort((a, b) => a.rem - b.rem);
-    $('perk-sum').innerHTML = '<div class="tile"><span class="label">Hit this period</span><span class="v">' + hits.length + '</span><span class="small muted">' + esc(hits.slice(0, 3).join(' · ') || 'Enter spends to track') + '</span></div>' +
-      '<div class="tile"><span class="label">Closest wins</span><span class="v">' + (close[0] ? esc(short(close[0].rem)) : '—') + '</span><span class="small muted">' + esc(close.slice(0, 2).map((x) => x.name + ' → ' + x.reward).join(' · ') || 'Enter spends to see what is close') + '</span></div>' +
-      '<div class="tile"><span class="label">Vouchers to use</span><span class="v">' + expiring.length + '</span><span class="small muted">' + esc(expiring.map((x) => x.reward + ' by ' + fmtD(x.ed)).join(' · ') || 'Mark the unlock date when a voucher unlocks') + '</span></div>' +
-      '<div class="tile"><span class="label">Always-on lounges</span><span class="v">' + esc((set().lounges || {}).v || '—') + '</span><span class="small muted">' + esc((set().lounges || {}).note || '') + '</span></div>';
+    $('perk-sum').innerHTML = '<div class="tile ps ps-hit"><span class="label">Hit this period</span><span class="v">' + hits.length + '</span><span class="small muted">' + esc(hits.slice(0, 3).join(' · ') || 'Enter spends to track') + '</span></div>' +
+      '<div class="tile ps ps-close"><span class="label">Closest wins</span><span class="v">' + (close[0] ? esc(short(close[0].rem)) : '—') + '</span><span class="small muted">' + esc(close.slice(0, 2).map((x) => x.name + ' → ' + x.reward).join(' · ') || 'Enter spends to see what is close') + '</span></div>' +
+      '<div class="tile ps ps-vouch"><span class="label">Vouchers to use</span><span class="v">' + expiring.length + '</span><span class="small muted">' + esc(expiring.map((x) => x.reward + ' by ' + fmtD(x.ed)).join(' · ') || 'Mark the unlock date when a voucher unlocks') + '</span></div>' +
+      '<div class="tile ps ps-lounge"><span class="label">Always-on lounges</span><span class="v">' + esc((set().lounges || {}).v || '—') + '</span><span class="small muted">' + esc((set().lounges || {}).note || '') + '</span></div>';
     el.innerHTML = cards.join('');
   }
+  function perkOffApply() { try { const o = JSON.parse(localStorage.getItem('pf-perks') || '{}') || {}; Object.entries(o).forEach(([id, p]) => { if (!S.perks || !S.perks[id]) return; const c = Object.assign({}, S.perks[id]); ['spend', 'used', 'unlocked'].forEach((f) => { if (p[f]) c[f] = Object.assign({}, c[f] || {}, p[f]); }); S.perks[id] = c; }); } catch (e) {} }
   document.addEventListener('change', (ev) => {
-    const t = ev.target; if (!db || !canWrite) return;
+    const t = ev.target; if (!window.__SNAPSHOT__ && (!db || !canWrite)) return;
     let patch = null, id = null;
     if (t.dataset.perk) { id = t.dataset.perk; const v = t.value === '' ? null : Number(t.value); if (v != null && (isNaN(v) || v < 0)) return; patch = { spend: { [t.dataset.pkey]: v } }; }
     else if (t.dataset.perkuse) { id = t.dataset.perkuse; patch = { used: { [t.dataset.ukey]: t.checked } }; }
     else if (t.dataset.perkunlock) { id = t.dataset.perkunlock; patch = { unlocked: { [t.dataset.ukey]: t.value || null } }; }
+    if (patch && (window.__SNAPSHOT__ || !db)) { try { const o = JSON.parse(localStorage.getItem('pf-perks') || '{}') || {}, q = o[id] = o[id] || {}; Object.entries(patch).forEach(([f, v]) => { q[f] = Object.assign({}, q[f] || {}, v); }); localStorage.setItem('pf-perks', JSON.stringify(o)); } catch (e) {} perkOffApply(); renderPerks(); toast('Saved in this browser'); return; }
     if (patch) db.doc('perks/' + id).update(patch).then(() => toast('Saved')).catch(() => toast('Couldn\'t save. Try again in a moment.'));
   });
 
@@ -3172,8 +3276,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     ccCache = { key, rows }; return rows;
   }
   const ymAdd = (ym, n) => { const [y, m] = ym.split('-').map(Number), d = new Date(y, m - 1 + n, 1); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); };
-  function ccMonthsList(span, end) { const meta = ccMeta(); if (!meta) return []; const to = end || meta.to, out = []; let k = span === '13' ? meta.from : ymAdd(to, -11); while (k <= to) { out.push(k); k = ymAdd(k, 1); } return out; }
-  const ccSum = (id, a, b) => ccTx().filter((t) => (id === 'all' || t.id === id) && t.d >= a && t.d <= b).reduce((s, t) => s + t.a, 0);
+  function ccMonthsList(span, end) { const meta = ccMeta(); if (!meta) return []; const to = end || meta.to, out = []; let k = span === '13' ? meta.from : ymAdd(to, -(Math.max(1, +span || 12) - 1)); if (k < meta.from) k = meta.from; while (k <= to) { out.push(k); k = ymAdd(k, 1); } return out; }
+  const ccSum = (id, a, b) => ccTx().filter((t) => (id === 'all' || t.id === id) && t.d >= a && t.d <= b && t.c !== 'EMIs, fees & cashback' && !/^OneCard statement/.test(t.m)).reduce((s, t) => s + t.a, 0);
   const isoD = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   const fmtIso = (s) => { if (!s) return '—'; const [y, m, d] = s.split('-').map(Number); return d + ' ' + MON[m - 1] + ' ' + y; };
   function ccYearOf(id, ref) {
@@ -3201,6 +3305,15 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const MERCH = [[/AMAZON/, 'Amazon'], [/FLIPKART/, 'Flipkart'], [/MAKE ?MY ?TRIP|MAKEMYTRIP|\bMMT\b/, 'MakeMyTrip'], [/INDIAN HOTELS|\bTAJ\b/, 'Taj (IHCL)'], [/GYFTR/, 'Gyftr vouchers'], [/SMARTBUY/, 'HDFC SmartBuy'], [/SWIGGY|BUNDL/, 'Swiggy'], [/ZOMATO/, 'Zomato'], [/MYNTRA/, 'Myntra'], [/CUSTCAP/, 'CustCap (wallet loads)'], [/INFINITI RETAIL|CROMA/, 'Croma'], [/POLICY ?BAZAAR/, 'Policybazaar'], [/AIRTEL/, 'Airtel'], [/YATRA/, 'Yatra'], [/UBER/, 'Uber'], [/BLINKIT|BLINK COMMERCE/, 'Blinkit'], [/ZEPTO/, 'Zepto'], [/BIGBASKET/, 'BigBasket'], [/NYKAA/, 'Nykaa'], [/MARRIOT|COURTYARD/, 'Marriott'], [/CONRA?D/, 'Conrad'], [/HYATT/, 'Hyatt'], [/INDIGO|INTERGLOBE/, 'IndiGo'], [/AIR INDIA/, 'Air India'], [/TATA ?PAYMENTS|TATA ?NEU/, 'Tata Neu'], [/MYGATE/, 'MyGate'], [/APPLE/, 'Apple'], [/GOOGLE|YOUTUBE/, 'Google'], [/IRCTC/, 'IRCTC'], [/PAYTM/, 'Paytm']];
   const merchKey = (m) => { const u = String(m).toUpperCase(); for (const [rx, k] of MERCH) if (rx.test(u)) return k; return u.replace(/[^A-Z ]/g, ' ').trim().split(/\s+/).slice(0, 2).map((w) => w.charAt(0) + w.slice(1).toLowerCase()).join(' '); };
   const ccState = { span: '12', card: 'all', cat: null, month: null, q: '', sort: 'date', limit: 25, view: 'list' };
+  // Bills by due month (cards/<id>.bills), grouped like ccSeries; the same source as the Card bills chart and Cash flow
+  function ccDueSeries() {
+    const big = ['regalia', 'amex', 'flipkart', 'amazon', 'travelone', 'swiggy', 'tataneu'], keys = new Set();
+    Object.values(S.cards || {}).forEach((c) => Object.keys(c.bills || {}).forEach((k) => keys.add(k)));
+    const ks = [...keys].sort().slice(-13);
+    const rows = ks.map((k) => { const r = { key: k }; let other = 0; Object.entries(S.cards || {}).forEach(([id, c]) => { const v = num((c.bills || {})[k]); if (v == null) return; if (big.includes(id)) r[id] = v; else other += v; }); r.other = other; return r; });
+    const series = big.map((id, i) => ({ key: id, label: ccName(id), color: CC_COL[id] || ['var(--accent)', 'var(--c3)', 'var(--c6)', 'var(--c5)', 'var(--saffron)', 'var(--c7)', 'var(--good)'][i % 7] })).concat([{ key: 'other', label: 'Other cards', color: CC_COL.other }]);
+    return { rows, series };
+  }
   function ccSeries(months) {
     const meta = ccMeta(), big = Object.keys(meta.cards || {}).sort((a, b) => Object.values((meta.cards[b] || {}).months || {}).reduce((x, y) => x + y, 0) - Object.values((meta.cards[a] || {}).months || {}).reduce((x, y) => x + y, 0)).slice(0, 7);
     const rows = months.map((k) => { const r = { key: k }; let other = 0; Object.entries(meta.cards).forEach(([id, c]) => { const v = num((c.months || {})[k]); if (v == null) return; if (big.includes(id)) r[id] = v; else other += v; }); r.other = other; return r; });
@@ -3218,7 +3331,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const ms = ccMonthsList(ccState.span), mFrom = ms[0], mTo = ms[ms.length - 1];
     const ids = Object.keys(meta.cards).filter((id) => meta.cards[id].tx);
     $('ccs-card').innerHTML = '<option value="all">All cards</option>' + ids.sort((a, b) => ((S.cards[a] || {}).order || 99) - ((S.cards[b] || {}).order || 99)).map((id) => '<option value="' + esc(id) + '">' + esc(ccName(id)) + '</option>').join('');
-    $('ccs-card').value = ccState.card; $('ccs-span').value = ccState.span;
+    $('ccs-card').value = ccState.card; $('ccs-span').querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.span === (ccState.span === '13' ? '12' : ccState.span)));
     const inSpan = ccTx().filter((t) => t.s >= mFrom && t.s <= mTo && (ccState.card === 'all' || t.id === ccState.card));
     const total = inSpan.reduce((s, t) => s + t.a, 0);
     const byCard = {}; inSpan.forEach((t) => (byCard[t.id] = (byCard[t.id] || 0) + t.a));
@@ -3244,7 +3357,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     // categories
     const cats = Object.entries(byCat).sort((a, b) => b[1] - a[1]).map(([c, v]) => ({ key: c, label: c, v, sub: Math.round(v / total * 100) + '%' }));
     hbarList($('ccs-cats'), cats, { active: ccState.cat, onPick: (it) => { ccState.cat = ccState.cat === it.key ? null : it.key; ccState.limit = 25; renderCcSpend(); } });
-    { const bigRows = inSpan.filter((t) => (!ccState.month || t.s === ccState.month) && (!ccState.cat || t.c === ccState.cat)).sort((a, b) => b.a - a.a).slice(0, 8); const flt = [ccState.cat, ccState.month ? mlabel(ccState.month, true) + ' statements' : ''].filter(Boolean).join(' · '); const bh = $('ccs-big').previousElementSibling; if (bh && bh.tagName === 'H3') bh.innerHTML = 'Biggest purchases' + (flt ? ' <span class="small muted">· ' + esc(flt) + '</span>' : ''); $('ccs-big').innerHTML = !bigRows.length ? '<div class="none">No purchases' + (flt ? ' for ' + esc(flt) : '') + '. <button type="button" id="ccs-clear">Show all</button></div>' : bigRows.map((t) => '<button type="button" data-merch="' + esc(merchKey(t.m)) + '"><span class="num small muted">' + esc(fmtIso(t.d)) + '</span><span class="bm">' + esc(t.m) + '<small class="muted"> · ' + esc(ccName(t.id)) + ' · ' + esc(t.c) + '</small></span><b class="num">' + esc(short(t.a)) + '</b></button>').join(''); const cb = $('ccs-clear'); if (cb) cb.onclick = () => { ccState.month = null; ccState.cat = null; renderCcSpend(); }; }
+    { const bigRows = inSpan.filter((t) => (!ccState.month || t.s === ccState.month) && (!ccState.cat || t.c === ccState.cat) && (ccState.cat || t.c !== 'EMIs, fees & cashback')).sort((a, b) => b.a - a.a).slice(0, 8); const flt = [ccState.cat, ccState.month ? mlabel(ccState.month, true) + ' statements' : ''].filter(Boolean).join(' · '); const bh = $('ccs-big').previousElementSibling; if (bh && bh.tagName === 'H3') bh.innerHTML = 'Biggest purchases' + (flt ? ' <span class="small muted">· ' + esc(flt) + '</span>' : ''); $('ccs-big').innerHTML = !bigRows.length ? '<div class="none">No purchases' + (flt ? ' for ' + esc(flt) : '') + '. <button type="button" id="ccs-clear">Show all</button></div>' : bigRows.map((t) => '<button type="button" data-merch="' + esc(merchKey(t.m)) + '"><span class="num small muted">' + esc(fmtIso(t.d)) + '</span><span class="bm">' + esc(t.m) + '<small class="muted"> · ' + esc(ccName(t.id)) + ' · ' + esc(t.c) + '</small></span><b class="num">' + esc(short(t.a)) + '</b></button>').join(''); const cb = $('ccs-clear'); if (cb) cb.onclick = () => { ccState.month = null; ccState.cat = null; renderCcSpend(); }; }
     renderCcYears(); renderCcQuarters(); renderCcTx();
     $('ccs-src').textContent = meta.source + ' Statement data runs to each card\'s last statement (latest ' + fmtIso(Object.values(meta.cards).map((c) => c.last_stmt).filter(Boolean).sort().pop()) + ').';
     $('ccs-notes').innerHTML = Object.entries(meta.cards).filter(([, c]) => c.note).map(([id, c]) => '<li><b>' + esc(ccName(id)) + ':</b> ' + esc(c.note) + '</li>').join('');
@@ -3327,7 +3440,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   {
     const box = document.getElementById('cards-spend');
     if (box) {
-      box.addEventListener('change', (e) => { if (e.target.id === 'ccs-span') { ccState.span = e.target.value; ccState.month = null; } else if (e.target.id === 'ccs-card') ccState.card = e.target.value; else return; ccState.limit = 25; renderCcSpend(); });
+      box.addEventListener('click', (e) => { const b = e.target.closest('#ccs-span [data-span]'); if (!b) return; ccState.span = b.dataset.span; ccState.month = null; ccState.limit = 25; renderCcSpend(); });
+      box.addEventListener('change', (e) => { if (e.target.id === 'ccs-card') ccState.card = e.target.value; else return; ccState.limit = 25; renderCcSpend(); });
       box.addEventListener('input', (e) => { if (e.target.id !== 'ccs-search') return; ccState.q = e.target.value; ccState.limit = 25; renderCcTx(); });
       box.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.matches('tr.clickrow')) e.target.click(); });
       box.addEventListener('click', (e) => {
@@ -3352,13 +3466,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const meta = ccMeta(), el = $('ch-ccmonth'), cel = $('ch-cccat');
     if (!el || !cel) return;
     if (!meta) { el.innerHTML = cel.innerHTML = '<p class="small muted">' + (loaded.has('ccspend') ? 'No card statements saved yet.' : 'Loading card statements…') + '</p>'; return; }
-    const ms = ccMonthsList('13'), { rows, series } = ccSeries(ms);
-    const r12 = rows.filter((r) => r.key <= ccDone()).slice(-12), sp12 = (keys) => r12.reduce((a, r) => a + keys.reduce((t, k) => t + (num(r[k]) || 0), 0), 0);
-    svgStack(el, rows, series, (r) => ccLbl(r.key), { w: 1000, h: 250, ym: true, values: true, label: 'Card spend by statement month and card', legendExtra: (solo) => '<span class="rw-pill" title="Rolling 12 statements' + (r12.length ? ', ' + mlabel(r12[0].key) + '–' + mlabel(r12[r12.length - 1].key) : '') + ', purchases minus refunds">12 mo · ' + esc(inr(sp12(solo ? [solo] : series.map((se) => se.key)))) + '</span>', tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click for the transactions</small>', onClick: (i) => openCcSpend({ month: rows[i].key, span: '13', cat: null }) });
+    const { rows, series } = ccDueSeries();
+    const r12 = rows.filter((r) => r.key <= ymAdd(ccDone(), 1)).slice(-12), sp12 = (keys) => r12.reduce((a, r) => a + keys.reduce((t, k) => t + (num(r[k]) || 0), 0), 0);
+    svgStack(el, rows, series, (r) => mlabel(r.key) + (ccPart(ymAdd(r.key, -1)) ? '*' : ''), { w: 1000, h: 250, ym: true, values: true, label: 'Card bills by due month and card', legendExtra: (solo) => '<span class="rw-pill" title="Last 12 months of bills' + (r12.length ? ', ' + mlabel(r12[0].key) + '–' + mlabel(r12[r12.length - 1].key) : '') + ', full statement amounts">12 mo · ' + esc(inr(sp12(solo ? [solo] : series.map((se) => se.key)))) + '</span>', tipTitle: (r) => mlabel(r.key, true) + ' statements', tipExtra: () => '<small>Click for the transactions</small>', onClick: (i) => openCcSpend({ month: ymAdd(rows[i].key, -1), span: '13', cat: null }) });
     const ms12 = ccMonthsList('12', ccDone()), byCat = {};
     ccTx().filter((t) => t.s >= ms12[0] && t.s <= ms12[ms12.length - 1]).forEach((t) => (byCat[t.c] = (byCat[t.c] || 0) + t.a));
     const tot = Object.values(byCat).reduce((a, b) => a + b, 0);
-    const bm = {}; ccTx().filter((t) => t.s >= ms12[0] && t.s <= ms12[ms12.length - 1]).forEach((t) => { const k = merchKey(t.m); bm[k] = bm[k] || { v: 0, n: 0 }; bm[k].v += t.a; bm[k].n++; });
+    const bm = {}; ccTx().filter((t) => t.s >= ms12[0] && t.s <= ms12[ms12.length - 1] && t.c !== 'EMIs, fees & cashback' && !/^OneCard statement/.test(t.m)).forEach((t) => { const k = merchKey(t.m); bm[k] = bm[k] || { v: 0, n: 0 }; bm[k].v += t.a; bm[k].n++; });
     if ($('ch-ccmerch')) hbarList($('ch-ccmerch'), Object.entries(bm).sort((a, b) => b[1].v - a[1].v).slice(0, 10).map(([k, o]) => ({ key: k, label: k, v: o.v, sub: o.n + '×', color: 'var(--c3)' })), { onPick: (it) => openCcSpend({ q: it.key.toLowerCase(), cat: null, month: null, span: '12' }) });
     hbarList(cel, Object.entries(byCat).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([c, v]) => ({ key: c, label: c, v, sub: Math.round(v / tot * 100) + '%' })), { onPick: (it) => openCcSpend({ cat: it.key, month: null, span: '12' }) });
   }
@@ -3374,7 +3488,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const tr = ($('trend-range') || {}).value || '12', cut = tr === 'all' ? '' : ymAdd(sel, -Number(tr) + 1);
     const allRows = months().filter((k) => k <= sel).map((k) => Object.assign({ key: k }, S.months[k]));
     const rows = allRows.filter((r) => r.key >= cut);
-    svgBars($('ch-card'), rows, ['card_gross', 'card_net'], ['var(--line)', 'var(--accent)'], ['Total bill', 'Your own spend']);
+    svgBars($('ch-card'), rows.map((r) => Object.assign({}, r, { card_spend: cardSpend(r) })), ['card_spend'], ['var(--accent)'], ['Card bills']);
     const hmKinds = ((S.targets.travel || {}).in_kind || []).filter((k) => num(k.value) > 0);
     const fundRows = rows.map((r) => { const kv = hmKinds.reduce((a, k) => a + ((k.received || '0000-00') <= r.key ? num(k.value) : 0), 0); return Object.assign({}, r, { hm_total: num(r.travel_fund) == null ? null : num(r.travel_fund) + kv }); });
     svgLines($('ch-funds'), fundRows, ['hm_total', 'emergency_fund'], ['var(--saffron)', 'var(--accent)'], (r) => mlabel(r.key), null, ['Goal reserve', 'Emergency'], (r) => mlabel(r.key, true));
@@ -3384,8 +3498,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     svgLines($('ch-corpus'), pts, ['total'], ['var(--accent)'], (p) => { const [, mm, dd] = p.date.split('-'); return Number(dd) + ' ' + MON[Number(mm) - 1]; }, null, ['Total financial assets'], (p) => fmtIso(p.date));
     renderCcTrends();
     renderInvTrend();
-    $('month-table').innerHTML = '<thead><tr><th>Month</th><th class="n">Income</th><th class="n">Own card</th><th class="n">SIP</th><th class="n">Stocks</th><th class="n">EMIs</th><th class="n">Saved</th><th class="n">Savings rate</th><th class="n">Free cash</th></tr></thead><tbody>' +
-      rows.slice().reverse().map((r) => { const rt = rateOf(r); return '<tr' + (r.key === sel ? ' class="cur"' : '') + '><td>' + esc(mlabel(r.key, true)) + '</td><td class="n">' + esc(short((num(r.salary) || 0) + (num(r.other_income) || 0))) + '</td><td class="n">' + esc(short(r.card_net)) + '</td><td class="n">' + esc(short(r.sip)) + '</td><td class="n">' + esc(short(r.direct_equity)) + '</td><td class="n">' + esc(short(r.emi)) + '</td><td class="n">' + esc(short((num(r.ef_add) || 0) + (num(r.travel_add) || 0))) + '</td><td class="n">' + (rt == null ? '—' : (rt * 100).toFixed(0) + '%') + '</td><td class="n">' + esc(short(r.free_cash)) + '</td></tr>'; }).join('') + '</tbody>';
+    $('month-table').innerHTML = '<thead><tr><th>Month</th><th class="n">Income</th><th class="n">Card spend</th><th class="n">SIP</th><th class="n">Stocks</th><th class="n">EMIs</th><th class="n">Saved</th><th class="n">Savings rate</th><th class="n">Free cash</th></tr></thead><tbody>' +
+      rows.slice().reverse().map((r) => { const rt = rateOf(r); return '<tr' + (r.key === sel ? ' class="cur"' : '') + '><td>' + esc(mlabel(r.key, true)) + '</td><td class="n">' + esc(short((num(r.salary) || 0) + (num(r.other_income) || 0) + otherIn(r.key))) + '</td><td class="n">' + esc(short(cardSpend(r))) + '</td><td class="n">' + esc(short(r.sip)) + '</td><td class="n">' + esc(short(r.direct_equity)) + '</td><td class="n">' + esc(short(r.emi)) + '</td><td class="n">' + esc(short((num(r.ef_add) || 0) + (num(r.travel_add) || 0))) + '</td><td class="n">' + (rt == null ? '—' : (rt * 100).toFixed(0) + '%') + '</td><td class="n">' + esc(short(r.free_cash)) + '</td></tr>'; }).join('') + '</tbody>';
   }
 
   const todoKey=id=>'pf-todo-2026-11-02/'+id;
@@ -3441,7 +3555,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   function renderFacts() {
     const m = M(), st = set();
     const f = [];
-    if (num(m.emergency_fund) && num(m.card_net) && num(m.emi)) f.push('Emergency fund covers about <b>' + Math.round(m.emergency_fund / ((m.card_net + m.emi) / 30)) + ' days</b> of own card spend plus EMIs.');
+    if (num(m.emergency_fund) && cardSpend(m) && num(m.emi)) f.push('Emergency fund covers about <b>' + Math.round(m.emergency_fund / ((cardSpend(m) + m.emi) / 30)) + ' days</b> of card spend plus EMIs.');
     const hm = num(m.travel_fund); if (hm != null) { const kv = ((S.targets.travel || {}).in_kind || []).reduce((a, k) => a + (num(k.value) || 0), 0); f.push('Goal reserve <b class="num">' + esc(inr(hm)) + '</b> is cash inside the salary account, so the bank floor includes it.' + (kv ? ' The ' + esc(inr(kv)) + ' of vouchers count toward the goal but are not cash, so they are left out of the floor and of total financial assets.' : '')); }
     const assets = (() => { const pts = Object.values(S.trend).filter((p) => p.date.slice(0, 7) <= sel).sort((a, b) => a.date.localeCompare(b.date)); return pts.length ? num(pts[pts.length - 1].total) : null; })();
     const loan = num((S.loans.home || {}).outstanding), home = num(st.home_value);
@@ -3512,7 +3626,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     $('tx-kpis').innerHTML = kpi('Tax for the year (estimate)', esc(inr(c.total)), esc('on taxable income ' + short(c.normal + c.ltG - c.ltEx + c.stEqG))) +
       kpi('Deducted so far', esc(inr(c.tdsYtd)), esc('to ' + mlabel(c.lastM) + ' · ' + short(c.tdsProj) + ' by March at this pace')) +
       kpi(netTxt, '<span class="' + (c.net > 0 ? 'neg' : 'pos') + '">' + esc(inr(Math.abs(c.net))) + '</span>', esc(Math.abs(c.net) < 10000 ? 'within ₹10K, no advance tax needed' : c.net > 0 ? 'more than ₹10K: advance tax or a higher TDS' : 'TDS is running ahead of tax')) +
-      (last ? kpi('Last return refund', esc(inr(last.refund || 0)), esc(last.refund_got ? 'received' : 'AY ' + last.ay + ' · not yet in AIS')) : '');
+      (last ? kpi('Last return refund', esc(inr(last.refund || 0)), esc(last.refund_got ? 'received' : 'AY ' + last.ay + (last.everified ? ' · e-verified, ' + (/process/i.test(last.status || '') ? 'under processing' : 'awaiting processing') : ' · not yet in AIS'))) : '');
     const row = (l, v, cls, sub) => '<tr class="' + (cls || '') + '"><td>' + l + '</td><td>' + v + '</td></tr>' + (sub ? '<tr class="sub"><td colspan="2">' + sub + '</td></tr>' : '');
     const box = (path, v, ph) => '<label class="bk-inp tx-inp"><i>₹</i><input type="text" inputmode="numeric" autocomplete="off" data-txedit="' + path + '" value="' + esc(v == null ? '' : Math.round(v).toLocaleString('en-IN')) + '" placeholder="' + esc(ph) + '" style="width:' + bkW(v == null ? '' : Math.round(v).toLocaleString('en-IN'), ph).toFixed(2) + 'ch"' + dis + '></label>';
     $('tx-calc').innerHTML = '<table class="tx-calc"><tbody>' +
@@ -3560,7 +3674,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const off = window.__SNAPSHOT__ ? bkOff() : {};
     return Object.entries(S.bank || {}).map(([id, a]) => Object.assign({ id }, a, off[id] || {})).sort((a, b) => (a.order ?? 9) - (b.order ?? 9)).map((a, i) => Object.assign(a, { col: BK_COL[i % BK_COL.length] }));
   }
-  // Locker fee (optional, settings sbi_locker): once a year; the money must be in the EMI account from fund_by March until the April debit
+  // SBI locker other_income: once a year (April); the money must be in SBI from 20 March until the April debit
   function bkLocker(today) {
     const st = set(), c = st.sbi_locker || {}, amt = num(c.amt) ?? 0; if (!amt) return null; const y = today.getFullYear();
     const fb = String(c.fund_by || '03-20').split('-'), un = String(c.until || '04-02').split('-');
@@ -3581,8 +3695,13 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       return base; }
     if (a.need === 'target') { const T = S.targets[a.target || 'ef'] || {}, t = num(T.target); return t == null ? null : { v: t, l: 'Target', d: T.label || 'Goal', goal: true }; }
     if (a.need === 'hold') return { v: num(a.keep), l: 'Must hold', d: a.keep_note || 'Not yours to spend', edit: true };
-    if (a.need === 'locked') return { v: num(a.bal), l: 'Locked', d: a.keep_note || 'Locked deposit; not spare cash', goal: true, locked: true };
+    if (a.need === 'locked') return { v: num(a.bal), l: 'Locked', d: /locker/i.test((a.name || '') + ' ' + (a.role || '')) ? 'Locker lien' : 'Locked deposit', goal: true, locked: true };
     return null;
+  }
+  const bkStamp = (a) => String((a && (a.bal_at || a.asof)) || '');
+  function bkPut(id, patch) {  // quiet write used by money-in entries
+    if (window.__SNAPSHOT__ || !db) { const o = bkOff(); o[id] = Object.assign({}, o[id] || {}, patch); try { localStorage.setItem(BK_OFF, JSON.stringify(o)); } catch (e) {} if (S.bank && S.bank[id] && !window.__SNAPSHOT__) Object.assign(S.bank[id], patch); return; }
+    if (!canWrite) return; db.doc('bank/' + id).update(patch).catch(() => toast('Couldn\'t update the balance. Try again in a moment.'));
   }
   function bkSave(id, patch, msg) {
     if (window.__SNAPSHOT__) { const o = bkOff(); o[id] = Object.assign({}, o[id] || {}, patch); try { localStorage.setItem(BK_OFF, JSON.stringify(o)); } catch (e) {} render(); toast(msg + ' in this browser only'); return; }
@@ -3595,7 +3714,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const a = (S.bank || {})[id] || {}, ym = bkIso().slice(0, 7);
     if (kind === 'keep') { bkSave(id, { keep: v }, 'Amount to hold saved'); return; }
     const hist = Object.assign({}, a.hist || {}); if (v != null) hist[ym] = v;
-    bkSave(id, { bal: v, asof: bkIso(), src: 'Typed in', hist }, 'Balance saved');
+    bkSave(id, { bal: v, asof: bkIso(), bal_at: new Date().toISOString(), in_adj: 0, src: 'Typed in', hist }, 'Balance saved');
   }
   function renderSavings() {
     const el = $('bk-cards'); if (!el) return;
@@ -3638,7 +3757,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         let chip = '';
         if (b == null) chip = '<span class="chip warn">Add balance</span>';
         else if (n.v == null) chip = '<span class="chip warn">Add amount</span>';
-        else if (n.locked) chip = '<span class="chip info">Locked' + (a.matures ? ' · renews ' + esc(fmtD(new Date(a.matures + 'T00:00:00')).replace(/^\d+ /, '')) : '') + '</span>';
+        else if (n.locked) chip = '<span class="chip info" title="' + esc((a.keep_note || '') + (a.matures ? ' · renews ' + a.matures : '')) + '">Locked' + (a.matures ? ' · ' + esc(fmtD(new Date(a.matures + 'T00:00:00')).replace(/^\d+ /, '')) : '') + '</span>';
         else if (n.goal) chip = b >= n.v ? '<span class="chip good">Target reached</span>' : '<span class="chip info">' + Math.round(b / n.v * 100) + '% · ' + esc(short(n.v - b)) + ' to go</span>';
         else if (b < n.v && n.by && !n.win) chip = '<span class="chip info">Top up by ' + esc(fmtD(n.by).replace(/ \d{4}$/, '')) + '</span>';
         else chip = b >= n.v ? '<span class="chip good">' + esc(short(b - n.v)) + ' above</span>' : '<span class="chip bad">Short ' + esc(short(n.v - b)) + '</span>';
@@ -3646,7 +3765,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         need = '<div class="bk-need">' + lab + chip + '</div>';
         if (n.goal && !n.locked && b != null && n.v) meter = '<div class="meter bk-meter"><i style="width:' + Math.min(100, b / n.v * 100).toFixed(1) + '%"></i></div>';
       }
-      const more = [n && n.edit ? esc(n.d) + ' ' + box('data-bkkeep="' + esc(a.id) + '"', n.v, 'amount', a.name + ' amount to hold') : (n && n.d ? esc(n.d) : ''), a.asof ? 'Updated ' + esc(fmtD(new Date(a.asof + 'T00:00:00'))) : esc(a.src || ''), chg, a.note ? esc(a.note) : ''].filter(Boolean).join(' · ');
+      const more = [n && n.edit ? esc(n.d) + ' ' + box('data-bkkeep="' + esc(a.id) + '"', n.v, 'amount', a.name + ' amount to hold') : (n && n.d ? esc(n.d) : ''), a.asof ? 'Updated ' + esc(fmtD(new Date(a.asof + 'T00:00:00'))) + (num(a.in_adj) ? ' + ' + esc(inr(num(a.in_adj))) + ' money in since' : '') : esc(a.src || ''), chg, a.note ? esc(a.note) : ''].filter(Boolean).join(' · ');
       return '<div class="bkcard" id="bk-' + esc(a.id) + '"><div class="bk-top"><span class="bk-name" data-bkmore="' + esc(a.id) + '" title="' + esc(a.role || '') + '"><b>' + esc(a.name) + '</b></span>' +
         box('data-bkbal="' + esc(a.id) + '"', b, 'Add', a.name + ' balance') + '</div>' + need + meter + '<div class="bk-more">' + more + '</div></div>';
     }).join('');
@@ -3947,7 +4066,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       canWrite = false;
       document.body.classList.add('offline'); if (window.__TEMPLATE__) document.body.classList.add('template');
       COLLS.forEach((c) => { S[c] = window.__SNAPSHOT__[c] || {}; loaded.add(c); });
-      restoreIncome(); cfRestoreOffline(); try { const bf = localStorage.getItem('pf-bank-floor'); if (bf !== null) { const v = JSON.parse(bf); if (Number.isFinite(v) && v >= 0) (S.settings.main = S.settings.main || {}).bank_floor = v; } } catch (e) {} restoreTodos(); applyOffTicks(); try { const hv = localStorage.getItem('pf-home-value'); if (hv !== null) { const v = JSON.parse(hv); if (v === null || (Number.isFinite(v) && v >= 0)) (S.settings.main = S.settings.main || {}).home_value = v; } } catch (e) {}
+      restoreIncome(); cfRestoreOffline(); perkOffApply(); try { const bf = localStorage.getItem('pf-bank-floor'); if (bf !== null) { const v = JSON.parse(bf); if (Number.isFinite(v) && v >= 0) (S.settings.main = S.settings.main || {}).bank_floor = v; } } catch (e) {} restoreTodos(); applyOffTicks(); try { const hv = localStorage.getItem('pf-home-value'); if (hv !== null) { const v = JSON.parse(hv); if (v === null || (Number.isFinite(v) && v >= 0)) (S.settings.main = S.settings.main || {}).home_value = v; } } catch (e) {}
       $('offline-note').textContent = 'Snapshot saved ' + (window.__SNAPSHOT_DATE__ || '') + '. Income, home value, bill ticks, benefit ticks and to-do ticks you change here are kept in this browser only and do not update the claude.ai version; everything else is view-only.';
       render(); return;
     }
@@ -3979,7 +4098,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   var RX=/[₹$]\s?[\d,]+(?:\.\d+)?(?:\s?(?:Cr|L|K|lakh|crore)\b)?|(^|[^\w.₹$•])[\d,]+(?:\.\d+)?\s?(?:Cr|L|K)\b/g,NUM=/^\s*[−+\-]?[\d,]+(?:\.\d+)?\s*$/;
   function pub(n){var e=n.parentElement;if(!e||!e.closest)return true;if(e.closest('.ins-priv'))return false;if(e.closest('script,style,select,#cards,#bills,#insurance,.ins-pub,.chg-drv,#oneoff,.toast,.nojs-note,#offline-note'))return true;
     var t=e.closest('.tile');if(t&&t.querySelector('#t-card'))return true;
-    var c=e.closest('.chg');if(c&&/^\s*Own card/.test(c.textContent))return true;
+    var c=e.closest('.chg');if(c&&/^\s*(Own card|Card spend)/.test(c.textContent))return true;
     var pn=e.closest('#trends .panel');if(pn){var h=pn.querySelector('h3');if(h&&/^(Card|Top merchants)/.test(h.textContent))return true;}
     return false;}
   function maskNode(n){var v=n.nodeValue;if(!v||!/\d/.test(v)||pub(n))return;var m=v.replace(RX,function(x,pre){return (pre||'')+(/^[₹$]/.test(x)?x.charAt(0):'')+'••••';});

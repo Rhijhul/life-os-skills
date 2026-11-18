@@ -2,6 +2,19 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.6 · 19-Nov-2026
+
+- **Card spend = full statements.** Money anyone pays you back is Other money in for the month it arrives; no tagging or matching to card months. Forecast card payments use the median of recent (bills − money received back).
+- **Money in moves the bank balance:** an actual receipt dated on or after the account's balance date adds to that account; editing or deleting it moves the balance back (online and offline). Savings shows "+ ₹X money in since".
+- **Cards → Spending:** 3M / 6M / 12M period toggle; new **Credit limits** panel (total limit, last billed, credit utilisation with Healthy / Fine / High, one row per issuer with an equal-length bar, hover readout and editable limit). New `settings.main.card_limits`.
+- **Statement items:** optional category *EMIs, fees & cashback* so every statement adds up to its bill; left out of milestones, top merchants and biggest purchases.
+- **Trends:** card bills by card and due month (from `cards.bills`); click opens that statement.
+- **Benefits & targets** redesigned (summary tiles, one card per issuer, two columns); gold style on All cards, Card detail, Benefits and Rewards; Rewards worth shows value and % of wallet.
+- **Savings:** locked accounts keep the standard card size ("Locker lien" / "Locked deposit" tag).
+- **Tax:** returns can carry `everified`, `status` and `ack`; optional `tax_refund_plan` note; `tds.q26as`.
+- **Fixes:** Card detail no longer sticks on lifetime-free cards; card year label for cycle-day cards.
+- **Docs and scripts:** SOP schema and views updated, SKILL rule 12 and master-prompt rules for full-statement spend; `validate_data.py` checks `card_limits` and warns on legacy `covers_card`. Sample data adds credit limits and an Other money in entry; the sample shows Salary + Other income only (no rent).
+
 ## Personal Finance Dashboard v1.5.1 · 18-Nov-2026
 
 - **Cash flow:** the minimum buffer is editable at the top right of the buffer chart ("Minimum buffer ₹…"). It saves to `settings.main.bank_floor` (offline: this browser) and updates the summary cards, the minimum line, the salary-account floor on Savings and the Overview checks at once.

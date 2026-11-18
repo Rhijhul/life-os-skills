@@ -65,7 +65,7 @@ The skill works with any agent that can read files and run Python. Hosting the p
 9. **One row per points account.** Cards that earn into one rewards balance share one wallet row in `rewards/main`.
 10. **Every bank account says what it must hold.** Each `bank/<id>` record has a `need` (floor, float, target, emi, hold, locked or none); spare cash is everything above it. The emergency-fund account is never counted as spare.
 11. **Tax is a tracker, not advice.** Build `tax/fy<YYYY-YY>` only from the user's payslip, AIS/TIS, capital-gains reports and filed returns; leave unknowns `null` and list them in `todo`.
-12. **One monthly record, shared everywhere.** Salary, other income, mutual funds and stocks live once in `months/<YYYY-MM>`; Income, Investments and Cash flow read and edit the same fields. Other money in goes to `inflows/*`; a receipt that repays a card payment is matched to that payment's month, and each receipt counts once.
+12. **One monthly record, shared everywhere.** Salary, other income, mutual funds and stocks live once in `months/<YYYY-MM>`; Income, Investments and Cash flow read and edit the same fields. Card spend is always the full statement amount; money anyone pays back goes to `inflows/*` as Other money in for the month it arrives (it also moves the receiving account's balance), and each receipt counts once.
 
 ## Workflow
 

@@ -48,7 +48,14 @@ for iid, e in (d.get('inflows') or {}).items():
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(e.get('date', ''))): err(f'inflows/{iid}.date must be YYYY-MM-DD')
     if not isinstance(e.get('amt'), (int, float)) or e['amt'] <= 0: err(f'inflows/{iid}.amt must be a positive number')
     if e.get('status') not in ('actual', 'expected'): err(f'inflows/{iid}.status must be actual|expected')
-    if e.get('covers_card') and not re.fullmatch(r'\d{4}-\d{2}', str(e.get('pay_m', ''))): err(f'inflows/{iid}: covers_card needs pay_m YYYY-MM')
+    if e.get('covers_card'): warn(f'inflows/{iid}: covers_card is ignored since v1.6 (card spend = full statements; the receipt counts as money in)')
+cl = (st or {}).get('card_limits')
+if cl:
+    for i in cl.get('issuers') or []:
+        if not isinstance(i.get('limit'), (int, float)) or i['limit'] <= 0: err(f"settings.main.card_limits: {i.get('id')} limit must be a positive number")
+        if i.get('status') not in (None, 'confirmed', 'provisional'): err(f"settings.main.card_limits: {i.get('id')} status must be confirmed|provisional")
+        for c in i.get('cards') or []:
+            if c not in (d.get('cards') or {}): warn(f"settings.main.card_limits: {i.get('id')} card {c} not found in cards")
 cf = (st or {}).get('cf') or {}
 if cf.get('sip_step_from') and not re.fullmatch(r'\d{4}-\d{2}', str(cf['sip_step_from'])): err('settings.main.cf.sip_step_from must be YYYY-MM or empty')
 for k in (cf.get('ovr') or {}):
