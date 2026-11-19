@@ -2,6 +2,15 @@
 
 Newest first. One entry per release: date, version, what changed.
 
+## Personal Finance Dashboard v1.7 · 20-Nov-2026
+
+- **Income → Salary journey (new):** from offer, appraisal and promotion letters (`settings.main.salary_journey`). Tiles for current CTC, growth per year (CAGR), last raise and since joining the current employer; views Timeline (step chart with markers by kind), By year (CTC at year end by employer, "Flat" years with a reason) and Raises (one bar per change, negatives below zero); 3Y / 5Y / 10Y / All window; hover, tap and arrow-key readout; works offline.
+- **Month rule:** a month record is the money available to spend that month; salary credited at the end of the previous month belongs to it, reimbursements paid with a salary belong to the month after. Income shows one line: "Credited end <prev>, for <month> · incl. ₹X other money in".
+- **Tax:** brought-forward losses (`losses_cf` with `cat` spec / stcl / ltcl) are applied in the estimate as the law allows. Capital gains rows get gain/loss bars, a brought-forward row and an LTCG bar showing what absorbed this year's gains and the tax-free room left before 31 March. Losses carried forward show as one bar per type with the last usable year. The tax table fills its column.
+- **Investments:** By market cap and By sleeve split their panel 50:50; Results verdict bar carries data labels.
+- **Overview:** Money moments cards have equal heights; Cash flow side-panel amounts right-aligned.
+- **Docs and scripts:** SOP schema (salary_journey, losses_cf, month rule), Income and Tax views, onboarding asks for the full ITR and salary letters; `validate_data.py` checks `salary_journey` and `losses_cf`. Sample data adds a fictional salary journey, carried-forward losses and intraday.
+
 ## Personal Finance Dashboard v1.6 · 19-Nov-2026
 
 - **Card spend = full statements.** Money anyone pays you back is Other money in for the month it arrives; no tagging or matching to card months. Forecast card payments use the median of recent (bills − money received back).

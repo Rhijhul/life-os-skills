@@ -118,10 +118,13 @@ Conventions:
 | last_updated | ISO timestamp | Shown in the sidebar; set by every refresh |
 | last_updated_by | string | "weekly refresh", "monthly update", etc. |
 | card_limits | `{asof, issuers:[{id, name, cards[], limit, prev, changed, status 'confirmed'\|'provisional', note}]}` | Credit limits per issuer (cards sharing one limit are listed together and counted once). Editable on Cards → Spending; offline `localStorage` `pf-card-limits` |
-| tax_refund_plan | string | Optional one-line plan for the expected refund, shown on the Tax page (default "planned for the goal reserve") |
+| tax_refund_plan | string | Optional one-line plan for the expected refund, shown on the Tax page (default "planned for the goal reserve"), e.g. a split between the emergency fund, the goal reserve and the salary account |
+| salary_journey | `{asof, src, next, year_notes:{YYYY: text}, rows:[{d, kind 'join'\|'merit'\|'promotion'\|'restructure'\|'breakup', org, title, band, ctc, base, fixed, var, note, gap_after}]}` | Salary history from offer, appraisal and promotion letters (Income → Salary journey). `breakup` rows are stored but not plotted; `year_notes` explain years with no change ("Flat"); `gap_after` marks missing letters. Hidden with fewer than 2 rows |
 | cf | object | Cash flow assumptions and overrides: `hike_pct`, `hike_month` (1–12, month the raised pay is for), `net_share` (share of a gross raise that reaches take-home, default 0.64), `sip_step_pct`, `sip_step_from` (`YYYY-MM`, empty = with the raise), `stock_default` (future stock buys per month), `avg_n` (months averaged for card spend), `rent_until` (optional end date for other income), `ovr` `{YYYY-MM: {salary, other_income, sip, stocks}}` (one forecast month only), `saved` `{YYYY-MM: {at, rows[{k, inn, out, me}]}}` (dated forecast copies). Offline: `localStorage` `pf-cf` |
 
 ### 2.2 `months/<YYYY-MM>` (one per month)
+
+**Month rule:** a month record holds the money available to spend that month. Salary (and other income) credited at the end of the previous month belongs to it; anything paid with a salary (e.g. employer reimbursements) belongs to the month after that salary is credited, so record it as an `expected` receipt in `inflows` for that month. Non-cash gifts (vouchers) go in the month note only, never in income.
 
 | Key | Type | Meaning |
 |---|---|---|
@@ -364,7 +367,7 @@ A new document starts each April.
 | cg | array | `{id, src, asof, stcg_eq, ltcg_eq, stcg_other, stcg_other_loss, ltcg_other, note}` per source (mutual funds, Indian stocks, US stocks) |
 | spec | `{cy, src}` | Intraday (speculative) profit or loss this year |
 | other | `{div_in, div_us, us_tax_withheld, interest_sb}` | Dividends, US tax withheld, savings interest (typed on the page) |
-| losses_cf | array | `{ay, kind, amt, last_ay}` losses carried forward |
+| losses_cf | array | `{cat 'spec'\|'stcl'\|'ltcl', kind, amt, ay, fy, last_ay, note}` losses carried forward, one per year and type, from Schedule CFL of the last return (`cat` is guessed from `kind` when missing) |
 | lrs | `{ytd}` | Money sent abroad this year (TCS context) |
 | returns | array, newest first | `{ay, fy, form, filed, everified, status, ack, regime, income, tax, tds, adv_tax, sa_tax, tcs, refund, refund_got}` past returns (`everified` date and `status` from the e-filing portal, e.g. "Under processing"); missing values show "—" |
 | todo | string[] | Documents still needed this year |
@@ -655,6 +658,8 @@ Sections top to bottom (each is `<section id>` with a `.pagehead`):
 
   Percentages are of income (salary + other income). A red note appears when the left-in-bank part is negative.
 - **Month by month:** stacked bars of the same five parts for all months. Click a month to open it.
+- One note line under Total income: "Credited end <prev>, for <month> · incl. ₹X other money in" (a `salary_note` replaces the first part).
+- **Salary journey** (from `settings.salary_journey`): four tiles (current CTC, growth per year as CAGR over the window, last raise, since joining the current employer with its yearly CAGR). Views Timeline (time-scaled step chart, markers by kind, dashed where letters are missing) / By year (CTC at each year end coloured by employer, label = % vs previous year, "Flat" with the `year_notes` reason) / Raises (one bar per change, colour by kind, negative changes below zero); window 3Y / 5Y / 10Y / All (both remembered in `pf-sj-view`, `pf-sj-win`). Hover, tap or arrow keys for the readout. Works offline.
 - **What changed this month:** card spend, investments, saved and income vs the previous month, with arrows.
   - "What drove the spending change": category deltas between the last two statement months, from `ccspend` (collapsible).
   - "One-off items": transactions over ₹10K.
@@ -795,7 +800,7 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 - KPI tiles: invested, value, P&L %, XIRR from `returns.lots`, 1Y and 3M value-weighted change vs Nifty.
 - Sortable holdings table (ticker, sector, mcap, sleeve, shares, avg, LTP, value, weight, P&L, 1Y, 3M, vs 52-week high, QVGM, plan).
 - Period switch (1Y / 3M / P&L) for the bar chart.
-- Sector and sleeve mix.
+- Sector and sleeve mix: By market cap and By sleeve share one panel 50:50, level with By sector (stacked on phones).
 - Analyst read (`meta.notes_eq`) at the bottom.
 
 **Performance vs benchmark** (My mutual funds and US direct stocks):
@@ -817,7 +822,7 @@ Tabs: Overview, By goal, Indian direct equity, My mutual funds, US direct stocks
 
 **Results:**
 
-- Season tile ("12 of 12 declared"), verdict buckets (Strong / Solid / Mixed / Weak), result rows with filter.
+- Season tile ("12 of 12 declared"), verdict buckets (Strong / Solid / Mixed / Weak), verdict bar with data labels on each segment (verdict, count, %; narrow segments drop the name, then the %), result rows with filter.
 - Earnings aggregates per quarter: mean and median revenue and PAT growth, margin, breadth, % with PAT ≥ 20%, PAT declines.
 - Momentum vs the prior quarter.
 
@@ -959,7 +964,10 @@ Card statements update the Cards section the day they arrive: a month still coll
 ### 4.17 Tax (`#tax`)
 
 - Uses the latest `tax/fy*` document. New regime (tax year 2026-27): salary for the year = `ytd_gross + monthly × months left + bonus` − ₹75,000 standard deduction; slab income adds dividends, savings interest and net non-equity short-term gains. Slabs 0–4L nil, then 5% steps per 4L to 24L, 30% above; 87A rebate to ₹12L; 4% cess.
-- Capital gains: short-term losses set off first against slab-rate gains, then 20% equity STCG, then LTCG; LTCG 12.5% above ₹1.25L (meter of the exemption used and left). Intraday losses stay apart.
+- Capital gains: this year's short-term losses set off first against slab-rate gains, then 20% equity STCG, then LTCG; long-term losses against LTCG only. Then brought-forward losses (`losses_cf`): past long-term loss against LTCG only; past short-term loss against slab STCG, equity STCG, then LTCG; past intraday loss against intraday profit only. LTCG 12.5% above ₹1.25L after all set-offs. Intraday losses stay apart.
+- Capital gains panel: one row per source with a bar (losses left in red, gains right in green, one segment per gain type), an Intraday row and a "Brought forward from past returns" row (amount by type and what this year uses); a readout line (hover a row or tap a segment). The After set-off box adds new losses to carry and past losses left, and an LTCG bar: long-term gains booked, split into what absorbed them (this year's short-term / long-term losses, past long-term / short-term loss), exemption used, taxed part, then tax-free room left (unused past losses + exemption left), with "₹X more tax-free before 31 Mar".
+- Past returns → Losses carried forward: one bar per type (Intraday, Short-term, Long-term), one segment per year's loss, amount on the right, last usable AY under the bar; hover/tap for each segment. A type with nothing to carry has no bar.
+- The "How the year's tax is worked out" table stretches to its column's height.
 - KPIs: tax for the year, TDS so far (and by March), likely to pay / refund (advance tax flagged above ₹10K), last return refund. TDS-by-month bars (actual solid, expected striped). Past returns table, losses carried forward, "Still needed" list.
 - Bonus and savings interest are editable (online to the tax doc, offline to the browser). The eye toggle masks the section. A tracker, not tax advice.
 
@@ -1106,7 +1114,8 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 2. [ASK] Fixed annual CTC (for the employer life cover) and the employer cover multiple (often 3×).
 3. [ASK] Monthly EPF contribution (you + employer, excluding EPS).
 4. [ASK] Savings accounts: for each bank account, its role and what it must hold (salary floor, petty cash, emergency fund, EMI money, a deposit held for someone, or nothing), plus the current balance. Any yearly charge (e.g. a locker fee) and when it is debited. → `bank/*`, `settings.axis_float`, `settings.emi_topup_day`, `settings.sbi_locker`.
-4a. [DOC] Tax: latest payslip (April-to-date gross and TDS), AIS/TIS, capital-gains reports, last filed returns. [CALC] Write `tax/fy<YYYY-YY>`.
+4a. [DOC] Tax: latest payslip (April-to-date gross and TDS), AIS/TIS, capital-gains reports, last filed returns (full ITR with Schedule CFL, not only the ITR-V). [CALC] Write `tax/fy<YYYY-YY>` including `losses_cf`.
+4c. [DOC] Salary journey (optional): offer, appraisal and promotion letters. [CALC] Write `settings.salary_journey.rows`.
 4b. [ASK] Cash flow: expected raise (% and the month it is for), any SIP step-up and from when, planned monthly stock buying, and whether other income has an end date. → `settings.cf`.
 5. [ASK] Bank floor (minimum balance after bills), crash floor, small card float.
 6. [ASK] Stock-buying rules, if any: regular threshold, regular monthly cap, dip cap. Defaults are offered if none.
@@ -1156,4 +1165,6 @@ The LLM runs this as a staged interview. Ask one stage at a time, confirm a summ
 - [ ] Cash flow: a salary or other-income edit in Cash flow shows in Income and back; a forecast-month override changes that month only; adding, editing and deleting a receipt works online and offline; a top-up of the "Restore minimum buffer" amount clears that card and lifts every projection; a positive average can show ₹0 spending room when one month breaches the minimum.
 - [ ] Money in: an actual receipt dated on or after the account's balance date raises that balance; editing the amount or account moves it; deleting takes it back; online and offline.
 - [ ] Cards: 3M / 6M / 12M change the tiles, charts and list; credit-limit rows, utilisation and hover readouts match the sample; statement-item lines are excluded from milestones.
+- [ ] Income: Salary journey views (Timeline / By year / Raises) and 3Y–All windows redraw; readout follows hover and arrow keys.
+- [ ] Tax: brought-forward losses reduce LTCG/STCG as in 4.17; the capital-gains and carried-forward bars show hover/tap readouts.
 - [ ] Rewards: wallet total = Σ worth; recording and removing a redemption moves the balance both ways.

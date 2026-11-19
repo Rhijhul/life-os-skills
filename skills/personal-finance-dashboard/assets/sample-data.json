@@ -1,6447 +1,6575 @@
 {
-"settings": {
-"main": {
-"birth": "1995-08-20",
-"bank_floor": 50000,
-"crash_floor": 40000,
-"axis_float": 2000,
-"regular_threshold": 60000,
-"regular_max": 12000,
-"dip_max": 30000,
-"emi_day": 5,
-"ctc_fixed": 1560000,
-"employer_cover_multiple": 3,
-"epf_monthly": 10800,
-"epf_pension": 92000,
-"home_value": 5200000,
-"loan_original": 3000000,
-"life_cover_personal": 10000000,
-"life_cover": 14680000,
-"rule_from": "2026-10",
-"us_target_pct": 15,
-"stock_buy_yearly": 90000,
-"us_buy_yearly": 24000,
-"card_note": "Sample data. Bills are by due month; each card statement is entered once a month.",
-"lounges": {
-"v": "~10/yr",
-"note": "Regalia Gold 6 intl (Priority Pass) · Regalia Gold 4 domestic on quarterly spend"
-},
-"notion_parent": "",
-"last_updated": "2026-11-14T09:00:00Z",
-"last_updated_by": "sample data",
-"emi_topup_day": 2,
-"card_limits": {
-"asof": "2026-11-14",
-"issuers": [
-{
-"id": "hdfc",
-"name": "HDFC Bank",
-"cards": [
-"regalia"
-],
-"limit": 450000,
-"prev": 400000,
-"changed": "2026-10-20",
-"status": "confirmed",
-"note": "Sample limit increase"
-},
-{
-"id": "amex",
-"name": "American Express",
-"cards": [
-"amex"
-],
-"limit": 250000,
-"status": "confirmed"
-},
-{
-"id": "sbi",
-"name": "SBI Card",
-"cards": [
-"sbicash"
-],
-"limit": 180000,
-"status": "confirmed"
-},
-{
-"id": "icici",
-"name": "ICICI Bank",
-"cards": [
-"amazon"
-],
-"limit": 300000,
-"status": "provisional",
-"note": "Sample: not yet confirmed"
-}
-]
-}
-}
-},
-"loans": {
-"home": {
-"loan": "HDFC home loan",
-"order": 1,
-"emi": 26500,
-"outstanding": 2846210.0,
-"rate": "8.40% floating",
-"ends": "2049",
-"status": "Active",
-"original": 3000000
-},
-"laptop": {
-"loan": "Laptop (no-cost EMI)",
-"order": 2,
-"emi": 7450,
-"outstanding": 22350,
-"original": 44700,
-"emis_total": 6,
-"emis_left": 3,
-"rate": "3 of 6 EMIs left · paid by Dad",
-"paid_by": "Dad",
-"ends": "Jan 2027",
-"status": "Active"
-},
-"phone": {
-"loan": "Phone (card EMI)",
-"order": 3,
-"emi": 4200,
-"outstanding": 0,
-"rate": "",
-"ends": "Aug 2026",
-"status": "Closed"
-}
-},
-"cards": {
-"regalia": {
-"name": "HDFC Regalia Gold",
-"order": 1,
-"fee": 2500,
-"waiver": 400000,
-"milestones": "₹5L and ₹7.5L flight vouchers",
-"anniv_spend": null,
-"cycle_start": 6,
-"due_day": 16,
-"bills": {
-"2026-08": 22808.47,
-"2026-10": 13989.16,
-"2026-11": 22678.15
-},
-"paid": {
-"2026-08": true,
-"2026-10": true,
-"2026-11": true
-}
-},
-"amex": {
-"name": "Amex MRCC",
-"order": 2,
-"fee": 4500,
-"waiver": 150000,
-"milestones": "Monthly bonus MR at ₹20K",
-"anniv_spend": null,
-"cycle_start": 11,
-"due_day": 26,
-"bills": {
-"2026-08": 16766.64,
-"2026-10": 6535.35,
-"2026-11": 10107.03
-},
-"paid": {
-"2026-08": true,
-"2026-10": true,
-"2026-11": false
-}
-},
-"sbicash": {
-"name": "SBI Cashback",
-"order": 3,
-"fee": 999,
-"waiver": 200000,
-"milestones": null,
-"anniv_spend": null,
-"cycle_start": 18,
-"due_day": 7,
-"bills": {
-"2026-08": 7927.07,
-"2026-10": 9571.26,
-"2026-11": 5612.68
-},
-"paid": {
-"2026-08": true,
-"2026-10": true,
-"2026-11": true
-}
-},
-"amazon": {
-"name": "ICICI Amazon Pay",
-"order": 4,
-"fee": null,
-"waiver": null,
-"milestones": null,
-"anniv_spend": null,
-"cycle_start": 3,
-"due_day": 21,
-"bills": {
-"2026-08": 3117.43,
-"2026-10": 4878.04,
-"2026-11": 4374.95
-},
-"paid": {
-"2026-08": true,
-"2026-10": true,
-"2026-11": true
-}
-}
-},
-"perks": {
-"regalia": {
-"name": "HDFC Regalia Gold",
-"order": 1,
-"lounge": [
-"Domestic: 4 visits a year on ₹1L quarterly spend",
-"International: 6 a year via Priority Pass"
-],
-"perks": [
-"SmartBuy 5X on select merchants",
-"Redeem points on flights/hotels at ₹0.50 per point"
-],
-"role": "Daily driver, milestones",
-"sources": "Sample data",
-"spend": {},
-"targets": [
-{
-"id": "q_lounge",
-"period": "quarter",
-"reward": "Domestic lounge access next quarter",
-"threshold": 100000
-},
-{
-"id": "y_fee",
-"period": "year",
-"reward": "₹2,500 annual fee waived",
-"threshold": 400000
-},
-{
-"id": "y_5l",
-"period": "year",
-"reward": "₹5,000 flight voucher",
-"threshold": 500000,
-"expiry_days": 60
-}
-],
-"unlocked": {},
-"used": {},
-"year_start": "06-01"
-},
-"amex": {
-"name": "Amex MRCC",
-"order": 2,
-"lounge": [
-"No lounge access"
-],
-"perks": [
-"Monthly bonus needs 4 spends of ₹1,500+ that post in the same month"
-],
-"role": "Monthly milestone",
-"sources": "Sample data",
-"spend": {},
-"targets": [
-{
-"id": "m_bonus",
-"period": "month",
-"reward": "Monthly bonus MR",
-"threshold": 20000,
-"note": "Needs 4 transactions of ₹1,500+ posted in the same month"
-},
-{
-"id": "y_fee",
-"period": "year",
-"reward": "₹4,500 fee waived",
-"threshold": 150000
-}
-],
-"unlocked": {},
-"used": {},
-"year_start": "11-01"
-},
-"sbicash": {
-"name": "SBI Cashback",
-"order": 3,
-"lounge": [
-"No lounge access"
-],
-"perks": [
-"5% cashback online (cap ₹5,000 per statement)",
-"1% offline"
-],
-"role": "Online shopping",
-"sources": "Sample data",
-"spend": {},
-"targets": [
-{
-"id": "y_fee",
-"period": "year",
-"reward": "₹999 fee waived",
-"threshold": 200000
-}
-],
-"unlocked": {},
-"used": {},
-"year_start": "04-01"
-},
-"amazon": {
-"name": "ICICI Amazon Pay",
-"order": 4,
-"lounge": [
-"No lounge access"
-],
-"perks": [
-"5% on Amazon with Prime",
-"Lifetime free"
-],
-"role": "Amazon purchases",
-"sources": "Sample data",
-"spend": {},
-"targets": [],
-"unlocked": {},
-"used": {}
-},
-"hdfcdebit": {
-"name": "HDFC Millennia debit card",
-"order": 5,
-"lounge": [
-"2 domestic lounge vouchers a quarter on ₹10,000 debit spend"
-],
-"perks": [
-"5% Swiggy (cap ₹150/month)"
-],
-"role": "Debit card",
-"sources": "Sample data",
-"spend": {},
-"targets": [
-{
-"id": "q_lounge",
-"period": "quarter",
-"reward": "2 domestic lounge vouchers",
-"threshold": 10000
-}
-],
-"unlocked": {},
-"used": {}
-}
-},
-"ccspend": {
-"meta": {
-"asof": "2026-11-10",
-"from": "2025-10",
-"to": "2026-10",
-"cats": [
-"Investments (NPS)",
-"Home & appliances",
-"Electronics",
-"Food delivery",
-"Groceries",
-"Dining out",
-"Travel & stays",
-"Cabs & fuel",
-"Bills & utilities",
-"Insurance",
-"Health & wellness",
-"Fashion & personal care",
-"Gift cards & vouchers",
-"Subscriptions & fun",
-"Online shopping",
-"Rent & wallet loads",
-"UPI to shops & people",
-"Other"
-],
-"cards": {
-"regalia": {
-"name": "HDFC Regalia Gold",
-"months": {
-"2025-10": 22581.21,
-"2025-11": 19993.52,
-"2025-12": 19654.11,
-"2026-01": 20159.05,
-"2026-02": 18251.77,
-"2026-03": 27602.4,
-"2026-04": 16491.92,
-"2026-05": 26818.34,
-"2026-06": 19907.58,
-"2026-07": 23051.68,
-"2026-08": 13908.5,
-"2026-09": 14360.34,
-"2026-10": 23092.21
-},
-"bills": {
-"2025-10": 22702.15,
-"2025-11": 19488.24,
-"2025-12": 19392.29,
-"2026-01": 20200.34,
-"2026-02": 17935.27,
-"2026-03": 26852.36,
-"2026-04": 16982.84,
-"2026-05": 27222.03,
-"2026-06": 20037.74,
-"2026-07": 22808.47,
-"2026-08": 14164.51,
-"2026-09": 13989.16,
-"2026-10": 22678.15
-},
-"coverage": {},
-"last_stmt": "2026-11-07",
-"tx": 51,
-"year_start": "06-01",
-"year_basis": "Card year from 01/06 (sample)"
-},
-"amex": {
-"name": "Amex MRCC",
-"months": {
-"2025-10": 8596.61,
-"2025-11": 11123.29,
-"2025-12": 14392.09,
-"2026-01": 10604.15,
-"2026-02": 8601.76,
-"2026-03": 14409.9,
-"2026-04": 10780.67,
-"2026-05": 18213.74,
-"2026-06": 14543.48,
-"2026-07": 16837.57,
-"2026-08": 11292.87,
-"2026-09": 6470.54,
-"2026-10": 9986.43
-},
-"bills": {
-"2025-10": 8371.74,
-"2025-11": 10975.45,
-"2025-12": 14045.31,
-"2026-01": 10444.23,
-"2026-02": 8592.14,
-"2026-03": 14772.5,
-"2026-04": 10857.89,
-"2026-05": 17810.35,
-"2026-06": 14707.09,
-"2026-07": 16766.64,
-"2026-08": 11612.82,
-"2026-09": 6535.35,
-"2026-10": 10107.03
-},
-"coverage": {},
-"last_stmt": "2026-11-12",
-"tx": 62,
-"year_start": "11-01",
-"year_basis": "Card year from 01/11 (sample)"
-},
-"sbicash": {
-"name": "SBI Cashback",
-"months": {
-"2025-10": 7383.71,
-"2025-11": 12632.42,
-"2025-12": 13677.52,
-"2026-01": 13238.74,
-"2026-02": 11761.42,
-"2026-03": 5464.94,
-"2026-04": 9539.77,
-"2026-05": 6715.54,
-"2026-06": 5550.1,
-"2026-07": 7733.36,
-"2026-08": 5102.83,
-"2026-09": 9602.42,
-"2026-10": 5617.87
-},
-"bills": {
-"2025-10": 7317.11,
-"2025-11": 12519.6,
-"2025-12": 13362.1,
-"2026-01": 13244.4,
-"2026-02": 11623.02,
-"2026-03": 5561.25,
-"2026-04": 9715.24,
-"2026-05": 6713.27,
-"2026-06": 5640.03,
-"2026-07": 7927.07,
-"2026-08": 5240.62,
-"2026-09": 9571.26,
-"2026-10": 5612.68
-},
-"coverage": {},
-"last_stmt": "2026-11-19",
-"tx": 58,
-"year_start": "04-01",
-"year_basis": "Card year from 01/04 (sample)"
-},
-"amazon": {
-"name": "ICICI Amazon Pay",
-"months": {
-"2025-10": 4550.28,
-"2025-11": 3071.84,
-"2025-12": 5062.41,
-"2026-01": 3983.38,
-"2026-02": 2962.31,
-"2026-03": 5763.61,
-"2026-04": 2118.0,
-"2026-05": 5432.38,
-"2026-06": 6228.34,
-"2026-07": 3163.7,
-"2026-08": 3851.08,
-"2026-09": 4790.23,
-"2026-10": 4392.47
-},
-"bills": {
-"2025-10": 4451.55,
-"2025-11": 3040.67,
-"2025-12": 5085.4,
-"2026-01": 3968.04,
-"2026-02": 2902.78,
-"2026-03": 5785.88,
-"2026-04": 2060.85,
-"2026-05": 5445.23,
-"2026-06": 6098.44,
-"2026-07": 3117.43,
-"2026-08": 3950.18,
-"2026-09": 4878.04,
-"2026-10": 4374.95
-},
-"coverage": {},
-"last_stmt": "2026-11-04",
-"tx": 36,
-"year_start": "04-01",
-"year_basis": "Card year from 01/04 (sample)",
-"lifetime_free": true
-}
-},
-"source": "Sample statements. Net purchases = purchases minus refunds; payments, cashback, fees and EMI principal excluded."
-},
-"tx-regalia-2025": {
-"rows": [
-[
-"2025-10-01",
-"BIGBASKET BANGALORE",
-4,
-2012.85,
-"2025-10"
-],
-[
-"2025-10-04",
-"BIGBASKET BANGALORE",
-4,
-1134.89,
-"2025-10"
-],
-[
-"2025-10-07",
-"SWIGGY BANGALORE",
-3,
-269.37,
-"2025-11"
-],
-[
-"2025-10-08",
-"SWIGGY BANGALORE",
-3,
-732.01,
-"2025-11"
-],
-[
-"2025-10-14",
-"CROMA BANGALORE",
-2,
-3847.55,
-"2025-11"
-],
-[
-"2025-10-15",
-"CROMA BANGALORE",
-2,
-9002.56,
-"2025-11"
-],
-[
-"2025-10-21",
-"CROMA BANGALORE",
-2,
-5581.98,
-"2025-11"
-],
-[
-"2025-11-06",
-"SWIGGY BANGALORE",
-3,
-743.22,
-"2025-12"
-],
-[
-"2025-11-11",
-"AIRTEL POSTPAID",
-8,
-799.0,
-"2025-12"
-],
-[
-"2025-11-12",
-"INDIGO AIRLINES GURGAON",
-6,
-7910.3,
-"2025-12"
-],
-[
-"2025-11-13",
-"MARRIOTT HOTELS",
-6,
-6919.89,
-"2025-12"
-],
-[
-"2025-11-13",
-"TOIT BREWPUB BANGALORE",
-5,
-2808.68,
-"2025-12"
-],
-[
-"2025-11-24",
-"UBER INDIA BANGALORE",
-7,
-559.35,
-"2025-12"
-],
-[
-"2025-11-25",
-"UBER INDIA BANGALORE",
-7,
-253.08,
-"2025-12"
-],
-[
-"2025-12-08",
-"INDIGO AIRLINES GURGAON",
-6,
-4935.33,
-"2026-01"
-],
-[
-"2025-12-13",
-"BIGBASKET BANGALORE",
-4,
-2879.56,
-"2026-01"
-],
-[
-"2025-12-23",
-"MARRIOTT HOTELS",
-6,
-11196.17,
-"2026-01"
-],
-[
-"2025-12-28",
-"UBER INDIA BANGALORE",
-7,
-643.05,
-"2026-01"
-],
-[
-"2026-01-06",
-"INDIGO AIRLINES GURGAON",
-6,
-10286.74,
-"2026-02"
-],
-[
-"2026-01-12",
-"MARRIOTT HOTELS",
-6,
-7463.89,
-"2026-02"
-],
-[
-"2026-01-23",
-"BIGBASKET BANGALORE",
-4,
-2408.42,
-"2026-02"
-],
-[
-"2026-02-02",
-"SWIGGY BANGALORE",
-3,
-398.88,
-"2026-02"
-],
-[
-"2026-02-03",
-"MARRIOTT HOTELS",
-6,
-9610.48,
-"2026-02"
-],
-[
-"2026-02-11",
-"CROMA BANGALORE",
-2,
-5904.04,
-"2026-03"
-],
-[
-"2026-02-21",
-"TOIT BREWPUB BANGALORE",
-5,
-2338.37,
-"2026-03"
-],
-[
-"2026-03-05",
-"BIGBASKET BANGALORE",
-4,
-3193.58,
-"2026-03"
-],
-[
-"2026-03-05",
-"TOIT BREWPUB BANGALORE",
-5,
-1628.61,
-"2026-03"
-],
-[
-"2026-03-12",
-"AIRTEL POSTPAID",
-8,
-799.0,
-"2026-04"
-],
-[
-"2026-03-14",
-"UBER INDIA BANGALORE",
-7,
-531.1,
-"2026-04"
-],
-[
-"2026-03-16",
-"MARRIOTT HOTELS",
-6,
-7913.64,
-"2026-04"
-],
-[
-"2026-03-18",
-"BIGBASKET BANGALORE",
-4,
-2587.97,
-"2026-04"
-],
-[
-"2026-03-21",
-"AIRTEL POSTPAID",
-8,
-799.0,
-"2026-04"
-],
-[
-"2026-03-25",
-"CROMA BANGALORE",
-2,
-10149.5,
-"2026-04"
-]
-]
-},
-"tx-regalia-2026": {
-"rows": [
-[
-"2026-04-14",
-"SMARTBUY GYFTR",
-12,
-8336.63,
-"2026-05"
-],
-[
-"2026-04-20",
-"INDIGO AIRLINES GURGAON",
-6,
-8155.29,
-"2026-05"
-],
-[
-"2026-05-01",
-"CROMA BANGALORE",
-2,
-15842.09,
-"2026-05"
-],
-[
-"2026-05-18",
-"INDIGO AIRLINES GURGAON",
-6,
-10976.25,
-"2026-06"
-],
-[
-"2026-06-04",
-"SMARTBUY GYFTR",
-12,
-6061.45,
-"2026-06"
-],
-[
-"2026-06-14",
-"MARRIOTT HOTELS",
-6,
-7003.97,
-"2026-07"
-],
-[
-"2026-06-17",
-"UBER INDIA BANGALORE",
-7,
-575.58,
-"2026-07"
-],
-[
-"2026-06-24",
-"SMARTBUY GYFTR",
-12,
-5629.79,
-"2026-07"
-],
-[
-"2026-06-25",
-"UBER INDIA BANGALORE",
-7,
-636.79,
-"2026-07"
-],
-[
-"2026-07-20",
-"CROMA BANGALORE",
-2,
-16736.65,
-"2026-08"
-],
-[
-"2026-07-25",
-"SMARTBUY GYFTR",
-12,
-6315.03,
-"2026-08"
-],
-[
-"2026-08-27",
-"MARRIOTT HOTELS",
-6,
-13908.5,
-"2026-09"
-],
-[
-"2026-09-03",
-"BIGBASKET BANGALORE",
-4,
-2907.22,
-"2026-09"
-],
-[
-"2026-09-27",
-"INDIGO AIRLINES GURGAON",
-6,
-11453.12,
-"2026-10"
-],
-[
-"2026-10-07",
-"AIRTEL POSTPAID",
-8,
-799.0,
-"2026-11"
-],
-[
-"2026-10-16",
-"SMARTBUY GYFTR",
-12,
-3027.13,
-"2026-11"
-],
-[
-"2026-10-17",
-"CROMA BANGALORE",
-2,
-5059.47,
-"2026-11"
-],
-[
-"2026-10-23",
-"CROMA BANGALORE",
-2,
-14206.61,
-"2026-11"
-]
-]
-},
-"tx-amex-2025": {
-"rows": [
-[
-"2025-10-08",
-"APOLLO PHARMACY",
-10,
-529.91,
-"2025-10"
-],
-[
-"2025-10-17",
-"INDIAN HOTELS TAJ",
-6,
-8066.7,
-"2025-11"
-],
-[
-"2025-11-01",
-"MYNTRA DESIGNS",
-11,
-3318.38,
-"2025-11"
-],
-[
-"2025-11-02",
-"MYNTRA DESIGNS",
-11,
-1442.64,
-"2025-11"
-],
-[
-"2025-11-02",
-"ZOMATO BANGALORE",
-3,
-866.27,
-"2025-11"
-],
-[
-"2025-11-08",
-"INDIAN HOTELS TAJ",
-6,
-5496.0,
-"2025-11"
-],
-[
-"2025-12-07",
-"NETFLIX COM",
-13,
-649.0,
-"2025-12"
-],
-[
-"2025-12-14",
-"ZOMATO BANGALORE",
-3,
-377.54,
-"2026-01"
-],
-[
-"2025-12-15",
-"INDIAN HOTELS TAJ",
-6,
-7965.05,
-"2026-01"
-],
-[
-"2025-12-16",
-"APOLLO PHARMACY",
-10,
-761.69,
-"2026-01"
-],
-[
-"2025-12-19",
-"BLINKIT BANGALORE",
-4,
-1412.69,
-"2026-01"
-],
-[
-"2025-12-21",
-"AMAZON PAY INDIA",
-14,
-3226.12,
-"2026-01"
-],
-[
-"2026-01-04",
-"INDIAN HOTELS TAJ",
-6,
-10604.15,
-"2026-01"
-],
-[
-"2026-02-06",
-"APOLLO PHARMACY",
-10,
-566.35,
-"2026-02"
-],
-[
-"2026-02-16",
-"MYNTRA DESIGNS",
-11,
-1798.72,
-"2026-03"
-],
-[
-"2026-02-18",
-"ZOMATO BANGALORE",
-3,
-340.47,
-"2026-03"
-],
-[
-"2026-02-25",
-"AMAZON PAY INDIA",
-14,
-4379.09,
-"2026-03"
-],
-[
-"2026-02-28",
-"BOOKMYSHOW MUMBAI",
-13,
-862.63,
-"2026-03"
-],
-[
-"2026-02-28",
-"ZOMATO BANGALORE",
-3,
-654.5,
-"2026-03"
-],
-[
-"2026-03-01",
-"AMAZON PAY INDIA",
-14,
-1242.08,
-"2026-03"
-],
-[
-"2026-03-02",
-"AMAZON PAY INDIA",
-14,
-3517.1,
-"2026-03"
-],
-[
-"2026-03-09",
-"NETFLIX COM",
-13,
-649.0,
-"2026-03"
-],
-[
-"2026-03-10",
-"APOLLO PHARMACY",
-10,
-594.11,
-"2026-03"
-],
-[
-"2026-03-17",
-"AMAZON PAY INDIA",
-14,
-2878.29,
-"2026-04"
-],
-[
-"2026-03-19",
-"MYNTRA DESIGNS",
-11,
-4687.35,
-"2026-04"
-],
-[
-"2026-03-23",
-"APOLLO PHARMACY",
-10,
-841.97,
-"2026-04"
-]
-]
-},
-"tx-amex-2026": {
-"rows": [
-[
-"2026-04-02",
-"MYNTRA DESIGNS",
-11,
-3284.11,
-"2026-04"
-],
-[
-"2026-04-03",
-"AMAZON PAY INDIA",
-14,
-4347.04,
-"2026-04"
-],
-[
-"2026-04-03",
-"BLINKIT BANGALORE",
-4,
-495.93,
-"2026-04"
-],
-[
-"2026-04-19",
-"MYNTRA DESIGNS",
-11,
-2653.59,
-"2026-05"
-],
-[
-"2026-05-07",
-"INDIAN HOTELS TAJ",
-6,
-11542.94,
-"2026-05"
-],
-[
-"2026-05-13",
-"INDIAN HOTELS TAJ",
-6,
-6670.8,
-"2026-06"
-],
-[
-"2026-06-04",
-"BLINKIT BANGALORE",
-4,
-770.25,
-"2026-06"
-],
-[
-"2026-06-04",
-"BOOKMYSHOW MUMBAI",
-13,
-1331.76,
-"2026-06"
-],
-[
-"2026-06-07",
-"MYNTRA DESIGNS",
-11,
-3783.4,
-"2026-06"
-],
-[
-"2026-06-07",
-"ZOMATO BANGALORE",
-3,
-358.61,
-"2026-06"
-],
-[
-"2026-06-12",
-"BOOKMYSHOW MUMBAI",
-13,
-532.46,
-"2026-07"
-],
-[
-"2026-06-12",
-"ZOMATO BANGALORE",
-3,
-1003.42,
-"2026-07"
-],
-[
-"2026-06-18",
-"AMAZON PAY INDIA",
-14,
-3204.67,
-"2026-07"
-],
-[
-"2026-06-20",
-"BLINKIT BANGALORE",
-4,
-781.29,
-"2026-07"
-],
-[
-"2026-06-20",
-"ZOMATO BANGALORE",
-3,
-307.45,
-"2026-07"
-],
-[
-"2026-06-25",
-"APOLLO PHARMACY",
-10,
-900.74,
-"2026-07"
-],
-[
-"2026-06-26",
-"BOOKMYSHOW MUMBAI",
-13,
-1011.68,
-"2026-07"
-],
-[
-"2026-06-27",
-"BOOKMYSHOW MUMBAI",
-13,
-557.75,
-"2026-07"
-],
-[
-"2026-07-05",
-"INDIAN HOTELS TAJ",
-6,
-9077.57,
-"2026-07"
-],
-[
-"2026-07-09",
-"BLINKIT BANGALORE",
-4,
-1291.96,
-"2026-07"
-],
-[
-"2026-07-11",
-"BOOKMYSHOW MUMBAI",
-13,
-444.09,
-"2026-08"
-],
-[
-"2026-07-14",
-"AMAZON PAY INDIA",
-14,
-959.96,
-"2026-08"
-],
-[
-"2026-07-18",
-"BLINKIT BANGALORE",
-4,
-1437.72,
-"2026-08"
-],
-[
-"2026-07-18",
-"NETFLIX COM",
-13,
-649.0,
-"2026-08"
-],
-[
-"2026-07-23",
-"AMAZON PAY INDIA",
-14,
-1036.31,
-"2026-08"
-],
-[
-"2026-07-27",
-"BLINKIT BANGALORE",
-4,
-1163.83,
-"2026-08"
-],
-[
-"2026-07-28",
-"APOLLO PHARMACY",
-10,
-777.13,
-"2026-08"
-],
-[
-"2026-08-26",
-"INDIAN HOTELS TAJ",
-6,
-11292.87,
-"2026-09"
-],
-[
-"2026-09-08",
-"INDIAN HOTELS TAJ",
-6,
-6470.54,
-"2026-09"
-],
-[
-"2026-10-01",
-"BLINKIT BANGALORE",
-4,
-1633.98,
-"2026-10"
-],
-[
-"2026-10-08",
-"BLINKIT BANGALORE",
-4,
-1696.07,
-"2026-10"
-],
-[
-"2026-10-11",
-"BLINKIT BANGALORE",
-4,
-1431.19,
-"2026-11"
-],
-[
-"2026-10-20",
-"NETFLIX COM",
-13,
-649.0,
-"2026-11"
-],
-[
-"2026-10-26",
-"BLINKIT BANGALORE",
-4,
-1766.69,
-"2026-11"
-],
-[
-"2026-10-26",
-"MYNTRA DESIGNS",
-11,
-2160.5,
-"2026-11"
-],
-[
-"2026-10-26",
-"NETFLIX COM",
-13,
-649.0,
-"2026-11"
-]
-]
-},
-"tx-sbicash-2025": {
-"rows": [
-[
-"2025-10-08",
-"FLIPKART INTERNET",
-14,
-5250.54,
-"2025-10"
-],
-[
-"2025-10-15",
-"NYKAA E RETAIL",
-11,
-2133.17,
-"2025-10"
-],
-[
-"2025-11-01",
-"DECATHLON SPORTS",
-11,
-1719.34,
-"2025-11"
-],
-[
-"2025-11-07",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2025-11"
-],
-[
-"2025-11-09",
-"FLIPKART INTERNET",
-14,
-5824.51,
-"2025-11"
-],
-[
-"2025-11-28",
-"MAKEMYTRIP INDIA",
-6,
-4969.57,
-"2025-12"
-],
-[
-"2025-12-09",
-"FLIPKART INTERNET",
-14,
-1311.31,
-"2025-12"
-],
-[
-"2025-12-09",
-"NYKAA E RETAIL",
-11,
-1661.18,
-"2025-12"
-],
-[
-"2025-12-11",
-"CULT FIT",
-10,
-1500.0,
-"2025-12"
-],
-[
-"2025-12-11",
-"ZEPTO MARKETPLACE",
-4,
-1174.25,
-"2025-12"
-],
-[
-"2025-12-14",
-"FLIPKART INTERNET",
-14,
-1274.53,
-"2025-12"
-],
-[
-"2025-12-17",
-"MAKEMYTRIP INDIA",
-6,
-6637.25,
-"2025-12"
-],
-[
-"2025-12-27",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-01"
-],
-[
-"2026-01-03",
-"NYKAA E RETAIL",
-11,
-1228.44,
-"2026-01"
-],
-[
-"2026-01-10",
-"FLIPKART INTERNET",
-14,
-4514.7,
-"2026-01"
-],
-[
-"2026-01-11",
-"CULT FIT",
-10,
-1500.0,
-"2026-01"
-],
-[
-"2026-01-11",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-01"
-],
-[
-"2026-01-22",
-"CULT FIT",
-10,
-1500.0,
-"2026-02"
-],
-[
-"2026-01-22",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-02"
-],
-[
-"2026-01-23",
-"NYKAA E RETAIL",
-11,
-1009.45,
-"2026-02"
-],
-[
-"2026-01-24",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-02"
-],
-[
-"2026-01-26",
-"MAKEMYTRIP INDIA",
-6,
-3010.15,
-"2026-02"
-],
-[
-"2026-01-28",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-02"
-],
-[
-"2026-02-01",
-"MAKEMYTRIP INDIA",
-6,
-6287.62,
-"2026-02"
-],
-[
-"2026-02-05",
-"CULT FIT",
-10,
-1500.0,
-"2026-02"
-],
-[
-"2026-02-10",
-"NYKAA E RETAIL",
-11,
-1731.03,
-"2026-02"
-],
-[
-"2026-02-10",
-"ZEPTO MARKETPLACE",
-4,
-782.88,
-"2026-02"
-],
-[
-"2026-02-13",
-"NYKAA E RETAIL",
-11,
-1340.89,
-"2026-02"
-],
-[
-"2026-02-24",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-03"
-],
-[
-"2026-03-07",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-03"
-],
-[
-"2026-03-15",
-"ZEPTO MARKETPLACE",
-4,
-857.99,
-"2026-03"
-],
-[
-"2026-03-16",
-"CULT FIT",
-10,
-1500.0,
-"2026-03"
-],
-[
-"2026-03-21",
-"DECATHLON SPORTS",
-11,
-2987.95,
-"2026-04"
-]
-]
-},
-"tx-sbicash-2026": {
-"rows": [
-[
-"2026-04-03",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-04"
-],
-[
-"2026-04-06",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-04"
-],
-[
-"2026-04-08",
-"NYKAA E RETAIL",
-11,
-1845.59,
-"2026-04"
-],
-[
-"2026-04-11",
-"CULT FIT",
-10,
-1500.0,
-"2026-04"
-],
-[
-"2026-04-21",
-"ZEPTO MARKETPLACE",
-4,
-918.54,
-"2026-05"
-],
-[
-"2026-04-25",
-"FLIPKART INTERNET",
-14,
-5037.64,
-"2026-05"
-],
-[
-"2026-05-13",
-"NYKAA E RETAIL",
-11,
-1936.69,
-"2026-05"
-],
-[
-"2026-05-14",
-"DECATHLON SPORTS",
-11,
-1162.18,
-"2026-05"
-],
-[
-"2026-05-16",
-"FLIPKART INTERNET",
-14,
-1997.67,
-"2026-05"
-],
-[
-"2026-05-19",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-06"
-],
-[
-"2026-05-28",
-"CULT FIT",
-10,
-1500.0,
-"2026-06"
-],
-[
-"2026-06-23",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-07"
-],
-[
-"2026-06-28",
-"FLIPKART INTERNET",
-14,
-5431.1,
-"2026-07"
-],
-[
-"2026-07-08",
-"MAKEMYTRIP INDIA",
-6,
-3301.31,
-"2026-07"
-],
-[
-"2026-07-17",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-07"
-],
-[
-"2026-07-26",
-"MAKEMYTRIP INDIA",
-6,
-4313.05,
-"2026-08"
-],
-[
-"2026-08-11",
-"CULT FIT",
-10,
-1500.0,
-"2026-08"
-],
-[
-"2026-08-18",
-"CULT FIT",
-10,
-1500.0,
-"2026-09"
-],
-[
-"2026-08-22",
-"NYKAA E RETAIL",
-11,
-2102.83,
-"2026-09"
-],
-[
-"2026-09-17",
-"SPOTIFY INDIA",
-13,
-119.0,
-"2026-09"
-],
-[
-"2026-09-18",
-"MAKEMYTRIP INDIA",
-6,
-7983.42,
-"2026-10"
-],
-[
-"2026-09-27",
-"CULT FIT",
-10,
-1500.0,
-"2026-10"
-],
-[
-"2026-10-09",
-"DECATHLON SPORTS",
-11,
-2608.83,
-"2026-10"
-],
-[
-"2026-10-17",
-"ZEPTO MARKETPLACE",
-4,
-1218.98,
-"2026-10"
-],
-[
-"2026-10-21",
-"DECATHLON SPORTS",
-11,
-1790.06,
-"2026-11"
-]
-]
-},
-"tx-amazon-2025": {
-"rows": [
-[
-"2025-10-03",
-"ACT FIBERNET",
-8,
-1059.0,
-"2025-11"
-],
-[
-"2025-10-03",
-"BESCOM BILL PAY",
-8,
-2239.54,
-"2025-11"
-],
-[
-"2025-10-11",
-"BESCOM BILL PAY",
-8,
-1251.74,
-"2025-11"
-],
-[
-"2025-11-03",
-"AMAZON FRESH",
-4,
-2012.84,
-"2025-12"
-],
-[
-"2025-11-14",
-"ACT FIBERNET",
-8,
-1059.0,
-"2025-12"
-],
-[
-"2025-12-14",
-"AMAZON SELLER SERVICES",
-14,
-961.87,
-"2026-01"
-],
-[
-"2025-12-25",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-01"
-],
-[
-"2025-12-25",
-"AMAZON SELLER SERVICES",
-14,
-3041.54,
-"2026-01"
-],
-[
-"2026-01-09",
-"AMAZON FRESH",
-4,
-1576.46,
-"2026-02"
-],
-[
-"2026-01-13",
-"BESCOM BILL PAY",
-8,
-1347.92,
-"2026-02"
-],
-[
-"2026-01-18",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-02"
-],
-[
-"2026-02-24",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-03"
-],
-[
-"2026-02-26",
-"BESCOM BILL PAY",
-8,
-1903.31,
-"2026-03"
-],
-[
-"2026-03-18",
-"AMAZON FRESH",
-4,
-2561.44,
-"2026-04"
-],
-[
-"2026-03-19",
-"AMAZON SELLER SERVICES",
-14,
-3202.17,
-"2026-04"
-]
-]
-},
-"tx-amazon-2026": {
-"rows": [
-[
-"2026-04-05",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-05"
-],
-[
-"2026-04-06",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-05"
-],
-[
-"2026-05-09",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-06"
-],
-[
-"2026-05-09",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-06"
-],
-[
-"2026-05-11",
-"AMAZON FRESH",
-4,
-1509.4,
-"2026-06"
-],
-[
-"2026-05-24",
-"AMAZON SELLER SERVICES",
-14,
-1804.98,
-"2026-06"
-],
-[
-"2026-06-03",
-"BESCOM BILL PAY",
-8,
-1236.33,
-"2026-07"
-],
-[
-"2026-06-08",
-"AMAZON SELLER SERVICES",
-14,
-2713.55,
-"2026-07"
-],
-[
-"2026-06-20",
-"AMAZON FRESH",
-4,
-2278.46,
-"2026-07"
-],
-[
-"2026-07-07",
-"AMAZON SELLER SERVICES",
-14,
-2104.7,
-"2026-08"
-],
-[
-"2026-07-23",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-08"
-],
-[
-"2026-08-01",
-"BESCOM BILL PAY",
-8,
-1062.15,
-"2026-08"
-],
-[
-"2026-08-06",
-"AMAZON SELLER SERVICES",
-14,
-2788.93,
-"2026-09"
-],
-[
-"2026-09-13",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-10"
-],
-[
-"2026-09-20",
-"BESCOM BILL PAY",
-8,
-2175.44,
-"2026-10"
-],
-[
-"2026-09-23",
-"AMAZON FRESH",
-4,
-751.99,
-"2026-10"
-],
-[
-"2026-09-25",
-"AMAZON FRESH",
-4,
-803.8,
-"2026-10"
-],
-[
-"2026-10-04",
-"ACT FIBERNET",
-8,
-1059.0,
-"2026-11"
-],
-[
-"2026-10-14",
-"AMAZON SELLER SERVICES",
-14,
-1411.05,
-"2026-11"
-],
-[
-"2026-10-14",
-"BESCOM BILL PAY",
-8,
-918.98,
-"2026-11"
-],
-[
-"2026-10-21",
-"BESCOM BILL PAY",
-8,
-1003.44,
-"2026-11"
-]
-]
-}
-},
-"mf": {
-"ppfas": {
-"fund": "Parag Parikh Flexi Cap",
-"goal": "Retirement",
-"sip": 6000,
-"invested": 312000,
-"current": 368400,
-"as_of": "2026-11-13",
-"bucket": "equity"
-},
-"hdfcmid": {
-"fund": "HDFC Mid-Cap Opportunities",
-"goal": "Retirement",
-"sip": 4000,
-"invested": 168000,
-"current": 201300,
-"as_of": "2026-11-13",
-"bucket": "equity"
-},
-"axissmall": {
-"fund": "Axis Small Cap",
-"goal": "Retirement",
-"sip": 2000,
-"invested": 96000,
-"current": 104250,
-"as_of": "2026-11-13",
-"bucket": "equity"
-},
-"iciciasset": {
-"fund": "ICICI Pru Multi-Asset",
-"goal": "Car",
-"sip": 4500,
-"invested": 128500,
-"current": 138200,
-"as_of": "2026-11-13",
-"bucket": "mixed"
-},
-"hdfcst": {
-"fund": "HDFC Short Term Debt",
-"goal": "Emergency top-up",
-"sip": 0,
-"invested": 60000,
-"current": 63120,
-"as_of": "2026-11-13",
-"bucket": "debt"
-},
-"mosnasdaq": {
-"fund": "Motilal Oswal Nasdaq 100 FoF",
-"goal": "Retirement",
-"sip": 1500,
-"invested": 74000,
-"current": 92650,
-"as_of": "2026-11-13",
-"bucket": "us",
-"kind": "US mutual fund"
-},
-"usstocks": {
-"fund": "US direct stocks: META, COST, V",
-"goal": "Retirement",
-"sip": 0,
-"invested": 23652.0,
-"current": 26357.0,
-"as_of": "2026-11-13",
-"kind": "US stocks (INDmoney)"
-}
-},
-"ppf": {
-"2026-27": {
-"balance": 214500,
-"balance_asof": "1 Nov 2026",
-"contributed": 40000,
-"limit": 150000,
-"min_yearly": 500,
-"target": 600000
-}
-},
-"nps": {
-"2026-27": {
-"balance": 45320,
-"balance_asof": "12 Nov 2026",
-"contributed": 12000,
-"min_yearly": 1000,
-"target": 150000,
-"note": "Tier I, auto choice. Sample data."
-}
-},
-"months": {
-"2026-08": {
-"label": "Aug 2026",
-"status": "closed",
-"salary": 112000,
-"other_income": 3500,
-"sip": 18000,
-"emi": 26500,
-"emi_paid": true,
-"emi_interest": 19900,
-"emi_principal": 6600,
-"card_gross": 50619.61,
-"card_net": 50619.61,
-"direct_equity": 8604,
-"ef_add": 4000,
-"travel_add": 5000,
-"emergency_fund": 100000,
-"travel_fund": 123000,
-"free_cash": 94276.39,
-"note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
-},
-"2026-09": {
-"label": "Sep 2026",
-"status": "closed",
-"salary": 112000,
-"other_income": 3500,
-"sip": 18000,
-"emi": 26500,
-"emi_paid": true,
-"emi_interest": 19860,
-"emi_principal": 6640,
-"card_gross": 34968.13,
-"card_net": 27518.13,
-"direct_equity": 6131,
-"ef_add": 4000,
-"travel_add": 5000,
-"emergency_fund": 104000,
-"travel_fund": 128000,
-"free_cash": 119850.87,
-"note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
-},
-"2026-10": {
-"label": "Oct 2026",
-"status": "closed",
-"salary": 112000,
-"other_income": 3500,
-"sip": 18000,
-"emi": 26500,
-"emi_paid": true,
-"emi_interest": 19820,
-"emi_principal": 6680,
-"card_gross": 34973.81,
-"card_net": 27523.81,
-"direct_equity": 7276,
-"ef_add": 4000,
-"travel_add": 5000,
-"emergency_fund": 108000,
-"travel_fund": 133000,
-"free_cash": 118700.19,
-"note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
-},
-"2026-11": {
-"label": "Nov 2026",
-"status": "open",
-"salary": 112000,
-"other_income": 3500,
-"sip": 18000,
-"emi": 26500,
-"emi_paid": true,
-"emi_interest": 19780,
-"emi_principal": 6720,
-"card_gross": 42772.81,
-"card_net": 35322.81,
-"direct_equity": 5041,
-"ef_add": 4000,
-"travel_add": 5000,
-"emergency_fund": 112000,
-"travel_fund": 138000,
-"free_cash": 113136.19,
-"note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower.",
-"other_credits": {
-"laptop_emi_from_dad": 7450
-},
-"stock_buys": [
-{
-"date": "2026-11-04",
-"ticker": "LT",
-"qty": 1,
-"price": 3712.0
-},
-{
-"date": "2026-11-06",
-"ticker": "GOLDBEES",
-"qty": 20,
-"price": 97.4
-}
-]
-}
-},
-"invest": {
-"snapshot": {
-"asof": "Mixed dates, 1–13 Nov 2026",
-"source": "Sample data",
-"total": 2856924.0,
-"components": [
-{
-"key": "eq",
-"label": "Indian direct equity",
-"group": "Market-linked",
-"invested": 693064.0,
-"value": 773347.0,
-"note": "12 stocks + GoldBEES · Zerodha",
-"tab": "eq",
-"asof": "13 Nov close"
-},
-{
-"key": "mf",
-"label": "My mutual funds (India)",
-"group": "Market-linked",
-"invested": 764500,
-"value": 875270,
-"note": "5 funds · Groww",
-"tab": "mf",
-"asof": "13 Nov"
-},
-{
-"key": "usmf",
-"label": "US mutual funds",
-"group": "Market-linked",
-"invested": 74000,
-"value": 92650,
-"note": "Nasdaq 100 FoF",
-"tab": "mf",
-"asof": "13 Nov"
-},
-{
-"key": "us",
-"label": "US direct stocks",
-"group": "Market-linked",
-"invested": 23652.0,
-"value": 26357.0,
-"note": "3 stocks · INDmoney",
-"tab": "us",
-"asof": "13 Nov"
-},
-{
-"key": "epf",
-"label": "EPF",
-"group": "Retirement, locked",
-"invested": null,
-"value": 624800,
-"note": "incl. EPS pension share",
-"tab": null,
-"asof": "31 Oct"
-},
-{
-"key": "ppf",
-"label": "PPF",
-"group": "Retirement, locked",
-"invested": null,
-"value": 214500,
-"note": "SBI",
-"tab": null,
-"asof": "1 Nov"
-},
-{
-"key": "hm",
-"label": "Travel fund",
-"group": "Cash for goals",
-"invested": null,
-"value": 138000,
-"note": "salary account",
-"tab": null,
-"asof": "1 Nov"
-},
-{
-"key": "ef",
-"label": "Emergency fund",
-"group": "Cash for goals",
-"invested": null,
-"value": 112000,
-"note": "savings account",
-"tab": null,
-"asof": "1 Nov"
-}
-],
-"notes": [
-"Sample totals for a demo profile.",
-"Direct stocks carry most of the gain in this sample.",
-"Up a little since last week, mostly from fresh SIP money.",
-"Safe side = EPF, PPF and cash goals."
-]
-},
-"equity": {
-"asof": "13 Nov 2026",
-"note": "Sample prices and holdings.",
-"rows": [
-{
-"ticker": "HDFCBANK",
-"sector": "Banks",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 60,
-"avg": 1480,
-"ltp": 1702,
-"invested": 88800,
-"value": 102120,
-"pnl_pct": 15.0,
-"chg_1y": 9.8,
-"chg_3m": 3.1,
-"high52": 1888.7,
-"low52": 1525.2,
-"from_high": -9.9,
-"target": "12–14%",
-"qvgm": "16/20",
-"action": "Hold; add on dips below ₹1,600",
-"order": 1,
-"note": null,
-"weight": 13.95
-},
-{
-"ticker": "TCS",
-"sector": "IT services",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 22,
-"avg": 3650,
-"ltp": 3420,
-"invested": 80300,
-"value": 75240,
-"pnl_pct": -6.3,
-"chg_1y": -6.2,
-"chg_3m": 1.4,
-"high52": 3868.5,
-"low52": 2509.1,
-"from_high": -11.6,
-"target": "10–12%",
-"qvgm": "15/20",
-"action": "Hold",
-"order": 2,
-"note": null,
-"weight": 10.28
-},
-{
-"ticker": "RELIANCE",
-"sector": "Energy & retail",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 45,
-"avg": 1260,
-"ltp": 1395,
-"invested": 56700,
-"value": 62775,
-"pnl_pct": 10.71,
-"chg_1y": 4.5,
-"chg_3m": -1.8,
-"high52": 1490.9,
-"low52": 1136.6,
-"from_high": -6.4,
-"target": "9–11%",
-"qvgm": "14/20",
-"action": "Hold",
-"order": 3,
-"note": null,
-"weight": 8.58
-},
-{
-"ticker": "BHARTIARTL",
-"sector": "Telecom",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 38,
-"avg": 1350,
-"ltp": 1885,
-"invested": 51300,
-"value": 71630,
-"pnl_pct": 39.63,
-"chg_1y": 28.4,
-"chg_3m": 5.2,
-"high52": 2211.3,
-"low52": 1574.9,
-"from_high": -14.8,
-"target": "8–10%",
-"qvgm": "17/20",
-"action": "No adds above 10%",
-"order": 4,
-"note": null,
-"weight": 9.79
-},
-{
-"ticker": "ASIANPAINT",
-"sector": "Consumer",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 25,
-"avg": 2900,
-"ltp": 2480,
-"invested": 72500,
-"value": 62000,
-"pnl_pct": -14.48,
-"chg_1y": -12.5,
-"chg_3m": -4.0,
-"high52": 3056.1,
-"low52": 2158.6,
-"from_high": -18.9,
-"target": "6–7%",
-"qvgm": "13/20",
-"action": "Watch margins at Q3",
-"order": 5,
-"note": null,
-"weight": 8.47
-},
-{
-"ticker": "LT",
-"sector": "Capital goods",
-"mcap": "Large",
-"sleeve": "Core",
-"shares": 18,
-"avg": 3300,
-"ltp": 3780,
-"invested": 59400,
-"value": 68040,
-"pnl_pct": 14.55,
-"chg_1y": 12.2,
-"chg_3m": 2.6,
-"high52": 4280.0,
-"low52": 3332.7,
-"from_high": -11.7,
-"target": "10–12%",
-"qvgm": "16/20",
-"action": "Add on fresh money",
-"order": 6,
-"note": null,
-"weight": 9.3
-},
-{
-"ticker": "POLYCAB",
-"sector": "Capital goods",
-"mcap": "Large",
-"sleeve": "Satellite",
-"shares": 9,
-"avg": 5600,
-"ltp": 7020,
-"invested": 50400,
-"value": 63180,
-"pnl_pct": 25.36,
-"chg_1y": 21.7,
-"chg_3m": 6.3,
-"high52": 8145.6,
-"low52": 5411.8,
-"from_high": -13.8,
-"target": "7–8%",
-"qvgm": "16/20",
-"action": "Hold",
-"order": 7,
-"note": null,
-"weight": 8.63
-},
-{
-"ticker": "PERSISTENT",
-"sector": "IT services",
-"mcap": "Mid",
-"sleeve": "Satellite",
-"shares": 8,
-"avg": 4800,
-"ltp": 5650,
-"invested": 38400,
-"value": 45200,
-"pnl_pct": 17.71,
-"chg_1y": 14.0,
-"chg_3m": -2.2,
-"high52": 6124.7,
-"low52": 5116.7,
-"from_high": -7.8,
-"target": "5–6%",
-"qvgm": "15/20",
-"action": "Hold",
-"order": 8,
-"note": null,
-"weight": 6.18
-},
-{
-"ticker": "TRENT",
-"sector": "Retail",
-"mcap": "Large",
-"sleeve": "Satellite",
-"shares": 10,
-"avg": 5900,
-"ltp": 5120,
-"invested": 59000,
-"value": 51200,
-"pnl_pct": -13.22,
-"chg_1y": -18.3,
-"chg_3m": -6.5,
-"high52": 5587.8,
-"low52": 4091.8,
-"from_high": -8.4,
-"target": "6–7%",
-"qvgm": "14/20",
-"action": "Review at Q3",
-"order": 9,
-"note": null,
-"weight": 7.0
-},
-{
-"ticker": "CDSL",
-"sector": "Capital markets",
-"mcap": "Mid",
-"sleeve": "Satellite",
-"shares": 30,
-"avg": 1290,
-"ltp": 1580,
-"invested": 38700,
-"value": 47400,
-"pnl_pct": 22.48,
-"chg_1y": 24.0,
-"chg_3m": 8.8,
-"high52": 1888.3,
-"low52": 1304.1,
-"from_high": -16.3,
-"target": "5–6%",
-"qvgm": "15/20",
-"action": "Hold",
-"order": 10,
-"note": null,
-"weight": 6.48
-},
-{
-"ticker": "KAYNES",
-"sector": "Electronics",
-"mcap": "Mid",
-"sleeve": "Specials",
-"shares": 6,
-"avg": 4300,
-"ltp": 5400,
-"invested": 25800,
-"value": 32400,
-"pnl_pct": 25.58,
-"chg_1y": 35.2,
-"chg_3m": 12.0,
-"high52": 6355.8,
-"low52": 4179.6,
-"from_high": -15.0,
-"target": "5–6%",
-"qvgm": "14/20",
-"action": "Build slowly",
-"order": 11,
-"note": null,
-"weight": 4.43
-},
-{
-"ticker": "APOLLOHOSP",
-"sector": "Healthcare",
-"mcap": "Large",
-"sleeve": "Specials",
-"shares": 7,
-"avg": 6400,
-"ltp": 7250,
-"invested": 44800,
-"value": 50750,
-"pnl_pct": 13.28,
-"chg_1y": 16.4,
-"chg_3m": 3.3,
-"high52": 8255.9,
-"low52": 5593.4,
-"from_high": -12.2,
-"target": "6–7%",
-"qvgm": "15/20",
-"action": "Hold",
-"order": 12,
-"note": null,
-"weight": 6.93
-},
-{
-"ticker": "GOLDBEES",
-"sector": "Gold",
-"mcap": "ETF",
-"sleeve": "Gold",
-"shares": 420,
-"avg": 64.2,
-"ltp": 98.6,
-"invested": 26964.0,
-"value": 41412.0,
-"pnl_pct": 53.58,
-"chg_1y": 41.0,
-"chg_3m": 9.5,
-"high52": 112.1,
-"low52": 76.7,
-"from_high": -12.0,
-"target": "—",
-"qvgm": "—",
-"action": "Build toward 5% of the retirement corpus",
-"order": 13,
-"note": null,
-"weight": 0
-}
-]
-},
-"us": {
-"asof": "13 Nov 2026",
-"usdinr": 84.6,
-"perf_asof": "2026-11-13",
-"bench": {
-"name": "Nasdaq 100 (QQQ, USD)",
-"chg_1y": 19.8,
-"chg_3m": 5.1,
-"chg_6m": 8.3
-},
-"rows": [
-{
-"ticker": "META",
-"name": "Meta Platforms",
-"order": 1,
-"invested_usd": 123.2,
-"value_usd": 134.73,
-"last_usd": 612.4,
-"invested": 10274.88,
-"value": 11398.16,
-"pnl_pct_usd": 9.4,
-"pnl_pct": 10.9,
-"chg_1y": 18.5,
-"chg_3m": 4.2,
-"chg_6m": 6.7,
-"bsince": 8.6,
-"weight": 43.2
-},
-{
-"ticker": "COST",
-"name": "Costco",
-"order": 2,
-"invested_usd": 70.4,
-"value_usd": 74.01,
-"last_usd": 925.1,
-"invested": 5871.36,
-"value": 6261.25,
-"pnl_pct_usd": 5.1,
-"pnl_pct": 6.6,
-"chg_1y": 9.1,
-"chg_3m": 2.0,
-"chg_6m": 3.2,
-"bsince": 5.3,
-"weight": 23.8
-},
-{
-"ticker": "V",
-"name": "Visa",
-"order": 3,
-"invested_usd": 90.0,
-"value_usd": 102.81,
-"last_usd": 342.7,
-"invested": 7506.0,
-"value": 8697.73,
-"pnl_pct_usd": 14.2,
-"pnl_pct": 15.9,
-"chg_1y": 15.2,
-"chg_3m": 3.6,
-"chg_6m": 5.8,
-"bsince": 15.4,
-"weight": 33.0
-}
-]
-},
-"mfret": {
-"asof": "2026-11-13",
-"bench_note": "Benchmark returns are approximate; \"Since bought\" puts the same buys into the index on the same dates.",
-"rows": {
-"ppfas": {
-"category": "Flexi cap",
-"r1y": 11.8,
-"r3m": 2.4,
-"r6m": 4.7,
-"r3y": 19.6,
-"rank": "3 of 38",
-"flag": null,
-"bname": "Nifty 500 TRI",
-"b1y": 7.1,
-"b3m": 1.6,
-"b6m": 3.0,
-"bsince": 14.2
-},
-"hdfcmid": {
-"category": "Mid cap",
-"r1y": 8.9,
-"r3m": 1.1,
-"r6m": 2.3,
-"r3y": 22.4,
-"rank": "5 of 29",
-"flag": null,
-"bname": "Nifty Midcap 150 TRI",
-"b1y": 9.6,
-"b3m": 0.4,
-"b6m": 2.1,
-"bsince": 16.8
-},
-"axissmall": {
-"category": "Small cap",
-"r1y": 2.1,
-"r3m": -3.4,
-"r6m": -5.4,
-"r3y": 18.8,
-"rank": "9 of 27",
-"flag": null,
-"bname": "Nifty Smallcap 250 TRI",
-"b1y": 0.8,
-"b3m": -4.1,
-"b6m": -2.0,
-"bsince": 6.3
-},
-"iciciasset": {
-"category": "Multi asset",
-"r1y": 10.2,
-"r3m": 2.9,
-"r6m": 5.4,
-"r3y": 17.1,
-"rank": "2 of 21",
-"flag": null,
-"bname": "Fund composite (65/25/10)",
-"b1y": 8.4,
-"b3m": 2.2,
-"b6m": 4.0,
-"bsince": 6.1
-},
-"hdfcst": {
-"category": "Short duration",
-"r1y": 7.4,
-"r3m": 1.8,
-"r6m": 3.4,
-"r3y": 7.0,
-"rank": "6 of 22",
-"flag": null,
-"bname": "CRISIL Short Duration Debt",
-"b1y": 7.6,
-"b3m": 1.7,
-"b6m": 3.6,
-"bsince": 4.9
-},
-"mosnasdaq": {
-"category": "International",
-"r1y": 21.3,
-"r3m": 6.0,
-"r6m": 10.8,
-"r3y": 24.9,
-"rank": null,
-"flag": null,
-"bname": "Nasdaq 100 in ₹",
-"b1y": 22.4,
-"b3m": 6.3,
-"b6m": 9.8,
-"bsince": 26.1
-}
-}
-},
-"meta": {
-"asof": "13 Nov 2026 close",
-"source": "Sample data",
-"eq_invested": 693064.0,
-"eq_value": 773347.0,
-"nifty1y": 6.4,
-"nifty3m": 1.9,
-"qqq1y": 19.8,
-"qqq3m": 5.1,
-"notes_eq": [
-"Over the year the sample portfolio is up about 11% against the Nifty 50’s 6.4%.",
-"Bharti Airtel and Polycab lead; Trent and Asian Paints are the drags.",
-"GoldBEES is tracked separately as a share of the retirement corpus."
-],
-"notes_mf": [
-"Parag Parikh Flexi Cap is the anchor fund.",
-"The multi-asset fund is earmarked for the car goal."
-],
-"notes_us": [
-"US exposure is small; the Nasdaq FoF carries most of it."
-],
-"review": {
-"done": "10 Nov 2026",
-"next": "mid-Feb 2027",
-"order": [
-"LT",
-"HDFCBANK",
-"KAYNES"
-],
-"summary": "Quarterly review done: no exits; fresh money goes to L&T, HDFC Bank and Kaynes in that order."
-}
-},
-"results": {
-"asof": "2026-11-13",
-"season": "Q2 FY27",
-"total": 12,
-"declared": 12,
-"source": "Sample data",
-"pending": [],
-"review": [
-"Asian Paints: margin recovery check at Q3",
-"Trent: same-store growth check at Q3"
-],
-"rows": [
-{
-"ticker": "HDFCBANK",
-"stock": "Hdfcbank",
-"date": "2026-10-10",
-"verdict": "Strong",
-"action": "Hold",
-"note": "Revenue +11%, PAT +24% (sample)."
-},
-{
-"ticker": "TCS",
-"stock": "Tcs",
-"date": "2026-10-11",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +24%, PAT +25% (sample)."
-},
-{
-"ticker": "RELIANCE",
-"stock": "Reliance",
-"date": "2026-10-12",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +18%, PAT +-5% (sample)."
-},
-{
-"ticker": "BHARTIARTL",
-"stock": "Bhartiartl",
-"date": "2026-10-13",
-"verdict": "Mixed",
-"action": "Hold",
-"note": "Revenue +6%, PAT +12% (sample)."
-},
-{
-"ticker": "ASIANPAINT",
-"stock": "Asianpaint",
-"date": "2026-10-14",
-"verdict": "Strong",
-"action": "Hold",
-"note": "Revenue +11%, PAT +19% (sample)."
-},
-{
-"ticker": "LT",
-"stock": "Lt",
-"date": "2026-10-15",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +26%, PAT +9% (sample)."
-},
-{
-"ticker": "POLYCAB",
-"stock": "Polycab",
-"date": "2026-10-16",
-"verdict": "Weak",
-"action": "Hold",
-"note": "Revenue +13%, PAT +31% (sample)."
-},
-{
-"ticker": "PERSISTENT",
-"stock": "Persistent",
-"date": "2026-10-17",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +15%, PAT +24% (sample)."
-},
-{
-"ticker": "TRENT",
-"stock": "Trent",
-"date": "2026-10-18",
-"verdict": "Mixed",
-"action": "Hold",
-"note": "Revenue +21%, PAT +27% (sample)."
-},
-{
-"ticker": "CDSL",
-"stock": "Cdsl",
-"date": "2026-10-19",
-"verdict": "Strong",
-"action": "Hold",
-"note": "Revenue +15%, PAT +21% (sample)."
-},
-{
-"ticker": "KAYNES",
-"stock": "Kaynes",
-"date": "2026-10-20",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +27%, PAT +29% (sample)."
-},
-{
-"ticker": "APOLLOHOSP",
-"stock": "Apollohosp",
-"date": "2026-10-21",
-"verdict": "Solid",
-"action": "Hold",
-"note": "Revenue +14%, PAT +16% (sample)."
-}
-]
-},
-"watch": {
-"asof": "13 Nov 2026",
-"source": "Sample data",
-"research_note": "Add research reports you read here.",
-"reports": [
-{
-"date": "2 Oct 2026",
-"title": "Broker note: Dixon Q2 preview",
-"take": "Watch only"
-}
-],
-"rows": [
-{
-"ticker": "DIXON",
-"name": "Dixon Technologies",
-"sector": "Electronics",
-"qvgm": "15/20",
-"lo": 13500,
-"hi": 14500,
-"ltp": 15880,
-"status": "Wait",
-"note": "Entry zone below current price"
-},
-{
-"ticker": "HAL",
-"name": "Hindustan Aeronautics",
-"sector": "Defence",
-"qvgm": "16/20",
-"lo": 4100,
-"hi": 4400,
-"ltp": 4480,
-"status": "Near zone",
-"note": "Order book catalyst"
-},
-{
-"ticker": "ICICIGI",
-"name": "ICICI Lombard",
-"sector": "Insurance",
-"qvgm": "14/20",
-"lo": 1750,
-"hi": 1850,
-"ltp": 1795,
-"status": "In zone",
-"note": "Start small"
-}
-]
-},
-"earnings": {
-"method": "Simple mean and median across reported holdings (sample).",
-"per": {
-"HDFCBANK": {
-"rev": 25,
-"pat": 21,
-"m": 14.7,
-"dm": -1.0,
-"mtype": "EBITDA (consolidated)",
-"mom": "Same"
-},
-"TCS": {
-"rev": 26,
-"pat": 4,
-"m": 15.6,
-"dm": 1.0,
-"mtype": "EBITDA (consolidated)",
-"mom": "Solid → Strong"
-},
-"RELIANCE": {
-"rev": 9,
-"pat": 5,
-"m": 24.5,
-"dm": -0.9,
-"mtype": "EBITDA (consolidated)",
-"mom": "Strong → Solid"
-},
-"BHARTIARTL": {
-"rev": 6,
-"pat": 4,
-"m": 15.2,
-"dm": -0.6,
-"mtype": "EBITDA (consolidated)",
-"mom": "Strong → Solid"
-},
-"ASIANPAINT": {
-"rev": 3,
-"pat": 37,
-"m": 20.2,
-"dm": -0.9,
-"mtype": "EBITDA (consolidated)",
-"mom": "Same"
-},
-"LT": {
-"rev": 20,
-"pat": 10,
-"m": 23.6,
-"dm": -1.5,
-"mtype": "EBITDA (consolidated)",
-"mom": "New"
-},
-"POLYCAB": {
-"rev": 6,
-"pat": -8,
-"m": 21.1,
-"dm": -0.1,
-"mtype": "EBITDA (consolidated)",
-"mom": "New"
-},
-"PERSISTENT": {
-"rev": 13,
-"pat": 3,
-"m": 29.3,
-"dm": -1.0,
-"mtype": "EBITDA (consolidated)",
-"mom": "New"
-},
-"TRENT": {
-"rev": 6,
-"pat": -4,
-"m": 17.4,
-"dm": -1.7,
-"mtype": "EBITDA (consolidated)",
-"mom": "Same"
-},
-"CDSL": {
-"rev": 7,
-"pat": 1,
-"m": 26.0,
-"dm": 1.8,
-"mtype": "EBITDA (consolidated)",
-"mom": "Same"
-},
-"KAYNES": {
-"rev": 10,
-"pat": -1,
-"m": 20.7,
-"dm": -0.3,
-"mtype": "EBITDA (consolidated)",
-"mom": "Solid → Strong"
-},
-"APOLLOHOSP": {
-"rev": 27,
-"pat": 25,
-"m": 17.0,
-"dm": 1.6,
-"mtype": "EBITDA (consolidated)",
-"mom": "Strong → Solid"
-}
-},
-"momentum": {
-"up": 2,
-"down": 2,
-"same": 6,
-"new": 2,
-"down_list": [
-"Trent",
-"Asian Paints"
-]
-},
-"notes": [
-"Sample season summary."
-],
-"quarters": [
-{
-"q": "Q4 FY26",
-"status": "Final",
-"n": 12,
-"cov": "12 / 12",
-"strong": 4,
-"solid": 5,
-"mixed": 2,
-"weak": 1,
-"avg_rev": 14.2,
-"med_rev": 11.2,
-"avg_pat": 17.5,
-"med_pat": 13.5,
-"avg_m": "18.4% (10)",
-"med_m": "16.9% (10)",
-"avg_dm": "+0.4pp (9)",
-"breadth": "6 / 9",
-"breadthp": 67,
-"pat20": "5 / 12",
-"pat20p": 42,
-"patdec": "2 / 12"
-},
-{
-"q": "Q1 FY27",
-"status": "Final",
-"n": 12,
-"cov": "12 / 12",
-"strong": 4,
-"solid": 5,
-"mixed": 2,
-"weak": 1,
-"avg_rev": 12.8,
-"med_rev": 9.8,
-"avg_pat": 15.1,
-"med_pat": 11.1,
-"avg_m": "18.4% (10)",
-"med_m": "16.9% (10)",
-"avg_dm": "+0.4pp (9)",
-"breadth": "6 / 9",
-"breadthp": 67,
-"pat20": "5 / 12",
-"pat20p": 42,
-"patdec": "2 / 12"
-},
-{
-"q": "Q2 FY27",
-"status": "Final",
-"n": 12,
-"cov": "12 / 12",
-"strong": 4,
-"solid": 5,
-"mixed": 2,
-"weak": 1,
-"avg_rev": 13.6,
-"med_rev": 10.6,
-"avg_pat": 16.3,
-"med_pat": 12.3,
-"avg_m": "18.4% (10)",
-"med_m": "16.9% (10)",
-"avg_dm": "+0.4pp (9)",
-"breadth": "6 / 9",
-"breadthp": 67,
-"pat20": "5 / 12",
-"pat20p": 42,
-"patdec": "2 / 12"
-}
-]
-},
-"returns": {
-"asof": "2026-11-13",
-"mf_asof": "2026-11-13",
-"basis": "Sample buy lots",
-"basis_mf": "Sample SIP cash flows",
-"lots": {
-"HDFCBANK": [
-[
-"2024-01-14",
-10,
-1465.35
-],
-[
-"2024-03-08",
-12,
-1383.45
-],
-[
-"2024-04-21",
-13,
-1394.46
-],
-[
-"2026-08-10",
-13,
-1341.66
-],
-[
-"2026-10-02",
-12,
-1512.45
-]
-],
-"TCS": [
-[
-"2024-05-26",
-6,
-3862.61
-],
-[
-"2024-11-05",
-4,
-3948.14
-],
-[
-"2025-12-28",
-6,
-3616.44
-],
-[
-"2026-04-14",
-6,
-3368.79
-]
-],
-"RELIANCE": [
-[
-"2024-03-26",
-14,
-1211.52
-],
-[
-"2026-05-15",
-16,
-1165.34
-],
-[
-"2026-05-23",
-15,
-1235.43
-]
-],
-"BHARTIARTL": [
-[
-"2024-04-22",
-9,
-1440.71
-],
-[
-"2025-12-11",
-8,
-1378.0
-],
-[
-"2026-08-15",
-10,
-1236.72
-],
-[
-"2026-10-01",
-11,
-1484.88
-]
-],
-"ASIANPAINT": [
-[
-"2024-03-16",
-7,
-2911.0
-],
-[
-"2024-08-12",
-6,
-2846.84
-],
-[
-"2025-03-19",
-6,
-2862.81
-],
-[
-"2025-11-04",
-6,
-3107.49
-]
-],
-"LT": [
-[
-"2025-02-25",
-5,
-3236.76
-],
-[
-"2026-01-15",
-4,
-3028.12
-],
-[
-"2026-01-22",
-5,
-3543.78
-],
-[
-"2026-08-10",
-4,
-3407.31
-]
-],
-"POLYCAB": [
-[
-"2024-04-17",
-1,
-5445.19
-],
-[
-"2025-02-01",
-3,
-6129.92
-],
-[
-"2026-03-10",
-2,
-5530.69
-],
-[
-"2026-04-23",
-1,
-5217.38
-],
-[
-"2026-08-25",
-2,
-5097.81
-]
-],
-"PERSISTENT": [
-[
-"2024-08-04",
-3,
-4941.8
-],
-[
-"2025-02-08",
-5,
-5272.57
-]
-],
-"TRENT": [
-[
-"2024-07-07",
-4,
-6397.8
-],
-[
-"2025-08-08",
-3,
-5849.01
-],
-[
-"2026-05-17",
-3,
-6142.39
-]
-],
-"CDSL": [
-[
-"2025-01-10",
-11,
-1348.32
-],
-[
-"2025-07-11",
-9,
-1402.04
-],
-[
-"2026-10-22",
-10,
-1287.33
-]
-],
-"KAYNES": [
-[
-"2025-08-11",
-3,
-4617.86
-],
-[
-"2026-04-19",
-1,
-4199.35
-],
-[
-"2026-08-12",
-2,
-4155.9
-]
-],
-"APOLLOHOSP": [
-[
-"2024-09-15",
-1,
-5779.64
-],
-[
-"2025-01-05",
-1,
-6402.93
-],
-[
-"2025-02-28",
-3,
-6841.65
-],
-[
-"2025-11-26",
-1,
-6810.56
-],
-[
-"2025-12-16",
-1,
-6662.69
-]
-],
-"GOLDBEES": [
-[
-"2024-06-28",
-140,
-66.44
-],
-[
-"2025-10-23",
-140,
-62.88
-],
-[
-"2026-03-03",
-140,
-63.81
-]
-]
-},
-"us": {
-"basis": "Sample",
-"lots": {
-"META": [
-[
-"2025-03-12",
-61.6,
-520.54
-],
-[
-"2025-09-08",
-61.6,
-563.408
-]
-],
-"COST": [
-[
-"2025-03-12",
-35.2,
-786.335
-],
-[
-"2025-09-08",
-35.2,
-851.0920000000001
-]
-],
-"V": [
-[
-"2025-03-12",
-45.0,
-291.29499999999996
-],
-[
-"2025-09-08",
-45.0,
-315.284
-]
-]
-}
-},
-"mf": {
-"ppfas": {
-"cfs": [
-[
-"2024-01-01",
--102000
-],
-[
-"2024-01-05",
--6000
-],
-[
-"2024-02-05",
--6000
-],
-[
-"2024-03-05",
--6000
-],
-[
-"2024-04-05",
--6000
-],
-[
-"2024-05-05",
--6000
-],
-[
-"2024-06-05",
--6000
-],
-[
-"2024-07-05",
--6000
-],
-[
-"2024-08-05",
--6000
-],
-[
-"2024-09-05",
--6000
-],
-[
-"2024-10-05",
--6000
-],
-[
-"2024-11-05",
--6000
-],
-[
-"2024-12-05",
--6000
-],
-[
-"2025-01-05",
--6000
-],
-[
-"2025-02-05",
--6000
-],
-[
-"2025-03-05",
--6000
-],
-[
-"2025-04-05",
--6000
-],
-[
-"2025-05-05",
--6000
-],
-[
-"2025-06-05",
--6000
-],
-[
-"2025-07-05",
--6000
-],
-[
-"2025-08-05",
--6000
-],
-[
-"2025-09-05",
--6000
-],
-[
-"2025-10-05",
--6000
-],
-[
-"2025-11-05",
--6000
-],
-[
-"2025-12-05",
--6000
-],
-[
-"2026-01-05",
--6000
-],
-[
-"2026-02-05",
--6000
-],
-[
-"2026-03-05",
--6000
-],
-[
-"2026-04-05",
--6000
-],
-[
-"2026-05-05",
--6000
-],
-[
-"2026-06-05",
--6000
-],
-[
-"2026-07-05",
--6000
-],
-[
-"2026-08-05",
--6000
-],
-[
-"2026-09-05",
--6000
-],
-[
-"2026-10-05",
--6000
-],
-[
-"2026-11-05",
--6000
-]
-],
-"cost": 312000,
-"mv": 368400
-},
-"hdfcmid": {
-"cfs": [
-[
-"2024-01-01",
--28000
-],
-[
-"2024-01-05",
--4000
-],
-[
-"2024-02-05",
--4000
-],
-[
-"2024-03-05",
--4000
-],
-[
-"2024-04-05",
--4000
-],
-[
-"2024-05-05",
--4000
-],
-[
-"2024-06-05",
--4000
-],
-[
-"2024-07-05",
--4000
-],
-[
-"2024-08-05",
--4000
-],
-[
-"2024-09-05",
--4000
-],
-[
-"2024-10-05",
--4000
-],
-[
-"2024-11-05",
--4000
-],
-[
-"2024-12-05",
--4000
-],
-[
-"2025-01-05",
--4000
-],
-[
-"2025-02-05",
--4000
-],
-[
-"2025-03-05",
--4000
-],
-[
-"2025-04-05",
--4000
-],
-[
-"2025-05-05",
--4000
-],
-[
-"2025-06-05",
--4000
-],
-[
-"2025-07-05",
--4000
-],
-[
-"2025-08-05",
--4000
-],
-[
-"2025-09-05",
--4000
-],
-[
-"2025-10-05",
--4000
-],
-[
-"2025-11-05",
--4000
-],
-[
-"2025-12-05",
--4000
-],
-[
-"2026-01-05",
--4000
-],
-[
-"2026-02-05",
--4000
-],
-[
-"2026-03-05",
--4000
-],
-[
-"2026-04-05",
--4000
-],
-[
-"2026-05-05",
--4000
-],
-[
-"2026-06-05",
--4000
-],
-[
-"2026-07-05",
--4000
-],
-[
-"2026-08-05",
--4000
-],
-[
-"2026-09-05",
--4000
-],
-[
-"2026-10-05",
--4000
-],
-[
-"2026-11-05",
--4000
-]
-],
-"cost": 168000,
-"mv": 201300
-},
-"axissmall": {
-"cfs": [
-[
-"2024-01-01",
--26000
-],
-[
-"2024-01-05",
--2000
-],
-[
-"2024-02-05",
--2000
-],
-[
-"2024-03-05",
--2000
-],
-[
-"2024-04-05",
--2000
-],
-[
-"2024-05-05",
--2000
-],
-[
-"2024-06-05",
--2000
-],
-[
-"2024-07-05",
--2000
-],
-[
-"2024-08-05",
--2000
-],
-[
-"2024-09-05",
--2000
-],
-[
-"2024-10-05",
--2000
-],
-[
-"2024-11-05",
--2000
-],
-[
-"2024-12-05",
--2000
-],
-[
-"2025-01-05",
--2000
-],
-[
-"2025-02-05",
--2000
-],
-[
-"2025-03-05",
--2000
-],
-[
-"2025-04-05",
--2000
-],
-[
-"2025-05-05",
--2000
-],
-[
-"2025-06-05",
--2000
-],
-[
-"2025-07-05",
--2000
-],
-[
-"2025-08-05",
--2000
-],
-[
-"2025-09-05",
--2000
-],
-[
-"2025-10-05",
--2000
-],
-[
-"2025-11-05",
--2000
-],
-[
-"2025-12-05",
--2000
-],
-[
-"2026-01-05",
--2000
-],
-[
-"2026-02-05",
--2000
-],
-[
-"2026-03-05",
--2000
-],
-[
-"2026-04-05",
--2000
-],
-[
-"2026-05-05",
--2000
-],
-[
-"2026-06-05",
--2000
-],
-[
-"2026-07-05",
--2000
-],
-[
-"2026-08-05",
--2000
-],
-[
-"2026-09-05",
--2000
-],
-[
-"2026-10-05",
--2000
-],
-[
-"2026-11-05",
--2000
-]
-],
-"cost": 96000,
-"mv": 104250
-},
-"iciciasset": {
-"cfs": [
-[
-"2024-01-01",
--2500
-],
-[
-"2024-01-05",
--4500
-],
-[
-"2024-02-05",
--4500
-],
-[
-"2024-03-05",
--4500
-],
-[
-"2024-04-05",
--4500
-],
-[
-"2024-05-05",
--4500
-],
-[
-"2024-06-05",
--4500
-],
-[
-"2024-07-05",
--4500
-],
-[
-"2024-08-05",
--4500
-],
-[
-"2024-09-05",
--4500
-],
-[
-"2024-10-05",
--4500
-],
-[
-"2024-11-05",
--4500
-],
-[
-"2024-12-05",
--4500
-],
-[
-"2025-01-05",
--4500
-],
-[
-"2025-02-05",
--4500
-],
-[
-"2025-03-05",
--4500
-],
-[
-"2025-04-05",
--4500
-],
-[
-"2025-05-05",
--4500
-],
-[
-"2025-06-05",
--4500
-],
-[
-"2025-07-05",
--4500
-],
-[
-"2025-08-05",
--4500
-],
-[
-"2025-09-05",
--4500
-],
-[
-"2025-10-05",
--4500
-],
-[
-"2025-11-05",
--4500
-],
-[
-"2025-12-05",
--4500
-],
-[
-"2026-01-05",
--4500
-],
-[
-"2026-02-05",
--4500
-],
-[
-"2026-03-05",
--4500
-],
-[
-"2026-04-05",
--4500
-]
-],
-"cost": 128500,
-"mv": 138200
-},
-"hdfcst": {
-"cfs": [
-[
-"2024-01-01",
--5000
-],
-[
-"2024-01-05",
--5000
-],
-[
-"2024-02-05",
--5000
-],
-[
-"2024-03-05",
--5000
-],
-[
-"2024-04-05",
--5000
-],
-[
-"2024-05-05",
--5000
-],
-[
-"2024-06-05",
--5000
-],
-[
-"2024-07-05",
--5000
-],
-[
-"2024-08-05",
--5000
-],
-[
-"2024-09-05",
--5000
-],
-[
-"2024-10-05",
--5000
-],
-[
-"2024-11-05",
--5000
-]
-],
-"cost": 60000,
-"mv": 63120
-},
-"mosnasdaq": {
-"cfs": [
-[
-"2024-01-01",
--21500
-],
-[
-"2024-01-05",
--1500
-],
-[
-"2024-02-05",
--1500
-],
-[
-"2024-03-05",
--1500
-],
-[
-"2024-04-05",
--1500
-],
-[
-"2024-05-05",
--1500
-],
-[
-"2024-06-05",
--1500
-],
-[
-"2024-07-05",
--1500
-],
-[
-"2024-08-05",
--1500
-],
-[
-"2024-09-05",
--1500
-],
-[
-"2024-10-05",
--1500
-],
-[
-"2024-11-05",
--1500
-],
-[
-"2024-12-05",
--1500
-],
-[
-"2025-01-05",
--1500
-],
-[
-"2025-02-05",
--1500
-],
-[
-"2025-03-05",
--1500
-],
-[
-"2025-04-05",
--1500
-],
-[
-"2025-05-05",
--1500
-],
-[
-"2025-06-05",
--1500
-],
-[
-"2025-07-05",
--1500
-],
-[
-"2025-08-05",
--1500
-],
-[
-"2025-09-05",
--1500
-],
-[
-"2025-10-05",
--1500
-],
-[
-"2025-11-05",
--1500
-],
-[
-"2025-12-05",
--1500
-],
-[
-"2026-01-05",
--1500
-],
-[
-"2026-02-05",
--1500
-],
-[
-"2026-03-05",
--1500
-],
-[
-"2026-04-05",
--1500
-],
-[
-"2026-05-05",
--1500
-],
-[
-"2026-06-05",
--1500
-],
-[
-"2026-07-05",
--1500
-],
-[
-"2026-08-05",
--1500
-],
-[
-"2026-09-05",
--1500
-],
-[
-"2026-10-05",
--1500
-],
-[
-"2026-11-05",
--1500
-]
-],
-"cost": 74000,
-"mv": 92650
-}
-},
-"nps": {
-"basis": "Sample",
-"cfs": [
-[
-"2025-04-05",
--12000
-],
-[
-"2026-04-05",
--12000
-]
-]
-},
-"mf_lifetime": {
-"label": "all funds since 2019 (sample)",
-"xirr": 13.2
-},
-"rates": {
-"epf": {
-"label": "EPF declared rate",
-"rate": 8.25
-},
-"ppf": {
-"label": "PPF rate",
-"rate": 7.1
-},
-"ef": {
-"label": "Savings account",
-"rate": 3.0
-},
-"hm": {
-"label": "Savings account",
-"rate": 3.0
-}
-},
-"pending": []
-},
-"flows": {
-"asof": "2026-11-13",
-"from": "2019-01",
-"stocks_from": "2022-01",
-"stocks_note": "Sample: stock trades start Jan 2022.",
-"basis": "Sample monthly flows",
-"note": "",
-"cols": [
-"stock_buy",
-"stock_sell",
-"mf_buy",
-"mf_sell",
-"us_buy"
-],
-"months": {
-"2019-01": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-02": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-03": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-04": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-05": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-06": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-07": [
-0,
-0,
-8000,
-8742,
-0
-],
-"2019-08": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-09": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-10": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-11": [
-0,
-0,
-8000,
-0,
-0
-],
-"2019-12": [
-0,
-0,
-8000,
-0,
-0
-],
-"2020-01": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-02": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-03": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-04": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-05": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-06": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-07": [
-0,
-0,
-10500,
-6226,
-0
-],
-"2020-08": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-09": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-10": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-11": [
-0,
-0,
-10500,
-0,
-0
-],
-"2020-12": [
-0,
-0,
-10500,
-0,
-0
-],
-"2021-01": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-02": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-03": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-04": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-05": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-06": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-07": [
-0,
-0,
-13000,
-5188,
-0
-],
-"2021-08": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-09": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-10": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-11": [
-0,
-0,
-13000,
-0,
-0
-],
-"2021-12": [
-0,
-0,
-13000,
-0,
-0
-],
-"2022-01": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-02": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-03": [
-4000,
-0,
-15500,
-0,
-0
-],
-"2022-04": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-05": [
-0,
-0,
-15500,
-0,
-0
-],
-"2022-06": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-07": [
-0,
-0,
-15500,
-3846,
-0
-],
-"2022-08": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-09": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2022-10": [
-4000,
-0,
-15500,
-0,
-0
-],
-"2022-11": [
-0,
-0,
-15500,
-0,
-0
-],
-"2022-12": [
-8000,
-0,
-15500,
-0,
-0
-],
-"2023-01": [
-0,
-806,
-18000,
-0,
-0
-],
-"2023-02": [
-8000,
-0,
-18000,
-0,
-0
-],
-"2023-03": [
-0,
-237,
-18000,
-0,
-0
-],
-"2023-04": [
-0,
-459,
-18000,
-0,
-0
-],
-"2023-05": [
-4000,
-3070,
-18000,
-0,
-0
-],
-"2023-06": [
-4000,
-0,
-18000,
-0,
-0
-],
-"2023-07": [
-8000,
-4636,
-18000,
-2950,
-0
-],
-"2023-08": [
-0,
-0,
-18000,
-0,
-0
-],
-"2023-09": [
-8000,
-5076,
-18000,
-0,
-0
-],
-"2023-10": [
-8000,
-0,
-18000,
-0,
-0
-],
-"2023-11": [
-8000,
-0,
-18000,
-0,
-0
-],
-"2023-12": [
-4000,
-3764,
-18000,
-0,
-0
-],
-"2024-01": [
-4000,
-0,
-20500,
-0,
-2000
-],
-"2024-02": [
-4000,
-0,
-20500,
-0,
-2000
-],
-"2024-03": [
-4000,
-4813,
-20500,
-0,
-2000
-],
-"2024-04": [
-4000,
-5655,
-20500,
-0,
-2000
-],
-"2024-05": [
-4000,
-2474,
-20500,
-0,
-2000
-],
-"2024-06": [
-0,
-3958,
-20500,
-0,
-2000
-],
-"2024-07": [
-0,
-0,
-20500,
-5881,
-2000
-],
-"2024-08": [
-8000,
-5728,
-20500,
-0,
-2000
-],
-"2024-09": [
-4000,
-0,
-20500,
-0,
-2000
-],
-"2024-10": [
-4000,
-66,
-20500,
-0,
-2000
-],
-"2024-11": [
-8000,
-0,
-20500,
-0,
-2000
-],
-"2024-12": [
-8000,
-2344,
-20500,
-0,
-2000
-],
-"2025-01": [
-0,
-1794,
-23000,
-0,
-2000
-],
-"2025-02": [
-8000,
-0,
-23000,
-0,
-2000
-],
-"2025-03": [
-4000,
-0,
-23000,
-0,
-2000
-],
-"2025-04": [
-0,
-0,
-23000,
-0,
-2000
-],
-"2025-05": [
-4000,
-0,
-23000,
-0,
-2000
-],
-"2025-06": [
-4000,
-0,
-23000,
-0,
-2000
-],
-"2025-07": [
-4000,
-3403,
-23000,
-2877,
-2000
-],
-"2025-08": [
-0,
-0,
-23000,
-0,
-2000
-],
-"2025-09": [
-4000,
-1347,
-23000,
-0,
-2000
-],
-"2025-10": [
-4000,
-2417,
-23000,
-0,
-2000
-],
-"2025-11": [
-8000,
-943,
-23000,
-0,
-2000
-],
-"2025-12": [
-4000,
-0,
-23000,
-0,
-2000
-],
-"2026-01": [
-0,
-4565,
-25500,
-0,
-2000
-],
-"2026-02": [
-4000,
-0,
-25500,
-0,
-2000
-],
-"2026-03": [
-0,
-4395,
-25500,
-0,
-2000
-],
-"2026-04": [
-0,
-3019,
-25500,
-0,
-2000
-],
-"2026-05": [
-8000,
-4788,
-25500,
-0,
-2000
-],
-"2026-06": [
-4000,
-887,
-25500,
-0,
-2000
-],
-"2026-07": [
-8000,
-0,
-25500,
-410,
-2000
-],
-"2026-08": [
-8000,
-4997,
-25500,
-0,
-2000
-],
-"2026-09": [
-0,
-0,
-25500,
-0,
-2000
-],
-"2026-10": [
-4000,
-5318,
-25500,
-0,
-2000
-],
-"2026-11": [
-4000,
-0,
-25500,
-0,
-2000
-]
-}
-},
-"planreview": {
-"reviews": [
-{
-"date": "2026-05-15",
-"actual": 2123032,
-"next": {
-"date": "2026-11-15",
-"value": 2299951
-},
-"proj60": 174109407,
-"need": 190195537,
-"end": 85,
-"spend": 150000,
-"path": [
-2123,
-2143,
-2162,
-2182,
-2202,
-2221,
-2241,
-2292,
-2343,
-2395,
-2448,
-2500,
-2553,
-2607,
-2661,
-2716,
-2771,
-2827,
-2883,
-2941,
-3000,
-3060,
-3120,
-3181,
-3242,
-3304,
-3366,
-3429,
-3492,
-3556,
-3621,
-3688,
-3756,
-3824,
-3893,
-3963,
-4033,
-4104,
-4176,
-4248,
-4320,
-4394,
-4468,
-4545,
-4622,
-4701,
-4780,
-4860,
-4940,
-5021,
-5103,
-5186,
-5269,
-5353,
-5438,
-5526,
-5615,
-5704,
-5795,
-5886,
-5978,
-6071,
-6164,
-6258,
-6354,
-6450,
-6547,
-6647,
-6748,
-6851,
-6954,
-7058,
-7163,
-7268,
-7375,
-7483,
-7592,
-7701,
-7812,
-7926,
-8042,
-8158,
-8275,
-8394,
-8513,
-8634,
-8756,
-8878,
-9002,
-9127,
-9253,
-9383,
-9514,
-9647,
-9780,
-9915,
-10051,
-10188,
-10327,
-10466,
-10607,
-10749,
-10892,
-11040,
-11189,
-11340,
-11492,
-11645,
-11799,
-11955,
-12112,
-12271,
-12431,
-12592,
-12755,
-12922,
-13092,
-13262,
-13435,
-13608,
-13784,
-13960,
-14139,
-14319,
-14500,
-14683,
-14868,
-15058,
-15250,
-15444,
-15639,
-15836,
-16034,
-16235,
-16437,
-16641,
-16846,
-17054,
-17263,
-17479,
-17696,
-17915,
-18136,
-18359,
-18584,
-18811,
-19040,
-19271,
-19504,
-19739,
-19976,
-20219,
-20465,
-20713,
-20963,
-21215,
-21470,
-21726,
-21985,
-22246,
-22510,
-22776,
-23044,
-23319,
-23597,
-23877,
-24160,
-24445,
-24733,
-25023,
-25315,
-25611,
-25909,
-26209,
-26512,
-26823,
-27137,
-27453,
-27772,
-28094,
-28419,
-28747,
-29078,
-29411,
-29748,
-30087,
-30430,
-30780,
-31134,
-31491,
-31852,
-32215,
-32582,
-32952,
-33325,
-33701,
-34081,
-34464,
-34851,
-35246,
-35645,
-36048,
-36454,
-36864,
-37278,
-37695,
-38116,
-38540,
-38969,
-39401,
-39837,
-40283,
-40733,
-41187,
-41645,
-42107,
-42573,
-43043,
-43517,
-43996,
-44479,
-44966,
-45458,
-45960,
-46467,
-46978,
-47494,
-48014,
-48540,
-49069,
-49604,
-50143,
-50687,
-51236,
-51789,
-52355,
-52926,
-53501,
-54082,
-54668,
-55259,
-55856,
-56458,
-57065,
-57677,
-58295,
-58919,
-59555,
-60197,
-60845,
-61499,
-62158,
-62824,
-63495,
-64172,
-64856,
-65545,
-66240,
-66942,
-67658,
-68380,
-69109,
-69845,
-70586,
-71335,
-72090,
-72852,
-73620,
-74396,
-75178,
-75968,
-76773,
-77585,
-78404,
-79231,
-80065,
-80907,
-81756,
-82612,
-83477,
-84349,
-85229,
-86116,
-87021,
-87934,
-88855,
-89784,
-90722,
-91667,
-92622,
-93585,
-94556,
-95536,
-96525,
-97523,
-98539,
-99565,
-100600,
-101644,
-102697,
-103760,
-104832,
-105914,
-107006,
-108107,
-109218,
-110339,
-111481,
-112633,
-113795,
-114968,
-116151,
-117345,
-118549,
-119764,
-120991,
-122228,
-123476,
-124735,
-126017,
-127310,
-128615,
-129932,
-131260,
-132601,
-133953,
-135318,
-136694,
-138084,
-139485,
-140899,
-142338,
-143790,
-145255,
-146733,
-148224,
-149729,
-151247,
-152778,
-154324,
-155883,
-157457,
-159044,
-160659,
-162288,
-163932,
-165590,
-167264,
-168952,
-170656,
-172375,
-174109
-]
-},
-{
-"date": "2026-11-14",
-"actual": 2358924,
-"next": {
-"date": "2027-05-14",
-"value": 2687888
-},
-"proj60": 183273060,
-"need": 192116704,
-"end": 85,
-"spend": 150000,
-"path": [
-2359,
-2413,
-2467,
-2521,
-2576,
-2632,
-2688,
-2744,
-2801,
-2859,
-2917,
-2975,
-3034,
-3096,
-3158,
-3221,
-3284,
-3348,
-3413,
-3478,
-3543,
-3609,
-3676,
-3743,
-3811,
-3882,
-3953,
-4026,
-4098,
-4172,
-4245,
-4320,
-4395,
-4471,
-4548,
-4625,
-4703,
-4784,
-4866,
-4948,
-5032,
-5115,
-5200,
-5286,
-5372,
-5459,
-5546,
-5635,
-5724,
-5817,
-5910,
-6004,
-6100,
-6196,
-6292,
-6390,
-6488,
-6588,
-6688,
-6789,
-6891,
-6997,
-7104,
-7211,
-7320,
-7429,
-7540,
-7651,
-7763,
-7877,
-7991,
-8106,
-8223,
-8343,
-8465,
-8587,
-8711,
-8836,
-8962,
-9088,
-9216,
-9346,
-9476,
-9607,
-9740,
-9877,
-10015,
-10154,
-10295,
-10437,
-10580,
-10725,
-10870,
-11017,
-11165,
-11315,
-11465,
-11621,
-11778,
-11937,
-12096,
-12258,
-12420,
-12584,
-12750,
-12916,
-13085,
-13255,
-13426,
-13603,
-13781,
-13960,
-14142,
-14325,
-14509,
-14695,
-14883,
-15072,
-15263,
-15456,
-15651,
-15851,
-16053,
-16256,
-16462,
-16669,
-16878,
-17089,
-17302,
-17517,
-17733,
-17952,
-18172,
-18399,
-18627,
-18858,
-19091,
-19325,
-19562,
-19801,
-20042,
-20285,
-20530,
-20777,
-21027,
-21283,
-21542,
-21803,
-22066,
-22332,
-22600,
-22870,
-23142,
-23417,
-23695,
-23975,
-24257,
-24547,
-24839,
-25134,
-25431,
-25732,
-26034,
-26340,
-26648,
-26959,
-27272,
-27589,
-27908,
-28235,
-28565,
-28898,
-29234,
-29573,
-29915,
-30260,
-30608,
-30959,
-31313,
-31671,
-32031,
-32400,
-32773,
-33149,
-33528,
-33911,
-34297,
-34686,
-35079,
-35475,
-35875,
-36278,
-36685,
-37101,
-37522,
-37945,
-38373,
-38805,
-39240,
-39679,
-40122,
-40569,
-41020,
-41475,
-41934,
-42403,
-42877,
-43355,
-43837,
-44323,
-44814,
-45309,
-45808,
-46312,
-46820,
-47333,
-47850,
-48379,
-48912,
-49451,
-49994,
-50542,
-51094,
-51652,
-52214,
-52782,
-53355,
-53932,
-54515,
-55111,
-55711,
-56317,
-56929,
-57546,
-58168,
-58796,
-59429,
-60068,
-60713,
-61363,
-62020,
-62690,
-63366,
-64048,
-64736,
-65430,
-66130,
-66837,
-67550,
-68269,
-68995,
-69727,
-70465,
-71219,
-71979,
-72747,
-73521,
-74301,
-75089,
-75884,
-76686,
-77495,
-78311,
-79135,
-79966,
-80813,
-81668,
-82531,
-83401,
-84279,
-85165,
-86059,
-86960,
-87870,
-88788,
-89714,
-90649,
-91601,
-92562,
-93531,
-94510,
-95496,
-96492,
-97497,
-98510,
-99533,
-100565,
-101605,
-102656,
-103726,
-104805,
-105895,
-106994,
-108102,
-109221,
-110350,
-111489,
-112638,
-113797,
-114967,
-116147,
-117349,
-118561,
-119785,
-121019,
-122264,
-123521,
-124789,
-126068,
-127358,
-128661,
-129974,
-131300,
-132649,
-134011,
-135385,
-136770,
-138169,
-139580,
-141003,
-142440,
-143889,
-145351,
-146826,
-148315,
-149830,
-151358,
-152900,
-154455,
-156025,
-157609,
-159207,
-160819,
-162446,
-164088,
-165744,
-167415,
-169114,
-170829,
-172560,
-174306,
-176067,
-177845,
-179638,
-181447,
-183273
-]
-}
-]
-}
-},
-"trend": {
-"2026-08-31": {
-"date": "2026-08-31",
-"total": 2513666,
-"source": "weekly refresh"
-},
-"2026-09-30": {
-"date": "2026-09-30",
-"total": 2543043,
-"source": "weekly refresh"
-},
-"2026-10-15": {
-"date": "2026-10-15",
-"total": 2577241,
-"source": "weekly refresh"
-},
-"2026-10-31": {
-"date": "2026-10-31",
-"total": 2626788,
-"source": "weekly refresh"
-},
-"2026-11-07": {
-"date": "2026-11-07",
-"total": 2690963,
-"source": "weekly refresh"
-},
-"2026-11-13": {
-"date": "2026-11-13",
-"total": 2856924,
-"source": "weekly refresh"
-}
-},
-"targets": {
-"ef": {
-"label": "Emergency fund",
-"order": 1,
-"target": 300000,
-"by": null,
-"note": "Six months of essential spend."
-},
-"travel": {
-"label": "Travel fund",
-"order": 2,
-"target": 200000,
-"by": "2027-04",
-"note": "Japan trip, April 2027.",
-"expected_inflow": 15000,
-"inflow_label": "Diwali bonus",
-"in_kind": [
-{
-"label": "airline vouchers",
-"value": 10000,
-"note": "Card milestone vouchers",
-"received": "2026-09"
-}
-]
-},
-"networth": {
-"label": "Total financial assets",
-"order": 3,
-"target": 5000000,
-"by": null,
-"note": "Gross."
-},
-"car": {
-"label": "Car replacement fund",
-"order": 4,
-"target": 500000,
-"by": null,
-"note": "Multi-asset fund SIP.",
-"sale_car": "car1"
-},
-"prepay": {
-"label": "Loan prepayment",
-"order": 5,
-"target": 12000,
-"by": "2026-12",
-"current": 6000,
-"manual": true,
-"note": "Set aside ₹1,000 a month."
-}
-},
-"actions": {
-"a01": {
-"item": "Pay Amex bill",
-"amount": 21450,
-"due": "2026-11-21",
-"month": "2026-11",
-"status": "To do",
-"done": false
-},
-"a02": {
-"item": "Top up PPF before the 5th",
-"amount": 10000,
-"due": "2026-12-05",
-"month": "2026-11",
-"status": "To do",
-"done": false
-},
-"a03": {
-"item": "Renew health insurance",
-"amount": 18400,
-"due": "2027-03-10",
-"month": "2026-11",
-"status": "To do",
-"done": false
-},
-"a04": {
-"item": "Check SBI Cashback cap this cycle",
-"amount": 0,
-"due": "2026-11-18",
-"month": "2026-11",
-"status": "Done",
-"done": true
-},
-"a05": {
-"item": "Book Japan flights",
-"amount": 62000,
-"due": "2026-12-15",
-"month": "2026-11",
-"status": "To do",
-"done": false
-}
-},
-"insurance": {
-"term_personal": {
-"order": 1,
-"kind": "term",
-"scope": "Personal",
-"name": "HDFC Life Click 2 Protect",
-"insurer": "HDFC Life",
-"policy": "10000000001",
-"cover": 10000000,
-"start": "2022-03-10",
-"end": "2060-03-09",
-"pay_until": "2055-03-10",
-"prem_now": 1150,
-"prem_freq": "Monthly",
-"prem_day": 10,
-"autopay": true,
-"prem_start": 15930,
-"prem_start_freq": "Annual",
-"nominee": "Spouse (100%)",
-"features": [
-"Terminal illness benefit included",
-"Premiums waived on total disability"
-],
-"early_exit": {
-"from": "2055-03-10",
-"to": "2058-03-09",
-"policy_years": "34–36"
-},
-"history": [
-{
-"y": "2021-22",
-"amt": 15930,
-"gst": 2430,
-"note": "Year 1, annual, incl. 18% GST"
-},
-{
-"y": "2022-23",
-"amt": 16284,
-"gst": 2484,
-"note": "Monthly: ₹1,357 (₹1,150 + 18% GST) × 12"
-},
-{
-"y": "2023-24",
-"amt": 16284,
-"gst": 2484,
-"note": "₹1,357 × 12"
-},
-{
-"y": "2024-25",
-"amt": 16284,
-"gst": 2484,
-"note": "₹1,357 × 12"
-},
-{
-"y": "2025-26",
-"amt": 15042,
-"gst": 1242,
-"note": "₹1,357 × 6 + ₹1,150 × 6, GST nil from Sep 2025"
-},
-{
-"y": "2026-27",
-"amt": 13800,
-"gst": 0,
-"note": "₹1,150 × 12, GST nil"
-}
-]
-},
-"term_work": {
-"order": 2,
-"kind": "term",
-"scope": "Work",
-"name": "Employer Group Term Life",
-"insurer": "Employer cover",
-"cover": 4680000,
-"cover_prev": 4440000,
-"formula": "3 × annual CTC",
-"start": "2026-04-01",
-"renews": "2027-04-01",
-"prem_now": 0,
-"prem_freq": "Employer-paid",
-"nominee": "Spouse (100%)",
-"features": [
-"Ends when you leave the employer"
-]
-},
-"health_personal": {
-"order": 3,
-"kind": "health",
-"scope": "Personal",
-"name": "HDFC ERGO Optima Secure",
-"insurer": "HDFC ERGO",
-"policy": "20000000002",
-"cover": 1500000,
-"base": 1000000,
-"booster": 500000,
-"safeguard": 0,
-"copay": "0% co-pay, no room-rent cap",
-"start": "2026-03-10",
-"renews": "2027-03-10",
-"prem_now": 18400,
-"prem_freq": "Yearly",
-"since": "2021-03-10",
-"features": [
-"Secure benefit doubles the base cover from day one",
-"Restore benefit refills cover after a claim"
-],
-"history": [
-{
-"y": "2023-24",
-"amt": 14800,
-"gst": 2258,
-"note": "Optima Secure"
-},
-{
-"y": "2024-25",
-"amt": 15900,
-"gst": 2425,
-"note": "Optima Secure"
-},
-{
-"y": "2025-26",
-"amt": 17100,
-"gst": 2608,
-"note": "Optima Secure"
-},
-{
-"y": "2026-27",
-"amt": 18400,
-"gst": 0,
-"note": "GST exempt"
-}
-]
-},
-"health_work": {
-"order": 4,
-"kind": "health",
-"scope": "Work",
-"name": "Employer Group Medical",
-"insurer": "Group insurer · TPA",
-"cover": 500000,
-"members": "You + spouse (family floater)",
-"start": "2026-04-01",
-"renews": "2027-04-01",
-"prem_now": 0,
-"prem_freq": "Employer-paid",
-"features": [
-"Cashless at network hospitals via the TPA"
-]
-},
-"health_parents": {
-"order": 5,
-"kind": "health",
-"scope": "Parents",
-"name": "Care Supreme (parents)",
-"insurer": "Care Health",
-"policy": "30000000003",
-"cover": 1500000,
-"members": "Mother + father",
-"start": "2026-01-15",
-"renews": "2027-01-15",
-"prem_now": 42600,
-"prem_freq": "Yearly",
-"nominee": "Self",
-"features": [
-"Pre-existing diseases covered after 3 years"
-]
-}
-},
-"rewards": {
-"main": {
-"asof": "2026-11-13",
-"source": "Sample balances",
-"note": "₹ per point depends on how you redeem; pick a route per card (remembered in this browser). Balances can be typed in.",
-"programs": [
-{
-"id": "regalia",
-"card": "Regalia Gold",
-"short": "Regalia Gold",
-"unit": "RP",
-"bal": 22215,
-"asof": "2026-11-13",
-"src": "November statement",
-"rule": "2 years from earning, rolling",
-"route": "travel",
-"routes": [
-{
-"id": "travel",
-"label": "Flights, hotels on the bank portal",
-"v": 0.5
-},
-{
-"id": "vouch",
-"label": "Vouchers",
-"v": 0.35
-},
-{
-"id": "cash",
-"label": "Statement cashback",
-"v": 0.2
-}
-],
-"expiring": [
-{
-"date": "2027-01-31",
-"pts": 1450,
-"est": true
-},
-{
-"date": "2027-02-28",
-"pts": 980,
-"est": true
-},
-{
-"date": "2027-03-31",
-"pts": 1600,
-"est": true
-},
-{
-"date": "2027-04-30",
-"pts": 1210,
-"est": true
-}
-]
-},
-{
-"id": "amex",
-"card": "Amex MRCC",
-"short": "Amex MRCC",
-"unit": "MR",
-"bal": 9400,
-"asof": "2026-11-10",
-"src": "Amex app",
-"rule": "No expiry while the card is open",
-"route": "gold",
-"routes": [
-{
-"id": "gold",
-"label": "Gold collection vouchers",
-"v": 0.5
-},
-{
-"id": "hotel",
-"label": "Hotel transfer, approx",
-"v": 1.2
-},
-{
-"id": "cat",
-"label": "Catalogue",
-"v": 0.25
-}
-]
-}
-],
-"redemptions": [
-{
-"id": "r1",
-"date": "2026-04-28",
-"card": "regalia",
-"pts": 10000,
-"kind": "booking",
-"partner": "",
-"ppts": null,
-"pid": "",
-"value": 5000,
-"useby": ""
-}
-],
-"routing": [
-{
-"spend": "Default / daily",
-"card": "Regalia Gold",
-"ret": "4 RP per ₹150 + milestones"
-},
-{
-"spend": "Monthly milestone",
-"card": "Amex MRCC",
-"ret": "4 spends of ₹1,500 = 1,000 bonus MR"
-},
-{
-"spend": "Amazon",
-"card": "Amazon Pay",
-"ret": "5% Prime"
-},
-{
-"spend": "Bills, online",
-"card": "SBI Cashback",
-"ret": "5% online, 1% offline"
-}
-],
-"watch": [
-"Regalia dates are estimated (oldest points used first); the bank app shows the exact schedule.",
-"Check each app’s expiring-points screen once a quarter."
-],
-"points": {
-"label": "Regalia Gold",
-"note": "From the monthly statements.",
-"rows": [
-{
-"m": "2025-12",
-"date": "2025-12-24",
-"open": 18200,
-"earned": 940,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 19140
-},
-{
-"m": "2026-01",
-"date": "2026-01-24",
-"open": 19140,
-"earned": 1310,
-"bonus": 300,
-"red": 0,
-"adj": 40,
-"close": 20410
-},
-{
-"m": "2026-02",
-"date": "2026-02-24",
-"open": 20410,
-"earned": 760,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 21170
-},
-{
-"m": "2026-03",
-"date": "2026-03-24",
-"open": 21170,
-"earned": 1840,
-"bonus": 600,
-"red": 0,
-"adj": 0,
-"close": 23010
-},
-{
-"m": "2026-04",
-"date": "2026-04-24",
-"open": 23010,
-"earned": 820,
-"bonus": 0,
-"red": 10000,
-"adj": 25,
-"close": 13805
-},
-{
-"m": "2026-05",
-"date": "2026-05-24",
-"open": 13805,
-"earned": 1020,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 14825
-},
-{
-"m": "2026-06",
-"date": "2026-06-24",
-"open": 14825,
-"earned": 690,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 15515
-},
-{
-"m": "2026-07",
-"date": "2026-07-24",
-"open": 15515,
-"earned": 1450,
-"bonus": 400,
-"red": 0,
-"adj": 0,
-"close": 16965
-},
-{
-"m": "2026-08",
-"date": "2026-08-24",
-"open": 16965,
-"earned": 880,
-"bonus": 0,
-"red": 0,
-"adj": 60,
-"close": 17785
-},
-{
-"m": "2026-09",
-"date": "2026-09-24",
-"open": 17785,
-"earned": 1160,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 18945
-},
-{
-"m": "2026-10",
-"date": "2026-10-24",
-"open": 18945,
-"earned": 2240,
-"bonus": 900,
-"red": 0,
-"adj": 0,
-"close": 21185
-},
-{
-"m": "2026-11",
-"date": "2026-11-24",
-"open": 21185,
-"earned": 1030,
-"bonus": 0,
-"red": 0,
-"adj": 0,
-"close": 22215
-}
-]
-},
-"cashback": {
-"note": "Amazon Pay cashback goes to the Amazon Pay balance and is left out.",
-"series": [
-{
-"key": "sbicash",
-"label": "SBI Cashback"
-}
-],
-"rows": [
-{
-"m": "2025-12",
-"sbicash": 212
-},
-{
-"m": "2026-01",
-"sbicash": 186
-},
-{
-"m": "2026-02",
-"sbicash": 240
-},
-{
-"m": "2026-03",
-"sbicash": 198
-},
-{
-"m": "2026-04",
-"sbicash": 305
-},
-{
-"m": "2026-05",
-"sbicash": 221
-},
-{
-"m": "2026-06",
-"sbicash": 176
-},
-{
-"m": "2026-07",
-"sbicash": 264
-},
-{
-"m": "2026-08",
-"sbicash": 233
-},
-{
-"m": "2026-09",
-"sbicash": 251
-},
-{
-"m": "2026-10",
-"sbicash": 318
-},
-{
-"m": "2026-11",
-"sbicash": 207
-}
-]
-}
-}
-},
-"bank": {
-"hdfc": {
-"name": "HDFC Bank",
-"order": 1,
-"role": "Salary account",
-"tag": "Salary",
-"need": "floor",
-"bal": 206400,
-"asof": "2026-11-14",
-"src": "Sample",
-"hist": {
-"2026-10": 197100,
-"2026-11": 206400
-},
-"note": "Salary lands here; card bills are paid from it and the travel fund sits in it."
-},
-"axis": {
-"name": "Axis Bank",
-"order": 2,
-"role": "Running account",
-"tag": "Running",
-"need": "float",
-"bal": 5200,
-"asof": "2026-11-14",
-"src": "Sample",
-"hist": {
-"2026-11": 5200
-},
-"note": "Petty cash and card auto-debits."
-},
-"kotak": {
-"name": "Kotak Bank",
-"order": 3,
-"role": "Emergency fund",
-"tag": "Emergency",
-"need": "target",
-"target": "ef",
-"bal": 112000,
-"asof": "2026-11-14",
-"src": "Sample",
-"hist": {
-"2026-11": 112000
-}
-},
-"idfc": {
-"name": "IDFC First Bank",
-"order": 4,
-"role": "Home-loan EMI account",
-"tag": "EMI",
-"need": "emi",
-"loan": "home",
-"bal": 900,
-"asof": "2026-11-14",
-"src": "Sample",
-"hist": {
-"2026-11": 900
-},
-"note": "EMI money is moved here after salary; the EMI is debited on the 5th."
-},
-"federal": {
-"name": "Federal Bank",
-"order": 5,
-"role": "US investing account",
-"tag": "US transfers",
-"need": null,
-"bal": 3100,
-"asof": "2026-11-14",
-"src": "Sample",
-"hist": {
-"2026-11": 3100
-}
-}
-},
-"tax": {
-"fy2026-27": {
-"fy": "2026-27",
-"label": "Tax year 2026-27",
-"regime": "new",
-"asof": "2026-11-14",
-"src": "Sample payslip and capital-gains reports",
-"salary": {
-"ytd_gross": 826000,
-"ytd_to": "2026-10",
-"monthly": 118000,
-"extras_note": "",
-"bonus": null,
-"pt_ytd": 1400,
-"epf_ytd": 75600
-},
-"tds": {
-"months": {
-"2026-04": 6900,
-"2026-05": 6900,
-"2026-06": 6900,
-"2026-07": 6900,
-"2026-08": 6900,
-"2026-09": 7100,
-"2026-10": 7100
-},
-"monthly_next": 7100,
-"src": "Payslip"
-},
-"cg": [
-{
-"id": "mf",
-"src": "Mutual funds (sample report)",
-"asof": "2026-11-10",
-"stcg_eq": 4200,
-"ltcg_eq": 38600,
-"stcg_other": 0,
-"note": "Sample: one equity fund switched in June"
-},
-{
-"id": "stocks",
-"src": "Indian stocks (sample tax P&L)",
-"asof": "2026-11-12",
-"stcg_eq": -6100,
-"ltcg_eq": 12400,
-"note": "Sample: two sales"
-},
-{
-"id": "us",
-"src": "US stocks",
-"asof": "2026-11-12",
-"stcg_other": 0,
-"ltcg_other": 0,
-"note": "No US sales this year"
-}
-],
-"spec": {
-"cy": 0,
-"src": "No intraday trades"
-},
-"other": {
-"div_in": 2800,
-"div_us": 0,
-"us_tax_withheld": 0,
-"interest_sb": null
-},
-"losses_cf": [],
-"lrs": {
-"ytd": 24000
-},
-"returns": [
-{
-"ay": "2026-27",
-"fy": "2025-26",
-"form": "ITR-2",
-"filed": "2026-07-22",
-"regime": "new",
-"income": 1210000,
-"tax": 0,
-"tds": 18400,
-"adv_tax": 0,
-"sa_tax": 0,
-"tcs": 0,
-"refund": 18400,
-"refund_got": true
-},
-{
-"ay": "2025-26",
-"fy": "2024-25",
-"form": "ITR-1",
-"filed": "2025-07-30",
-"regime": "new",
-"income": 1080000,
-"tax": 49920,
-"tds": 52300,
-"adv_tax": 0,
-"sa_tax": 0,
-"tcs": 0,
-"refund": 2380,
-"refund_got": true
-}
-],
-"todo": [
-"November payslip",
-"Savings-account interest for the year"
-]
-}
-},
-"inflows": {
-"in_sample1": {
-"date": "2026-11-12",
-"m": "2026-11",
-"amt": 2400,
-"desc": "Shared dinner repaid",
-"type": "Family reimbursement",
-"account": "axis",
-"status": "actual",
-"covers_card": false,
-"pay_m": null,
-"added": "2026-11-12"
-}
-}
+ "settings": {
+  "main": {
+   "birth": "1995-08-20",
+   "bank_floor": 50000,
+   "crash_floor": 40000,
+   "axis_float": 2000,
+   "regular_threshold": 60000,
+   "regular_max": 12000,
+   "dip_max": 30000,
+   "emi_day": 5,
+   "ctc_fixed": 1560000,
+   "employer_cover_multiple": 3,
+   "epf_monthly": 10800,
+   "epf_pension": 92000,
+   "home_value": 5200000,
+   "loan_original": 3000000,
+   "life_cover_personal": 10000000,
+   "life_cover": 14680000,
+   "rule_from": "2026-10",
+   "us_target_pct": 15,
+   "stock_buy_yearly": 90000,
+   "us_buy_yearly": 24000,
+   "card_note": "Sample data. Bills are by due month; each card statement is entered once a month.",
+   "lounges": {
+    "v": "~10/yr",
+    "note": "Regalia Gold 6 intl (Priority Pass) · Regalia Gold 4 domestic on quarterly spend"
+   },
+   "notion_parent": "",
+   "last_updated": "2026-11-14T09:00:00Z",
+   "last_updated_by": "sample data",
+   "emi_topup_day": 2,
+   "card_limits": {
+    "asof": "2026-11-14",
+    "issuers": [
+     {
+      "id": "hdfc",
+      "name": "HDFC Bank",
+      "cards": [
+       "regalia"
+      ],
+      "limit": 450000,
+      "prev": 400000,
+      "changed": "2026-10-20",
+      "status": "confirmed",
+      "note": "Sample limit increase"
+     },
+     {
+      "id": "amex",
+      "name": "American Express",
+      "cards": [
+       "amex"
+      ],
+      "limit": 250000,
+      "status": "confirmed"
+     },
+     {
+      "id": "sbi",
+      "name": "SBI Card",
+      "cards": [
+       "sbicash"
+      ],
+      "limit": 180000,
+      "status": "confirmed"
+     },
+     {
+      "id": "icici",
+      "name": "ICICI Bank",
+      "cards": [
+       "amazon"
+      ],
+      "limit": 300000,
+      "status": "provisional",
+      "note": "Sample: not yet confirmed"
+     }
+    ]
+   },
+   "salary_journey": {
+    "asof": "2026-11-15",
+    "src": "Sample offer and appraisal letters",
+    "next": "Next promotion would be to the next band",
+    "year_notes": {
+     "2020": "Pay freeze that year",
+     "2022": "Joined after the appraisal cut-off, so no review that year"
+    },
+    "rows": [
+     {
+      "d": "2017-07-01",
+      "kind": "join",
+      "org": "Contoso Research",
+      "title": "Research Associate",
+      "ctc": 420000,
+      "fixed": 380000,
+      "var": 40000,
+      "note": "Sample first job"
+     },
+     {
+      "d": "2018-07-01",
+      "kind": "merit",
+      "org": "Contoso Research",
+      "title": "Research Associate",
+      "ctc": 456000,
+      "fixed": 412000,
+      "var": 44000
+     },
+     {
+      "d": "2019-07-01",
+      "kind": "promotion",
+      "org": "Contoso Research",
+      "title": "Research Analyst",
+      "ctc": 540000,
+      "fixed": 488000,
+      "var": 52000
+     },
+     {
+      "d": "2021-07-01",
+      "kind": "merit",
+      "org": "Contoso Research",
+      "title": "Research Analyst",
+      "ctc": 585000,
+      "fixed": 528000,
+      "var": 57000
+     },
+     {
+      "d": "2021-10-01",
+      "kind": "join",
+      "org": "Northwind Analytics",
+      "title": "Analyst",
+      "band": "B5",
+      "ctc": 900000,
+      "fixed": 810000,
+      "var": 90000,
+      "note": "Sample switch"
+     },
+     {
+      "d": "2023-04-01",
+      "kind": "merit",
+      "org": "Northwind Analytics",
+      "title": "Analyst",
+      "band": "B5",
+      "ctc": 972000,
+      "fixed": 875000,
+      "var": 97000
+     },
+     {
+      "d": "2024-04-01",
+      "kind": "promotion",
+      "org": "Northwind Analytics",
+      "title": "Senior Analyst",
+      "band": "B5.5",
+      "ctc": 1110000,
+      "fixed": 999000,
+      "var": 111000
+     },
+     {
+      "d": "2025-04-01",
+      "kind": "merit",
+      "org": "Northwind Analytics",
+      "title": "Senior Analyst",
+      "band": "B5.5",
+      "ctc": 1188000,
+      "fixed": 1069000,
+      "var": 119000
+     },
+     {
+      "d": "2026-04-01",
+      "kind": "merit",
+      "org": "Northwind Analytics",
+      "title": "Senior Analyst",
+      "band": "B5.5",
+      "ctc": 1260000,
+      "fixed": 1134000,
+      "var": 126000
+     }
+    ]
+   },
+   "tax_refund_plan": "split when credited: part to the emergency fund, part to the goal reserve, the rest stays in the salary account"
+  }
+ },
+ "loans": {
+  "home": {
+   "loan": "HDFC home loan",
+   "order": 1,
+   "emi": 26500,
+   "outstanding": 2846210.0,
+   "rate": "8.40% floating",
+   "ends": "2049",
+   "status": "Active",
+   "original": 3000000
+  },
+  "laptop": {
+   "loan": "Laptop (no-cost EMI)",
+   "order": 2,
+   "emi": 7450,
+   "outstanding": 22350,
+   "original": 44700,
+   "emis_total": 6,
+   "emis_left": 3,
+   "rate": "3 of 6 EMIs left · paid by Dad",
+   "paid_by": "Dad",
+   "ends": "Jan 2027",
+   "status": "Active"
+  },
+  "phone": {
+   "loan": "Phone (card EMI)",
+   "order": 3,
+   "emi": 4200,
+   "outstanding": 0,
+   "rate": "",
+   "ends": "Aug 2026",
+   "status": "Closed"
+  }
+ },
+ "cards": {
+  "regalia": {
+   "name": "HDFC Regalia Gold",
+   "order": 1,
+   "fee": 2500,
+   "waiver": 400000,
+   "milestones": "₹5L and ₹7.5L flight vouchers",
+   "anniv_spend": null,
+   "cycle_start": 6,
+   "due_day": 16,
+   "bills": {
+    "2026-08": 22808.47,
+    "2026-10": 13989.16,
+    "2026-11": 22678.15
+   },
+   "paid": {
+    "2026-08": true,
+    "2026-10": true,
+    "2026-11": true
+   }
+  },
+  "amex": {
+   "name": "Amex MRCC",
+   "order": 2,
+   "fee": 4500,
+   "waiver": 150000,
+   "milestones": "Monthly bonus MR at ₹20K",
+   "anniv_spend": null,
+   "cycle_start": 11,
+   "due_day": 26,
+   "bills": {
+    "2026-08": 16766.64,
+    "2026-10": 6535.35,
+    "2026-11": 10107.03
+   },
+   "paid": {
+    "2026-08": true,
+    "2026-10": true,
+    "2026-11": false
+   }
+  },
+  "sbicash": {
+   "name": "SBI Cashback",
+   "order": 3,
+   "fee": 999,
+   "waiver": 200000,
+   "milestones": null,
+   "anniv_spend": null,
+   "cycle_start": 18,
+   "due_day": 7,
+   "bills": {
+    "2026-08": 7927.07,
+    "2026-10": 9571.26,
+    "2026-11": 5612.68
+   },
+   "paid": {
+    "2026-08": true,
+    "2026-10": true,
+    "2026-11": true
+   }
+  },
+  "amazon": {
+   "name": "ICICI Amazon Pay",
+   "order": 4,
+   "fee": null,
+   "waiver": null,
+   "milestones": null,
+   "anniv_spend": null,
+   "cycle_start": 3,
+   "due_day": 21,
+   "bills": {
+    "2026-08": 3117.43,
+    "2026-10": 4878.04,
+    "2026-11": 4374.95
+   },
+   "paid": {
+    "2026-08": true,
+    "2026-10": true,
+    "2026-11": true
+   }
+  }
+ },
+ "perks": {
+  "regalia": {
+   "name": "HDFC Regalia Gold",
+   "order": 1,
+   "lounge": [
+    "Domestic: 4 visits a year on ₹1L quarterly spend",
+    "International: 6 a year via Priority Pass"
+   ],
+   "perks": [
+    "SmartBuy 5X on select merchants",
+    "Redeem points on flights/hotels at ₹0.50 per point"
+   ],
+   "role": "Daily driver, milestones",
+   "sources": "Sample data",
+   "spend": {},
+   "targets": [
+    {
+     "id": "q_lounge",
+     "period": "quarter",
+     "reward": "Domestic lounge access next quarter",
+     "threshold": 100000
+    },
+    {
+     "id": "y_fee",
+     "period": "year",
+     "reward": "₹2,500 annual fee waived",
+     "threshold": 400000
+    },
+    {
+     "id": "y_5l",
+     "period": "year",
+     "reward": "₹5,000 flight voucher",
+     "threshold": 500000,
+     "expiry_days": 60
+    }
+   ],
+   "unlocked": {},
+   "used": {},
+   "year_start": "06-01"
+  },
+  "amex": {
+   "name": "Amex MRCC",
+   "order": 2,
+   "lounge": [
+    "No lounge access"
+   ],
+   "perks": [
+    "Monthly bonus needs 4 spends of ₹1,500+ that post in the same month"
+   ],
+   "role": "Monthly milestone",
+   "sources": "Sample data",
+   "spend": {},
+   "targets": [
+    {
+     "id": "m_bonus",
+     "period": "month",
+     "reward": "Monthly bonus MR",
+     "threshold": 20000,
+     "note": "Needs 4 transactions of ₹1,500+ posted in the same month"
+    },
+    {
+     "id": "y_fee",
+     "period": "year",
+     "reward": "₹4,500 fee waived",
+     "threshold": 150000
+    }
+   ],
+   "unlocked": {},
+   "used": {},
+   "year_start": "11-01"
+  },
+  "sbicash": {
+   "name": "SBI Cashback",
+   "order": 3,
+   "lounge": [
+    "No lounge access"
+   ],
+   "perks": [
+    "5% cashback online (cap ₹5,000 per statement)",
+    "1% offline"
+   ],
+   "role": "Online shopping",
+   "sources": "Sample data",
+   "spend": {},
+   "targets": [
+    {
+     "id": "y_fee",
+     "period": "year",
+     "reward": "₹999 fee waived",
+     "threshold": 200000
+    }
+   ],
+   "unlocked": {},
+   "used": {},
+   "year_start": "04-01"
+  },
+  "amazon": {
+   "name": "ICICI Amazon Pay",
+   "order": 4,
+   "lounge": [
+    "No lounge access"
+   ],
+   "perks": [
+    "5% on Amazon with Prime",
+    "Lifetime free"
+   ],
+   "role": "Amazon purchases",
+   "sources": "Sample data",
+   "spend": {},
+   "targets": [],
+   "unlocked": {},
+   "used": {}
+  },
+  "hdfcdebit": {
+   "name": "HDFC Millennia debit card",
+   "order": 5,
+   "lounge": [
+    "2 domestic lounge vouchers a quarter on ₹10,000 debit spend"
+   ],
+   "perks": [
+    "5% Swiggy (cap ₹150/month)"
+   ],
+   "role": "Debit card",
+   "sources": "Sample data",
+   "spend": {},
+   "targets": [
+    {
+     "id": "q_lounge",
+     "period": "quarter",
+     "reward": "2 domestic lounge vouchers",
+     "threshold": 10000
+    }
+   ],
+   "unlocked": {},
+   "used": {}
+  }
+ },
+ "ccspend": {
+  "meta": {
+   "asof": "2026-11-10",
+   "from": "2025-10",
+   "to": "2026-10",
+   "cats": [
+    "Investments (NPS)",
+    "Home & appliances",
+    "Electronics",
+    "Food delivery",
+    "Groceries",
+    "Dining out",
+    "Travel & stays",
+    "Cabs & fuel",
+    "Bills & utilities",
+    "Insurance",
+    "Health & wellness",
+    "Fashion & personal care",
+    "Gift cards & vouchers",
+    "Subscriptions & fun",
+    "Online shopping",
+    "Rent & wallet loads",
+    "UPI to shops & people",
+    "Other"
+   ],
+   "cards": {
+    "regalia": {
+     "name": "HDFC Regalia Gold",
+     "months": {
+      "2025-10": 22581.21,
+      "2025-11": 19993.52,
+      "2025-12": 19654.11,
+      "2026-01": 20159.05,
+      "2026-02": 18251.77,
+      "2026-03": 27602.4,
+      "2026-04": 16491.92,
+      "2026-05": 26818.34,
+      "2026-06": 19907.58,
+      "2026-07": 23051.68,
+      "2026-08": 13908.5,
+      "2026-09": 14360.34,
+      "2026-10": 23092.21
+     },
+     "bills": {
+      "2025-10": 22702.15,
+      "2025-11": 19488.24,
+      "2025-12": 19392.29,
+      "2026-01": 20200.34,
+      "2026-02": 17935.27,
+      "2026-03": 26852.36,
+      "2026-04": 16982.84,
+      "2026-05": 27222.03,
+      "2026-06": 20037.74,
+      "2026-07": 22808.47,
+      "2026-08": 14164.51,
+      "2026-09": 13989.16,
+      "2026-10": 22678.15
+     },
+     "coverage": {},
+     "last_stmt": "2026-11-07",
+     "tx": 51,
+     "year_start": "06-01",
+     "year_basis": "Card year from 01/06 (sample)"
+    },
+    "amex": {
+     "name": "Amex MRCC",
+     "months": {
+      "2025-10": 8596.61,
+      "2025-11": 11123.29,
+      "2025-12": 14392.09,
+      "2026-01": 10604.15,
+      "2026-02": 8601.76,
+      "2026-03": 14409.9,
+      "2026-04": 10780.67,
+      "2026-05": 18213.74,
+      "2026-06": 14543.48,
+      "2026-07": 16837.57,
+      "2026-08": 11292.87,
+      "2026-09": 6470.54,
+      "2026-10": 9986.43
+     },
+     "bills": {
+      "2025-10": 8371.74,
+      "2025-11": 10975.45,
+      "2025-12": 14045.31,
+      "2026-01": 10444.23,
+      "2026-02": 8592.14,
+      "2026-03": 14772.5,
+      "2026-04": 10857.89,
+      "2026-05": 17810.35,
+      "2026-06": 14707.09,
+      "2026-07": 16766.64,
+      "2026-08": 11612.82,
+      "2026-09": 6535.35,
+      "2026-10": 10107.03
+     },
+     "coverage": {},
+     "last_stmt": "2026-11-12",
+     "tx": 62,
+     "year_start": "11-01",
+     "year_basis": "Card year from 01/11 (sample)"
+    },
+    "sbicash": {
+     "name": "SBI Cashback",
+     "months": {
+      "2025-10": 7383.71,
+      "2025-11": 12632.42,
+      "2025-12": 13677.52,
+      "2026-01": 13238.74,
+      "2026-02": 11761.42,
+      "2026-03": 5464.94,
+      "2026-04": 9539.77,
+      "2026-05": 6715.54,
+      "2026-06": 5550.1,
+      "2026-07": 7733.36,
+      "2026-08": 5102.83,
+      "2026-09": 9602.42,
+      "2026-10": 5617.87
+     },
+     "bills": {
+      "2025-10": 7317.11,
+      "2025-11": 12519.6,
+      "2025-12": 13362.1,
+      "2026-01": 13244.4,
+      "2026-02": 11623.02,
+      "2026-03": 5561.25,
+      "2026-04": 9715.24,
+      "2026-05": 6713.27,
+      "2026-06": 5640.03,
+      "2026-07": 7927.07,
+      "2026-08": 5240.62,
+      "2026-09": 9571.26,
+      "2026-10": 5612.68
+     },
+     "coverage": {},
+     "last_stmt": "2026-11-19",
+     "tx": 58,
+     "year_start": "04-01",
+     "year_basis": "Card year from 01/04 (sample)"
+    },
+    "amazon": {
+     "name": "ICICI Amazon Pay",
+     "months": {
+      "2025-10": 4550.28,
+      "2025-11": 3071.84,
+      "2025-12": 5062.41,
+      "2026-01": 3983.38,
+      "2026-02": 2962.31,
+      "2026-03": 5763.61,
+      "2026-04": 2118.0,
+      "2026-05": 5432.38,
+      "2026-06": 6228.34,
+      "2026-07": 3163.7,
+      "2026-08": 3851.08,
+      "2026-09": 4790.23,
+      "2026-10": 4392.47
+     },
+     "bills": {
+      "2025-10": 4451.55,
+      "2025-11": 3040.67,
+      "2025-12": 5085.4,
+      "2026-01": 3968.04,
+      "2026-02": 2902.78,
+      "2026-03": 5785.88,
+      "2026-04": 2060.85,
+      "2026-05": 5445.23,
+      "2026-06": 6098.44,
+      "2026-07": 3117.43,
+      "2026-08": 3950.18,
+      "2026-09": 4878.04,
+      "2026-10": 4374.95
+     },
+     "coverage": {},
+     "last_stmt": "2026-11-04",
+     "tx": 36,
+     "year_start": "04-01",
+     "year_basis": "Card year from 01/04 (sample)",
+     "lifetime_free": true
+    }
+   },
+   "source": "Sample statements. Net purchases = purchases minus refunds; payments, cashback, fees and EMI principal excluded."
+  },
+  "tx-regalia-2025": {
+   "rows": [
+    [
+     "2025-10-01",
+     "BIGBASKET BANGALORE",
+     4,
+     2012.85,
+     "2025-10"
+    ],
+    [
+     "2025-10-04",
+     "BIGBASKET BANGALORE",
+     4,
+     1134.89,
+     "2025-10"
+    ],
+    [
+     "2025-10-07",
+     "SWIGGY BANGALORE",
+     3,
+     269.37,
+     "2025-11"
+    ],
+    [
+     "2025-10-08",
+     "SWIGGY BANGALORE",
+     3,
+     732.01,
+     "2025-11"
+    ],
+    [
+     "2025-10-14",
+     "CROMA BANGALORE",
+     2,
+     3847.55,
+     "2025-11"
+    ],
+    [
+     "2025-10-15",
+     "CROMA BANGALORE",
+     2,
+     9002.56,
+     "2025-11"
+    ],
+    [
+     "2025-10-21",
+     "CROMA BANGALORE",
+     2,
+     5581.98,
+     "2025-11"
+    ],
+    [
+     "2025-11-06",
+     "SWIGGY BANGALORE",
+     3,
+     743.22,
+     "2025-12"
+    ],
+    [
+     "2025-11-11",
+     "AIRTEL POSTPAID",
+     8,
+     799.0,
+     "2025-12"
+    ],
+    [
+     "2025-11-12",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     7910.3,
+     "2025-12"
+    ],
+    [
+     "2025-11-13",
+     "MARRIOTT HOTELS",
+     6,
+     6919.89,
+     "2025-12"
+    ],
+    [
+     "2025-11-13",
+     "TOIT BREWPUB BANGALORE",
+     5,
+     2808.68,
+     "2025-12"
+    ],
+    [
+     "2025-11-24",
+     "UBER INDIA BANGALORE",
+     7,
+     559.35,
+     "2025-12"
+    ],
+    [
+     "2025-11-25",
+     "UBER INDIA BANGALORE",
+     7,
+     253.08,
+     "2025-12"
+    ],
+    [
+     "2025-12-08",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     4935.33,
+     "2026-01"
+    ],
+    [
+     "2025-12-13",
+     "BIGBASKET BANGALORE",
+     4,
+     2879.56,
+     "2026-01"
+    ],
+    [
+     "2025-12-23",
+     "MARRIOTT HOTELS",
+     6,
+     11196.17,
+     "2026-01"
+    ],
+    [
+     "2025-12-28",
+     "UBER INDIA BANGALORE",
+     7,
+     643.05,
+     "2026-01"
+    ],
+    [
+     "2026-01-06",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     10286.74,
+     "2026-02"
+    ],
+    [
+     "2026-01-12",
+     "MARRIOTT HOTELS",
+     6,
+     7463.89,
+     "2026-02"
+    ],
+    [
+     "2026-01-23",
+     "BIGBASKET BANGALORE",
+     4,
+     2408.42,
+     "2026-02"
+    ],
+    [
+     "2026-02-02",
+     "SWIGGY BANGALORE",
+     3,
+     398.88,
+     "2026-02"
+    ],
+    [
+     "2026-02-03",
+     "MARRIOTT HOTELS",
+     6,
+     9610.48,
+     "2026-02"
+    ],
+    [
+     "2026-02-11",
+     "CROMA BANGALORE",
+     2,
+     5904.04,
+     "2026-03"
+    ],
+    [
+     "2026-02-21",
+     "TOIT BREWPUB BANGALORE",
+     5,
+     2338.37,
+     "2026-03"
+    ],
+    [
+     "2026-03-05",
+     "BIGBASKET BANGALORE",
+     4,
+     3193.58,
+     "2026-03"
+    ],
+    [
+     "2026-03-05",
+     "TOIT BREWPUB BANGALORE",
+     5,
+     1628.61,
+     "2026-03"
+    ],
+    [
+     "2026-03-12",
+     "AIRTEL POSTPAID",
+     8,
+     799.0,
+     "2026-04"
+    ],
+    [
+     "2026-03-14",
+     "UBER INDIA BANGALORE",
+     7,
+     531.1,
+     "2026-04"
+    ],
+    [
+     "2026-03-16",
+     "MARRIOTT HOTELS",
+     6,
+     7913.64,
+     "2026-04"
+    ],
+    [
+     "2026-03-18",
+     "BIGBASKET BANGALORE",
+     4,
+     2587.97,
+     "2026-04"
+    ],
+    [
+     "2026-03-21",
+     "AIRTEL POSTPAID",
+     8,
+     799.0,
+     "2026-04"
+    ],
+    [
+     "2026-03-25",
+     "CROMA BANGALORE",
+     2,
+     10149.5,
+     "2026-04"
+    ]
+   ]
+  },
+  "tx-regalia-2026": {
+   "rows": [
+    [
+     "2026-04-14",
+     "SMARTBUY GYFTR",
+     12,
+     8336.63,
+     "2026-05"
+    ],
+    [
+     "2026-04-20",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     8155.29,
+     "2026-05"
+    ],
+    [
+     "2026-05-01",
+     "CROMA BANGALORE",
+     2,
+     15842.09,
+     "2026-05"
+    ],
+    [
+     "2026-05-18",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     10976.25,
+     "2026-06"
+    ],
+    [
+     "2026-06-04",
+     "SMARTBUY GYFTR",
+     12,
+     6061.45,
+     "2026-06"
+    ],
+    [
+     "2026-06-14",
+     "MARRIOTT HOTELS",
+     6,
+     7003.97,
+     "2026-07"
+    ],
+    [
+     "2026-06-17",
+     "UBER INDIA BANGALORE",
+     7,
+     575.58,
+     "2026-07"
+    ],
+    [
+     "2026-06-24",
+     "SMARTBUY GYFTR",
+     12,
+     5629.79,
+     "2026-07"
+    ],
+    [
+     "2026-06-25",
+     "UBER INDIA BANGALORE",
+     7,
+     636.79,
+     "2026-07"
+    ],
+    [
+     "2026-07-20",
+     "CROMA BANGALORE",
+     2,
+     16736.65,
+     "2026-08"
+    ],
+    [
+     "2026-07-25",
+     "SMARTBUY GYFTR",
+     12,
+     6315.03,
+     "2026-08"
+    ],
+    [
+     "2026-08-27",
+     "MARRIOTT HOTELS",
+     6,
+     13908.5,
+     "2026-09"
+    ],
+    [
+     "2026-09-03",
+     "BIGBASKET BANGALORE",
+     4,
+     2907.22,
+     "2026-09"
+    ],
+    [
+     "2026-09-27",
+     "INDIGO AIRLINES GURGAON",
+     6,
+     11453.12,
+     "2026-10"
+    ],
+    [
+     "2026-10-07",
+     "AIRTEL POSTPAID",
+     8,
+     799.0,
+     "2026-11"
+    ],
+    [
+     "2026-10-16",
+     "SMARTBUY GYFTR",
+     12,
+     3027.13,
+     "2026-11"
+    ],
+    [
+     "2026-10-17",
+     "CROMA BANGALORE",
+     2,
+     5059.47,
+     "2026-11"
+    ],
+    [
+     "2026-10-23",
+     "CROMA BANGALORE",
+     2,
+     14206.61,
+     "2026-11"
+    ]
+   ]
+  },
+  "tx-amex-2025": {
+   "rows": [
+    [
+     "2025-10-08",
+     "APOLLO PHARMACY",
+     10,
+     529.91,
+     "2025-10"
+    ],
+    [
+     "2025-10-17",
+     "INDIAN HOTELS TAJ",
+     6,
+     8066.7,
+     "2025-11"
+    ],
+    [
+     "2025-11-01",
+     "MYNTRA DESIGNS",
+     11,
+     3318.38,
+     "2025-11"
+    ],
+    [
+     "2025-11-02",
+     "MYNTRA DESIGNS",
+     11,
+     1442.64,
+     "2025-11"
+    ],
+    [
+     "2025-11-02",
+     "ZOMATO BANGALORE",
+     3,
+     866.27,
+     "2025-11"
+    ],
+    [
+     "2025-11-08",
+     "INDIAN HOTELS TAJ",
+     6,
+     5496.0,
+     "2025-11"
+    ],
+    [
+     "2025-12-07",
+     "NETFLIX COM",
+     13,
+     649.0,
+     "2025-12"
+    ],
+    [
+     "2025-12-14",
+     "ZOMATO BANGALORE",
+     3,
+     377.54,
+     "2026-01"
+    ],
+    [
+     "2025-12-15",
+     "INDIAN HOTELS TAJ",
+     6,
+     7965.05,
+     "2026-01"
+    ],
+    [
+     "2025-12-16",
+     "APOLLO PHARMACY",
+     10,
+     761.69,
+     "2026-01"
+    ],
+    [
+     "2025-12-19",
+     "BLINKIT BANGALORE",
+     4,
+     1412.69,
+     "2026-01"
+    ],
+    [
+     "2025-12-21",
+     "AMAZON PAY INDIA",
+     14,
+     3226.12,
+     "2026-01"
+    ],
+    [
+     "2026-01-04",
+     "INDIAN HOTELS TAJ",
+     6,
+     10604.15,
+     "2026-01"
+    ],
+    [
+     "2026-02-06",
+     "APOLLO PHARMACY",
+     10,
+     566.35,
+     "2026-02"
+    ],
+    [
+     "2026-02-16",
+     "MYNTRA DESIGNS",
+     11,
+     1798.72,
+     "2026-03"
+    ],
+    [
+     "2026-02-18",
+     "ZOMATO BANGALORE",
+     3,
+     340.47,
+     "2026-03"
+    ],
+    [
+     "2026-02-25",
+     "AMAZON PAY INDIA",
+     14,
+     4379.09,
+     "2026-03"
+    ],
+    [
+     "2026-02-28",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     862.63,
+     "2026-03"
+    ],
+    [
+     "2026-02-28",
+     "ZOMATO BANGALORE",
+     3,
+     654.5,
+     "2026-03"
+    ],
+    [
+     "2026-03-01",
+     "AMAZON PAY INDIA",
+     14,
+     1242.08,
+     "2026-03"
+    ],
+    [
+     "2026-03-02",
+     "AMAZON PAY INDIA",
+     14,
+     3517.1,
+     "2026-03"
+    ],
+    [
+     "2026-03-09",
+     "NETFLIX COM",
+     13,
+     649.0,
+     "2026-03"
+    ],
+    [
+     "2026-03-10",
+     "APOLLO PHARMACY",
+     10,
+     594.11,
+     "2026-03"
+    ],
+    [
+     "2026-03-17",
+     "AMAZON PAY INDIA",
+     14,
+     2878.29,
+     "2026-04"
+    ],
+    [
+     "2026-03-19",
+     "MYNTRA DESIGNS",
+     11,
+     4687.35,
+     "2026-04"
+    ],
+    [
+     "2026-03-23",
+     "APOLLO PHARMACY",
+     10,
+     841.97,
+     "2026-04"
+    ]
+   ]
+  },
+  "tx-amex-2026": {
+   "rows": [
+    [
+     "2026-04-02",
+     "MYNTRA DESIGNS",
+     11,
+     3284.11,
+     "2026-04"
+    ],
+    [
+     "2026-04-03",
+     "AMAZON PAY INDIA",
+     14,
+     4347.04,
+     "2026-04"
+    ],
+    [
+     "2026-04-03",
+     "BLINKIT BANGALORE",
+     4,
+     495.93,
+     "2026-04"
+    ],
+    [
+     "2026-04-19",
+     "MYNTRA DESIGNS",
+     11,
+     2653.59,
+     "2026-05"
+    ],
+    [
+     "2026-05-07",
+     "INDIAN HOTELS TAJ",
+     6,
+     11542.94,
+     "2026-05"
+    ],
+    [
+     "2026-05-13",
+     "INDIAN HOTELS TAJ",
+     6,
+     6670.8,
+     "2026-06"
+    ],
+    [
+     "2026-06-04",
+     "BLINKIT BANGALORE",
+     4,
+     770.25,
+     "2026-06"
+    ],
+    [
+     "2026-06-04",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     1331.76,
+     "2026-06"
+    ],
+    [
+     "2026-06-07",
+     "MYNTRA DESIGNS",
+     11,
+     3783.4,
+     "2026-06"
+    ],
+    [
+     "2026-06-07",
+     "ZOMATO BANGALORE",
+     3,
+     358.61,
+     "2026-06"
+    ],
+    [
+     "2026-06-12",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     532.46,
+     "2026-07"
+    ],
+    [
+     "2026-06-12",
+     "ZOMATO BANGALORE",
+     3,
+     1003.42,
+     "2026-07"
+    ],
+    [
+     "2026-06-18",
+     "AMAZON PAY INDIA",
+     14,
+     3204.67,
+     "2026-07"
+    ],
+    [
+     "2026-06-20",
+     "BLINKIT BANGALORE",
+     4,
+     781.29,
+     "2026-07"
+    ],
+    [
+     "2026-06-20",
+     "ZOMATO BANGALORE",
+     3,
+     307.45,
+     "2026-07"
+    ],
+    [
+     "2026-06-25",
+     "APOLLO PHARMACY",
+     10,
+     900.74,
+     "2026-07"
+    ],
+    [
+     "2026-06-26",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     1011.68,
+     "2026-07"
+    ],
+    [
+     "2026-06-27",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     557.75,
+     "2026-07"
+    ],
+    [
+     "2026-07-05",
+     "INDIAN HOTELS TAJ",
+     6,
+     9077.57,
+     "2026-07"
+    ],
+    [
+     "2026-07-09",
+     "BLINKIT BANGALORE",
+     4,
+     1291.96,
+     "2026-07"
+    ],
+    [
+     "2026-07-11",
+     "BOOKMYSHOW MUMBAI",
+     13,
+     444.09,
+     "2026-08"
+    ],
+    [
+     "2026-07-14",
+     "AMAZON PAY INDIA",
+     14,
+     959.96,
+     "2026-08"
+    ],
+    [
+     "2026-07-18",
+     "BLINKIT BANGALORE",
+     4,
+     1437.72,
+     "2026-08"
+    ],
+    [
+     "2026-07-18",
+     "NETFLIX COM",
+     13,
+     649.0,
+     "2026-08"
+    ],
+    [
+     "2026-07-23",
+     "AMAZON PAY INDIA",
+     14,
+     1036.31,
+     "2026-08"
+    ],
+    [
+     "2026-07-27",
+     "BLINKIT BANGALORE",
+     4,
+     1163.83,
+     "2026-08"
+    ],
+    [
+     "2026-07-28",
+     "APOLLO PHARMACY",
+     10,
+     777.13,
+     "2026-08"
+    ],
+    [
+     "2026-08-26",
+     "INDIAN HOTELS TAJ",
+     6,
+     11292.87,
+     "2026-09"
+    ],
+    [
+     "2026-09-08",
+     "INDIAN HOTELS TAJ",
+     6,
+     6470.54,
+     "2026-09"
+    ],
+    [
+     "2026-10-01",
+     "BLINKIT BANGALORE",
+     4,
+     1633.98,
+     "2026-10"
+    ],
+    [
+     "2026-10-08",
+     "BLINKIT BANGALORE",
+     4,
+     1696.07,
+     "2026-10"
+    ],
+    [
+     "2026-10-11",
+     "BLINKIT BANGALORE",
+     4,
+     1431.19,
+     "2026-11"
+    ],
+    [
+     "2026-10-20",
+     "NETFLIX COM",
+     13,
+     649.0,
+     "2026-11"
+    ],
+    [
+     "2026-10-26",
+     "BLINKIT BANGALORE",
+     4,
+     1766.69,
+     "2026-11"
+    ],
+    [
+     "2026-10-26",
+     "MYNTRA DESIGNS",
+     11,
+     2160.5,
+     "2026-11"
+    ],
+    [
+     "2026-10-26",
+     "NETFLIX COM",
+     13,
+     649.0,
+     "2026-11"
+    ]
+   ]
+  },
+  "tx-sbicash-2025": {
+   "rows": [
+    [
+     "2025-10-08",
+     "FLIPKART INTERNET",
+     14,
+     5250.54,
+     "2025-10"
+    ],
+    [
+     "2025-10-15",
+     "NYKAA E RETAIL",
+     11,
+     2133.17,
+     "2025-10"
+    ],
+    [
+     "2025-11-01",
+     "DECATHLON SPORTS",
+     11,
+     1719.34,
+     "2025-11"
+    ],
+    [
+     "2025-11-07",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2025-11"
+    ],
+    [
+     "2025-11-09",
+     "FLIPKART INTERNET",
+     14,
+     5824.51,
+     "2025-11"
+    ],
+    [
+     "2025-11-28",
+     "MAKEMYTRIP INDIA",
+     6,
+     4969.57,
+     "2025-12"
+    ],
+    [
+     "2025-12-09",
+     "FLIPKART INTERNET",
+     14,
+     1311.31,
+     "2025-12"
+    ],
+    [
+     "2025-12-09",
+     "NYKAA E RETAIL",
+     11,
+     1661.18,
+     "2025-12"
+    ],
+    [
+     "2025-12-11",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2025-12"
+    ],
+    [
+     "2025-12-11",
+     "ZEPTO MARKETPLACE",
+     4,
+     1174.25,
+     "2025-12"
+    ],
+    [
+     "2025-12-14",
+     "FLIPKART INTERNET",
+     14,
+     1274.53,
+     "2025-12"
+    ],
+    [
+     "2025-12-17",
+     "MAKEMYTRIP INDIA",
+     6,
+     6637.25,
+     "2025-12"
+    ],
+    [
+     "2025-12-27",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-01"
+    ],
+    [
+     "2026-01-03",
+     "NYKAA E RETAIL",
+     11,
+     1228.44,
+     "2026-01"
+    ],
+    [
+     "2026-01-10",
+     "FLIPKART INTERNET",
+     14,
+     4514.7,
+     "2026-01"
+    ],
+    [
+     "2026-01-11",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-01"
+    ],
+    [
+     "2026-01-11",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-01"
+    ],
+    [
+     "2026-01-22",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-02"
+    ],
+    [
+     "2026-01-22",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-02"
+    ],
+    [
+     "2026-01-23",
+     "NYKAA E RETAIL",
+     11,
+     1009.45,
+     "2026-02"
+    ],
+    [
+     "2026-01-24",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-02"
+    ],
+    [
+     "2026-01-26",
+     "MAKEMYTRIP INDIA",
+     6,
+     3010.15,
+     "2026-02"
+    ],
+    [
+     "2026-01-28",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-02"
+    ],
+    [
+     "2026-02-01",
+     "MAKEMYTRIP INDIA",
+     6,
+     6287.62,
+     "2026-02"
+    ],
+    [
+     "2026-02-05",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-02"
+    ],
+    [
+     "2026-02-10",
+     "NYKAA E RETAIL",
+     11,
+     1731.03,
+     "2026-02"
+    ],
+    [
+     "2026-02-10",
+     "ZEPTO MARKETPLACE",
+     4,
+     782.88,
+     "2026-02"
+    ],
+    [
+     "2026-02-13",
+     "NYKAA E RETAIL",
+     11,
+     1340.89,
+     "2026-02"
+    ],
+    [
+     "2026-02-24",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-03"
+    ],
+    [
+     "2026-03-07",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-03"
+    ],
+    [
+     "2026-03-15",
+     "ZEPTO MARKETPLACE",
+     4,
+     857.99,
+     "2026-03"
+    ],
+    [
+     "2026-03-16",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-03"
+    ],
+    [
+     "2026-03-21",
+     "DECATHLON SPORTS",
+     11,
+     2987.95,
+     "2026-04"
+    ]
+   ]
+  },
+  "tx-sbicash-2026": {
+   "rows": [
+    [
+     "2026-04-03",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-04"
+    ],
+    [
+     "2026-04-06",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-04"
+    ],
+    [
+     "2026-04-08",
+     "NYKAA E RETAIL",
+     11,
+     1845.59,
+     "2026-04"
+    ],
+    [
+     "2026-04-11",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-04"
+    ],
+    [
+     "2026-04-21",
+     "ZEPTO MARKETPLACE",
+     4,
+     918.54,
+     "2026-05"
+    ],
+    [
+     "2026-04-25",
+     "FLIPKART INTERNET",
+     14,
+     5037.64,
+     "2026-05"
+    ],
+    [
+     "2026-05-13",
+     "NYKAA E RETAIL",
+     11,
+     1936.69,
+     "2026-05"
+    ],
+    [
+     "2026-05-14",
+     "DECATHLON SPORTS",
+     11,
+     1162.18,
+     "2026-05"
+    ],
+    [
+     "2026-05-16",
+     "FLIPKART INTERNET",
+     14,
+     1997.67,
+     "2026-05"
+    ],
+    [
+     "2026-05-19",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-06"
+    ],
+    [
+     "2026-05-28",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-06"
+    ],
+    [
+     "2026-06-23",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-07"
+    ],
+    [
+     "2026-06-28",
+     "FLIPKART INTERNET",
+     14,
+     5431.1,
+     "2026-07"
+    ],
+    [
+     "2026-07-08",
+     "MAKEMYTRIP INDIA",
+     6,
+     3301.31,
+     "2026-07"
+    ],
+    [
+     "2026-07-17",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-07"
+    ],
+    [
+     "2026-07-26",
+     "MAKEMYTRIP INDIA",
+     6,
+     4313.05,
+     "2026-08"
+    ],
+    [
+     "2026-08-11",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-08"
+    ],
+    [
+     "2026-08-18",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-09"
+    ],
+    [
+     "2026-08-22",
+     "NYKAA E RETAIL",
+     11,
+     2102.83,
+     "2026-09"
+    ],
+    [
+     "2026-09-17",
+     "SPOTIFY INDIA",
+     13,
+     119.0,
+     "2026-09"
+    ],
+    [
+     "2026-09-18",
+     "MAKEMYTRIP INDIA",
+     6,
+     7983.42,
+     "2026-10"
+    ],
+    [
+     "2026-09-27",
+     "CULT FIT",
+     10,
+     1500.0,
+     "2026-10"
+    ],
+    [
+     "2026-10-09",
+     "DECATHLON SPORTS",
+     11,
+     2608.83,
+     "2026-10"
+    ],
+    [
+     "2026-10-17",
+     "ZEPTO MARKETPLACE",
+     4,
+     1218.98,
+     "2026-10"
+    ],
+    [
+     "2026-10-21",
+     "DECATHLON SPORTS",
+     11,
+     1790.06,
+     "2026-11"
+    ]
+   ]
+  },
+  "tx-amazon-2025": {
+   "rows": [
+    [
+     "2025-10-03",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2025-11"
+    ],
+    [
+     "2025-10-03",
+     "BESCOM BILL PAY",
+     8,
+     2239.54,
+     "2025-11"
+    ],
+    [
+     "2025-10-11",
+     "BESCOM BILL PAY",
+     8,
+     1251.74,
+     "2025-11"
+    ],
+    [
+     "2025-11-03",
+     "AMAZON FRESH",
+     4,
+     2012.84,
+     "2025-12"
+    ],
+    [
+     "2025-11-14",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2025-12"
+    ],
+    [
+     "2025-12-14",
+     "AMAZON SELLER SERVICES",
+     14,
+     961.87,
+     "2026-01"
+    ],
+    [
+     "2025-12-25",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-01"
+    ],
+    [
+     "2025-12-25",
+     "AMAZON SELLER SERVICES",
+     14,
+     3041.54,
+     "2026-01"
+    ],
+    [
+     "2026-01-09",
+     "AMAZON FRESH",
+     4,
+     1576.46,
+     "2026-02"
+    ],
+    [
+     "2026-01-13",
+     "BESCOM BILL PAY",
+     8,
+     1347.92,
+     "2026-02"
+    ],
+    [
+     "2026-01-18",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-02"
+    ],
+    [
+     "2026-02-24",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-03"
+    ],
+    [
+     "2026-02-26",
+     "BESCOM BILL PAY",
+     8,
+     1903.31,
+     "2026-03"
+    ],
+    [
+     "2026-03-18",
+     "AMAZON FRESH",
+     4,
+     2561.44,
+     "2026-04"
+    ],
+    [
+     "2026-03-19",
+     "AMAZON SELLER SERVICES",
+     14,
+     3202.17,
+     "2026-04"
+    ]
+   ]
+  },
+  "tx-amazon-2026": {
+   "rows": [
+    [
+     "2026-04-05",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-05"
+    ],
+    [
+     "2026-04-06",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-05"
+    ],
+    [
+     "2026-05-09",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-06"
+    ],
+    [
+     "2026-05-09",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-06"
+    ],
+    [
+     "2026-05-11",
+     "AMAZON FRESH",
+     4,
+     1509.4,
+     "2026-06"
+    ],
+    [
+     "2026-05-24",
+     "AMAZON SELLER SERVICES",
+     14,
+     1804.98,
+     "2026-06"
+    ],
+    [
+     "2026-06-03",
+     "BESCOM BILL PAY",
+     8,
+     1236.33,
+     "2026-07"
+    ],
+    [
+     "2026-06-08",
+     "AMAZON SELLER SERVICES",
+     14,
+     2713.55,
+     "2026-07"
+    ],
+    [
+     "2026-06-20",
+     "AMAZON FRESH",
+     4,
+     2278.46,
+     "2026-07"
+    ],
+    [
+     "2026-07-07",
+     "AMAZON SELLER SERVICES",
+     14,
+     2104.7,
+     "2026-08"
+    ],
+    [
+     "2026-07-23",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-08"
+    ],
+    [
+     "2026-08-01",
+     "BESCOM BILL PAY",
+     8,
+     1062.15,
+     "2026-08"
+    ],
+    [
+     "2026-08-06",
+     "AMAZON SELLER SERVICES",
+     14,
+     2788.93,
+     "2026-09"
+    ],
+    [
+     "2026-09-13",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-10"
+    ],
+    [
+     "2026-09-20",
+     "BESCOM BILL PAY",
+     8,
+     2175.44,
+     "2026-10"
+    ],
+    [
+     "2026-09-23",
+     "AMAZON FRESH",
+     4,
+     751.99,
+     "2026-10"
+    ],
+    [
+     "2026-09-25",
+     "AMAZON FRESH",
+     4,
+     803.8,
+     "2026-10"
+    ],
+    [
+     "2026-10-04",
+     "ACT FIBERNET",
+     8,
+     1059.0,
+     "2026-11"
+    ],
+    [
+     "2026-10-14",
+     "AMAZON SELLER SERVICES",
+     14,
+     1411.05,
+     "2026-11"
+    ],
+    [
+     "2026-10-14",
+     "BESCOM BILL PAY",
+     8,
+     918.98,
+     "2026-11"
+    ],
+    [
+     "2026-10-21",
+     "BESCOM BILL PAY",
+     8,
+     1003.44,
+     "2026-11"
+    ]
+   ]
+  }
+ },
+ "mf": {
+  "ppfas": {
+   "fund": "Parag Parikh Flexi Cap",
+   "goal": "Retirement",
+   "sip": 6000,
+   "invested": 312000,
+   "current": 368400,
+   "as_of": "2026-11-13",
+   "bucket": "equity"
+  },
+  "hdfcmid": {
+   "fund": "HDFC Mid-Cap Opportunities",
+   "goal": "Retirement",
+   "sip": 4000,
+   "invested": 168000,
+   "current": 201300,
+   "as_of": "2026-11-13",
+   "bucket": "equity"
+  },
+  "axissmall": {
+   "fund": "Axis Small Cap",
+   "goal": "Retirement",
+   "sip": 2000,
+   "invested": 96000,
+   "current": 104250,
+   "as_of": "2026-11-13",
+   "bucket": "equity"
+  },
+  "iciciasset": {
+   "fund": "ICICI Pru Multi-Asset",
+   "goal": "Car",
+   "sip": 4500,
+   "invested": 128500,
+   "current": 138200,
+   "as_of": "2026-11-13",
+   "bucket": "mixed"
+  },
+  "hdfcst": {
+   "fund": "HDFC Short Term Debt",
+   "goal": "Emergency top-up",
+   "sip": 0,
+   "invested": 60000,
+   "current": 63120,
+   "as_of": "2026-11-13",
+   "bucket": "debt"
+  },
+  "mosnasdaq": {
+   "fund": "Motilal Oswal Nasdaq 100 FoF",
+   "goal": "Retirement",
+   "sip": 1500,
+   "invested": 74000,
+   "current": 92650,
+   "as_of": "2026-11-13",
+   "bucket": "us",
+   "kind": "US mutual fund"
+  },
+  "usstocks": {
+   "fund": "US direct stocks: META, COST, V",
+   "goal": "Retirement",
+   "sip": 0,
+   "invested": 23652.0,
+   "current": 26357.0,
+   "as_of": "2026-11-13",
+   "kind": "US stocks (INDmoney)"
+  }
+ },
+ "ppf": {
+  "2026-27": {
+   "balance": 214500,
+   "balance_asof": "1 Nov 2026",
+   "contributed": 40000,
+   "limit": 150000,
+   "min_yearly": 500,
+   "target": 600000
+  }
+ },
+ "nps": {
+  "2026-27": {
+   "balance": 45320,
+   "balance_asof": "12 Nov 2026",
+   "contributed": 12000,
+   "min_yearly": 1000,
+   "target": 150000,
+   "note": "Tier I, auto choice. Sample data."
+  }
+ },
+ "months": {
+  "2026-08": {
+   "label": "Aug 2026",
+   "status": "closed",
+   "salary": 112000,
+   "other_income": 3500,
+   "sip": 18000,
+   "emi": 26500,
+   "emi_paid": true,
+   "emi_interest": 19900,
+   "emi_principal": 6600,
+   "card_gross": 50619.61,
+   "card_net": 50619.61,
+   "direct_equity": 8604,
+   "ef_add": 4000,
+   "travel_add": 5000,
+   "emergency_fund": 100000,
+   "travel_fund": 123000,
+   "free_cash": 94276.39,
+   "note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
+  },
+  "2026-09": {
+   "label": "Sep 2026",
+   "status": "closed",
+   "salary": 112000,
+   "other_income": 3500,
+   "sip": 18000,
+   "emi": 26500,
+   "emi_paid": true,
+   "emi_interest": 19860,
+   "emi_principal": 6640,
+   "card_gross": 34968.13,
+   "card_net": 27518.13,
+   "direct_equity": 6131,
+   "ef_add": 4000,
+   "travel_add": 5000,
+   "emergency_fund": 104000,
+   "travel_fund": 128000,
+   "free_cash": 119850.87,
+   "note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
+  },
+  "2026-10": {
+   "label": "Oct 2026",
+   "status": "closed",
+   "salary": 112000,
+   "other_income": 3500,
+   "sip": 18000,
+   "emi": 26500,
+   "emi_paid": true,
+   "emi_interest": 19820,
+   "emi_principal": 6680,
+   "card_gross": 34973.81,
+   "card_net": 27523.81,
+   "direct_equity": 7276,
+   "ef_add": 4000,
+   "travel_add": 5000,
+   "emergency_fund": 108000,
+   "travel_fund": 133000,
+   "free_cash": 118700.19,
+   "note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower."
+  },
+  "2026-11": {
+   "label": "Nov 2026",
+   "status": "open",
+   "salary": 112000,
+   "other_income": 3500,
+   "sip": 18000,
+   "emi": 26500,
+   "emi_paid": true,
+   "emi_interest": 19780,
+   "emi_principal": 6720,
+   "card_gross": 42772.81,
+   "card_net": 35322.81,
+   "direct_equity": 5041,
+   "ef_add": 4000,
+   "travel_add": 5000,
+   "emergency_fund": 112000,
+   "travel_fund": 138000,
+   "free_cash": 113136.19,
+   "note": "Sample month. Laptop EMI ₹7,450 inside the Regalia bill is paid back by Dad, so own card spend is lower.",
+   "other_credits": {
+    "laptop_emi_from_dad": 7450
+   },
+   "stock_buys": [
+    {
+     "date": "2026-11-04",
+     "ticker": "LT",
+     "qty": 1,
+     "price": 3712.0
+    },
+    {
+     "date": "2026-11-06",
+     "ticker": "GOLDBEES",
+     "qty": 20,
+     "price": 97.4
+    }
+   ]
+  }
+ },
+ "invest": {
+  "snapshot": {
+   "asof": "Mixed dates, 1–13 Nov 2026",
+   "source": "Sample data",
+   "total": 2856924.0,
+   "components": [
+    {
+     "key": "eq",
+     "label": "Indian direct equity",
+     "group": "Market-linked",
+     "invested": 693064.0,
+     "value": 773347.0,
+     "note": "12 stocks + GoldBEES · Zerodha",
+     "tab": "eq",
+     "asof": "13 Nov close"
+    },
+    {
+     "key": "mf",
+     "label": "My mutual funds (India)",
+     "group": "Market-linked",
+     "invested": 764500,
+     "value": 875270,
+     "note": "5 funds · Groww",
+     "tab": "mf",
+     "asof": "13 Nov"
+    },
+    {
+     "key": "usmf",
+     "label": "US mutual funds",
+     "group": "Market-linked",
+     "invested": 74000,
+     "value": 92650,
+     "note": "Nasdaq 100 FoF",
+     "tab": "mf",
+     "asof": "13 Nov"
+    },
+    {
+     "key": "us",
+     "label": "US direct stocks",
+     "group": "Market-linked",
+     "invested": 23652.0,
+     "value": 26357.0,
+     "note": "3 stocks · INDmoney",
+     "tab": "us",
+     "asof": "13 Nov"
+    },
+    {
+     "key": "epf",
+     "label": "EPF",
+     "group": "Retirement, locked",
+     "invested": null,
+     "value": 624800,
+     "note": "incl. EPS pension share",
+     "tab": null,
+     "asof": "31 Oct"
+    },
+    {
+     "key": "ppf",
+     "label": "PPF",
+     "group": "Retirement, locked",
+     "invested": null,
+     "value": 214500,
+     "note": "SBI",
+     "tab": null,
+     "asof": "1 Nov"
+    },
+    {
+     "key": "hm",
+     "label": "Travel fund",
+     "group": "Cash for goals",
+     "invested": null,
+     "value": 138000,
+     "note": "salary account",
+     "tab": null,
+     "asof": "1 Nov"
+    },
+    {
+     "key": "ef",
+     "label": "Emergency fund",
+     "group": "Cash for goals",
+     "invested": null,
+     "value": 112000,
+     "note": "savings account",
+     "tab": null,
+     "asof": "1 Nov"
+    }
+   ],
+   "notes": [
+    "Sample totals for a demo profile.",
+    "Direct stocks carry most of the gain in this sample.",
+    "Up a little since last week, mostly from fresh SIP money.",
+    "Safe side = EPF, PPF and cash goals."
+   ]
+  },
+  "equity": {
+   "asof": "13 Nov 2026",
+   "note": "Sample prices and holdings.",
+   "rows": [
+    {
+     "ticker": "HDFCBANK",
+     "sector": "Banks",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 60,
+     "avg": 1480,
+     "ltp": 1702,
+     "invested": 88800,
+     "value": 102120,
+     "pnl_pct": 15.0,
+     "chg_1y": 9.8,
+     "chg_3m": 3.1,
+     "high52": 1888.7,
+     "low52": 1525.2,
+     "from_high": -9.9,
+     "target": "12–14%",
+     "qvgm": "16/20",
+     "action": "Hold; add on dips below ₹1,600",
+     "order": 1,
+     "note": null,
+     "weight": 13.95
+    },
+    {
+     "ticker": "TCS",
+     "sector": "IT services",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 22,
+     "avg": 3650,
+     "ltp": 3420,
+     "invested": 80300,
+     "value": 75240,
+     "pnl_pct": -6.3,
+     "chg_1y": -6.2,
+     "chg_3m": 1.4,
+     "high52": 3868.5,
+     "low52": 2509.1,
+     "from_high": -11.6,
+     "target": "10–12%",
+     "qvgm": "15/20",
+     "action": "Hold",
+     "order": 2,
+     "note": null,
+     "weight": 10.28
+    },
+    {
+     "ticker": "RELIANCE",
+     "sector": "Energy & retail",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 45,
+     "avg": 1260,
+     "ltp": 1395,
+     "invested": 56700,
+     "value": 62775,
+     "pnl_pct": 10.71,
+     "chg_1y": 4.5,
+     "chg_3m": -1.8,
+     "high52": 1490.9,
+     "low52": 1136.6,
+     "from_high": -6.4,
+     "target": "9–11%",
+     "qvgm": "14/20",
+     "action": "Hold",
+     "order": 3,
+     "note": null,
+     "weight": 8.58
+    },
+    {
+     "ticker": "BHARTIARTL",
+     "sector": "Telecom",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 38,
+     "avg": 1350,
+     "ltp": 1885,
+     "invested": 51300,
+     "value": 71630,
+     "pnl_pct": 39.63,
+     "chg_1y": 28.4,
+     "chg_3m": 5.2,
+     "high52": 2211.3,
+     "low52": 1574.9,
+     "from_high": -14.8,
+     "target": "8–10%",
+     "qvgm": "17/20",
+     "action": "No adds above 10%",
+     "order": 4,
+     "note": null,
+     "weight": 9.79
+    },
+    {
+     "ticker": "ASIANPAINT",
+     "sector": "Consumer",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 25,
+     "avg": 2900,
+     "ltp": 2480,
+     "invested": 72500,
+     "value": 62000,
+     "pnl_pct": -14.48,
+     "chg_1y": -12.5,
+     "chg_3m": -4.0,
+     "high52": 3056.1,
+     "low52": 2158.6,
+     "from_high": -18.9,
+     "target": "6–7%",
+     "qvgm": "13/20",
+     "action": "Watch margins at Q3",
+     "order": 5,
+     "note": null,
+     "weight": 8.47
+    },
+    {
+     "ticker": "LT",
+     "sector": "Capital goods",
+     "mcap": "Large",
+     "sleeve": "Core",
+     "shares": 18,
+     "avg": 3300,
+     "ltp": 3780,
+     "invested": 59400,
+     "value": 68040,
+     "pnl_pct": 14.55,
+     "chg_1y": 12.2,
+     "chg_3m": 2.6,
+     "high52": 4280.0,
+     "low52": 3332.7,
+     "from_high": -11.7,
+     "target": "10–12%",
+     "qvgm": "16/20",
+     "action": "Add on fresh money",
+     "order": 6,
+     "note": null,
+     "weight": 9.3
+    },
+    {
+     "ticker": "POLYCAB",
+     "sector": "Capital goods",
+     "mcap": "Large",
+     "sleeve": "Satellite",
+     "shares": 9,
+     "avg": 5600,
+     "ltp": 7020,
+     "invested": 50400,
+     "value": 63180,
+     "pnl_pct": 25.36,
+     "chg_1y": 21.7,
+     "chg_3m": 6.3,
+     "high52": 8145.6,
+     "low52": 5411.8,
+     "from_high": -13.8,
+     "target": "7–8%",
+     "qvgm": "16/20",
+     "action": "Hold",
+     "order": 7,
+     "note": null,
+     "weight": 8.63
+    },
+    {
+     "ticker": "PERSISTENT",
+     "sector": "IT services",
+     "mcap": "Mid",
+     "sleeve": "Satellite",
+     "shares": 8,
+     "avg": 4800,
+     "ltp": 5650,
+     "invested": 38400,
+     "value": 45200,
+     "pnl_pct": 17.71,
+     "chg_1y": 14.0,
+     "chg_3m": -2.2,
+     "high52": 6124.7,
+     "low52": 5116.7,
+     "from_high": -7.8,
+     "target": "5–6%",
+     "qvgm": "15/20",
+     "action": "Hold",
+     "order": 8,
+     "note": null,
+     "weight": 6.18
+    },
+    {
+     "ticker": "TRENT",
+     "sector": "Retail",
+     "mcap": "Large",
+     "sleeve": "Satellite",
+     "shares": 10,
+     "avg": 5900,
+     "ltp": 5120,
+     "invested": 59000,
+     "value": 51200,
+     "pnl_pct": -13.22,
+     "chg_1y": -18.3,
+     "chg_3m": -6.5,
+     "high52": 5587.8,
+     "low52": 4091.8,
+     "from_high": -8.4,
+     "target": "6–7%",
+     "qvgm": "14/20",
+     "action": "Review at Q3",
+     "order": 9,
+     "note": null,
+     "weight": 7.0
+    },
+    {
+     "ticker": "CDSL",
+     "sector": "Capital markets",
+     "mcap": "Mid",
+     "sleeve": "Satellite",
+     "shares": 30,
+     "avg": 1290,
+     "ltp": 1580,
+     "invested": 38700,
+     "value": 47400,
+     "pnl_pct": 22.48,
+     "chg_1y": 24.0,
+     "chg_3m": 8.8,
+     "high52": 1888.3,
+     "low52": 1304.1,
+     "from_high": -16.3,
+     "target": "5–6%",
+     "qvgm": "15/20",
+     "action": "Hold",
+     "order": 10,
+     "note": null,
+     "weight": 6.48
+    },
+    {
+     "ticker": "KAYNES",
+     "sector": "Electronics",
+     "mcap": "Mid",
+     "sleeve": "Specials",
+     "shares": 6,
+     "avg": 4300,
+     "ltp": 5400,
+     "invested": 25800,
+     "value": 32400,
+     "pnl_pct": 25.58,
+     "chg_1y": 35.2,
+     "chg_3m": 12.0,
+     "high52": 6355.8,
+     "low52": 4179.6,
+     "from_high": -15.0,
+     "target": "5–6%",
+     "qvgm": "14/20",
+     "action": "Build slowly",
+     "order": 11,
+     "note": null,
+     "weight": 4.43
+    },
+    {
+     "ticker": "APOLLOHOSP",
+     "sector": "Healthcare",
+     "mcap": "Large",
+     "sleeve": "Specials",
+     "shares": 7,
+     "avg": 6400,
+     "ltp": 7250,
+     "invested": 44800,
+     "value": 50750,
+     "pnl_pct": 13.28,
+     "chg_1y": 16.4,
+     "chg_3m": 3.3,
+     "high52": 8255.9,
+     "low52": 5593.4,
+     "from_high": -12.2,
+     "target": "6–7%",
+     "qvgm": "15/20",
+     "action": "Hold",
+     "order": 12,
+     "note": null,
+     "weight": 6.93
+    },
+    {
+     "ticker": "GOLDBEES",
+     "sector": "Gold",
+     "mcap": "ETF",
+     "sleeve": "Gold",
+     "shares": 420,
+     "avg": 64.2,
+     "ltp": 98.6,
+     "invested": 26964.0,
+     "value": 41412.0,
+     "pnl_pct": 53.58,
+     "chg_1y": 41.0,
+     "chg_3m": 9.5,
+     "high52": 112.1,
+     "low52": 76.7,
+     "from_high": -12.0,
+     "target": "—",
+     "qvgm": "—",
+     "action": "Build toward 5% of the retirement corpus",
+     "order": 13,
+     "note": null,
+     "weight": 0
+    }
+   ]
+  },
+  "us": {
+   "asof": "13 Nov 2026",
+   "usdinr": 84.6,
+   "perf_asof": "2026-11-13",
+   "bench": {
+    "name": "Nasdaq 100 (QQQ, USD)",
+    "chg_1y": 19.8,
+    "chg_3m": 5.1,
+    "chg_6m": 8.3
+   },
+   "rows": [
+    {
+     "ticker": "META",
+     "name": "Meta Platforms",
+     "order": 1,
+     "invested_usd": 123.2,
+     "value_usd": 134.73,
+     "last_usd": 612.4,
+     "invested": 10274.88,
+     "value": 11398.16,
+     "pnl_pct_usd": 9.4,
+     "pnl_pct": 10.9,
+     "chg_1y": 18.5,
+     "chg_3m": 4.2,
+     "chg_6m": 6.7,
+     "bsince": 8.6,
+     "weight": 43.2
+    },
+    {
+     "ticker": "COST",
+     "name": "Costco",
+     "order": 2,
+     "invested_usd": 70.4,
+     "value_usd": 74.01,
+     "last_usd": 925.1,
+     "invested": 5871.36,
+     "value": 6261.25,
+     "pnl_pct_usd": 5.1,
+     "pnl_pct": 6.6,
+     "chg_1y": 9.1,
+     "chg_3m": 2.0,
+     "chg_6m": 3.2,
+     "bsince": 5.3,
+     "weight": 23.8
+    },
+    {
+     "ticker": "V",
+     "name": "Visa",
+     "order": 3,
+     "invested_usd": 90.0,
+     "value_usd": 102.81,
+     "last_usd": 342.7,
+     "invested": 7506.0,
+     "value": 8697.73,
+     "pnl_pct_usd": 14.2,
+     "pnl_pct": 15.9,
+     "chg_1y": 15.2,
+     "chg_3m": 3.6,
+     "chg_6m": 5.8,
+     "bsince": 15.4,
+     "weight": 33.0
+    }
+   ]
+  },
+  "mfret": {
+   "asof": "2026-11-13",
+   "bench_note": "Benchmark returns are approximate; \"Since bought\" puts the same buys into the index on the same dates.",
+   "rows": {
+    "ppfas": {
+     "category": "Flexi cap",
+     "r1y": 11.8,
+     "r3m": 2.4,
+     "r6m": 4.7,
+     "r3y": 19.6,
+     "rank": "3 of 38",
+     "flag": null,
+     "bname": "Nifty 500 TRI",
+     "b1y": 7.1,
+     "b3m": 1.6,
+     "b6m": 3.0,
+     "bsince": 14.2
+    },
+    "hdfcmid": {
+     "category": "Mid cap",
+     "r1y": 8.9,
+     "r3m": 1.1,
+     "r6m": 2.3,
+     "r3y": 22.4,
+     "rank": "5 of 29",
+     "flag": null,
+     "bname": "Nifty Midcap 150 TRI",
+     "b1y": 9.6,
+     "b3m": 0.4,
+     "b6m": 2.1,
+     "bsince": 16.8
+    },
+    "axissmall": {
+     "category": "Small cap",
+     "r1y": 2.1,
+     "r3m": -3.4,
+     "r6m": -5.4,
+     "r3y": 18.8,
+     "rank": "9 of 27",
+     "flag": null,
+     "bname": "Nifty Smallcap 250 TRI",
+     "b1y": 0.8,
+     "b3m": -4.1,
+     "b6m": -2.0,
+     "bsince": 6.3
+    },
+    "iciciasset": {
+     "category": "Multi asset",
+     "r1y": 10.2,
+     "r3m": 2.9,
+     "r6m": 5.4,
+     "r3y": 17.1,
+     "rank": "2 of 21",
+     "flag": null,
+     "bname": "Fund composite (65/25/10)",
+     "b1y": 8.4,
+     "b3m": 2.2,
+     "b6m": 4.0,
+     "bsince": 6.1
+    },
+    "hdfcst": {
+     "category": "Short duration",
+     "r1y": 7.4,
+     "r3m": 1.8,
+     "r6m": 3.4,
+     "r3y": 7.0,
+     "rank": "6 of 22",
+     "flag": null,
+     "bname": "CRISIL Short Duration Debt",
+     "b1y": 7.6,
+     "b3m": 1.7,
+     "b6m": 3.6,
+     "bsince": 4.9
+    },
+    "mosnasdaq": {
+     "category": "International",
+     "r1y": 21.3,
+     "r3m": 6.0,
+     "r6m": 10.8,
+     "r3y": 24.9,
+     "rank": null,
+     "flag": null,
+     "bname": "Nasdaq 100 in ₹",
+     "b1y": 22.4,
+     "b3m": 6.3,
+     "b6m": 9.8,
+     "bsince": 26.1
+    }
+   }
+  },
+  "meta": {
+   "asof": "13 Nov 2026 close",
+   "source": "Sample data",
+   "eq_invested": 693064.0,
+   "eq_value": 773347.0,
+   "nifty1y": 6.4,
+   "nifty3m": 1.9,
+   "qqq1y": 19.8,
+   "qqq3m": 5.1,
+   "notes_eq": [
+    "Over the year the sample portfolio is up about 11% against the Nifty 50’s 6.4%.",
+    "Bharti Airtel and Polycab lead; Trent and Asian Paints are the drags.",
+    "GoldBEES is tracked separately as a share of the retirement corpus."
+   ],
+   "notes_mf": [
+    "Parag Parikh Flexi Cap is the anchor fund.",
+    "The multi-asset fund is earmarked for the car goal."
+   ],
+   "notes_us": [
+    "US exposure is small; the Nasdaq FoF carries most of it."
+   ],
+   "review": {
+    "done": "10 Nov 2026",
+    "next": "mid-Feb 2027",
+    "order": [
+     "LT",
+     "HDFCBANK",
+     "KAYNES"
+    ],
+    "summary": "Quarterly review done: no exits; fresh money goes to L&T, HDFC Bank and Kaynes in that order."
+   }
+  },
+  "results": {
+   "asof": "2026-11-13",
+   "season": "Q2 FY27",
+   "total": 12,
+   "declared": 12,
+   "source": "Sample data",
+   "pending": [],
+   "review": [
+    "Asian Paints: margin recovery check at Q3",
+    "Trent: same-store growth check at Q3"
+   ],
+   "rows": [
+    {
+     "ticker": "HDFCBANK",
+     "stock": "Hdfcbank",
+     "date": "2026-10-10",
+     "verdict": "Strong",
+     "action": "Hold",
+     "note": "Revenue +11%, PAT +24% (sample)."
+    },
+    {
+     "ticker": "TCS",
+     "stock": "Tcs",
+     "date": "2026-10-11",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +24%, PAT +25% (sample)."
+    },
+    {
+     "ticker": "RELIANCE",
+     "stock": "Reliance",
+     "date": "2026-10-12",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +18%, PAT +-5% (sample)."
+    },
+    {
+     "ticker": "BHARTIARTL",
+     "stock": "Bhartiartl",
+     "date": "2026-10-13",
+     "verdict": "Mixed",
+     "action": "Hold",
+     "note": "Revenue +6%, PAT +12% (sample)."
+    },
+    {
+     "ticker": "ASIANPAINT",
+     "stock": "Asianpaint",
+     "date": "2026-10-14",
+     "verdict": "Strong",
+     "action": "Hold",
+     "note": "Revenue +11%, PAT +19% (sample)."
+    },
+    {
+     "ticker": "LT",
+     "stock": "Lt",
+     "date": "2026-10-15",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +26%, PAT +9% (sample)."
+    },
+    {
+     "ticker": "POLYCAB",
+     "stock": "Polycab",
+     "date": "2026-10-16",
+     "verdict": "Weak",
+     "action": "Hold",
+     "note": "Revenue +13%, PAT +31% (sample)."
+    },
+    {
+     "ticker": "PERSISTENT",
+     "stock": "Persistent",
+     "date": "2026-10-17",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +15%, PAT +24% (sample)."
+    },
+    {
+     "ticker": "TRENT",
+     "stock": "Trent",
+     "date": "2026-10-18",
+     "verdict": "Mixed",
+     "action": "Hold",
+     "note": "Revenue +21%, PAT +27% (sample)."
+    },
+    {
+     "ticker": "CDSL",
+     "stock": "Cdsl",
+     "date": "2026-10-19",
+     "verdict": "Strong",
+     "action": "Hold",
+     "note": "Revenue +15%, PAT +21% (sample)."
+    },
+    {
+     "ticker": "KAYNES",
+     "stock": "Kaynes",
+     "date": "2026-10-20",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +27%, PAT +29% (sample)."
+    },
+    {
+     "ticker": "APOLLOHOSP",
+     "stock": "Apollohosp",
+     "date": "2026-10-21",
+     "verdict": "Solid",
+     "action": "Hold",
+     "note": "Revenue +14%, PAT +16% (sample)."
+    }
+   ]
+  },
+  "watch": {
+   "asof": "13 Nov 2026",
+   "source": "Sample data",
+   "research_note": "Add research reports you read here.",
+   "reports": [
+    {
+     "date": "2 Oct 2026",
+     "title": "Broker note: Dixon Q2 preview",
+     "take": "Watch only"
+    }
+   ],
+   "rows": [
+    {
+     "ticker": "DIXON",
+     "name": "Dixon Technologies",
+     "sector": "Electronics",
+     "qvgm": "15/20",
+     "lo": 13500,
+     "hi": 14500,
+     "ltp": 15880,
+     "status": "Wait",
+     "note": "Entry zone below current price"
+    },
+    {
+     "ticker": "HAL",
+     "name": "Hindustan Aeronautics",
+     "sector": "Defence",
+     "qvgm": "16/20",
+     "lo": 4100,
+     "hi": 4400,
+     "ltp": 4480,
+     "status": "Near zone",
+     "note": "Order book catalyst"
+    },
+    {
+     "ticker": "ICICIGI",
+     "name": "ICICI Lombard",
+     "sector": "Insurance",
+     "qvgm": "14/20",
+     "lo": 1750,
+     "hi": 1850,
+     "ltp": 1795,
+     "status": "In zone",
+     "note": "Start small"
+    }
+   ]
+  },
+  "earnings": {
+   "method": "Simple mean and median across reported holdings (sample).",
+   "per": {
+    "HDFCBANK": {
+     "rev": 25,
+     "pat": 21,
+     "m": 14.7,
+     "dm": -1.0,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Same"
+    },
+    "TCS": {
+     "rev": 26,
+     "pat": 4,
+     "m": 15.6,
+     "dm": 1.0,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Solid → Strong"
+    },
+    "RELIANCE": {
+     "rev": 9,
+     "pat": 5,
+     "m": 24.5,
+     "dm": -0.9,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Strong → Solid"
+    },
+    "BHARTIARTL": {
+     "rev": 6,
+     "pat": 4,
+     "m": 15.2,
+     "dm": -0.6,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Strong → Solid"
+    },
+    "ASIANPAINT": {
+     "rev": 3,
+     "pat": 37,
+     "m": 20.2,
+     "dm": -0.9,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Same"
+    },
+    "LT": {
+     "rev": 20,
+     "pat": 10,
+     "m": 23.6,
+     "dm": -1.5,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "New"
+    },
+    "POLYCAB": {
+     "rev": 6,
+     "pat": -8,
+     "m": 21.1,
+     "dm": -0.1,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "New"
+    },
+    "PERSISTENT": {
+     "rev": 13,
+     "pat": 3,
+     "m": 29.3,
+     "dm": -1.0,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "New"
+    },
+    "TRENT": {
+     "rev": 6,
+     "pat": -4,
+     "m": 17.4,
+     "dm": -1.7,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Same"
+    },
+    "CDSL": {
+     "rev": 7,
+     "pat": 1,
+     "m": 26.0,
+     "dm": 1.8,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Same"
+    },
+    "KAYNES": {
+     "rev": 10,
+     "pat": -1,
+     "m": 20.7,
+     "dm": -0.3,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Solid → Strong"
+    },
+    "APOLLOHOSP": {
+     "rev": 27,
+     "pat": 25,
+     "m": 17.0,
+     "dm": 1.6,
+     "mtype": "EBITDA (consolidated)",
+     "mom": "Strong → Solid"
+    }
+   },
+   "momentum": {
+    "up": 2,
+    "down": 2,
+    "same": 6,
+    "new": 2,
+    "down_list": [
+     "Trent",
+     "Asian Paints"
+    ]
+   },
+   "notes": [
+    "Sample season summary."
+   ],
+   "quarters": [
+    {
+     "q": "Q4 FY26",
+     "status": "Final",
+     "n": 12,
+     "cov": "12 / 12",
+     "strong": 4,
+     "solid": 5,
+     "mixed": 2,
+     "weak": 1,
+     "avg_rev": 14.2,
+     "med_rev": 11.2,
+     "avg_pat": 17.5,
+     "med_pat": 13.5,
+     "avg_m": "18.4% (10)",
+     "med_m": "16.9% (10)",
+     "avg_dm": "+0.4pp (9)",
+     "breadth": "6 / 9",
+     "breadthp": 67,
+     "pat20": "5 / 12",
+     "pat20p": 42,
+     "patdec": "2 / 12"
+    },
+    {
+     "q": "Q1 FY27",
+     "status": "Final",
+     "n": 12,
+     "cov": "12 / 12",
+     "strong": 4,
+     "solid": 5,
+     "mixed": 2,
+     "weak": 1,
+     "avg_rev": 12.8,
+     "med_rev": 9.8,
+     "avg_pat": 15.1,
+     "med_pat": 11.1,
+     "avg_m": "18.4% (10)",
+     "med_m": "16.9% (10)",
+     "avg_dm": "+0.4pp (9)",
+     "breadth": "6 / 9",
+     "breadthp": 67,
+     "pat20": "5 / 12",
+     "pat20p": 42,
+     "patdec": "2 / 12"
+    },
+    {
+     "q": "Q2 FY27",
+     "status": "Final",
+     "n": 12,
+     "cov": "12 / 12",
+     "strong": 4,
+     "solid": 5,
+     "mixed": 2,
+     "weak": 1,
+     "avg_rev": 13.6,
+     "med_rev": 10.6,
+     "avg_pat": 16.3,
+     "med_pat": 12.3,
+     "avg_m": "18.4% (10)",
+     "med_m": "16.9% (10)",
+     "avg_dm": "+0.4pp (9)",
+     "breadth": "6 / 9",
+     "breadthp": 67,
+     "pat20": "5 / 12",
+     "pat20p": 42,
+     "patdec": "2 / 12"
+    }
+   ]
+  },
+  "returns": {
+   "asof": "2026-11-13",
+   "mf_asof": "2026-11-13",
+   "basis": "Sample buy lots",
+   "basis_mf": "Sample SIP cash flows",
+   "lots": {
+    "HDFCBANK": [
+     [
+      "2024-01-14",
+      10,
+      1465.35
+     ],
+     [
+      "2024-03-08",
+      12,
+      1383.45
+     ],
+     [
+      "2024-04-21",
+      13,
+      1394.46
+     ],
+     [
+      "2026-08-10",
+      13,
+      1341.66
+     ],
+     [
+      "2026-10-02",
+      12,
+      1512.45
+     ]
+    ],
+    "TCS": [
+     [
+      "2024-05-26",
+      6,
+      3862.61
+     ],
+     [
+      "2024-11-05",
+      4,
+      3948.14
+     ],
+     [
+      "2025-12-28",
+      6,
+      3616.44
+     ],
+     [
+      "2026-04-14",
+      6,
+      3368.79
+     ]
+    ],
+    "RELIANCE": [
+     [
+      "2024-03-26",
+      14,
+      1211.52
+     ],
+     [
+      "2026-05-15",
+      16,
+      1165.34
+     ],
+     [
+      "2026-05-23",
+      15,
+      1235.43
+     ]
+    ],
+    "BHARTIARTL": [
+     [
+      "2024-04-22",
+      9,
+      1440.71
+     ],
+     [
+      "2025-12-11",
+      8,
+      1378.0
+     ],
+     [
+      "2026-08-15",
+      10,
+      1236.72
+     ],
+     [
+      "2026-10-01",
+      11,
+      1484.88
+     ]
+    ],
+    "ASIANPAINT": [
+     [
+      "2024-03-16",
+      7,
+      2911.0
+     ],
+     [
+      "2024-08-12",
+      6,
+      2846.84
+     ],
+     [
+      "2025-03-19",
+      6,
+      2862.81
+     ],
+     [
+      "2025-11-04",
+      6,
+      3107.49
+     ]
+    ],
+    "LT": [
+     [
+      "2025-02-25",
+      5,
+      3236.76
+     ],
+     [
+      "2026-01-15",
+      4,
+      3028.12
+     ],
+     [
+      "2026-01-22",
+      5,
+      3543.78
+     ],
+     [
+      "2026-08-10",
+      4,
+      3407.31
+     ]
+    ],
+    "POLYCAB": [
+     [
+      "2024-04-17",
+      1,
+      5445.19
+     ],
+     [
+      "2025-02-01",
+      3,
+      6129.92
+     ],
+     [
+      "2026-03-10",
+      2,
+      5530.69
+     ],
+     [
+      "2026-04-23",
+      1,
+      5217.38
+     ],
+     [
+      "2026-08-25",
+      2,
+      5097.81
+     ]
+    ],
+    "PERSISTENT": [
+     [
+      "2024-08-04",
+      3,
+      4941.8
+     ],
+     [
+      "2025-02-08",
+      5,
+      5272.57
+     ]
+    ],
+    "TRENT": [
+     [
+      "2024-07-07",
+      4,
+      6397.8
+     ],
+     [
+      "2025-08-08",
+      3,
+      5849.01
+     ],
+     [
+      "2026-05-17",
+      3,
+      6142.39
+     ]
+    ],
+    "CDSL": [
+     [
+      "2025-01-10",
+      11,
+      1348.32
+     ],
+     [
+      "2025-07-11",
+      9,
+      1402.04
+     ],
+     [
+      "2026-10-22",
+      10,
+      1287.33
+     ]
+    ],
+    "KAYNES": [
+     [
+      "2025-08-11",
+      3,
+      4617.86
+     ],
+     [
+      "2026-04-19",
+      1,
+      4199.35
+     ],
+     [
+      "2026-08-12",
+      2,
+      4155.9
+     ]
+    ],
+    "APOLLOHOSP": [
+     [
+      "2024-09-15",
+      1,
+      5779.64
+     ],
+     [
+      "2025-01-05",
+      1,
+      6402.93
+     ],
+     [
+      "2025-02-28",
+      3,
+      6841.65
+     ],
+     [
+      "2025-11-26",
+      1,
+      6810.56
+     ],
+     [
+      "2025-12-16",
+      1,
+      6662.69
+     ]
+    ],
+    "GOLDBEES": [
+     [
+      "2024-06-28",
+      140,
+      66.44
+     ],
+     [
+      "2025-10-23",
+      140,
+      62.88
+     ],
+     [
+      "2026-03-03",
+      140,
+      63.81
+     ]
+    ]
+   },
+   "us": {
+    "basis": "Sample",
+    "lots": {
+     "META": [
+      [
+       "2025-03-12",
+       61.6,
+       520.54
+      ],
+      [
+       "2025-09-08",
+       61.6,
+       563.408
+      ]
+     ],
+     "COST": [
+      [
+       "2025-03-12",
+       35.2,
+       786.335
+      ],
+      [
+       "2025-09-08",
+       35.2,
+       851.0920000000001
+      ]
+     ],
+     "V": [
+      [
+       "2025-03-12",
+       45.0,
+       291.29499999999996
+      ],
+      [
+       "2025-09-08",
+       45.0,
+       315.284
+      ]
+     ]
+    }
+   },
+   "mf": {
+    "ppfas": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -102000
+      ],
+      [
+       "2024-01-05",
+       -6000
+      ],
+      [
+       "2024-02-05",
+       -6000
+      ],
+      [
+       "2024-03-05",
+       -6000
+      ],
+      [
+       "2024-04-05",
+       -6000
+      ],
+      [
+       "2024-05-05",
+       -6000
+      ],
+      [
+       "2024-06-05",
+       -6000
+      ],
+      [
+       "2024-07-05",
+       -6000
+      ],
+      [
+       "2024-08-05",
+       -6000
+      ],
+      [
+       "2024-09-05",
+       -6000
+      ],
+      [
+       "2024-10-05",
+       -6000
+      ],
+      [
+       "2024-11-05",
+       -6000
+      ],
+      [
+       "2024-12-05",
+       -6000
+      ],
+      [
+       "2025-01-05",
+       -6000
+      ],
+      [
+       "2025-02-05",
+       -6000
+      ],
+      [
+       "2025-03-05",
+       -6000
+      ],
+      [
+       "2025-04-05",
+       -6000
+      ],
+      [
+       "2025-05-05",
+       -6000
+      ],
+      [
+       "2025-06-05",
+       -6000
+      ],
+      [
+       "2025-07-05",
+       -6000
+      ],
+      [
+       "2025-08-05",
+       -6000
+      ],
+      [
+       "2025-09-05",
+       -6000
+      ],
+      [
+       "2025-10-05",
+       -6000
+      ],
+      [
+       "2025-11-05",
+       -6000
+      ],
+      [
+       "2025-12-05",
+       -6000
+      ],
+      [
+       "2026-01-05",
+       -6000
+      ],
+      [
+       "2026-02-05",
+       -6000
+      ],
+      [
+       "2026-03-05",
+       -6000
+      ],
+      [
+       "2026-04-05",
+       -6000
+      ],
+      [
+       "2026-05-05",
+       -6000
+      ],
+      [
+       "2026-06-05",
+       -6000
+      ],
+      [
+       "2026-07-05",
+       -6000
+      ],
+      [
+       "2026-08-05",
+       -6000
+      ],
+      [
+       "2026-09-05",
+       -6000
+      ],
+      [
+       "2026-10-05",
+       -6000
+      ],
+      [
+       "2026-11-05",
+       -6000
+      ]
+     ],
+     "cost": 312000,
+     "mv": 368400
+    },
+    "hdfcmid": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -28000
+      ],
+      [
+       "2024-01-05",
+       -4000
+      ],
+      [
+       "2024-02-05",
+       -4000
+      ],
+      [
+       "2024-03-05",
+       -4000
+      ],
+      [
+       "2024-04-05",
+       -4000
+      ],
+      [
+       "2024-05-05",
+       -4000
+      ],
+      [
+       "2024-06-05",
+       -4000
+      ],
+      [
+       "2024-07-05",
+       -4000
+      ],
+      [
+       "2024-08-05",
+       -4000
+      ],
+      [
+       "2024-09-05",
+       -4000
+      ],
+      [
+       "2024-10-05",
+       -4000
+      ],
+      [
+       "2024-11-05",
+       -4000
+      ],
+      [
+       "2024-12-05",
+       -4000
+      ],
+      [
+       "2025-01-05",
+       -4000
+      ],
+      [
+       "2025-02-05",
+       -4000
+      ],
+      [
+       "2025-03-05",
+       -4000
+      ],
+      [
+       "2025-04-05",
+       -4000
+      ],
+      [
+       "2025-05-05",
+       -4000
+      ],
+      [
+       "2025-06-05",
+       -4000
+      ],
+      [
+       "2025-07-05",
+       -4000
+      ],
+      [
+       "2025-08-05",
+       -4000
+      ],
+      [
+       "2025-09-05",
+       -4000
+      ],
+      [
+       "2025-10-05",
+       -4000
+      ],
+      [
+       "2025-11-05",
+       -4000
+      ],
+      [
+       "2025-12-05",
+       -4000
+      ],
+      [
+       "2026-01-05",
+       -4000
+      ],
+      [
+       "2026-02-05",
+       -4000
+      ],
+      [
+       "2026-03-05",
+       -4000
+      ],
+      [
+       "2026-04-05",
+       -4000
+      ],
+      [
+       "2026-05-05",
+       -4000
+      ],
+      [
+       "2026-06-05",
+       -4000
+      ],
+      [
+       "2026-07-05",
+       -4000
+      ],
+      [
+       "2026-08-05",
+       -4000
+      ],
+      [
+       "2026-09-05",
+       -4000
+      ],
+      [
+       "2026-10-05",
+       -4000
+      ],
+      [
+       "2026-11-05",
+       -4000
+      ]
+     ],
+     "cost": 168000,
+     "mv": 201300
+    },
+    "axissmall": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -26000
+      ],
+      [
+       "2024-01-05",
+       -2000
+      ],
+      [
+       "2024-02-05",
+       -2000
+      ],
+      [
+       "2024-03-05",
+       -2000
+      ],
+      [
+       "2024-04-05",
+       -2000
+      ],
+      [
+       "2024-05-05",
+       -2000
+      ],
+      [
+       "2024-06-05",
+       -2000
+      ],
+      [
+       "2024-07-05",
+       -2000
+      ],
+      [
+       "2024-08-05",
+       -2000
+      ],
+      [
+       "2024-09-05",
+       -2000
+      ],
+      [
+       "2024-10-05",
+       -2000
+      ],
+      [
+       "2024-11-05",
+       -2000
+      ],
+      [
+       "2024-12-05",
+       -2000
+      ],
+      [
+       "2025-01-05",
+       -2000
+      ],
+      [
+       "2025-02-05",
+       -2000
+      ],
+      [
+       "2025-03-05",
+       -2000
+      ],
+      [
+       "2025-04-05",
+       -2000
+      ],
+      [
+       "2025-05-05",
+       -2000
+      ],
+      [
+       "2025-06-05",
+       -2000
+      ],
+      [
+       "2025-07-05",
+       -2000
+      ],
+      [
+       "2025-08-05",
+       -2000
+      ],
+      [
+       "2025-09-05",
+       -2000
+      ],
+      [
+       "2025-10-05",
+       -2000
+      ],
+      [
+       "2025-11-05",
+       -2000
+      ],
+      [
+       "2025-12-05",
+       -2000
+      ],
+      [
+       "2026-01-05",
+       -2000
+      ],
+      [
+       "2026-02-05",
+       -2000
+      ],
+      [
+       "2026-03-05",
+       -2000
+      ],
+      [
+       "2026-04-05",
+       -2000
+      ],
+      [
+       "2026-05-05",
+       -2000
+      ],
+      [
+       "2026-06-05",
+       -2000
+      ],
+      [
+       "2026-07-05",
+       -2000
+      ],
+      [
+       "2026-08-05",
+       -2000
+      ],
+      [
+       "2026-09-05",
+       -2000
+      ],
+      [
+       "2026-10-05",
+       -2000
+      ],
+      [
+       "2026-11-05",
+       -2000
+      ]
+     ],
+     "cost": 96000,
+     "mv": 104250
+    },
+    "iciciasset": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -2500
+      ],
+      [
+       "2024-01-05",
+       -4500
+      ],
+      [
+       "2024-02-05",
+       -4500
+      ],
+      [
+       "2024-03-05",
+       -4500
+      ],
+      [
+       "2024-04-05",
+       -4500
+      ],
+      [
+       "2024-05-05",
+       -4500
+      ],
+      [
+       "2024-06-05",
+       -4500
+      ],
+      [
+       "2024-07-05",
+       -4500
+      ],
+      [
+       "2024-08-05",
+       -4500
+      ],
+      [
+       "2024-09-05",
+       -4500
+      ],
+      [
+       "2024-10-05",
+       -4500
+      ],
+      [
+       "2024-11-05",
+       -4500
+      ],
+      [
+       "2024-12-05",
+       -4500
+      ],
+      [
+       "2025-01-05",
+       -4500
+      ],
+      [
+       "2025-02-05",
+       -4500
+      ],
+      [
+       "2025-03-05",
+       -4500
+      ],
+      [
+       "2025-04-05",
+       -4500
+      ],
+      [
+       "2025-05-05",
+       -4500
+      ],
+      [
+       "2025-06-05",
+       -4500
+      ],
+      [
+       "2025-07-05",
+       -4500
+      ],
+      [
+       "2025-08-05",
+       -4500
+      ],
+      [
+       "2025-09-05",
+       -4500
+      ],
+      [
+       "2025-10-05",
+       -4500
+      ],
+      [
+       "2025-11-05",
+       -4500
+      ],
+      [
+       "2025-12-05",
+       -4500
+      ],
+      [
+       "2026-01-05",
+       -4500
+      ],
+      [
+       "2026-02-05",
+       -4500
+      ],
+      [
+       "2026-03-05",
+       -4500
+      ],
+      [
+       "2026-04-05",
+       -4500
+      ]
+     ],
+     "cost": 128500,
+     "mv": 138200
+    },
+    "hdfcst": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -5000
+      ],
+      [
+       "2024-01-05",
+       -5000
+      ],
+      [
+       "2024-02-05",
+       -5000
+      ],
+      [
+       "2024-03-05",
+       -5000
+      ],
+      [
+       "2024-04-05",
+       -5000
+      ],
+      [
+       "2024-05-05",
+       -5000
+      ],
+      [
+       "2024-06-05",
+       -5000
+      ],
+      [
+       "2024-07-05",
+       -5000
+      ],
+      [
+       "2024-08-05",
+       -5000
+      ],
+      [
+       "2024-09-05",
+       -5000
+      ],
+      [
+       "2024-10-05",
+       -5000
+      ],
+      [
+       "2024-11-05",
+       -5000
+      ]
+     ],
+     "cost": 60000,
+     "mv": 63120
+    },
+    "mosnasdaq": {
+     "cfs": [
+      [
+       "2024-01-01",
+       -21500
+      ],
+      [
+       "2024-01-05",
+       -1500
+      ],
+      [
+       "2024-02-05",
+       -1500
+      ],
+      [
+       "2024-03-05",
+       -1500
+      ],
+      [
+       "2024-04-05",
+       -1500
+      ],
+      [
+       "2024-05-05",
+       -1500
+      ],
+      [
+       "2024-06-05",
+       -1500
+      ],
+      [
+       "2024-07-05",
+       -1500
+      ],
+      [
+       "2024-08-05",
+       -1500
+      ],
+      [
+       "2024-09-05",
+       -1500
+      ],
+      [
+       "2024-10-05",
+       -1500
+      ],
+      [
+       "2024-11-05",
+       -1500
+      ],
+      [
+       "2024-12-05",
+       -1500
+      ],
+      [
+       "2025-01-05",
+       -1500
+      ],
+      [
+       "2025-02-05",
+       -1500
+      ],
+      [
+       "2025-03-05",
+       -1500
+      ],
+      [
+       "2025-04-05",
+       -1500
+      ],
+      [
+       "2025-05-05",
+       -1500
+      ],
+      [
+       "2025-06-05",
+       -1500
+      ],
+      [
+       "2025-07-05",
+       -1500
+      ],
+      [
+       "2025-08-05",
+       -1500
+      ],
+      [
+       "2025-09-05",
+       -1500
+      ],
+      [
+       "2025-10-05",
+       -1500
+      ],
+      [
+       "2025-11-05",
+       -1500
+      ],
+      [
+       "2025-12-05",
+       -1500
+      ],
+      [
+       "2026-01-05",
+       -1500
+      ],
+      [
+       "2026-02-05",
+       -1500
+      ],
+      [
+       "2026-03-05",
+       -1500
+      ],
+      [
+       "2026-04-05",
+       -1500
+      ],
+      [
+       "2026-05-05",
+       -1500
+      ],
+      [
+       "2026-06-05",
+       -1500
+      ],
+      [
+       "2026-07-05",
+       -1500
+      ],
+      [
+       "2026-08-05",
+       -1500
+      ],
+      [
+       "2026-09-05",
+       -1500
+      ],
+      [
+       "2026-10-05",
+       -1500
+      ],
+      [
+       "2026-11-05",
+       -1500
+      ]
+     ],
+     "cost": 74000,
+     "mv": 92650
+    }
+   },
+   "nps": {
+    "basis": "Sample",
+    "cfs": [
+     [
+      "2025-04-05",
+      -12000
+     ],
+     [
+      "2026-04-05",
+      -12000
+     ]
+    ]
+   },
+   "mf_lifetime": {
+    "label": "all funds since 2019 (sample)",
+    "xirr": 13.2
+   },
+   "rates": {
+    "epf": {
+     "label": "EPF declared rate",
+     "rate": 8.25
+    },
+    "ppf": {
+     "label": "PPF rate",
+     "rate": 7.1
+    },
+    "ef": {
+     "label": "Savings account",
+     "rate": 3.0
+    },
+    "hm": {
+     "label": "Savings account",
+     "rate": 3.0
+    }
+   },
+   "pending": []
+  },
+  "flows": {
+   "asof": "2026-11-13",
+   "from": "2019-01",
+   "stocks_from": "2022-01",
+   "stocks_note": "Sample: stock trades start Jan 2022.",
+   "basis": "Sample monthly flows",
+   "note": "",
+   "cols": [
+    "stock_buy",
+    "stock_sell",
+    "mf_buy",
+    "mf_sell",
+    "us_buy"
+   ],
+   "months": {
+    "2019-01": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-02": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-03": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-04": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-05": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-06": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-07": [
+     0,
+     0,
+     8000,
+     8742,
+     0
+    ],
+    "2019-08": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-09": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-10": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-11": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2019-12": [
+     0,
+     0,
+     8000,
+     0,
+     0
+    ],
+    "2020-01": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-02": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-03": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-04": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-05": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-06": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-07": [
+     0,
+     0,
+     10500,
+     6226,
+     0
+    ],
+    "2020-08": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-09": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-10": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-11": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2020-12": [
+     0,
+     0,
+     10500,
+     0,
+     0
+    ],
+    "2021-01": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-02": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-03": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-04": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-05": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-06": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-07": [
+     0,
+     0,
+     13000,
+     5188,
+     0
+    ],
+    "2021-08": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-09": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-10": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-11": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2021-12": [
+     0,
+     0,
+     13000,
+     0,
+     0
+    ],
+    "2022-01": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-02": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-03": [
+     4000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-04": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-05": [
+     0,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-06": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-07": [
+     0,
+     0,
+     15500,
+     3846,
+     0
+    ],
+    "2022-08": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-09": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-10": [
+     4000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-11": [
+     0,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2022-12": [
+     8000,
+     0,
+     15500,
+     0,
+     0
+    ],
+    "2023-01": [
+     0,
+     806,
+     18000,
+     0,
+     0
+    ],
+    "2023-02": [
+     8000,
+     0,
+     18000,
+     0,
+     0
+    ],
+    "2023-03": [
+     0,
+     237,
+     18000,
+     0,
+     0
+    ],
+    "2023-04": [
+     0,
+     459,
+     18000,
+     0,
+     0
+    ],
+    "2023-05": [
+     4000,
+     3070,
+     18000,
+     0,
+     0
+    ],
+    "2023-06": [
+     4000,
+     0,
+     18000,
+     0,
+     0
+    ],
+    "2023-07": [
+     8000,
+     4636,
+     18000,
+     2950,
+     0
+    ],
+    "2023-08": [
+     0,
+     0,
+     18000,
+     0,
+     0
+    ],
+    "2023-09": [
+     8000,
+     5076,
+     18000,
+     0,
+     0
+    ],
+    "2023-10": [
+     8000,
+     0,
+     18000,
+     0,
+     0
+    ],
+    "2023-11": [
+     8000,
+     0,
+     18000,
+     0,
+     0
+    ],
+    "2023-12": [
+     4000,
+     3764,
+     18000,
+     0,
+     0
+    ],
+    "2024-01": [
+     4000,
+     0,
+     20500,
+     0,
+     2000
+    ],
+    "2024-02": [
+     4000,
+     0,
+     20500,
+     0,
+     2000
+    ],
+    "2024-03": [
+     4000,
+     4813,
+     20500,
+     0,
+     2000
+    ],
+    "2024-04": [
+     4000,
+     5655,
+     20500,
+     0,
+     2000
+    ],
+    "2024-05": [
+     4000,
+     2474,
+     20500,
+     0,
+     2000
+    ],
+    "2024-06": [
+     0,
+     3958,
+     20500,
+     0,
+     2000
+    ],
+    "2024-07": [
+     0,
+     0,
+     20500,
+     5881,
+     2000
+    ],
+    "2024-08": [
+     8000,
+     5728,
+     20500,
+     0,
+     2000
+    ],
+    "2024-09": [
+     4000,
+     0,
+     20500,
+     0,
+     2000
+    ],
+    "2024-10": [
+     4000,
+     66,
+     20500,
+     0,
+     2000
+    ],
+    "2024-11": [
+     8000,
+     0,
+     20500,
+     0,
+     2000
+    ],
+    "2024-12": [
+     8000,
+     2344,
+     20500,
+     0,
+     2000
+    ],
+    "2025-01": [
+     0,
+     1794,
+     23000,
+     0,
+     2000
+    ],
+    "2025-02": [
+     8000,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-03": [
+     4000,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-04": [
+     0,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-05": [
+     4000,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-06": [
+     4000,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-07": [
+     4000,
+     3403,
+     23000,
+     2877,
+     2000
+    ],
+    "2025-08": [
+     0,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2025-09": [
+     4000,
+     1347,
+     23000,
+     0,
+     2000
+    ],
+    "2025-10": [
+     4000,
+     2417,
+     23000,
+     0,
+     2000
+    ],
+    "2025-11": [
+     8000,
+     943,
+     23000,
+     0,
+     2000
+    ],
+    "2025-12": [
+     4000,
+     0,
+     23000,
+     0,
+     2000
+    ],
+    "2026-01": [
+     0,
+     4565,
+     25500,
+     0,
+     2000
+    ],
+    "2026-02": [
+     4000,
+     0,
+     25500,
+     0,
+     2000
+    ],
+    "2026-03": [
+     0,
+     4395,
+     25500,
+     0,
+     2000
+    ],
+    "2026-04": [
+     0,
+     3019,
+     25500,
+     0,
+     2000
+    ],
+    "2026-05": [
+     8000,
+     4788,
+     25500,
+     0,
+     2000
+    ],
+    "2026-06": [
+     4000,
+     887,
+     25500,
+     0,
+     2000
+    ],
+    "2026-07": [
+     8000,
+     0,
+     25500,
+     410,
+     2000
+    ],
+    "2026-08": [
+     8000,
+     4997,
+     25500,
+     0,
+     2000
+    ],
+    "2026-09": [
+     0,
+     0,
+     25500,
+     0,
+     2000
+    ],
+    "2026-10": [
+     4000,
+     5318,
+     25500,
+     0,
+     2000
+    ],
+    "2026-11": [
+     4000,
+     0,
+     25500,
+     0,
+     2000
+    ]
+   }
+  },
+  "planreview": {
+   "reviews": [
+    {
+     "date": "2026-05-15",
+     "actual": 2123032,
+     "next": {
+      "date": "2026-11-15",
+      "value": 2299951
+     },
+     "proj60": 174109407,
+     "need": 190195537,
+     "end": 85,
+     "spend": 150000,
+     "path": [
+      2123,
+      2143,
+      2162,
+      2182,
+      2202,
+      2221,
+      2241,
+      2292,
+      2343,
+      2395,
+      2448,
+      2500,
+      2553,
+      2607,
+      2661,
+      2716,
+      2771,
+      2827,
+      2883,
+      2941,
+      3000,
+      3060,
+      3120,
+      3181,
+      3242,
+      3304,
+      3366,
+      3429,
+      3492,
+      3556,
+      3621,
+      3688,
+      3756,
+      3824,
+      3893,
+      3963,
+      4033,
+      4104,
+      4176,
+      4248,
+      4320,
+      4394,
+      4468,
+      4545,
+      4622,
+      4701,
+      4780,
+      4860,
+      4940,
+      5021,
+      5103,
+      5186,
+      5269,
+      5353,
+      5438,
+      5526,
+      5615,
+      5704,
+      5795,
+      5886,
+      5978,
+      6071,
+      6164,
+      6258,
+      6354,
+      6450,
+      6547,
+      6647,
+      6748,
+      6851,
+      6954,
+      7058,
+      7163,
+      7268,
+      7375,
+      7483,
+      7592,
+      7701,
+      7812,
+      7926,
+      8042,
+      8158,
+      8275,
+      8394,
+      8513,
+      8634,
+      8756,
+      8878,
+      9002,
+      9127,
+      9253,
+      9383,
+      9514,
+      9647,
+      9780,
+      9915,
+      10051,
+      10188,
+      10327,
+      10466,
+      10607,
+      10749,
+      10892,
+      11040,
+      11189,
+      11340,
+      11492,
+      11645,
+      11799,
+      11955,
+      12112,
+      12271,
+      12431,
+      12592,
+      12755,
+      12922,
+      13092,
+      13262,
+      13435,
+      13608,
+      13784,
+      13960,
+      14139,
+      14319,
+      14500,
+      14683,
+      14868,
+      15058,
+      15250,
+      15444,
+      15639,
+      15836,
+      16034,
+      16235,
+      16437,
+      16641,
+      16846,
+      17054,
+      17263,
+      17479,
+      17696,
+      17915,
+      18136,
+      18359,
+      18584,
+      18811,
+      19040,
+      19271,
+      19504,
+      19739,
+      19976,
+      20219,
+      20465,
+      20713,
+      20963,
+      21215,
+      21470,
+      21726,
+      21985,
+      22246,
+      22510,
+      22776,
+      23044,
+      23319,
+      23597,
+      23877,
+      24160,
+      24445,
+      24733,
+      25023,
+      25315,
+      25611,
+      25909,
+      26209,
+      26512,
+      26823,
+      27137,
+      27453,
+      27772,
+      28094,
+      28419,
+      28747,
+      29078,
+      29411,
+      29748,
+      30087,
+      30430,
+      30780,
+      31134,
+      31491,
+      31852,
+      32215,
+      32582,
+      32952,
+      33325,
+      33701,
+      34081,
+      34464,
+      34851,
+      35246,
+      35645,
+      36048,
+      36454,
+      36864,
+      37278,
+      37695,
+      38116,
+      38540,
+      38969,
+      39401,
+      39837,
+      40283,
+      40733,
+      41187,
+      41645,
+      42107,
+      42573,
+      43043,
+      43517,
+      43996,
+      44479,
+      44966,
+      45458,
+      45960,
+      46467,
+      46978,
+      47494,
+      48014,
+      48540,
+      49069,
+      49604,
+      50143,
+      50687,
+      51236,
+      51789,
+      52355,
+      52926,
+      53501,
+      54082,
+      54668,
+      55259,
+      55856,
+      56458,
+      57065,
+      57677,
+      58295,
+      58919,
+      59555,
+      60197,
+      60845,
+      61499,
+      62158,
+      62824,
+      63495,
+      64172,
+      64856,
+      65545,
+      66240,
+      66942,
+      67658,
+      68380,
+      69109,
+      69845,
+      70586,
+      71335,
+      72090,
+      72852,
+      73620,
+      74396,
+      75178,
+      75968,
+      76773,
+      77585,
+      78404,
+      79231,
+      80065,
+      80907,
+      81756,
+      82612,
+      83477,
+      84349,
+      85229,
+      86116,
+      87021,
+      87934,
+      88855,
+      89784,
+      90722,
+      91667,
+      92622,
+      93585,
+      94556,
+      95536,
+      96525,
+      97523,
+      98539,
+      99565,
+      100600,
+      101644,
+      102697,
+      103760,
+      104832,
+      105914,
+      107006,
+      108107,
+      109218,
+      110339,
+      111481,
+      112633,
+      113795,
+      114968,
+      116151,
+      117345,
+      118549,
+      119764,
+      120991,
+      122228,
+      123476,
+      124735,
+      126017,
+      127310,
+      128615,
+      129932,
+      131260,
+      132601,
+      133953,
+      135318,
+      136694,
+      138084,
+      139485,
+      140899,
+      142338,
+      143790,
+      145255,
+      146733,
+      148224,
+      149729,
+      151247,
+      152778,
+      154324,
+      155883,
+      157457,
+      159044,
+      160659,
+      162288,
+      163932,
+      165590,
+      167264,
+      168952,
+      170656,
+      172375,
+      174109
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "actual": 2358924,
+     "next": {
+      "date": "2027-05-14",
+      "value": 2687888
+     },
+     "proj60": 183273060,
+     "need": 192116704,
+     "end": 85,
+     "spend": 150000,
+     "path": [
+      2359,
+      2413,
+      2467,
+      2521,
+      2576,
+      2632,
+      2688,
+      2744,
+      2801,
+      2859,
+      2917,
+      2975,
+      3034,
+      3096,
+      3158,
+      3221,
+      3284,
+      3348,
+      3413,
+      3478,
+      3543,
+      3609,
+      3676,
+      3743,
+      3811,
+      3882,
+      3953,
+      4026,
+      4098,
+      4172,
+      4245,
+      4320,
+      4395,
+      4471,
+      4548,
+      4625,
+      4703,
+      4784,
+      4866,
+      4948,
+      5032,
+      5115,
+      5200,
+      5286,
+      5372,
+      5459,
+      5546,
+      5635,
+      5724,
+      5817,
+      5910,
+      6004,
+      6100,
+      6196,
+      6292,
+      6390,
+      6488,
+      6588,
+      6688,
+      6789,
+      6891,
+      6997,
+      7104,
+      7211,
+      7320,
+      7429,
+      7540,
+      7651,
+      7763,
+      7877,
+      7991,
+      8106,
+      8223,
+      8343,
+      8465,
+      8587,
+      8711,
+      8836,
+      8962,
+      9088,
+      9216,
+      9346,
+      9476,
+      9607,
+      9740,
+      9877,
+      10015,
+      10154,
+      10295,
+      10437,
+      10580,
+      10725,
+      10870,
+      11017,
+      11165,
+      11315,
+      11465,
+      11621,
+      11778,
+      11937,
+      12096,
+      12258,
+      12420,
+      12584,
+      12750,
+      12916,
+      13085,
+      13255,
+      13426,
+      13603,
+      13781,
+      13960,
+      14142,
+      14325,
+      14509,
+      14695,
+      14883,
+      15072,
+      15263,
+      15456,
+      15651,
+      15851,
+      16053,
+      16256,
+      16462,
+      16669,
+      16878,
+      17089,
+      17302,
+      17517,
+      17733,
+      17952,
+      18172,
+      18399,
+      18627,
+      18858,
+      19091,
+      19325,
+      19562,
+      19801,
+      20042,
+      20285,
+      20530,
+      20777,
+      21027,
+      21283,
+      21542,
+      21803,
+      22066,
+      22332,
+      22600,
+      22870,
+      23142,
+      23417,
+      23695,
+      23975,
+      24257,
+      24547,
+      24839,
+      25134,
+      25431,
+      25732,
+      26034,
+      26340,
+      26648,
+      26959,
+      27272,
+      27589,
+      27908,
+      28235,
+      28565,
+      28898,
+      29234,
+      29573,
+      29915,
+      30260,
+      30608,
+      30959,
+      31313,
+      31671,
+      32031,
+      32400,
+      32773,
+      33149,
+      33528,
+      33911,
+      34297,
+      34686,
+      35079,
+      35475,
+      35875,
+      36278,
+      36685,
+      37101,
+      37522,
+      37945,
+      38373,
+      38805,
+      39240,
+      39679,
+      40122,
+      40569,
+      41020,
+      41475,
+      41934,
+      42403,
+      42877,
+      43355,
+      43837,
+      44323,
+      44814,
+      45309,
+      45808,
+      46312,
+      46820,
+      47333,
+      47850,
+      48379,
+      48912,
+      49451,
+      49994,
+      50542,
+      51094,
+      51652,
+      52214,
+      52782,
+      53355,
+      53932,
+      54515,
+      55111,
+      55711,
+      56317,
+      56929,
+      57546,
+      58168,
+      58796,
+      59429,
+      60068,
+      60713,
+      61363,
+      62020,
+      62690,
+      63366,
+      64048,
+      64736,
+      65430,
+      66130,
+      66837,
+      67550,
+      68269,
+      68995,
+      69727,
+      70465,
+      71219,
+      71979,
+      72747,
+      73521,
+      74301,
+      75089,
+      75884,
+      76686,
+      77495,
+      78311,
+      79135,
+      79966,
+      80813,
+      81668,
+      82531,
+      83401,
+      84279,
+      85165,
+      86059,
+      86960,
+      87870,
+      88788,
+      89714,
+      90649,
+      91601,
+      92562,
+      93531,
+      94510,
+      95496,
+      96492,
+      97497,
+      98510,
+      99533,
+      100565,
+      101605,
+      102656,
+      103726,
+      104805,
+      105895,
+      106994,
+      108102,
+      109221,
+      110350,
+      111489,
+      112638,
+      113797,
+      114967,
+      116147,
+      117349,
+      118561,
+      119785,
+      121019,
+      122264,
+      123521,
+      124789,
+      126068,
+      127358,
+      128661,
+      129974,
+      131300,
+      132649,
+      134011,
+      135385,
+      136770,
+      138169,
+      139580,
+      141003,
+      142440,
+      143889,
+      145351,
+      146826,
+      148315,
+      149830,
+      151358,
+      152900,
+      154455,
+      156025,
+      157609,
+      159207,
+      160819,
+      162446,
+      164088,
+      165744,
+      167415,
+      169114,
+      170829,
+      172560,
+      174306,
+      176067,
+      177845,
+      179638,
+      181447,
+      183273
+     ]
+    }
+   ]
+  }
+ },
+ "trend": {
+  "2026-08-31": {
+   "date": "2026-08-31",
+   "total": 2513666,
+   "source": "weekly refresh"
+  },
+  "2026-09-30": {
+   "date": "2026-09-30",
+   "total": 2543043,
+   "source": "weekly refresh"
+  },
+  "2026-10-15": {
+   "date": "2026-10-15",
+   "total": 2577241,
+   "source": "weekly refresh"
+  },
+  "2026-10-31": {
+   "date": "2026-10-31",
+   "total": 2626788,
+   "source": "weekly refresh"
+  },
+  "2026-11-07": {
+   "date": "2026-11-07",
+   "total": 2690963,
+   "source": "weekly refresh"
+  },
+  "2026-11-13": {
+   "date": "2026-11-13",
+   "total": 2856924,
+   "source": "weekly refresh"
+  }
+ },
+ "targets": {
+  "ef": {
+   "label": "Emergency fund",
+   "order": 1,
+   "target": 300000,
+   "by": null,
+   "note": "Six months of essential spend."
+  },
+  "travel": {
+   "label": "Travel fund",
+   "order": 2,
+   "target": 200000,
+   "by": "2027-04",
+   "note": "Japan trip, April 2027.",
+   "expected_inflow": 15000,
+   "inflow_label": "Diwali bonus",
+   "in_kind": [
+    {
+     "label": "airline vouchers",
+     "value": 10000,
+     "note": "Card milestone vouchers",
+     "received": "2026-09"
+    }
+   ]
+  },
+  "networth": {
+   "label": "Total financial assets",
+   "order": 3,
+   "target": 5000000,
+   "by": null,
+   "note": "Gross."
+  },
+  "car": {
+   "label": "Car replacement fund",
+   "order": 4,
+   "target": 500000,
+   "by": null,
+   "note": "Multi-asset fund SIP.",
+   "sale_car": "car1"
+  },
+  "prepay": {
+   "label": "Loan prepayment",
+   "order": 5,
+   "target": 12000,
+   "by": "2026-12",
+   "current": 6000,
+   "manual": true,
+   "note": "Set aside ₹1,000 a month."
+  }
+ },
+ "actions": {
+  "a01": {
+   "item": "Pay Amex bill",
+   "amount": 21450,
+   "due": "2026-11-21",
+   "month": "2026-11",
+   "status": "To do",
+   "done": false
+  },
+  "a02": {
+   "item": "Top up PPF before the 5th",
+   "amount": 10000,
+   "due": "2026-12-05",
+   "month": "2026-11",
+   "status": "To do",
+   "done": false
+  },
+  "a03": {
+   "item": "Renew health insurance",
+   "amount": 18400,
+   "due": "2027-03-10",
+   "month": "2026-11",
+   "status": "To do",
+   "done": false
+  },
+  "a04": {
+   "item": "Check SBI Cashback cap this cycle",
+   "amount": 0,
+   "due": "2026-11-18",
+   "month": "2026-11",
+   "status": "Done",
+   "done": true
+  },
+  "a05": {
+   "item": "Book Japan flights",
+   "amount": 62000,
+   "due": "2026-12-15",
+   "month": "2026-11",
+   "status": "To do",
+   "done": false
+  }
+ },
+ "insurance": {
+  "term_personal": {
+   "order": 1,
+   "kind": "term",
+   "scope": "Personal",
+   "name": "HDFC Life Click 2 Protect",
+   "insurer": "HDFC Life",
+   "policy": "10000000001",
+   "cover": 10000000,
+   "start": "2022-03-10",
+   "end": "2060-03-09",
+   "pay_until": "2055-03-10",
+   "prem_now": 1150,
+   "prem_freq": "Monthly",
+   "prem_day": 10,
+   "autopay": true,
+   "prem_start": 15930,
+   "prem_start_freq": "Annual",
+   "nominee": "Spouse (100%)",
+   "features": [
+    "Terminal illness benefit included",
+    "Premiums waived on total disability"
+   ],
+   "early_exit": {
+    "from": "2055-03-10",
+    "to": "2058-03-09",
+    "policy_years": "34–36"
+   },
+   "history": [
+    {
+     "y": "2021-22",
+     "amt": 15930,
+     "gst": 2430,
+     "note": "Year 1, annual, incl. 18% GST"
+    },
+    {
+     "y": "2022-23",
+     "amt": 16284,
+     "gst": 2484,
+     "note": "Monthly: ₹1,357 (₹1,150 + 18% GST) × 12"
+    },
+    {
+     "y": "2023-24",
+     "amt": 16284,
+     "gst": 2484,
+     "note": "₹1,357 × 12"
+    },
+    {
+     "y": "2024-25",
+     "amt": 16284,
+     "gst": 2484,
+     "note": "₹1,357 × 12"
+    },
+    {
+     "y": "2025-26",
+     "amt": 15042,
+     "gst": 1242,
+     "note": "₹1,357 × 6 + ₹1,150 × 6, GST nil from Sep 2025"
+    },
+    {
+     "y": "2026-27",
+     "amt": 13800,
+     "gst": 0,
+     "note": "₹1,150 × 12, GST nil"
+    }
+   ]
+  },
+  "term_work": {
+   "order": 2,
+   "kind": "term",
+   "scope": "Work",
+   "name": "Employer Group Term Life",
+   "insurer": "Employer cover",
+   "cover": 4680000,
+   "cover_prev": 4440000,
+   "formula": "3 × annual CTC",
+   "start": "2026-04-01",
+   "renews": "2027-04-01",
+   "prem_now": 0,
+   "prem_freq": "Employer-paid",
+   "nominee": "Spouse (100%)",
+   "features": [
+    "Ends when you leave the employer"
+   ]
+  },
+  "health_personal": {
+   "order": 3,
+   "kind": "health",
+   "scope": "Personal",
+   "name": "HDFC ERGO Optima Secure",
+   "insurer": "HDFC ERGO",
+   "policy": "20000000002",
+   "cover": 1500000,
+   "base": 1000000,
+   "booster": 500000,
+   "safeguard": 0,
+   "copay": "0% co-pay, no room-rent cap",
+   "start": "2026-03-10",
+   "renews": "2027-03-10",
+   "prem_now": 18400,
+   "prem_freq": "Yearly",
+   "since": "2021-03-10",
+   "features": [
+    "Secure benefit doubles the base cover from day one",
+    "Restore benefit refills cover after a claim"
+   ],
+   "history": [
+    {
+     "y": "2023-24",
+     "amt": 14800,
+     "gst": 2258,
+     "note": "Optima Secure"
+    },
+    {
+     "y": "2024-25",
+     "amt": 15900,
+     "gst": 2425,
+     "note": "Optima Secure"
+    },
+    {
+     "y": "2025-26",
+     "amt": 17100,
+     "gst": 2608,
+     "note": "Optima Secure"
+    },
+    {
+     "y": "2026-27",
+     "amt": 18400,
+     "gst": 0,
+     "note": "GST exempt"
+    }
+   ]
+  },
+  "health_work": {
+   "order": 4,
+   "kind": "health",
+   "scope": "Work",
+   "name": "Employer Group Medical",
+   "insurer": "Group insurer · TPA",
+   "cover": 500000,
+   "members": "You + spouse (family floater)",
+   "start": "2026-04-01",
+   "renews": "2027-04-01",
+   "prem_now": 0,
+   "prem_freq": "Employer-paid",
+   "features": [
+    "Cashless at network hospitals via the TPA"
+   ]
+  },
+  "health_parents": {
+   "order": 5,
+   "kind": "health",
+   "scope": "Parents",
+   "name": "Care Supreme (parents)",
+   "insurer": "Care Health",
+   "policy": "30000000003",
+   "cover": 1500000,
+   "members": "Mother + father",
+   "start": "2026-01-15",
+   "renews": "2027-01-15",
+   "prem_now": 42600,
+   "prem_freq": "Yearly",
+   "nominee": "Self",
+   "features": [
+    "Pre-existing diseases covered after 3 years"
+   ]
+  }
+ },
+ "rewards": {
+  "main": {
+   "asof": "2026-11-13",
+   "source": "Sample balances",
+   "note": "₹ per point depends on how you redeem; pick a route per card (remembered in this browser). Balances can be typed in.",
+   "programs": [
+    {
+     "id": "regalia",
+     "card": "Regalia Gold",
+     "short": "Regalia Gold",
+     "unit": "RP",
+     "bal": 22215,
+     "asof": "2026-11-13",
+     "src": "November statement",
+     "rule": "2 years from earning, rolling",
+     "route": "travel",
+     "routes": [
+      {
+       "id": "travel",
+       "label": "Flights, hotels on the bank portal",
+       "v": 0.5
+      },
+      {
+       "id": "vouch",
+       "label": "Vouchers",
+       "v": 0.35
+      },
+      {
+       "id": "cash",
+       "label": "Statement cashback",
+       "v": 0.2
+      }
+     ],
+     "expiring": [
+      {
+       "date": "2027-01-31",
+       "pts": 1450,
+       "est": true
+      },
+      {
+       "date": "2027-02-28",
+       "pts": 980,
+       "est": true
+      },
+      {
+       "date": "2027-03-31",
+       "pts": 1600,
+       "est": true
+      },
+      {
+       "date": "2027-04-30",
+       "pts": 1210,
+       "est": true
+      }
+     ]
+    },
+    {
+     "id": "amex",
+     "card": "Amex MRCC",
+     "short": "Amex MRCC",
+     "unit": "MR",
+     "bal": 9400,
+     "asof": "2026-11-10",
+     "src": "Amex app",
+     "rule": "No expiry while the card is open",
+     "route": "gold",
+     "routes": [
+      {
+       "id": "gold",
+       "label": "Gold collection vouchers",
+       "v": 0.5
+      },
+      {
+       "id": "hotel",
+       "label": "Hotel transfer, approx",
+       "v": 1.2
+      },
+      {
+       "id": "cat",
+       "label": "Catalogue",
+       "v": 0.25
+      }
+     ]
+    }
+   ],
+   "redemptions": [
+    {
+     "id": "r1",
+     "date": "2026-04-28",
+     "card": "regalia",
+     "pts": 10000,
+     "kind": "booking",
+     "partner": "",
+     "ppts": null,
+     "pid": "",
+     "value": 5000,
+     "useby": ""
+    }
+   ],
+   "routing": [
+    {
+     "spend": "Default / daily",
+     "card": "Regalia Gold",
+     "ret": "4 RP per ₹150 + milestones"
+    },
+    {
+     "spend": "Monthly milestone",
+     "card": "Amex MRCC",
+     "ret": "4 spends of ₹1,500 = 1,000 bonus MR"
+    },
+    {
+     "spend": "Amazon",
+     "card": "Amazon Pay",
+     "ret": "5% Prime"
+    },
+    {
+     "spend": "Bills, online",
+     "card": "SBI Cashback",
+     "ret": "5% online, 1% offline"
+    }
+   ],
+   "watch": [
+    "Regalia dates are estimated (oldest points used first); the bank app shows the exact schedule.",
+    "Check each app’s expiring-points screen once a quarter."
+   ],
+   "points": {
+    "label": "Regalia Gold",
+    "note": "From the monthly statements.",
+    "rows": [
+     {
+      "m": "2025-12",
+      "date": "2025-12-24",
+      "open": 18200,
+      "earned": 940,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 19140
+     },
+     {
+      "m": "2026-01",
+      "date": "2026-01-24",
+      "open": 19140,
+      "earned": 1310,
+      "bonus": 300,
+      "red": 0,
+      "adj": 40,
+      "close": 20410
+     },
+     {
+      "m": "2026-02",
+      "date": "2026-02-24",
+      "open": 20410,
+      "earned": 760,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 21170
+     },
+     {
+      "m": "2026-03",
+      "date": "2026-03-24",
+      "open": 21170,
+      "earned": 1840,
+      "bonus": 600,
+      "red": 0,
+      "adj": 0,
+      "close": 23010
+     },
+     {
+      "m": "2026-04",
+      "date": "2026-04-24",
+      "open": 23010,
+      "earned": 820,
+      "bonus": 0,
+      "red": 10000,
+      "adj": 25,
+      "close": 13805
+     },
+     {
+      "m": "2026-05",
+      "date": "2026-05-24",
+      "open": 13805,
+      "earned": 1020,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 14825
+     },
+     {
+      "m": "2026-06",
+      "date": "2026-06-24",
+      "open": 14825,
+      "earned": 690,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 15515
+     },
+     {
+      "m": "2026-07",
+      "date": "2026-07-24",
+      "open": 15515,
+      "earned": 1450,
+      "bonus": 400,
+      "red": 0,
+      "adj": 0,
+      "close": 16965
+     },
+     {
+      "m": "2026-08",
+      "date": "2026-08-24",
+      "open": 16965,
+      "earned": 880,
+      "bonus": 0,
+      "red": 0,
+      "adj": 60,
+      "close": 17785
+     },
+     {
+      "m": "2026-09",
+      "date": "2026-09-24",
+      "open": 17785,
+      "earned": 1160,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 18945
+     },
+     {
+      "m": "2026-10",
+      "date": "2026-10-24",
+      "open": 18945,
+      "earned": 2240,
+      "bonus": 900,
+      "red": 0,
+      "adj": 0,
+      "close": 21185
+     },
+     {
+      "m": "2026-11",
+      "date": "2026-11-24",
+      "open": 21185,
+      "earned": 1030,
+      "bonus": 0,
+      "red": 0,
+      "adj": 0,
+      "close": 22215
+     }
+    ]
+   },
+   "cashback": {
+    "note": "Amazon Pay cashback goes to the Amazon Pay balance and is left out.",
+    "series": [
+     {
+      "key": "sbicash",
+      "label": "SBI Cashback"
+     }
+    ],
+    "rows": [
+     {
+      "m": "2025-12",
+      "sbicash": 212
+     },
+     {
+      "m": "2026-01",
+      "sbicash": 186
+     },
+     {
+      "m": "2026-02",
+      "sbicash": 240
+     },
+     {
+      "m": "2026-03",
+      "sbicash": 198
+     },
+     {
+      "m": "2026-04",
+      "sbicash": 305
+     },
+     {
+      "m": "2026-05",
+      "sbicash": 221
+     },
+     {
+      "m": "2026-06",
+      "sbicash": 176
+     },
+     {
+      "m": "2026-07",
+      "sbicash": 264
+     },
+     {
+      "m": "2026-08",
+      "sbicash": 233
+     },
+     {
+      "m": "2026-09",
+      "sbicash": 251
+     },
+     {
+      "m": "2026-10",
+      "sbicash": 318
+     },
+     {
+      "m": "2026-11",
+      "sbicash": 207
+     }
+    ]
+   }
+  }
+ },
+ "bank": {
+  "hdfc": {
+   "name": "HDFC Bank",
+   "order": 1,
+   "role": "Salary account",
+   "tag": "Salary",
+   "need": "floor",
+   "bal": 206400,
+   "asof": "2026-11-14",
+   "src": "Sample",
+   "hist": {
+    "2026-10": 197100,
+    "2026-11": 206400
+   },
+   "note": "Salary lands here; card bills are paid from it and the travel fund sits in it."
+  },
+  "axis": {
+   "name": "Axis Bank",
+   "order": 2,
+   "role": "Running account",
+   "tag": "Running",
+   "need": "float",
+   "bal": 5200,
+   "asof": "2026-11-14",
+   "src": "Sample",
+   "hist": {
+    "2026-11": 5200
+   },
+   "note": "Petty cash and card auto-debits."
+  },
+  "kotak": {
+   "name": "Kotak Bank",
+   "order": 3,
+   "role": "Emergency fund",
+   "tag": "Emergency",
+   "need": "target",
+   "target": "ef",
+   "bal": 112000,
+   "asof": "2026-11-14",
+   "src": "Sample",
+   "hist": {
+    "2026-11": 112000
+   }
+  },
+  "idfc": {
+   "name": "IDFC First Bank",
+   "order": 4,
+   "role": "Home-loan EMI account",
+   "tag": "EMI",
+   "need": "emi",
+   "loan": "home",
+   "bal": 900,
+   "asof": "2026-11-14",
+   "src": "Sample",
+   "hist": {
+    "2026-11": 900
+   },
+   "note": "EMI money is moved here after salary; the EMI is debited on the 5th."
+  },
+  "federal": {
+   "name": "Federal Bank",
+   "order": 5,
+   "role": "US investing account",
+   "tag": "US transfers",
+   "need": null,
+   "bal": 3100,
+   "asof": "2026-11-14",
+   "src": "Sample",
+   "hist": {
+    "2026-11": 3100
+   }
+  }
+ },
+ "tax": {
+  "fy2026-27": {
+   "fy": "2026-27",
+   "label": "Tax year 2026-27",
+   "regime": "new",
+   "asof": "2026-11-14",
+   "src": "Sample payslip and capital-gains reports",
+   "salary": {
+    "ytd_gross": 826000,
+    "ytd_to": "2026-10",
+    "monthly": 118000,
+    "extras_note": "",
+    "bonus": null,
+    "pt_ytd": 1400,
+    "epf_ytd": 75600
+   },
+   "tds": {
+    "months": {
+     "2026-04": 6900,
+     "2026-05": 6900,
+     "2026-06": 6900,
+     "2026-07": 6900,
+     "2026-08": 6900,
+     "2026-09": 7100,
+     "2026-10": 7100
+    },
+    "monthly_next": 7100,
+    "src": "Payslip"
+   },
+   "cg": [
+    {
+     "id": "mf",
+     "src": "Mutual funds (sample report)",
+     "asof": "2026-11-10",
+     "stcg_eq": 4200,
+     "ltcg_eq": 38600,
+     "stcg_other": 0,
+     "note": "Sample: one equity fund switched in June"
+    },
+    {
+     "id": "stocks",
+     "src": "Indian stocks (sample tax P&L)",
+     "asof": "2026-11-12",
+     "stcg_eq": -6100,
+     "ltcg_eq": 12400,
+     "note": "Sample: two sales"
+    },
+    {
+     "id": "us",
+     "src": "US stocks",
+     "asof": "2026-11-12",
+     "stcg_other": 0,
+     "ltcg_other": 0,
+     "note": "No US sales this year"
+    }
+   ],
+   "spec": {
+    "cy": -450,
+    "src": "Sample intraday (3 trades)"
+   },
+   "other": {
+    "div_in": 2800,
+    "div_us": 0,
+    "us_tax_withheld": 0,
+    "interest_sb": null
+   },
+   "losses_cf": [
+    {
+     "cat": "spec",
+     "kind": "Speculative (intraday)",
+     "amt": 6200,
+     "ay": "2025-26",
+     "fy": "2024-25",
+     "last_ay": "2029-30",
+     "note": "Sample"
+    },
+    {
+     "cat": "stcl",
+     "kind": "Short-term capital loss",
+     "amt": 9800,
+     "ay": "2026-27",
+     "fy": "2025-26",
+     "last_ay": "2034-35",
+     "note": "Sample"
+    },
+    {
+     "cat": "ltcl",
+     "kind": "Long-term capital loss",
+     "amt": 5400,
+     "ay": "2026-27",
+     "fy": "2025-26",
+     "last_ay": "2034-35",
+     "note": "Sample"
+    }
+   ],
+   "lrs": {
+    "ytd": 24000
+   },
+   "returns": [
+    {
+     "ay": "2026-27",
+     "fy": "2025-26",
+     "form": "ITR-2",
+     "filed": "2026-07-22",
+     "regime": "new",
+     "income": 1210000,
+     "tax": 0,
+     "tds": 18400,
+     "adv_tax": 0,
+     "sa_tax": 0,
+     "tcs": 0,
+     "refund": 18400,
+     "refund_got": true
+    },
+    {
+     "ay": "2025-26",
+     "fy": "2024-25",
+     "form": "ITR-1",
+     "filed": "2025-07-30",
+     "regime": "new",
+     "income": 1080000,
+     "tax": 49920,
+     "tds": 52300,
+     "adv_tax": 0,
+     "sa_tax": 0,
+     "tcs": 0,
+     "refund": 2380,
+     "refund_got": true
+    }
+   ],
+   "todo": [
+    "November payslip",
+    "Savings-account interest for the year"
+   ]
+  }
+ },
+ "inflows": {
+  "in_sample1": {
+   "date": "2026-11-12",
+   "m": "2026-11",
+   "amt": 2400,
+   "desc": "Shared dinner repaid",
+   "type": "Family reimbursement",
+   "account": "axis",
+   "status": "actual",
+   "covers_card": false,
+   "pay_m": null,
+   "added": "2026-11-12"
+  }
+ }
 }

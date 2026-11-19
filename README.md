@@ -25,6 +25,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 <tr><td><img src="docs/images/rewards.png" alt="Card rewards"></td><td><img src="docs/images/insurance.png" alt="Insurance"></td></tr>
 <tr><td><img src="docs/images/targets.png" alt="Targets"></td><td><img src="docs/images/dark.png" alt="Dark mode"></td></tr>
 <tr><td colspan="2"><img src="docs/images/cashflow.png" alt="Cash flow ahead: summary cards, monthly surplus or shortfall, salary-account buffer forecast"></td></tr>
+<tr><td colspan="2"><img src="docs/images/income.png" alt="Salary journey: CTC step chart with joins, merit increases and promotions"></td></tr>
 <tr><td><img src="docs/images/mobile.png" alt="Phone view" width="260"></td><td></td></tr>
 </table>
 
@@ -43,7 +44,7 @@ Skills follow the open `SKILL.md` format. They work in Claude (as an uploaded sk
 
 **Try it in 10 seconds:** download [`sample-dashboard.html`](skills/personal-finance-dashboard/assets/sample-dashboard.html) and open it in Chrome or Safari.
 
-**What's new in v1.6** (19-Nov-2026): card spend as full statements with money paid back as income, receipts that update bank balances, a Credit limits panel with utilisation, a 3M / 6M / 12M card-spend toggle and a redesigned Benefits view: see the [changelog](CHANGELOG.md).
+**What's new in v1.7** (20-Nov-2026): a Salary journey panel (Timeline / By year / Raises, 3Y–All), brought-forward losses applied in the tax estimate, capital-gains and losses-carried-forward bars with hover readouts, and an explicit month rule for salary and reimbursements: see the [changelog](CHANGELOG.md).
 
 ## How to use a skill
 

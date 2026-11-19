@@ -60,8 +60,18 @@ cf = (st or {}).get('cf') or {}
 if cf.get('sip_step_from') and not re.fullmatch(r'\d{4}-\d{2}', str(cf['sip_step_from'])): err('settings.main.cf.sip_step_from must be YYYY-MM or empty')
 for k in (cf.get('ovr') or {}):
     if not re.fullmatch(r'\d{4}-\d{2}', k): err(f'settings.main.cf.ovr: key {k} must be YYYY-MM')
+sj = (st or {}).get('salary_journey')
+if sj:
+    for r in sj.get('rows') or []:
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(r.get('d', ''))): err(f"settings.main.salary_journey: row date {r.get('d')} must be YYYY-MM-DD")
+        if r.get('kind') not in ('join', 'merit', 'promotion', 'restructure', 'breakup'): err(f"settings.main.salary_journey: {r.get('d')} kind must be join|merit|promotion|restructure|breakup")
+        if r.get('kind') != 'breakup' and not isinstance(r.get('ctc'), (int, float)): err(f"settings.main.salary_journey: {r.get('d')} ctc must be a number")
 for tid, t in (d.get('tax') or {}).items():
     if not re.fullmatch(r'fy\d{4}-\d{2}', tid): err(f'tax/{tid}: id must be fy<YYYY-YY>')
+    for l in t.get('losses_cf') or []:
+        if l.get('cat') not in (None, 'spec', 'stcl', 'ltcl'): err(f'tax/{tid}.losses_cf: cat must be spec|stcl|ltcl')
+        if not isinstance(l.get('amt'), (int, float)) or l['amt'] < 0: err(f'tax/{tid}.losses_cf: amt must be a non-negative number')
+        if not re.fullmatch(r'\d{4}-\d{2}', str(l.get('last_ay', ''))): warn(f'tax/{tid}.losses_cf: last_ay should be YYYY-YY')
     if t.get('regime') not in ('new', 'old'): warn(f'tax/{tid}.regime should be new or old')
     if not isinstance((t.get('salary') or {}).get('ytd_gross'), (int, float)): warn(f'tax/{tid}.salary.ytd_gross missing')
 for fid, f in (d.get('mf') or {}).items():

@@ -128,6 +128,10 @@ td select { padding: 3px 6px; }
 .dtrack{position:relative;height:12px}.dtrack::after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--muted)}.dtrack i{position:absolute;top:0;bottom:0;border-radius:5px}.dtrack i.down{right:50%;background:var(--accent)}.dtrack i.up{left:50%;background:var(--saffron)}.drv-note{font-style:italic;color:var(--muted);margin:2px 0 0}
 .oneoff{border-top:1px solid var(--line);padding-top:8px}.oneoff>summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none}.oneoff>summary::-webkit-details-marker{display:none}.oneoff[open] .goal-arrow{transform:rotate(225deg)}.oneoff .goal-arrow{width:7px;height:7px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}.oneoff .biglist{margin-top:6px}
 @media (max-width:460px){.inc-fields{grid-template-columns:1fr}.drow{grid-template-columns:minmax(0,7rem) minmax(0,1fr) 5.4rem}}
+.sj{margin-top:16px;display:grid;gap:12px}.sj-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:10px}.sj-head h3{margin:0}.sj-ctl{display:flex;flex-wrap:wrap;gap:8px}.sj-legend .k-est{background:var(--track);border:1px dashed var(--muted)}.sj-head .seg button{padding:6px 14px}
+.sj-kpis .tile small{color:var(--muted)}.sj-kpis .sj-cagr{font-size:.85em;color:var(--muted)}@media (max-width:560px){#sj .sj-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.sj-kpis .tile .v{font-size:1.05rem}}.sj-kpis .tile .v{font-size:1.25rem}
+.sj-legend{display:flex;flex-wrap:wrap;gap:6px 16px}.sj-legend span{display:inline-flex;align-items:center;gap:6px}.sj-dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--accent)}
+.sj-dot.k-join{background:var(--c3)}.sj-dot.k-merit{background:var(--accent)}.sj-dot.k-promotion{background:var(--saffron);border-radius:2px;transform:rotate(45deg)}.sj-dot.k-restructure{background:var(--surface);border:2px solid var(--muted)}.sj-gapkey{width:18px;border-top:2px dashed var(--muted);display:inline-block}
 .inc-row { display: grid; grid-template-columns: 5rem auto minmax(0, 1fr); gap: 10px; align-items: center; }
 .inc-row.total { border-top: 1px solid var(--line); padding-top: 10px; font-weight: 600; }
 .inc-row.total .num { font-size: 1.15rem; }
@@ -162,7 +166,7 @@ td select { padding: 3px 6px; }
 .cf-kt-tip{position:absolute;left:12px;right:12px;top:calc(100% + 6px);z-index:20;padding:10px 12px;border-radius:10px;background:var(--ink);color:var(--surface);font-size:.76rem;line-height:1.45;font-weight:400;box-shadow:0 10px 24px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(-3px);transition:opacity .15s,transform .15s;pointer-events:none}.cf-kt:hover .cf-kt-tip,.cf-kt:focus-visible .cf-kt-tip,.cf-kt.tip .cf-kt-tip{opacity:1;visibility:visible;transform:none}
 .cf-hit.dim{opacity:.45}.cf-hit{transition:opacity .12s}
 @media (max-width:560px){.cf-kpis{grid-template-columns:minmax(0,1fr)}}
-.cf-minset{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);cursor:default}.cf-minbox{display:inline-flex;align-items:center;gap:2px;padding:3px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-weight:600}.cf-minbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent)}.cf-minbox input{all:unset;width:5.2em;text-align:right;font-variant-numeric:tabular-nums}.cf-lhit{cursor:pointer;outline:none}.cf-guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:0}.cf-lhit:hover .cf-guide,.cf-lhit.on .cf-guide,.cf-lhit:focus-visible .cf-guide{opacity:.7}.cf-lread{margin:4px 0 0;min-height:1.4em;color:var(--muted)}.cf-lread b{color:var(--ink);margin-right:4px}.cf-key{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:flex-start;margin:0 0 6px;font-size:.8rem;color:var(--muted)}.cf-key span{display:inline-flex;align-items:center;gap:7px;line-height:1}.cf-key svg{flex:none;display:block}.cf-rec line{stroke:var(--saffron);stroke-width:1.6;stroke-dasharray:2 3}.cf-rec line.hit{stroke:transparent;stroke-width:12;stroke-dasharray:none;cursor:help}.cf-rec text{font-size:10.5px;fill:var(--saffron);font-weight:600}.cfa-l{display:grid;gap:3px;font-size:.72rem;color:var(--muted);min-width:0}.cfa-l small{font-size:.68rem;color:var(--warn)}.cfa-l.w{grid-column:1/-1}.cfa-src{grid-column:1/-1;margin:0;font-size:.72rem;color:var(--muted)}.cfa-act .cfa-del{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}.cf-li.cf-osub{border-top:1px dashed var(--line);padding-top:6px}.cf-lt{font-style:normal;display:inline-flex;align-items:center;gap:2px}.cf-oi{padding-left:10px}.cf-lk{font-size:.75rem;margin-left:5px;color:var(--accent)}
+.cf-minset{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);cursor:default}.cf-minbox{display:inline-flex;align-items:center;gap:2px;padding:3px 8px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-weight:600}.cf-minbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent)}.cf-minbox input{all:unset;width:5.2em;text-align:right;font-variant-numeric:tabular-nums}.cf-lhit{cursor:pointer;outline:none}.cf-guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;opacity:0}.cf-lhit:hover .cf-guide,.cf-lhit.on .cf-guide,.cf-lhit:focus-visible .cf-guide{opacity:.7}.cf-lread{margin:4px 0 0;min-height:1.4em;color:var(--muted)}.cf-lread b{color:var(--ink);margin-right:4px}.cf-key{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:flex-start;margin:0 0 6px;font-size:.8rem;color:var(--muted)}.cf-key span{display:inline-flex;align-items:center;gap:7px;line-height:1}.cf-key svg{flex:none;display:block}.cf-rec line{stroke:var(--saffron);stroke-width:1.6;stroke-dasharray:2 3}.cf-rec line.hit{stroke:transparent;stroke-width:12;stroke-dasharray:none;cursor:help}.cf-rec text{font-size:10.5px;fill:var(--saffron);font-weight:600}.cfa-l{display:grid;gap:3px;font-size:.72rem;color:var(--muted);min-width:0}.cfa-l small{font-size:.68rem;color:var(--warn)}.cfa-l.w{grid-column:1/-1}.cfa-src{grid-column:1/-1;margin:0;font-size:.72rem;color:var(--muted)}.cfa-act .cfa-del{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}.cf-li.cf-osub{border-top:1px dashed var(--line);padding-top:6px}.cf-lt{font-style:normal;display:inline-flex;align-items:center;gap:2px}.cf-oi{padding-left:10px}.cf-oi>span:first-child{flex:1;min-width:0}.cf-oi>.cf-pen{order:2;margin-left:-4px}.cf-oi>b{order:3;margin-left:0}.cf-lk{font-size:.75rem;margin-left:5px;color:var(--accent)}
 .cf-amt{width:7.2em;text-align:right;font:inherit;font-size:.85rem;font-weight:600;font-variant-numeric:tabular-nums;padding:3px 7px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}.cf-amt:disabled{border-color:transparent;background:transparent;color:var(--ink)}.cf-x{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:1rem;padding:0 4px}.cf-addbtn,.cf-calc,.cf-savefc{font:inherit;font-size:.82rem;padding:5px 10px;border:1px dashed var(--line);border-radius:7px;background:transparent;color:var(--accent);cursor:pointer;text-align:left}.cf-calc{border-style:solid}.cf-calcbox{line-height:1.5;color:var(--muted)}
 .cf-addf{display:grid;grid-template-columns:1fr 1fr;gap:6px}.cf-addf input,.cf-addf select{font:inherit;font-size:.8rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0}.cfa-cov{grid-column:1/-1;font-size:.78rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.cfa-act{grid-column:1/-1;display:flex;gap:6px}.cfa-act button,.cf-dact button{font:inherit;font-size:.82rem;padding:5px 12px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:var(--surface);cursor:pointer}.cfa-act .ghost,.cf-dact .ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .cf-net{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;font-size:1rem}.cf-net.up{background:color-mix(in srgb,var(--good) 12%,transparent);color:var(--good)}.cf-net.dn{background:color-mix(in srgb,var(--bad) 12%,transparent);color:var(--bad)}.cf-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;margin-top:12px}.cf-link b{color:var(--accent)}.cf-pen{border:0;background:transparent;color:var(--accent);cursor:pointer;padding:0 3px}
@@ -210,10 +214,12 @@ button.comp:hover { border-color: var(--gc); }
 .collapse .goal-arrow { width: 7px; height: 7px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); flex: none; }
 .collapse[open] .goal-arrow { transform: rotate(225deg); }
 .moments { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 521px) { .moments { grid-auto-rows: 1fr; } }
 @media (max-width: 980px) { .moments { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .moments { grid-template-columns: minmax(0, 1fr); } }
 .moment .msub{font-size:.8rem;color:var(--muted);line-height:1.3}.moment .mtag{align-self:flex-start;margin-top:auto;padding:2px 8px;font-size:.7rem!important;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:.74rem;font-weight:600}.moment .mfoot{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}.moment .mnote{font-size:.74rem;color:var(--muted)}.moment .mlink{font-size:.8rem;margin-top:auto}.moment .mrows{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:.82rem;border-top:1px solid var(--line);padding-top:6px}.moment .meter{margin-top:2px}.moment .meter.bad i{background:var(--bad)}
 .moment { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.in-snote{display:block;margin-top:2px}.in-snote:empty{display:none}
 .moment .emo { font-size: 1.05rem; line-height: 1; }
 .moment .mhead { display: flex; align-items: center; gap: 7px; }
 .moment .v { font-family: var(--mono); font-size: 1.12rem; line-height: 1.25; }
@@ -306,6 +312,7 @@ tr.clickrow{cursor:pointer}tr.clickrow:hover td{background:var(--track)}#month-t
 .pos { color: var(--good); } .neg { color: var(--bad); }
 .notes ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
 .hb { display: flex; flex-direction: column; gap: 7px; }
+.eq-split{display:flex;flex-direction:column;gap:0}.eq-half{flex:1 1 0;display:flex;flex-direction:column;min-height:fit-content}.eq-half>h3{margin-bottom:10px}.eq-half>.hb{flex:1;justify-content:space-around}.eq-half2{border-top:2px dotted var(--line);margin-top:14px;padding-top:14px}
 .mix-panel { display: flex; flex-direction: column; }
 .mix-panel #ch-mix { flex: 1; justify-content: space-evenly; gap: 12px; padding: 6px 0 4px; }
 .mix-panel #ch-mix .r { font-size: 0.9rem; }
@@ -372,7 +379,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 .shr,.hb-v small.muted,.cmix small.muted,#wealth .mixrow small em,.split-legend .pc,.mixtab td.shr{color:var(--saffron);font-weight:500;font-style:normal}.amt,.hb-v,.cmix b,#wealth .mixrow small{color:var(--ink);font-weight:600}.hb .r .num .amt{font-weight:600}
 .hbars>.hbar,.hb>.r,.div-bars>.r,.mixrow,.holdingline,main tbody>tr,.mixstack>i,.stack>i,.chg-list>.chg{transition:opacity .12s,background-color .12s}
 .hbars:hover>.hbar:not(:hover),.hb:hover>.r:not(:hover),.div-bars:hover>.r:not(:hover),#countries:hover>.mixrow:not(:hover),#heldaccounts:hover>.holdingline:not(:hover),main tbody:hover>tr:not(:hover),.chg-list:hover>.chg:not(:hover){opacity:.45}
-.mixstack:hover>i:not(:hover),.stack:hover>i:not(:hover){opacity:.45!important}#sn-bar{cursor:pointer;height:34px}#sn-bar.pick>i:not(.on){opacity:.4!important}#sn-bar>i.on{opacity:1!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}#sn-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.sn-read{margin:-8px 0 -6px;min-height:1.3em;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.sn-read b{color:var(--ink);font-weight:600}.sn-dot{display:inline-block;width:9px;height:9px;border-radius:2px}.comp.sn-on{border-color:var(--gc);box-shadow:0 0 0 1px var(--gc)}
+.mixstack:hover>i:not(:hover),.stack:hover>i:not(:hover){opacity:.45!important}#rs-bar>.rs-seg{display:flex;align-items:center;justify-content:center;overflow:hidden;font-style:normal}#rs-bar>.rs-seg{container-type:inline-size}#rs-bar .rs-seg b,#rs-bar .rs-seg em{font:inherit}@container (max-width:96px){#rs-bar .rs-seg b{display:none}}@container (max-width:50px){#rs-bar .rs-seg em{display:none}}#rs-bar .rs-seg span{color:#fff;font-size:.76rem;font-weight:600;white-space:nowrap;padding:0 4px;font-variant-numeric:tabular-nums;text-shadow:0 1px 1px rgba(0,0,0,.25)}#sn-bar{cursor:pointer;height:34px}#sn-bar.pick>i:not(.on){opacity:.4!important}#sn-bar>i.on{opacity:1!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}#sn-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.sn-read{margin:-8px 0 -6px;min-height:1.3em;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.sn-read b{color:var(--ink);font-weight:600}.sn-dot{display:inline-block;width:9px;height:9px;border-radius:2px}.comp.sn-on{border-color:var(--gc);box-shadow:0 0 0 1px var(--gc)}
 .hb>.r:hover,.div-bars>.r:hover,.mixrow:hover,.holdingline:hover,main tbody>tr:hover,.chg-list>.chg:hover{background:var(--track)}
 .hb>.r,.div-bars>.r,.mixrow,.holdingline{border-radius:6px;padding-inline:6px;margin-inline:-6px}
 .yrseg{flex:none}.yrseg button{padding:2px 5px;font-size:.66rem;text-transform:none;letter-spacing:0}.yrhead>span:first-child{overflow:hidden;text-overflow:ellipsis}.hb .r .num .shr{font-size:.86em}.yrhead{display:flex;justify-content:space-between;align-items:center;gap:6px;white-space:nowrap}.yrh{display:flex;justify-content:space-between;align-items:center;gap:8px}#yr-grid.wide{grid-template-columns:1fr}.yrctl{display:inline-flex;gap:6px;flex-wrap:wrap;align-items:center}.yrctl select{font-size:.78rem;padding:3px 6px}.yoy{font-weight:600}.bvsep{fill:var(--line)}.goldhead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:.84rem}.goldhead b{font-size:1rem}.goldhead small{color:var(--saffron);font-weight:500;margin-left:auto}.goldscale{display:grid;grid-template-columns:1fr 1fr 1fr;font-size:.7rem;color:var(--muted);margin-top:2px}.goldscale span:nth-child(2){text-align:center}.goldscale span:nth-child(3){text-align:right}#t-yr-tile{cursor:pointer}
@@ -384,7 +391,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
 .tx-cgrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:7px 0;border-top:1px solid var(--line);font-size:.86rem}.tx-cgrow:first-child{border-top:0}.tx-cgrow small{grid-column:1/-1;color:var(--muted);font-size:.74rem;line-height:1.35}.tx-cgrow b{font-family:var(--mono);font-weight:500}
 .tx-ex{display:grid;gap:4px;margin-top:8px;padding:9px 11px;border-radius:9px;background:var(--track);font-size:.82rem}.tx-ex .meter{height:7px}.tx-ex b{font-family:var(--mono);font-weight:500}
 .tx-ret{width:100%;border-collapse:collapse;font-size:.84rem}.tx-ret th{font-size:.66rem}.tx-ret td{padding:6px 8px 6px 0;border-top:1px solid var(--line)}.tx-ret td.n{text-align:right;font-family:var(--mono)}
-.tx-cf{margin-top:10px;font-size:.8rem;display:grid;gap:3px}.tx-cf .label{margin-bottom:2px}.tx-todo ul{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;font-size:.84rem}
+.cgx{grid-template-rows:auto auto auto}.cgx:hover,.cgx:focus-within{background:color-mix(in srgb,var(--accent) 6%,transparent)}.tx-cgrow{border-radius:6px;padding-inline:6px}.cgb{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;height:10px;margin:2px 0}.cgl,.cgr{display:flex;height:100%;background:var(--track)}.cgl{justify-content:flex-end;border-radius:4px 0 0 4px;border-right:1.5px solid var(--muted)}.cgr{border-radius:0 4px 4px 0}.cgs{display:block;height:100%;cursor:pointer}.cgs:hover,.cgs:focus{filter:brightness(1.18);outline:none}.cgl .cgs{background:var(--bad)}.cgr .cgs{background:var(--good)}.cgl .cgk0,.cgr .cgk0{opacity:1}.cgk1,.cgk3{opacity:.7}.cgk2{opacity:.5}.cg-read{margin:6px 0 0;min-height:1.3em}.cg-lth{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:6px}.cg-lth b{font-family:inherit!important;font-weight:600!important}.cg-lth span{color:var(--muted)}.cgm{display:flex;gap:2px;height:12px;border-radius:4px;overflow:hidden;background:var(--surface)}.cgu1{background:var(--c3)}.cgu2{background:var(--c4)}.cgu3{background:var(--c6)}.cgu4{background:var(--c5)}.cgu5{background:var(--accent)}.cgu6{background:var(--bad)}.cgu7{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c6) 45%,transparent) 0 3px,transparent 3px 6px)}.cgu8{background:color-mix(in srgb,var(--accent) 18%,var(--surface))}.cg-leg{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:.74rem;color:var(--muted)}.cg-leg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}.tx-cf{margin-top:12px;font-size:.84rem;display:grid;gap:8px}.cfr{display:grid;grid-template-columns:6.2rem minmax(0,1fr) 5.6rem;grid-template-rows:auto auto;column-gap:10px;align-items:center}.cfr .cfn{font-weight:600}.cfr .num{text-align:right}.cfb{display:flex;gap:2px;height:12px;background:var(--track);border-radius:4px;overflow:hidden}.cfs{display:block;height:100%;background:var(--accent);cursor:pointer}.cfs1{background:var(--c3)}.cfs2{background:var(--c6)}.cfs:hover,.cfs:focus{filter:brightness(1.15);outline:none}.cfy{grid-column:2/4;color:var(--muted);font-size:.76rem}.cf-read{margin:0;min-height:1.2em}.tx-calcp{display:grid;grid-template-rows:auto 1fr}.tx-calcp>#tx-calc{height:100%}.tx-calcp table.tx-calc{height:100%}.tx-cf .label{margin-bottom:2px}.tx-todo ul{margin:4px 0 0;padding-left:1.1rem;display:grid;gap:3px;font-size:.84rem}
 .tx-bars{display:flex;align-items:flex-end;gap:6px;height:110px;padding-top:6px}.tx-bars button{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;border:0;background:transparent;padding:0;cursor:pointer;color:var(--muted);font:inherit;font-size:.7rem}.tx-bars i{display:block;width:100%;max-width:38px;border-radius:5px 5px 0 0;background:var(--accent)}.tx-bars i.est{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--accent) 45%,transparent) 0 4px,transparent 4px 8px);border:1px dashed var(--accent);border-bottom:0}.tx-bars:hover button:not(:hover){opacity:.5}.tx-bars button.on{color:var(--ink);font-weight:600}
 .bkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:10px;align-items:start}.bkcard{--bc:var(--accent);position:relative;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),var(--surface) 70%);border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));border-radius:12px;padding:10px 12px;display:grid;gap:6px;min-width:0;transition:box-shadow .2s;cursor:default}.bk-top{align-items:flex-start}.bk-mono{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:var(--bc);color:#fff;font:600 .82rem var(--display);letter-spacing:.02em;flex:none}.bk-name{display:flex;align-items:center;gap:8px;min-width:0}.bk-name b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.bk-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;min-width:0}.bk-top>.bk-name{min-width:0}.bk-more{display:none;align-items:center;gap:4px;flex-wrap:wrap;font-size:.74rem;color:var(--muted);line-height:1.35;padding-top:4px;border-top:1px dashed var(--line)}.bkcard.open .bk-more{display:flex}.bk-name{cursor:pointer}.bkcard.flash{box-shadow:0 0 0 2px var(--bc)}.bk-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.bk-name{min-width:0;line-height:1.25}.bk-name b{font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bk-name small{color:var(--muted);font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bk-inp{display:inline-flex;align-items:center;gap:3px;flex:none;box-sizing:border-box;border:1px solid transparent;border-radius:8px;padding:0 7px;background:transparent;transition:border-color .12s,background-color .12s}.bk-inp:hover{border-color:color-mix(in srgb,var(--bc) 45%,var(--line))}.bk-inp:focus-within{border-color:var(--accent);background:var(--surface)}.bk-top .bk-inp input{min-width:2ch;max-width:11ch}.bk-inp i{font-style:normal;color:var(--muted);font-size:.85rem}.bk-inp input{border:0;background-color:transparent;min-width:2ch;max-width:11ch;padding:3px 0;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:1.08rem;font-weight:500;text-align:right;outline:none}.bk-inp input::placeholder{font-family:var(--body);font-size:.82rem;font-weight:400}.bk-inp svg{width:12px;height:12px;color:var(--muted);opacity:.55}.bk-inp:hover svg,.bk-inp:focus-within svg{opacity:1}.bk-need{display:flex;justify-content:space-between;align-items:center;gap:6px 8px;flex-wrap:wrap;font-size:.8rem;min-height:1.4rem}.bk-more .bk-inp{width:8rem;background:var(--bg)}.bk-more .bk-inp input{flex:1;width:auto!important;font-size:.82rem;font-weight:400}.bk-need .chip{font-size:.7rem}.chip,.act1{white-space:nowrap}.bk-meter{height:4px}.bk-meta{font-size:.72rem;color:var(--muted);display:flex;gap:4px 8px;flex-wrap:wrap}.bk-stack{height:14px;border-radius:5px}.bk-stack>i{cursor:crosshair;transition:opacity .12s}.bk-stack.hov>i:not(.on){opacity:.4}.bk-legend{display:flex;flex-wrap:wrap;gap:2px 14px}.bk-legend button{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-size:.78rem;padding:2px 4px;cursor:pointer}.bk-legend button:hover{background:var(--track)}.bk-legend button i{width:8px;height:8px;border-radius:2px}.bk-legend button em{font-style:normal;color:var(--saffron);font-weight:500}.bk-chg{font-size:.72rem}
 [data-priv] #savings .bk-inp input{color:transparent!important;caret-color:transparent;pointer-events:none;background-image:radial-gradient(circle,var(--muted) 1.6px,transparent 2px);background-size:9px 100%;background-repeat:repeat-x;background-position:right center}
@@ -555,7 +562,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         <div class="panel inc-in">
           <h3>Income</h3>
           <div class="inc-fields">
-            <label class="inc-f"><span>Salary</span><span class="inp"><i>₹</i><input id="in-salary" type="number" min="0" step="any" data-month-field="salary"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2.5l2.5 2.5L5.5 13H3v-2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><small id="in-salary-note" class="muted"></small></label>
+            <label class="inc-f"><span>Salary</span><span class="inp"><i>₹</i><input id="in-salary" type="number" min="0" step="any" data-month-field="salary"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2.5l2.5 2.5L5.5 13H3v-2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span></label>
             <label class="inc-f"><span>Other income</span><span class="inp"><i>₹</i><input id="in-other_income" type="number" min="0" step="any" data-month-field="other_income"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2.5l2.5 2.5L5.5 13H3v-2.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span></label>
           </div>
           <div class="inc-total"><span>Total income</span><b class="num" id="in-total">—</b></div><small class="muted" id="in-other"></small>
@@ -576,6 +583,12 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         <p class="small muted">Invested = SIP + direct stocks. Saved = emergency fund + goal reserve additions. EMI = all loan EMIs that month (see Loans). Spent = card bills paid this month (full statements). Income includes money received back (other money in, from Cash flow). Left = what stays in the bank.</p>
         <div class="close-row online-only"><button type="button" id="close-btn">Save this month to Notion</button><span class="small muted" id="close-msg" aria-live="polite"></span></div>
       </div>
+    </div>
+    <div class="panel sj" id="sj" hidden>
+      <div class="sj-head"><div><h3>Salary journey</h3><p class="small muted" id="sj-sub"></p></div><div class="sj-ctl"><div class="seg" id="sj-view" role="group" aria-label="Chart view"><button type="button" data-sjv="step">Timeline</button><button type="button" data-sjv="year">By year</button><button type="button" data-sjv="raise">Raises</button></div><div class="seg" id="sj-win" role="group" aria-label="Years shown"><button type="button" data-sjw="3">3Y</button><button type="button" data-sjw="5">5Y</button><button type="button" data-sjw="10">10Y</button><button type="button" data-sjw="all">All</button></div></div></div>
+      <div class="kpis sj-kpis" id="sj-kpis"></div>
+      <div class="chart" id="sj-chart"></div>
+      <div class="sj-legend small muted" id="sj-leg"><span><i class="sj-dot k-join"></i>Joined</span><span><i class="sj-dot k-merit"></i>Merit increase</span><span><i class="sj-dot k-promotion"></i>Promotion</span><span><i class="sj-dot k-restructure"></i>Restructure</span><span><i class="sj-gapkey"></i>Letters not added yet</span></div>
     </div>
   </section>
 
@@ -615,7 +628,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     <div class="pagehead"><h2>Tax</h2><span class="small muted" id="tx-sum"></span></div>
     <div class="kpis" id="tx-kpis"></div>
     <div class="grid2">
-      <div class="panel"><div class="sec-head"><h3>How the year's tax is worked out</h3><span class="small muted" id="tx-regime"></span></div><div id="tx-calc"></div></div>
+      <div class="panel tx-calcp"><div class="sec-head"><h3>How the year's tax is worked out</h3><span class="small muted" id="tx-regime"></span></div><div id="tx-calc"></div></div>
       <div class="tx-col">
         <div class="panel"><div class="sec-head"><h3>Tax deducted by month</h3><span class="small muted" id="tx-tds-sum"></span></div><div class="chart-wrap" id="tx-tds"></div><p class="chart-read small" id="tx-tds-read"></p></div>
         <div class="panel"><div class="sec-head"><h3>Past returns</h3></div><div id="tx-returns"></div><div class="tx-cf" id="tx-cf"></div></div>
@@ -690,7 +703,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       <div class="panel notes"><h3>Analyst read</h3><ul id="eq-notes"></ul></div>
       <div class="grid2">
         <div class="panel"><h3>By sector</h3><div id="eq-sector" class="hb"></div></div>
-        <div class="panel"><h3>By market cap</h3><div id="eq-cap" class="hb"></div><h3 class="sep-h">By sleeve</h3><div id="eq-sleeve" class="hb"></div></div>
+        <div class="panel eq-split"><div class="eq-half"><h3>By market cap</h3><div id="eq-cap" class="hb"></div></div><div class="eq-half eq-half2"><h3>By sleeve</h3><div id="eq-sleeve" class="hb"></div></div></div>
       </div>
       <div class="panel">
         <div class="sec-head"><h3>Return by holding</h3>
@@ -1114,7 +1127,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
       out.push(card('🌱', 'Compounding at work', g + '% from growth', 'Of your projected ₹' + (lastPlan.forecast / 1e7).toFixed(1) + ' Cr at age 60.', '<div class="meter"><i style="width:' + g + '%"></i></div><span class="mfoot"><span>Growth ' + g + '% · Contributions ' + (100 - g) + '%</span></span><span class="mnote">Based on the Retirement plan’s assumptions</span>'));
     }
     const loan = S.loans.home || {}, orig = num(st.loan_original), outst = num(loan.outstanding);
-    if (orig && outst) out.push(card('🏠', 'Home loan paid off', Math.round((1 - outst / orig) * 100) + '%', esc(short(orig - outst)) + ' of ' + esc(short(orig)) + ' principal repaid.', '<div class="meter saffron"><i style="width:' + ((1 - outst / orig) * 100) + '%"></i></div>' + (((S.loans || {}).home || {}).ends ? '<span class="small muted">Estimated end: <b>' + esc(String(S.loans.home.ends).match(/\d{4}/) ? String(S.loans.home.ends).match(/\d{4}/)[0] : S.loans.home.ends) + '</b> at the current EMI; earlier with prepayments</span>' : '') + '<a class="mlink" href="#targets">Explore extra repayments →</a>'));
+    if (orig && outst) out.push(card('🏠', 'Home loan paid off', Math.round((1 - outst / orig) * 100) + '%', esc(short(orig - outst)) + ' of ' + esc(short(orig)) + ' repaid.', '<div class="meter saffron"><i style="width:' + ((1 - outst / orig) * 100) + '%"></i></div>' + (((S.loans || {}).home || {}).ends ? '<span class="mnote">Ends <b>' + esc(String(S.loans.home.ends).match(/\d{4}/) ? String(S.loans.home.ends).match(/\d{4}/)[0] : S.loans.home.ends) + '</b> at the current EMI · <a class="mlink" href="#targets">Prepay →</a></span>' : '<a class="mlink" href="#targets">Explore extra repayments →</a>')));
     if (lastP) {
       const before = pts.filter((p) => p.date.slice(0, 7) < sel), b0 = before[before.length - 1];
       if (b0 && lastP.date.slice(0, 7) === sel) { const d = num(lastP.total) - num(b0.total); out.push(card('📈', 'Wealth added this month', (d >= 0 ? '+' : '−') + esc(short(Math.abs(d))), esc(short(b0.total)) + ' → ' + esc(short(lastP.total)) + ' since ' + esc(fmtIso(b0.date)) + '.', '<span class="mnote">Includes contributions and valuation changes.</span>')); }
@@ -1370,7 +1383,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (num(cm.emi) && !cm.emi_paid) { const day = num(st.emi_day) || 10; if (day < d) add('bad', 'Home-loan EMI not marked paid', 'bills', 0); else if (day - d <= 3) add('warn', 'EMI ' + short(cm.emi) + ' due ' + (day === d ? 'today' : 'in ' + (day - d) + 'd'), 'bills', 10); }
     // savings accounts
     try { bkList().forEach((a) => { const b = num(a.bal), n = bkNeed(a); const nm = a.name.replace(/ Bank$/, '');
-      if (b != null && n && n.v != null && !n.goal) { if (b < n.v && (!n.by || n.win)) add('bad', nm + ' short ' + short(n.v - b) + (a.need === 'emi' ? (n.l === 'Locker fee' ? ' for the April locker other_income' : ' for the ' + n.d.split(' · ')[0].replace(/ \d{4}$/, '') + ' EMI' + (n.lock ? ' + locker' : '')) : a.need === 'floor' ? ' of its floor' : ''), 'savings', 5);
+      if (b != null && n && n.v != null && !n.goal) { if (b < n.v && (!n.by || n.win)) add('bad', nm + ' short ' + short(n.v - b) + (a.need === 'emi' ? (n.l === 'Locker fee' ? ' for the locker fee' : ' for the ' + n.d.split(' · ')[0].replace(/ \d{4}$/, '') + ' EMI' + (n.lock ? ' + locker' : '')) : a.need === 'floor' ? ' of its floor' : ''), 'savings', 5);
         else if (a.need === 'floor' && b - n.v < 10000) add('warn', nm + ' only ' + short(b - n.v) + ' above its floor', 'savings', 20); }
       if (a.need !== 'locked' && a.asof && dd(a.asof) < -35) add('info', nm + ' balance is ' + (-dd(a.asof)) + ' days old', 'savings', 80); }); } catch (e) {}
     // reward points expiring within 60 days
@@ -1408,7 +1421,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
         if (a.need === 'floor') { note = b >= n.v ? 'above ' + inr(n.v) + ' floor' : 'short ' + inr(n.v - b) + ' of the floor'; cls = b < n.v ? 'bad' : (b - n.v < 10000 ? 'warn' : ''); }
         else if (a.need === 'float') note = 'above ' + inr(n.v) + ' petty cash';
         else if (a.need === 'hold') note = 'above ' + inr(n.v) + ' deposit';
-        else if (a.need === 'emi') { const what = n.l === 'Locker fee' ? 'locker other_income ' + inr(n.v) : inr(n.v) + (n.lock ? ' EMI + locker' : ' EMI');
+        else if (a.need === 'emi') { const what = n.l === 'Locker fee' ? 'locker fee ' + inr(n.v) : inr(n.v) + (n.lock ? ' EMI + locker' : ' EMI');
           note = b >= n.v ? what + ' held' : (n.win ? 'short ' + inr(n.v - b) + ' for ' + what : what + ' · top up by ' + fmtD(n.by).replace(/ \d{4}$/, '')); cls = b < n.v && n.win ? 'bad' : ''; } }
       rows.push({ a, nm, free, note, cls }); });
     const tot = rows.reduce((x, r) => x + r.free, 0), out = rows.filter((r) => r.a.need !== 'floor' && r.free > 0), mvAmt = out.reduce((x, r) => x + r.free, 0);
@@ -1577,13 +1590,137 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
   const SPLIT = [
     ['Invested', 'var(--accent)'], ['Saved', 'var(--saffron)'], ['EMI', 'var(--c3)'], ['Spent', 'var(--bad)'], ['Left in bank', 'var(--line)']
   ];
+  // v166 Salary journey: settings.main.salary_journey.rows [{d, kind join|merit|promotion|restructure|breakup, org, title, band, ctc, base, fixed, var, note}]
+  let sjWin = (() => { try { return localStorage.getItem('pf-sj-win') || 'all'; } catch (e) { return 'all'; } })();
+  const SJ_COL = { join: 'var(--c3)', merit: 'var(--accent)', promotion: 'var(--saffron)', restructure: 'var(--muted)' };
+  const SJ_LBL = { join: 'Joined', merit: 'Merit increase', promotion: 'Promotion', restructure: 'Restructure' };
+  function renderSalaryJourney() {
+    const box = $('sj'); if (!box) return;
+    const sj = set().salary_journey, all = ((sj && sj.rows) || []).filter((r) => r && r.d && num(r.ctc)).slice().sort((a, b) => a.d < b.d ? -1 : 1);
+    if (all.length < 2) { box.hidden = true; return; } box.hidden = false;
+    const pts = all.filter((r) => r.kind !== 'breakup');
+    const today = new Date(bkIso() + 'T00:00:00'), T = (d) => new Date(d + 'T00:00:00').getTime();
+    const yrs = (a, b) => (b - a) / (365.25 * 864e5);
+    const span = yrs(T(pts[0].d), today.getTime());
+    $('sj-win').querySelectorAll('[data-sjw]').forEach((b) => { const w = b.dataset.sjw; b.hidden = w !== 'all' && +w >= span + 0.5 && !(w === '10' && span > 5.5); b.classList.toggle('on', w === sjWin); });
+    if (sjWin !== 'all' && $('sj-win').querySelector('[data-sjw="' + sjWin + '"]').hidden) sjWin = 'all';
+    $('sj-win').querySelectorAll('[data-sjw]').forEach((b) => b.classList.toggle('on', b.dataset.sjw === sjWin));
+    const t1 = today.getTime(), t0w = sjWin === 'all' ? T(pts[0].d) : Math.max(T(pts[0].d), t1 - (+sjWin) * 365.25 * 864e5);
+    const vis = pts.filter((r) => T(r.d) >= t0w), prior = pts.filter((r) => T(r.d) < t0w).pop();
+    const seq = (prior ? [Object.assign({}, prior, { _carry: true })] : []).concat(vis);
+    const cur = pts[pts.length - 1], startV = num(seq[0].ctc), startT = prior ? t0w : T(seq[0].d), gy = yrs(startT, t1);
+    const cagr = gy > 0.9 && startV ? Math.pow(num(cur.ctc) / startV, 1 / gy) - 1 : null;
+    const raises = pts.map((r, i) => i && (r.kind === 'merit' || r.kind === 'promotion') ? { r, pct: num(r.ctc) / num(pts[i - 1].ctc) - 1 } : null).filter(Boolean);
+    const last = raises[raises.length - 1], promo = pts.filter((r) => r.kind === 'promotion').pop();
+    const pctS = (x) => (x >= 0 ? '+' : '') + (x * 100).toFixed(1) + '%';
+    const orgNow = cur.org, joinNow = pts.filter((r) => r.org === orgNow && r.kind === 'join').pop();
+    $('sj-sub').textContent = (cur.title || '') + (cur.band ? ' · ' + cur.band : '') + (orgNow ? ' · ' + orgNow : '') + ' · from appraisal and promotion letters';
+    const tile = (l, v, sub) => '<div class="tile"><span class="label">' + esc(l) + '</span><b class="v num">' + v + '</b><small>' + sub + '</small></div>';
+    $('sj-kpis').innerHTML =
+      tile('Current CTC', esc(inr(cur.ctc)), (num(cur.base) ? 'base ' + esc(inr(cur.base)) + ' · ' : '') + 'since ' + esc(fmtD(new Date(cur.d + 'T00:00:00')))) +
+      tile('Growth per year', cagr == null ? '—' : esc(pctS(cagr)), cagr == null ? 'needs a year of data' : esc(short(startV)) + ' → ' + esc(short(cur.ctc)) + ' over ' + gy.toFixed(1) + ' yrs (CAGR)') +
+      tile('Last raise', last ? esc(pctS(last.pct)) : '—', last ? esc(SJ_LBL[last.r.kind]) + ' · ' + esc(fmtD(new Date(last.r.d + 'T00:00:00'))) : '') +
+      tile(joinNow ? 'Since joining ' + (orgNow || '') : 'Promotion', joinNow ? (() => { const jy = yrs(T(joinNow.d), t1), jc = jy > 0.9 ? Math.pow(num(cur.ctc) / num(joinNow.ctc), 1 / jy) - 1 : null; return esc((num(cur.ctc) / num(joinNow.ctc) >= 1 ? '+' : '') + Math.round((num(cur.ctc) / num(joinNow.ctc) - 1) * 100) + '%') + (jc != null ? ' <span class="sj-cagr">(' + esc((jc * 100).toFixed(1)) + '% a year)</span>' : ''); })() : '—', joinNow ? esc(short(joinNow.ctc)) + ' on ' + esc(fmtD(new Date(joinNow.d + 'T00:00:00'))) + ' · ' + yrs(T(joinNow.d), t1).toFixed(1) + ' yrs' : '');
+    // chart: time-scaled step line of CTC
+    const el = $('sj-chart'); renderSJLegend();
+    if (sjView === 'year') return sjYear(el, pts, startT, t1, prior);
+    if (sjView === 'raise') return sjRaise(el, pts, t0w);
+    const narrow = (el.clientWidth || 640) < 520, W = narrow ? 380 : 640, H = narrow ? 250 : 240, ml = narrow ? 48 : 56, mr = narrow ? 10 : 16, mt = 18, mb = 30;
+    const xT = (t) => ml + (W - ml - mr) * (t - startT) / Math.max(1, t1 - startT);
+    const max = Math.max(...seq.map((r) => num(r.ctc))) * 1.12, ticks = niceTicks(max), top = ticks[ticks.length - 1];
+    const y = (v) => mt + (H - mt - mb) * (1 - v / top);
+    let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"><rect x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent"/>';
+    ticks.forEach((t) => { svg += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(t) + '" y2="' + y(t) + '" stroke="var(--track)"/><text x="' + (ml - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + esc(short(t)) + '</text>'; });
+    const y0 = new Date(startT).getFullYear(), y1 = today.getFullYear(), ystep = Math.max(1, Math.ceil((y1 - y0 + 1) / (narrow ? 6 : 11)));
+    for (let yy = y0 + 1; yy <= y1; yy += ystep) { const x = xT(new Date(yy + '-01-01T00:00:00').getTime()); if (x > ml + 4 && x < W - mr) svg += '<line x1="' + x + '" x2="' + x + '" y1="' + mt + '" y2="' + (H - mb) + '" stroke="var(--track)" stroke-dasharray="2 4"/><text x="' + x + '" y="' + (H - 10) + '" text-anchor="middle">' + yy + '</text>'; }
+    const xs = seq.map((r, i) => i === 0 && r._carry ? ml : xT(T(r.d)));
+    for (let i = 0; i < seq.length; i++) {
+      const xa = xs[i], xb = i + 1 < seq.length ? xs[i + 1] : W - mr, ya = y(num(seq[i].ctc)), gap = seq[i].gap_after;
+      svg += '<path d="M' + xa + ' ' + ya + 'H' + xb + (i + 1 < seq.length ? 'V' + y(num(seq[i + 1].ctc)) : '') + '" fill="none" stroke="' + (gap ? 'var(--muted)' : 'var(--accent)') + '" stroke-width="2.4"' + (gap ? ' stroke-dasharray="5 5"' : '') + '/>';
+    }
+    seq.forEach((r, i) => { const cx = xs[i], cy = y(num(r.ctc)), c = SJ_COL[r.kind] || 'var(--accent)';
+      if (r._carry) return;
+      svg += r.kind === 'promotion' ? '<rect x="' + (cx - 5.5) + '" y="' + (cy - 5.5) + '" width="11" height="11" transform="rotate(45 ' + cx + ' ' + cy + ')" fill="' + c + '" stroke="var(--surface)" stroke-width="1.5" data-i="' + i + '"/>'
+        : r.kind === 'restructure' ? '<circle cx="' + cx + '" cy="' + cy + '" r="5" fill="var(--surface)" stroke="' + c + '" stroke-width="2" data-i="' + i + '"/>'
+        : '<circle cx="' + cx + '" cy="' + cy + '" r="5" fill="' + c + '" stroke="var(--surface)" stroke-width="1.5" data-i="' + i + '"/>'; });
+    const lr = seq[seq.length - 1]; svg += '<text x="' + (W - mr) + '" y="' + (y(num(lr.ctc)) - 8) + '" text-anchor="end" class="bv">' + esc(short(lr.ctc)) + '</text>';
+    el.innerHTML = '<div class="chart-wrap">' + svg + '</svg></div><p class="small chart-read"></p>';
+    const pctOf = (i) => { const r = seq[i], k = pts.indexOf(pts.find((p) => p.d === r.d && p.kind === r.kind)); return k > 0 ? num(r.ctc) / num(pts[k - 1].ctc) - 1 : null; };
+    const line = (i) => { const r = seq[i], p = pctOf(i); return { when: fmtD(new Date(r.d + 'T00:00:00')), kind: r._carry ? 'In effect' : (SJ_LBL[r.kind] || r.kind), p, r }; };
+    scrub(el.querySelector('svg'), { xs, top: mt, bottom: H - mb, start: seq.length - 1, label: 'Salary journey',
+      ys: (i) => [[y(num(seq[i].ctc)), SJ_COL[seq[i].kind] || 'var(--accent)']],
+      tip: (i) => { const L = line(i), r = L.r; return '<small>' + esc(L.when) + ' · ' + esc(L.kind) + '</small><strong>' + esc(inr(r.ctc)) + '</strong>' + (L.p != null && !r._carry ? '<small>' + esc(pctS(L.p)) + ' vs before</small>' : '') + (r.title ? '<small>' + esc(r.title) + (r.band ? ' · ' + esc(r.band) : '') + '</small>' : '') + (num(r.base) ? '<small>Base ' + esc(inr(r.base)) + '</small>' : '') + (r.note ? '<small>' + esc(r.note) + '</small>' : ''); },
+      read: el.querySelector('.chart-read'),
+      readText: (i) => { const L = line(i), r = L.r; return '<b>' + esc(L.when) + '</b> ' + esc(L.kind) + ' · CTC ' + esc(inr(r.ctc)) + (L.p != null && !r._carry ? ' (' + esc(pctS(L.p)) + ')' : '') + (r.org ? ' <span class="muted">· ' + esc(r.org) + (r.title ? ', ' + esc(r.title) : '') + '</span>' : ''); } });
+  }
+  let sjView = (() => { try { return localStorage.getItem('pf-sj-view') || 'step'; } catch (e) { return 'step'; } })();
+  const SJ_ORG = (o) => { const os = [...new Set(((set().salary_journey || {}).rows || []).slice().sort((a, b) => String(b.d).localeCompare(String(a.d))).map((r) => r.org).filter(Boolean))]; return ['var(--accent)', 'var(--c3)', 'var(--c6)', 'var(--c5)', 'var(--c4)'][Math.max(0, Math.min(4, os.indexOf(o)))]; };
+  function renderSJLegend() {
+    $('sj-view').querySelectorAll('[data-sjv]').forEach((b) => b.classList.toggle('on', b.dataset.sjv === sjView));
+    const orgs = [...new Set(((set().salary_journey || {}).rows || []).map((r) => r.org).filter(Boolean))];
+    const L = $('sj-leg');
+    if (sjView === 'year') L.innerHTML = orgs.map((o) => '<span><i class="sj-dot" style="border-radius:2px;background:' + SJ_ORG(o) + '"></i>' + esc(o) + '</span>').join('') + '<span><i class="sj-dot k-est" style="border-radius:2px"></i>No letter that year (carried forward)</span><span>Label = change vs previous year</span>';
+    else if (sjView === 'raise') L.innerHTML = '<span><i class="sj-dot k-join"></i>Job switch</span><span><i class="sj-dot k-merit"></i>Merit increase</span><span><i class="sj-dot k-promotion" style="transform:none"></i>Promotion</span><span><i class="sj-dot k-restructure"></i>Restructure</span><span><i class="sj-dot k-est"></i>Spans missing letters</span>';
+    else L.innerHTML = '<span><i class="sj-dot k-join"></i>Joined</span><span><i class="sj-dot k-merit"></i>Merit increase</span><span><i class="sj-dot k-promotion"></i>Promotion</span><span><i class="sj-dot k-restructure"></i>Restructure</span><span><i class="sj-gapkey"></i>Letters not added yet</span>';
+  }
+  const sjAt = (pts, t) => { let r = null; for (const p of pts) { if (new Date(p.d + 'T00:00:00').getTime() <= t) r = p; else break; } return r; };
+  // By year: CTC in effect at each year end (today for the current year), coloured by employer; years with no letter are carried forward and drawn faded
+  function sjYear(el, pts, startT, t1, prior) {
+    const YN = (set().salary_journey || {}).year_notes || {};
+    const T = (d) => new Date(d + 'T00:00:00').getTime(), y0 = new Date(startT).getFullYear(), y1 = new Date(t1).getFullYear();
+    const rows = []; for (let yy = y0; yy <= y1; yy++) { const end = yy === y1 ? t1 : new Date(yy + '-12-31T00:00:00').getTime(), r = sjAt(pts, end); if (!r) continue;
+      const evs = pts.filter((p) => new Date(p.d).getFullYear() === yy), prevR = rows[rows.length - 1];
+      const gap = !evs.length && (() => { const before = pts.filter((p) => T(p.d) <= end).pop(); return !!(before && before.gap_after); })();
+      rows.push({ yy, ctc: num(r.ctc), r, evs, gap, pct: prevR ? num(r.ctc) / prevR.ctc - 1 : null, cur: yy === y1 }); }
+    const narrow = (el.clientWidth || 640) < 520, W = narrow ? 380 : 640, H = narrow ? 250 : 240, ml = narrow ? 44 : 56, mr = 8, mt = 22, mb = 26;
+    const ticks = niceTicks(Math.max(...rows.map((r) => r.ctc)) * 1.1), top = ticks[ticks.length - 1], y = (v) => mt + (H - mt - mb) * (1 - v / top);
+    const band = (W - ml - mr) / rows.length, bw = Math.min(40, band * 0.66), cx = (i) => ml + band * i + band / 2;
+    let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"><rect x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent"/>';
+    ticks.forEach((t) => { svg += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(t) + '" y2="' + y(t) + '" stroke="var(--track)"/><text x="' + (ml - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + esc(short(t)) + '</text>'; });
+    rows.forEach((r, i) => { const c = SJ_ORG(r.r.org);
+      svg += '<rect x="' + (cx(i) - bw / 2) + '" y="' + y(r.ctc) + '" width="' + bw + '" height="' + (y(0) - y(r.ctc)) + '" rx="3" fill="' + (r.gap ? 'var(--track)' : c) + '"' + (r.gap ? ' stroke="var(--muted)" stroke-dasharray="3 3"' : '') + ' data-i="' + i + '"/>';
+      if (r.pct != null && !r.gap) svg += '<text x="' + cx(i) + '" y="' + (y(r.ctc) - 6) + '" text-anchor="middle" class="bv">' + (Math.abs(r.pct) < 0.0005 ? 'Flat' : (r.pct > 0 ? '+' : '') + Math.round(r.pct * 100) + '%') + '</text>';
+      if (!narrow || i % 2 === rows.length % 2 || i === rows.length - 1) svg += '<text x="' + cx(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + (narrow ? "'" + String(r.yy).slice(2) : r.yy) + '</text>'; });
+    el.innerHTML = '<div class="chart-wrap">' + svg + '</svg></div><p class="small chart-read"></p>';
+    const evTxt = (r) => YN[r.yy] ? YN[r.yy] : r.evs.length ? r.evs.filter((e) => e.kind !== 'breakup').map((e) => (SJ_LBL[e.kind] || e.kind) + ' ' + fmtD(new Date(e.d + 'T00:00:00')).replace(/ \d{4}$/, '')).join(', ') : (r.gap ? 'no letter added for this year' : 'no change');
+    scrub(el.querySelector('svg'), { xs: rows.map((_, i) => cx(i)), band: Math.max(10, band * 0.9), top: mt - 6, bottom: H - mb, start: rows.length - 1, label: 'Salary by year',
+      tip: (i) => { const r = rows[i]; return '<small>' + r.yy + (r.cur ? ' (so far)' : ' · at year end') + '</small><strong>' + esc(inr(r.ctc)) + '</strong>' + (r.pct != null ? '<small>' + (r.pct >= 0 ? '+' : '') + (r.pct * 100).toFixed(1) + '% vs ' + (r.yy - 1) + '</small>' : '') + '<small>' + esc(r.r.org || '') + (r.r.title ? ' · ' + esc(r.r.title) : '') + '</small><small>' + esc(evTxt(r)) + '</small>'; },
+      read: el.querySelector('.chart-read'),
+      readText: (i) => { const r = rows[i]; return '<b>' + r.yy + '</b> CTC ' + esc(inr(r.ctc)) + (r.pct != null ? ' (' + (r.pct >= 0 ? '+' : '') + (r.pct * 100).toFixed(1) + '% vs ' + (r.yy - 1) + ')' : '') + ' <span class="muted">· ' + esc(evTxt(r)) + '</span>'; } });
+  }
+  // Raises: one bar per change, height = % change vs the previous CTC, colour = kind; a raise that spans missing letters is drawn faded
+  function sjRaise(el, pts, t0w) {
+    const T = (d) => new Date(d + 'T00:00:00').getTime();
+    const rows = pts.map((r, i) => i ? { r, prev: pts[i - 1], pct: num(r.ctc) / num(pts[i - 1].ctc) - 1, add: num(r.ctc) - num(pts[i - 1].ctc), span: !!pts[i - 1].gap_after } : null).filter((x) => x && T(x.r.d) >= t0w);
+    if (!rows.length) { el.innerHTML = '<p class="small muted">No raises in this window.</p>'; return; }
+    const narrow = (el.clientWidth || 640) < 520, W = narrow ? 380 : 640, H = narrow ? 250 : 240, ml = narrow ? 36 : 44, mr = 8, mt = 22, mb = 30;
+    const ticks = niceTicks(Math.max(5, ...rows.map((x) => x.pct * 100)) * 1.12).map((t) => t / 100), top = ticks[ticks.length - 1], minP = Math.min(0, ...rows.map((x) => x.pct)), lo = minP < 0 ? -Math.ceil(-minP * 100 / 5) * 5 / 100 : 0, y = (v) => mt + (H - mt - mb) * (top - v) / (top - lo);
+    if (lo < 0) ticks.unshift(lo);
+    const band = (W - ml - mr) / rows.length, bw = Math.min(34, band * 0.62), cx = (i) => ml + band * i + band / 2;
+    const col = (x) => x.r.kind === 'join' ? SJ_COL.join : x.r.kind === 'promotion' ? SJ_COL.promotion : x.r.kind === 'restructure' ? 'var(--muted)' : SJ_COL.merit;
+    let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"><rect x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent"/>';
+    ticks.forEach((t) => { svg += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(t) + '" y2="' + y(t) + '" stroke="var(--track)"/><text x="' + (ml - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end">' + Math.round(t * 100) + '%</text>'; });
+    rows.forEach((x, i) => { const c = col(x);
+      svg += '<rect x="' + (cx(i) - bw / 2) + '" y="' + Math.min(y(x.pct), y(0)) + '" width="' + bw + '" height="' + Math.max(1, Math.abs(y(0) - y(x.pct))) + '" rx="3" fill="' + (x.span ? 'var(--track)' : c) + '"' + (x.span ? ' stroke="' + c + '" stroke-dasharray="3 3"' : '') + ' data-i="' + i + '"/>';
+      svg += '<text x="' + cx(i) + '" y="' + (x.pct < 0 ? y(0) - 6 : y(x.pct) - 6) + '" text-anchor="middle" class="bv">' + (x.pct < 0 ? '−' : '') + (Math.abs(x.pct) * 100).toFixed(Math.abs(x.pct) < 0.1 ? 1 : 0) + '%</text>';
+      const d = new Date(x.r.d + 'T00:00:00'); svg += '<text x="' + cx(i) + '" y="' + (H - 16) + '" text-anchor="middle" class="xm">' + MON[d.getMonth()] + '</text><text x="' + cx(i) + '" y="' + (H - 3) + '" text-anchor="middle" class="xy">' + (narrow ? "'" + String(d.getFullYear()).slice(2) : d.getFullYear()) + '</text>'; });
+    el.innerHTML = '<div class="chart-wrap">' + svg + '</svg></div><p class="small chart-read"></p>';
+    const avg = rows.filter((x) => x.r.kind === 'merit' && !x.span), am = avg.length ? avg.reduce((a, x) => a + x.pct, 0) / avg.length : null;
+    const kindTxt = (x) => x.r.kind === 'join' ? 'Job switch to ' + (x.r.org || '') : (SJ_LBL[x.r.kind] || x.r.kind);
+    scrub(el.querySelector('svg'), { xs: rows.map((_, i) => cx(i)), band: Math.max(10, band * 0.9), top: mt - 6, bottom: H - mb, start: rows.length - 1, label: 'Raises',
+      tip: (i) => { const x = rows[i]; return '<small>' + esc(fmtD(new Date(x.r.d + 'T00:00:00'))) + ' · ' + esc(kindTxt(x)) + '</small><strong>' + (x.pct < 0 ? '−' : '+') + (Math.abs(x.pct) * 100).toFixed(1) + '%</strong><small>' + esc(short(x.prev.ctc)) + ' → ' + esc(short(x.r.ctc)) + ' (' + (x.add < 0 ? '−' : '+') + esc(inr(Math.abs(x.add))) + ' a year)</small>' + (x.r.title ? '<small>' + esc(x.r.title) + (x.r.band ? ' · ' + esc(x.r.band) : '') + '</small>' : '') + (x.span ? '<small>Spans years with no letter added</small>' : '') + (x.r.note ? '<small>' + esc(x.r.note) + '</small>' : ''); },
+      read: el.querySelector('.chart-read'),
+      readText: (i) => { const x = rows[i]; return '<b>' + esc(fmtD(new Date(x.r.d + 'T00:00:00'))) + '</b> ' + esc(kindTxt(x)) + ' · ' + (x.pct < 0 ? '−' : '+') + (Math.abs(x.pct) * 100).toFixed(1) + '% (' + (x.add < 0 ? '−' : '+') + esc(inr(Math.abs(x.add))) + ')' + (am != null ? ' <span class="muted">· average merit in view ' + (am * 100).toFixed(1) + '%</span>' : ''); } });
+  }
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('#sj-view [data-sjv]'); if (!b) return; sjView = b.dataset.sjv; try { localStorage.setItem('pf-sj-view', sjView); } catch (e) {} renderSalaryJourney(); });
+  document.addEventListener('click', (ev) => { const b = ev.target.closest('#sj-win [data-sjw]'); if (!b) return; sjWin = b.dataset.sjw; try { localStorage.setItem('pf-sj-win', sjWin); } catch (e) {} renderSalaryJourney(); });
   function renderIncome() {
     const m = M();
     const dis = !canWrite && !window.__SNAPSHOT__;
     [['in-salary', 'salary'], ['in-other_income', 'other_income']].forEach(([id, f]) => { const el = $(id); if (document.activeElement !== el) el.value = m[f] ?? ''; el.disabled = dis; });
-    $('in-salary-note').textContent = m.salary_expected ? 'Expected; replace with the actual credit' : (m.salary_note || '');
+    const salNote = m.salary_expected ? 'Salary expected; replace with the actual credit' : (m.salary_note || (() => { const mm = +sel.split('-')[1]; return 'Credited end ' + MON[(mm + 10) % 12] + ', for ' + MON[mm - 1]; })());
     const oin = otherIn(sel), inc = (num(m.salary) || 0) + (num(m.other_income) || 0) + oin;
-    $('in-total').textContent = inr(inc); { const o = $('in-other'); if (o) o.textContent = oin ? 'incl. ' + inr(oin) + ' other money in (Cash flow)' : ''; }
+    $('in-total').textContent = inr(inc); { const o = $('in-other'); if (o) o.textContent = [salNote, oin ? 'incl. ' + inr(oin) + ' other money in' : ''].filter(Boolean).join(' · '); }
     const inv = (num(m.sip) || 0) + (num(m.direct_equity) || 0);
     const saved = (num(m.ef_add) || 0) + (num(m.travel_add) || 0);
     const emi = num(m.emi) || 0, spent = cardSpend(m) || 0, princ = num(m.emi_principal) || 0;
@@ -1603,7 +1740,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     document.querySelectorAll('#split-bar [data-split], #split-legend [data-split]').forEach((bt) => bt.onclick = () => { const i = +bt.dataset.split; splitPick = splitPick === i ? null : i; renderIncome(); });
     const det = $('split-detail');
     if (splitPick == null) det.hidden = true; else { det.hidden = false; det.innerHTML = splitDetail(splitPick, m, vals, inc); }
-    renderIncChanges(m, inc, inv, spent); fitSplit();
+    renderIncChanges(m, inc, inv, spent); fitSplit(); renderSalaryJourney();
   }
 
   function health(m) {
@@ -1982,8 +2119,8 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     if (num(m.emi)) items.push({ id: 'emi', kind: 'emi', name: 'Home loan EMI', amt: num((S.loans.home || {}).emi) || num(m.emi), day: st.emi_day || 10, paid: !!m.emi_paid });
     { const lc = st.sbi_locker || {}, la = num(lc.amt) ?? 0, fb = String(lc.fund_by || '03-20').split('-');
       const un = String(lc.until || '04-02').split('-');
-      if (la && +sel.split('-')[1] === +fb[0]) items.push({ id: 'locker', kind: 'yr', flag: 'locker_paid', name: 'SBI locker other_income, yearly: move to SBI (debited in April)', amt: la, day: +fb[1], paid: !!m.locker_paid });
-      if (la && +sel.split('-')[1] === +un[0]) items.push({ id: 'locker-d', kind: 'yr', flag: 'locker_debited', name: 'SBI locker other_income debited (tick once it leaves SBI)', amt: la, day: +un[1], paid: !!m.locker_debited }); }
+      if (la && +sel.split('-')[1] === +fb[0]) items.push({ id: 'locker', kind: 'yr', flag: 'locker_paid', name: 'Locker fee, yearly: move to the EMI account', amt: la, day: +fb[1], paid: !!m.locker_paid });
+      if (la && +sel.split('-')[1] === +un[0]) items.push({ id: 'locker-d', kind: 'yr', flag: 'locker_debited', name: 'Locker fee debited (tick once it is paid)', amt: la, day: +un[1], paid: !!m.locker_debited }); }
     Object.entries(S.insurance || {}).filter(([, p]) => /month/i.test(p.prem_freq || '') && num(p.prem_now)).forEach(([k, p]) => { const f = 'ins_' + k + '_paid';
       items.push({ id: 'ins-' + k, kind: 'ins', flag: f, name: (p.kind === 'term' ? 'Term insurance' : 'Insurance') + ' (' + (p.insurer || p.name || '').replace(/ Life| Allianz/g, '') + ')', amt: num(p.prem_now), day: num(p.prem_day), paid: !!m[f] }); });
     items.sort((a, b) => (a.day || 99) - (b.day || 99));
@@ -2938,7 +3075,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const order = ['Strong', 'Solid', 'Mixed', 'Weak'], colr = { Strong: 'var(--good)', Solid: 'var(--accent)', Mixed: 'var(--warn)', Weak: 'var(--bad)' };
     $('rs-kpis').innerHTML = '<div class="tile"><span class="label">' + esc(Rr.season || '') + ' season</span><span class="v">' + rows.length + ' of ' + esc(Rr.total || '') + '</span><span class="small muted">holdings declared · as of ' + esc(dshort(Rr.asof || '2026-01-01')) + '</span></div>' +
       order.map((v) => '<div class="tile"><span class="label">' + v + '</span><span class="v" style="color:' + colr[v] + '">' + (cnt[v] || 0) + '</span><span class="small muted">' + ({ Strong: 'clear beat', Solid: 'thesis intact', Mixed: 'watch item', Weak: 'thesis pressure' })[v] + '</span></div>').join('');
-    $('rs-bar').innerHTML = order.map((v) => '<i style="width:' + ((cnt[v] || 0) / rows.length * 100) + '%;background:' + colr[v] + '" title="' + v + ': ' + (cnt[v] || 0) + '"></i>').join('');
+    $('rs-bar').innerHTML = order.filter((v) => cnt[v]).map((v) => { const pc = cnt[v] / rows.length * 100; return '<i class="rs-seg" style="width:' + pc + '%;background:' + colr[v] + '" title="' + v + ': ' + cnt[v] + ' (' + Math.round(pc) + '%)"><span><b>' + v + ' </b>' + cnt[v] + '<em> · ' + Math.round(pc) + '%</em></span></i>'; }).join('');
     $('rs-latest').innerHTML = rows.slice(0, 3).map((r) => '<div class="moment"><span class="small muted">' + esc(dshort(r.date)) + '</span><b>' + esc(r.stock) + '</b><div class="badges"><span class="chip ' + VCLS[r.verdict] + '">' + esc(r.verdict) + '</span><span class="chip ' + (ACLS[r.action] || 'info') + '">' + esc(r.action) + '</span></div><span class="small">' + esc(r.note) + '</span></div>').join('');
     $('rs-pending').innerHTML = (Rr.pending || []).map((p) => '<span class="badge off">' + esc(p.stock) + ' · ' + esc(p.date) + '</span>').join('') || '<span class="small muted">Season complete.</span>';
     $('rs-review').innerHTML = (Rr.review || []).map((x) => '<li>' + esc(x) + '</li>').join('');
@@ -3597,17 +3734,22 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     // set-off: short-term losses first against slab-rate short-term gains, then 20% STCG, then LTCG; long-term losses only against LTCG
     let stLoss = Math.max(0, -Math.min(0, stEq)) + Math.max(0, -Math.min(0, stOt)), stOtG = Math.max(0, stOt), stEqG = Math.max(0, stEq), ltG = Math.max(0, ltEq) + Math.max(0, ltOt), ltLoss = Math.max(0, -Math.min(0, ltEq)) + Math.max(0, -Math.min(0, ltOt));
     const use = (g) => { const u = Math.min(g, stLoss); stLoss -= u; return g - u; };
-    stOtG = use(stOtG); stEqG = use(stEqG); ltG = use(ltG); ltG = Math.max(0, ltG - ltLoss);
+    const ltG0 = ltG; stOtG = use(stOtG); stEqG = use(stEqG); ltG = use(ltG); const ltStU = ltG0 - ltG; const ltLossUsed = Math.min(ltG, ltLoss); ltG -= ltLossUsed;
+    // v179 brought-forward losses (tax.losses_cf): long-term only against LTCG; short-term against STCG then LTCG; intraday only against intraday profit
+    const bfA = (k) => (d.losses_cf || []).filter((l) => (l.cat || (/short/i.test(l.kind || '') ? 'stcl' : /long/i.test(l.kind || '') ? 'ltcl' : 'spec')) === k).reduce((a, l) => a + (num(l.amt) || 0), 0);
+    const bf = { st: bfA('stcl'), lt: bfA('ltcl'), sp: bfA('spec') }, bfU = { st: 0, lt: 0, sp: 0 };
+    bfU.lt = Math.min(ltG, bf.lt); ltG -= bfU.lt;
+    { let r = bf.st; const t = (g) => { const u = Math.min(g, r); r -= u; bfU.st += u; return g - u; }; stOtG = t(stOtG); stEqG = t(stEqG); const lb = ltG; ltG = t(ltG); var bfStLt = lb - ltG; }
     const ltEx = Math.min(ltG, 125000), ltTax = (ltG - ltEx) * 0.125, stTax = stEqG * 0.20;
     const o = d.other || {}, oth = (num(o.div_in) || 0) + (num(o.div_us) || 0) + (num(o.interest_sb) || 0);
-    const spec = num((d.spec || {}).cy) || 0;
+    const spec0 = num((d.spec || {}).cy) || 0; bfU.sp = Math.min(Math.max(0, spec0), bf.sp); const spec = spec0 - bfU.sp;
     const normal = Math.max(0, gross - std + oth + stOtG + Math.max(0, spec));
     let slab = txSlab(normal); const rebate = normal <= 1200000 ? Math.min(slab, 60000) : 0; slab -= rebate;
     const base = slab + stTax + ltTax, cess = base * 0.04, total = Math.round(base + cess);
     const tm = (d.tds || {}).months || {}, tdsYtd = Object.values(tm).reduce((a, v) => a + (num(v) || 0), 0), lastM = Object.keys(tm).sort().pop() || ytdTo;
     const leftT = lastM ? Math.max(0, (+fyEnd.slice(0, 4) - +lastM.slice(0, 4)) * 12 + (+fyEnd.slice(5) - +lastM.slice(5))) : 0;
     const tdsProj = tdsYtd + (num((d.tds || {}).monthly_next) || 0) * leftT, fTax = num(o.us_tax_withheld) || 0;
-    return { gross, left, std, oth, stOtG, stEqG, ltG, ltEx, ltTax, stTax, normal, slab, rebate, cess, total, tdsYtd, tdsProj, leftT, lastM, net: total - tdsProj - fTax, fTax, carried: stLoss, spec, stEq, ltEq, stOt };
+    return { gross, left, std, oth, stOtG, stEqG, ltG, ltEx, ltTax, stTax, normal, slab, rebate, cess, total, tdsYtd, tdsProj, leftT, lastM, net: total - tdsProj - fTax, fTax, carried: stLoss, ltCarried: ltLoss - ltLossUsed, spec, spec0, stEq, ltEq, stOt, bf, bfU, ltG0, ltStU, ltLU: ltLossUsed, bfStLt };
   }
   function txSave(path, v) {
     const d = txDoc(); if (!d) return; const [grp, key] = path.split('.');
@@ -3653,15 +3795,48 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     // capital gains
     const sgn = (v) => (v < 0 ? '−' : '') + inr(Math.abs(Math.round(v)));
     $('tx-cg-asof').textContent = 'set off as the law allows';
-    $('tx-cg').innerHTML = (d.cg || []).map((r) => { const parts = [['Equity short-term', r.stcg_eq], ['Equity long-term', r.ltcg_eq], ['Debt / other short-term', (num(r.stcg_other) || 0) + (num(r.stcg_other_loss) || 0)], ['Other long-term', r.ltcg_other]].filter((p) => num(p[1]));
-      return '<div class="tx-cgrow"><span>' + esc(r.src) + '</span><b>' + (parts.length ? esc(sgn(parts.reduce((a, p) => a + num(p[1]), 0))) : '—') + '</b><small>' + (parts.length ? parts.map((p) => esc(p[0] + ' ' + sgn(num(p[1])))).join(' · ') : '') + (r.note ? (parts.length ? ' · ' : '') + esc(r.note) : '') + '</small></div>'; }).join('') +
-      '<div class="tx-cgrow"><span>Intraday (speculative)</span><b>' + esc(sgn(c.spec)) + '</b><small>' + esc((d.spec || {}).src || '') + ' · can only be set off against intraday profits</small></div>' +
-      '<div class="tx-ex"><span>After set-off: equity STCG <b>' + esc(inr(c.stEqG)) + '</b> · LTCG <b>' + esc(inr(c.ltG)) + '</b>' + (c.carried ? ' · loss to carry forward <b>' + esc(inr(c.carried)) + '</b>' : '') + '</span>' +
-      '<div class="meter"><i style="width:' + Math.min(100, c.ltG / 125000 * 100).toFixed(1) + '%"></i></div><span class="small muted">LTCG exemption used ' + esc(inr(c.ltG)) + ' of ₹1,25,000 · ' + esc(inr(Math.max(0, 125000 - c.ltG))) + ' of long-term gains can still be booked tax-free before 31 Mar</span></div>';
+    { // v181: every row gets a bar (gains right, losses left); the LTCG bar shows what absorbed this year's long-term gains and the tax-free room left; hover/tap any part for its amount
+    const PN = ['Equity short-term', 'Equity long-term', 'Debt / other short-term', 'Other long-term'];
+    const rows = (d.cg || []).map((r) => ({ r, parts: [r.stcg_eq, r.ltcg_eq, (num(r.stcg_other) || 0) + (num(r.stcg_other_loss) || 0), r.ltcg_other].map((v, k) => [PN[k], num(v) || 0, k]).filter((p) => p[1]) }));
+    rows.push({ r: { src: 'Intraday (speculative)', note: ((d.spec || {}).src || '') + ' · set off only against intraday profit' }, parts: c.spec0 ? [['Intraday', c.spec0, 4]] : [], spec: true });
+    const side = (ps, sg) => ps.reduce((a, p) => a + (sg * p[1] > 0 ? Math.abs(p[1]) : 0), 0);
+    const mx = Math.max(1, ...rows.map((x) => Math.max(side(x.parts, 1), side(x.parts, -1))));
+    const seg = (p, lbl) => '<i class="cgs cgk' + p[2] + '" style="width:' + (Math.abs(p[1]) / mx * 100).toFixed(2) + '%" tabindex="0" data-cgt="' + esc(lbl + ' · ' + p[0] + ' ' + sgn(p[1])) + '" title="' + esc(p[0] + ' ' + sgn(p[1])) + '"></i>';
+    const bar = (x) => '<span class="cgb"><span class="cgl">' + x.parts.filter((p) => p[1] < 0).map((p) => seg(p, x.r.src)).join('') + '</span><span class="cgr">' + x.parts.filter((p) => p[1] > 0).map((p) => seg(p, x.r.src)).join('') + '</span></span>';
+    const tot = (x) => x.parts.reduce((a, p) => a + p[1], 0);
+    let h = rows.map((x) => '<div class="tx-cgrow cgx"><span>' + esc(x.r.src) + '</span><b class="' + (tot(x) < 0 ? 'neg' : tot(x) > 0 ? 'pos' : '') + '">' + (x.parts.length ? esc(sgn(tot(x))) : '—') + '</b>' + (x.parts.length ? bar(x) : '') + '<small>' + (x.spec ? '' : x.parts.map((p) => esc(p[0] + ' ' + sgn(p[1]))).join(' · ')) + (x.r.note ? (x.parts.length && !x.spec ? ' · ' : '') + esc(x.r.note) : '') + '</small></div>').join('');
+    if (c.bf.st || c.bf.lt || c.bf.sp) h += '<div class="tx-cgrow tx-bf"><span>Brought forward from past returns</span><b>' + esc(inr(c.bf.st + c.bf.lt + c.bf.sp)) + '</b><small>' + [['Short-term', c.bf.st, c.bfU.st], ['Long-term', c.bf.lt, c.bfU.lt], ['Intraday', c.bf.sp, c.bfU.sp]].filter((x) => x[1]).map((x) => esc(x[0] + ' ' + inr(x[1]) + (x[2] ? ' (uses ' + inr(x[2]) + ' this year)' : ''))).join(' · ') + ' · see Past returns for expiry</small></div>';
+    h += '<p class="small muted cg-read" aria-live="polite">Hover or tap a bar for its amount</p>';
+    // LTCG bar: what absorbed this year's long-term gains, the exemption used, and the tax-free room left before 31 Mar
+    const pastLeft = Math.max(0, c.bf.lt - c.bfU.lt) + Math.max(0, c.bf.st - c.bfU.st), exLeft = Math.max(0, 125000 - c.ltEx), room = pastLeft + exLeft;
+    const L = [['Set off by this year\'s short-term losses', c.ltStU, 'cgu1'], ['Set off by this year\'s long-term losses', c.ltLU, 'cgu2'], ['Set off by past long-term loss', c.bfU.lt, 'cgu3'], ['Set off by past short-term loss', c.bfStLt, 'cgu4'], ['Uses the ₹1.25L exemption', c.ltEx, 'cgu5'], ['Taxed at 12.5%', c.ltG - c.ltEx, 'cgu6'], ['Past losses left (tax-free room)', pastLeft, 'cgu7'], ['Exemption left (tax-free room)', exLeft, 'cgu8']].filter((x) => x[1] > 0);
+    const sc = Math.max(1, L.reduce((a, x) => a + x[1], 0));
+    h += '<div class="tx-ex"><span>After set-off: equity STCG <b>' + esc(inr(c.stEqG)) + '</b> · LTCG <b>' + esc(inr(c.ltG)) + '</b>' + (c.carried ? ' · new short-term loss to carry <b>' + esc(inr(c.carried)) + '</b>' : '') + (c.ltCarried ? ' · new long-term loss to carry <b>' + esc(inr(c.ltCarried)) + '</b>' : '') + (c.spec0 < 0 ? ' · new intraday loss to carry <b>' + esc(inr(-c.spec0)) + '</b>' : '') + ((c.bf.st + c.bf.lt + c.bf.sp) ? ' · past losses left after this year <b>' + esc(inr(c.bf.st + c.bf.lt + c.bf.sp - c.bfU.st - c.bfU.lt - c.bfU.sp)) + '</b>' : '') + '</span>' +
+      '<span class="cg-lth"><b>Long-term gains booked ' + esc(inr(c.ltG0)) + '</b><span>' + esc(inr(room)) + ' more tax-free</span></span>' +
+      '<span class="cgm">' + L.map((x) => '<i class="cgs ' + x[2] + '" style="width:' + (x[1] / sc * 100).toFixed(2) + '%" tabindex="0" data-cgt="' + esc(x[0] + ' ' + inr(x[1])) + '" title="' + esc(x[0] + ' ' + inr(x[1])) + '"></i>').join('') + '</span>' +
+      '<span class="cg-leg">' + L.map((x) => '<span><i class="' + x[2] + '"></i>' + esc(x[0].replace(/ \(tax-free room\)/, '')) + '</span>').join('') + '</span>' +
+      '<span class="small muted cg-room">' + esc(inr(room) + ' of long-term gains can still be booked tax-free before 31 Mar: ' + inr(exLeft) + ' exemption' + (pastLeft ? ' + ' + inr(pastLeft) + ' past losses left' : '')) + '</span></div>';
+    $('tx-cg').innerHTML = h;
+    const rd = $('tx-cg').querySelector('.cg-read');
+    $('tx-cg').querySelectorAll('[data-cgt]').forEach((el) => { const show = () => { if (rd) rd.textContent = el.dataset.cgt; }; el.addEventListener('mouseenter', show); el.addEventListener('focus', show); el.addEventListener('click', show); });
+    $('tx-cg').querySelectorAll('.cgx').forEach((row) => { row.addEventListener('mouseenter', () => { if (rd && !row.querySelector('.cgs:hover')) rd.textContent = row.querySelector('span').textContent + ': ' + row.querySelector('b').textContent + (row.querySelector('small').textContent ? ' · ' + row.querySelector('small').textContent : ''); }); });
+    }
     // past returns and losses carried forward
     $('tx-returns').innerHTML = '<div class="tbl"><table class="tx-ret"><thead><tr><th>Year</th><th class="n">Income</th><th class="n">Tax</th><th class="n">TDS</th><th class="n">Refund</th></tr></thead><tbody>' + (d.returns || []).map((r) =>
       '<tr title="' + esc([r.form, r.filed ? 'filed ' + fmtIso(r.filed) : '', r.regime_note || '', 'advance tax ' + inr(r.adv_tax || 0) + ' · self-assessment ' + inr(r.sa_tax || 0)].filter(Boolean).join(' · ')) + '"><td>AY ' + esc(r.ay) + '<br><span class="small muted">' + esc([r.regime ? (r.regime === 'old' ? 'Old' : 'New') + ' regime' : '', r.filed ? fmtIso(r.filed) : 'FY ' + (r.fy || '')].filter(Boolean).join(' · ')) + '</span></td><td class="n">' + esc(short(r.income)) + '</td><td class="n">' + esc(short(r.tax)) + '</td><td class="n">' + esc(r.tds == null ? '—' : short(r.tds)) + '</td><td class="n pos">' + (r.refund == null ? '<span class="muted">—</span>' : esc(short(r.refund)) + (r.refund_got ? '' : '<br><span class="small muted">not confirmed</span>')) + '</td></tr>').join('') + '</tbody></table></div>';
-    $('tx-cf').innerHTML = (d.losses_cf || []).length ? '<span class="label">Losses carried forward</span>' + d.losses_cf.map((l) => '<span>' + esc(l.kind) + ' <b class="num">' + esc(inr(l.amt)) + '</b> <span class="muted">from AY ' + esc(l.ay) + ', usable to AY ' + esc(l.last_ay) + '</span></span>').join('') : '';
+    { // v180: one bar per loss type; segments = each year's loss, labelled with the last assessment year it can be used in
+      const LT = [['spec', 'Intraday'], ['stcl', 'Short-term'], ['ltcl', 'Long-term']];
+      const cat = (l) => l.cat || (/short/i.test(l.kind || '') ? 'stcl' : /long/i.test(l.kind || '') ? 'ltcl' : 'spec');
+      const grp = LT.map(([k, lbl]) => ({ k, lbl, ls: (d.losses_cf || []).filter((l) => cat(l) === k && num(l.amt) > 0).sort((a, b) => String(a.last_ay).localeCompare(String(b.last_ay))) })).filter((g) => g.ls.length);
+      const mx = Math.max(1, ...grp.map((g) => g.ls.reduce((a, l) => a + num(l.amt), 0)));
+      const yr = (ay) => String(ay || '').replace(/^(\d{4})-(\d{2})$/, '$1-$2');
+      const rows = grp.map((g) => { const tot = g.ls.reduce((a, l) => a + num(l.amt), 0);
+        const segs = g.ls.map((l, i) => '<i class="cfs cfs' + i + '" style="width:' + (num(l.amt) / mx * 100).toFixed(2) + '%" title="' + esc(inr(l.amt) + ' from AY ' + l.ay + ', usable till AY ' + yr(l.last_ay)) + '" tabindex="0" data-cft="' + esc(inr(l.amt) + ' usable till AY ' + yr(l.last_ay)) + '"></i>').join('');
+        const yrs = g.ls.map((l) => (g.ls.length > 1 ? esc(short(l.amt)) + ' till ' : 'till ') + 'AY ' + esc(yr(l.last_ay))).join(' · ');
+        return '<div class="cfr"><span class="cfn">' + esc(g.lbl) + '</span><span class="cfb">' + segs + '</span><b class="num">' + esc(inr(tot)) + '</b><small class="cfy">' + yrs + '</small></div>'; }).join('');
+      $('tx-cf').innerHTML = rows ? '<span class="label">Losses carried forward</span>' + rows + '<p class="small muted cf-read" aria-live="polite"></p>' : '';
+      $('tx-cf').querySelectorAll('[data-cft]').forEach((el) => { const show = () => { const r = $('tx-cf').querySelector('.cf-read'); if (r) r.textContent = el.closest('.cfr').querySelector('.cfn').textContent + ': ' + el.dataset.cft; }; el.addEventListener('mouseenter', show); el.addEventListener('focus', show); el.addEventListener('click', show); });
+    }
     $('tx-todo').innerHTML = (d.todo || []).length ? '<span class="label">Still needed for this year</span><ul>' + d.todo.map((t) => '<li>' + esc(t) + '</li>').join('') + '</ul>' : '';
   }
 
@@ -3674,7 +3849,7 @@ th button.sort[data-on]::after { content: attr(data-on); margin-left: 3px; }
     const off = window.__SNAPSHOT__ ? bkOff() : {};
     return Object.entries(S.bank || {}).map(([id, a]) => Object.assign({ id }, a, off[id] || {})).sort((a, b) => (a.order ?? 9) - (b.order ?? 9)).map((a, i) => Object.assign(a, { col: BK_COL[i % BK_COL.length] }));
   }
-  // SBI locker other_income: once a year (April); the money must be in SBI from 20 March until the April debit
+  // SBI locker fee: once a year (April); the money must be in SBI from 20 March until the April debit
   function bkLocker(today) {
     const st = set(), c = st.sbi_locker || {}, amt = num(c.amt) ?? 0; if (!amt) return null; const y = today.getFullYear();
     const fb = String(c.fund_by || '03-20').split('-'), un = String(c.until || '04-02').split('-');
